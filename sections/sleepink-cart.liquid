@@ -1,0 +1,213 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+
+{{ 'sleepink-cart.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+
+{% liquid 
+  assign tagBackground = settings.colors_text 
+  assign tagForeground = settings.colors_background_1
+%}
+
+<div class="sc-flex sc-column sc-mxh-100p">
+  {% comment %} Shipping Banner {% endcomment %}
+  <div class="sc-flex sc-row sc-jc-c sc-ai-c sc-px-4 sc-h-40px color-invert sc-fs-12px sc-fs-md-0 sc-ff-heading sc-fw-300 sc-lh-16px sc-ls-p05">
+    <div class="sc-flex sc-row sc-ai-c">
+      <img src="{{ section.settings.shippingIconFirst | img_url: '50x' }}" alt="{{ section.settings.shippingIconFirst.alt | escape }}" width="22" height="22" loading="lazy">
+      <div class="sc-ml-3">{{ section.settings.shippingMessageFirst | escape }}</div>
+    </div>
+    <div class="sc-flex sc-row sc-ai-c">
+      <img src="{{ section.settings.shippingIconSecond | img_url: '50x' }}" alt="{{ section.settings.shippingIconSecond.alt | escape }}" width="22" height="22" loading="lazy">
+      <div class="sc-ml-3">{{ section.settings.shippingMessageSecond | escape }}</div>
+    </div>
+  </div>
+  {% comment %} Title {% endcomment %}
+  <div class="sc-flex sc-row sc-jc-spb sc-ai-c">
+    <div class="sc-w-56px sc-mx-7 sc-mx-md-8">
+      <div class="sc-ff-heading sc-fs-2 sc-fs-md-3 sc-lh-130 sc-fw-500 sc-my-3 sc-my-md-5">
+        {{ section.settings.cartTitle | escape }}
+      </div>
+    </div>
+    <button class="sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px">
+      {% render 'icon-close-small' %}
+    </button>
+  </div>
+  {% comment %} Line {% endcomment %}
+  <div class="sc-mx-5 sc-mx-md-7 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-mobile">&nbsp;</div>
+  <div class="sc-flex sc-column sc-flex1 sc-ofy-auto sc-ofx-none sc-pb-5">
+    {% comment %} DecisionBanner {% endcomment %}
+    {% if cart.item_count > 0 %}
+      <div class="sc-flex sc-row sc-jc-c sc-ai-c sc-px-4 sc-h-40px sc-bg-e3fff1 sc-col-ff sc-ff-heading sc-fs-3 sc-fw-300 sc-lh-26px sc-nmobileflex sc-mb-4">
+        <div class="sc-col-0A5425">
+          <div class="sc-flex sc-row sc-ai-c">
+            <div class="sc-decban sc-w-16px sc-h-16px">&nbsp;</div>
+            <div class="sc-fs-2 sc-ml-2">
+              <span class="sc-fw-700">Gute Wahl!</span> Hier sind Ihre Produkte:
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% comment %} Liste der Waren {% endcomment %}
+    <div class="sc-h-90p">
+      {% assign highest_index = cart.items.size | minus: 1 %}
+      {% for item in cart.items %}
+        <div class="sc-flex sc-row sc-ai-str sc-mxw-100vw sc-of-h" id="CartItem-{{ item.index | plus: 1 }}">
+          <div class="sc-flex sc-column sc-ai-c sc-ml-5 sc-ml-md-7 sc-mr-4 sc-mr-md-5 sc-mb-5">
+            {% comment %} Produktbild {% endcomment %}
+            <img src="{{ item.image | img_url: '150x' }}" width="60" height="60" loading="lazy" class="sc-contain">
+            {% comment %} QuantitySpinner {% endcomment %}
+            <quantity-input class="quantity">
+              <button class="quantity__button no-js-hidden" name="minus" type="button">
+                <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                {% render 'icon-minus' %}
+              </button>
+              <input class="quantity__input"
+                type="number"
+                name="updates[]"
+                value="{{ item.quantity }}"
+                min="0"
+                aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                id="Quantity-{{ item.index | plus: 1 }}"
+                data-index="{{ item.index | plus: 1 }}"
+              >
+              <button class="quantity__button no-js-hidden" name="plus" type="button">
+                <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                {% render 'icon-plus' %}
+              </button>
+            </quantity-input>
+          </div>
+          {% comment %} Name des Produktes {% endcomment %}
+          <div class="sc-flex sc-row sc-flex1 sc-my-5 sc-mr-5 sc-mr-md-7">
+            <div class="sc-flex sc-column sc-flex1">
+              <h3 class="sc-ff-heading sc-fs-15px sc-fs-md-2 sc-lh-120 sc-lh-md-133 sc-fw-400 sc-mb-2">
+                {{ item.product.title | escape }}
+              </h3>
+              <h4 class="sc-ff-heading sc-fs-0 sc-fs-md-1 sc-lh-18px sc-lh-md-125 sc-mb-4 sc-fw-300">
+                {%- if item.product.has_only_default_variant == false -%}
+                  {%- for option in item.options_with_values -%}
+                      {{ option.value }}
+                  {%- endfor -%}
+                  {% else %}
+                    &nbsp;
+                {%- endif -%}
+              </h4>
+            </div>
+          </div>
+          {% comment %} Trash Icon und Preis {% endcomment %}
+          <div class="sc-flex sc-column sc-ai-fe">
+            <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+              <a href="{{ item.url_to_remove }}" class="button button--tertiary sc-noborder sc-nooutline" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                {% render 'icon-remove' %}
+              </a>
+            </cart-remove-button>
+            <div class="sc-fs-15px sc-fs-md-1 sc-ff-body sc-fw-400 sc-lh-100 sc-lh-md-26px sc-mt-m4px sc-mt-md-m2px sc-mb-5 sc-pt-3">
+              {{ item.final_price | money_without_currency }} €
+            </div>
+          </div>
+        </div>
+        {% if item.index != highest_index %}
+          <div class="sc-w-100p sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% comment %} Gutscheineingabe {% endcomment %}
+    <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
+    <div>
+      <div class="sc-flex sc-row sc-jc-spb sc-w-100p sc-px-5 sc-px-md-7">
+        <div class="sc-flex sc-column sc-w-100m20">
+          <form class="sc-flex sc-row sc-ai-c sc-px-0 sc-pb-0 sc-pos-rel sc-w-100m20">
+            <input type="text" placeholder="Gutscheincode einlösen" class="sc-w-100p sc-p-3 sc-p-md-4 sc-border-couponinput sc-fs-1 sc-fw-300">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
+    {% comment %} Bestellübersicht {% endcomment %}
+    <div class="sc-flex sc-column sc-px-5 sc-px-md-7 sc-pt-5 sc-pt-md-7 sc-pb-7 sc-pb-md-8">
+      <div class="sc-fs-2 sc-fs-md-21px sc-ff-heading sc-fw-600 sc-lh-24px sc-lh-md-28px sc-pt-0 sc-pb-3">
+        Bestellübersicht
+      </div>
+      <div class="sc-flex sc-row sc-jc-spb sc-pb-3">
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          {{ cart.item_count }} Artikel
+        </div>
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          {{ cart.original_total_price | money_without_currency }} €
+        </div>
+      </div>
+      {% if discount_application.title and cart.total_discount > 0 %}
+        <div class="sc-flex sc-row sc-jc-spb sc-pb-3">
+          <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+            {{ discount_application.title | escape }}
+          </div>
+          <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+            {{ cart.total_discount | money_without_currency }} €
+          </div>
+        </div>
+      {% endif %}
+      <div class="sc-flex sc-row sc-jc-spb sc-pb-3">
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          Versand
+        </div>
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          {% liquid 
+            if cart.original_total_price > 2900 
+              assign shipping_price = 0
+              assign total_price = cart.items_subtotal_price
+            else
+              assign shipping_price = 380
+              assign total_price = cart.items_subtotal_price | plus: 380
+            endif
+          %}
+          {{ shipping_price | money_without_currency }} €
+        </div>
+      </div>
+      {% comment %} Line {% endcomment %}
+      <div class="sc-w-100p sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px">&nbsp;</div>
+      {% comment %} Gesamtpreis {% endcomment %}
+      <div class="sc-flex sc-row sc-jc-spb sc-py-4">
+        <div class="sc-flex sc-row sc-ai-base">
+          <div class="sc-ff-heading sc-fs-2 sc-fw-500 sc-lh-28px">
+            Gesamtbetrag
+          </div>
+          <div class="sc-ff-heading sc-fs-0 sc-fw-300 sc-lh-26px sc-ml-1">inkl. MwSt</div>
+        </div>
+        <div class="sc-ff-body sc-fs-1 sc-fs-md-2 sc-fw-500 sc-lh-18px sc-lh-md-26px">
+          {{ total_price | money_without_currency }} €
+        </div>
+      </div>
+    </div>
+    <a href="" id="checkout" class="sc-nodec sc-w-100m20 sc-inlineblock sc-mx-auto">
+      <button style="background-color: {{ tagBackground}}; color: {{ tagForeground }};" class="sc-flex sc-row sc-jc-c sc-ai-c sc-w-100p sc-inlineblock">
+        <span class="sc-mb-2">
+        {%- render 'icon-lock', currentColor: "#FFFFFF" -%}
+        </span>
+        <div class="sc-mx-3 sc-py-5 sc-ff-heading sc-fs-3 sc-fw-300 sc-lh-26px sc-lh-lg-32px">
+        Zur Kasse
+        </div>
+      </button>
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Warenkorb",
+  "tag": "cart-overlay",
+  "class": "overlay-right",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-cart-items.settings.show_vendor.label"
+    }
+  ]
+}
+{% endschema %}
