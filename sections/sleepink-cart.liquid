@@ -16,12 +16,12 @@
 
 <div class="sc-flex sc-column sc-mxh-100p">
   {% comment %} Shipping Banner {% endcomment %}
-  <div class="sc-flex sc-row sc-jc-c sc-ai-c sc-px-4 sc-h-40px color-invert sc-fs-12px sc-fs-md-0 sc-ff-heading sc-fw-300 sc-lh-16px sc-ls-p05">
+  <div class="sc-flex sc-row sc-jc-c sc-ai-c sc-px-4 sc-h-40px color-invert sc-fs-12px sc-fs-md-0 sc-ff-heading sc-fw-300 sc-lh-16px sc-ls-p05" style="background-color: {{ tagBackground | escape }}; color: {{ tagForeground | escape }}">
     <div class="sc-flex sc-row sc-ai-c">
       <img src="{{ section.settings.shippingIconFirst | img_url: '50x' }}" alt="{{ section.settings.shippingIconFirst.alt | escape }}" width="22" height="22" loading="lazy">
       <div class="sc-ml-3">{{ section.settings.shippingMessageFirst | escape }}</div>
     </div>
-    <div class="sc-flex sc-row sc-ai-c">
+    <div class="sc-flex sc-row sc-ai-c sc-ml-2">
       <img src="{{ section.settings.shippingIconSecond | img_url: '50x' }}" alt="{{ section.settings.shippingIconSecond.alt | escape }}" width="22" height="22" loading="lazy">
       <div class="sc-ml-3">{{ section.settings.shippingMessageSecond | escape }}</div>
     </div>
@@ -29,11 +29,11 @@
   {% comment %} Title {% endcomment %}
   <div class="sc-flex sc-row sc-jc-spb sc-ai-c">
     <div class="sc-w-56px sc-mx-7 sc-mx-md-8">
-      <div class="sc-ff-heading sc-fs-2 sc-fs-md-3 sc-lh-130 sc-fw-500 sc-my-3 sc-my-md-5">
+      <div class="sc-ff-heading sc-fs-2 sc-fs-md-3 sc-lh-130 sc-fw-500 sc-my-3 sc-my-md-5 sc-uppercase">
         {{ section.settings.cartTitle | escape }}
       </div>
     </div>
-    <button class="sc-close-cart sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px">
+    <button class="sc-close-cart sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px" style="background-color: {{ tagForeground | escape }}">
       {% render 'icon-close-small' %}
     </button>
   </div>
@@ -220,10 +220,32 @@
   "class": "overlay-right overlay-hidden sc-animate",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.main-cart-items.settings.show_vendor.label"
+      "type": "image_picker",
+      "id": "shippingIconFirst",
+      "label": "erstes Icon in der Versandleiste"
+    },
+    {
+      "type": "text",
+      "id": "shippingMessageFirst",
+      "label": "erste Aussage in der Versandleiste",
+      "default": "Kostenloser Versand ab 29€"
+    },
+    {
+      "type": "image_picker",
+      "id": "shippingIconSecond",
+      "label": "zweites Icon in der Versandleiste"
+    },
+    {
+      "type": "text",
+      "id": "shippingMessageSecond",
+      "label": "zweite Aussage in der Versandleiste",
+      "default": "1 bis 3 Werktage"
+    },
+    {
+      "type": "text",
+      "id": "cartTitle",
+      "label": "Titel des Warenkorbs",
+      "default": "Warenkorb"
     }
   ]
 }
