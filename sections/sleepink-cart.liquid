@@ -196,6 +196,7 @@
   </div>
 </div>
 {% liquid 
+  assign itemCount = cart.item_count
   for item in cart.items
     if item.index == 0
       assign itemString = item.variant_id | append: ':' | append: item.quantity
@@ -208,9 +209,15 @@
   document.getElementsByClassName("sc-close-cart")[0].addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.add("overlay-hidden"));
   document.getElementById("cart-icon-bubble").addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.remove("overlay-hidden"));
   const shopUrl = "{{ shop.url | escape }}";
+  if ({{ itemCount }} > 0){
   const itemString = "{{ itemString | escape }}";
   const urlString = `${shopUrl}/cart/${itemString}`;
   document.getElementById("checkout").href = urlString;
+  document.querySelector("#checkout > button").disabled = false;
+  } else {
+    document.getElementById("checkout").href = "";
+    document.querySelector("#checkout > button").disabled = true;
+  }
 </script>
 
 {% schema %}
