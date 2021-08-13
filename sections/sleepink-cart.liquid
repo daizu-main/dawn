@@ -33,7 +33,7 @@
         {{ section.settings.cartTitle | escape }}
       </div>
     </div>
-    <button class="sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px">
+    <button class="sc-close-cart sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px">
       {% render 'icon-close-small' %}
     </button>
   </div>
@@ -184,7 +184,7 @@
       </div>
     </div>
     <a href="" id="checkout" class="sc-nodec sc-w-100m20 sc-inlineblock sc-mx-auto">
-      <button style="background-color: {{ tagBackground}}; color: {{ tagForeground }};" class="sc-flex sc-row sc-jc-c sc-ai-c sc-w-100p sc-inlineblock">
+      <button style="background-color: {{ tagBackground }}; color: {{ tagForeground }};" class="sc-flex sc-row sc-jc-c sc-ai-c sc-w-100p sc-inlineblock">
         <span class="sc-mb-2">
         {%- render 'icon-lock', currentColor: "#FFFFFF" -%}
         </span>
@@ -195,12 +195,16 @@
     </a>
   </div>
 </div>
+<script>
+  document.getElementsByClassName("sc-close-cart")[0].addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.add("overlay-hidden"));
+  document.getElementById("cart-icon-bubble").addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.remove("overlay-hidden"));
+</script>
 
 {% schema %}
 {
   "name": "Warenkorb",
-  "tag": "cart-overlay",
-  "class": "overlay-right",
+  "tag": "div",
+  "class": "overlay-right overlay-hidden sc-animate",
   "settings": [
     {
       "type": "checkbox",

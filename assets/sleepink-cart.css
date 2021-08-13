@@ -8,6 +8,14 @@
   background-color: white;
 }
 
+.overlay-hidden {
+  transform: translate3d(100%, 0, 0);
+}
+
+.sc-animate {
+  transition: transform 0.4s ease-in-out;
+}
+
 #checkout svg {
   width: 20px;
   height: 20px;
