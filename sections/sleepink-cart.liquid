@@ -236,7 +236,7 @@
         } else {
           document.getElementById("couponRow").style.display = "none";
           const saving = 0;
-          const shipping = {{ cart.original_total_price }} < 2900 ? 3.80 : 0.00
+          const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00
           const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
           document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
         }
