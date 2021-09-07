@@ -1,13 +1,13 @@
-{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'component-cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
-{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 {{ 'sleepink-cart.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'sleepink-cart.js' | asset_url }}" defer="defer"></script>
 
 {% liquid 
   assign tagBackground = settings.colors_text 
@@ -33,7 +33,7 @@
         {{ section.settings.cartTitle | escape }}
       </div>
     </div>
-    <button class="sc-close-cart sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px" style="background-color: {{ tagForeground | escape }}">
+    <button id="close-cart" class="sc-close-cart sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px" style="background-color: {{ tagForeground | escape }}">
       {% render 'icon-close-small' %}
     </button>
   </div>
@@ -54,7 +54,9 @@
       </div>
     {% endif %}
     {% comment %} Liste der Waren {% endcomment %}
-    <div class="sc-h-90p">
+    <sleepink-cart-items class="sc-h-90p">
+      <div id="main-cart-items" class="w-100-p" data-id="{{ section.id }}">
+        <div class="js-contents">
       {% assign highest_index = cart.items.size | minus: 1 %}
       {% for item in cart.items %}
         <div class="sc-flex sc-row sc-ai-str sc-mxw-100vw sc-of-h" id="CartItem-{{ item.index | plus: 1 }}">
@@ -101,11 +103,11 @@
           </div>
           {% comment %} Trash Icon und Preis {% endcomment %}
           <div class="sc-flex sc-column sc-ai-fe">
-            <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+            <sleepink-cart-remove id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
               <a href="{{ item.url_to_remove }}" class="button button--tertiary sc-noborder sc-nooutline" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                 {% render 'icon-remove' %}
               </a>
-            </cart-remove-button>
+            </sleepink-cart-remove>
             <div class="sc-fs-15px sc-fs-md-1 sc-ff-body sc-fw-400 sc-lh-100 sc-lh-md-26px sc-mt-m4px sc-mt-md-m2px sc-mb-5 sc-pt-3">
               {{ item.final_price | money_without_currency }} €
             </div>
@@ -116,6 +118,10 @@
         {% endif %}
       {% endfor %}
     </div>
+    </div>
+    <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+    <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
+    </sleepink-cart-items>
     {% comment %} Gutscheineingabe {% endcomment %}
     <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
     <div>
@@ -129,16 +135,17 @@
     </div>
     <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
     {% comment %} Bestellübersicht {% endcomment %}
-    <div class="sc-flex sc-column sc-px-5 sc-px-md-7 sc-pt-5 sc-pt-md-7 sc-pb-7 sc-pb-md-8">
+    <div class="sc-flex sc-column sc-px-5 sc-px-md-7 sc-pt-5 sc-pt-md-7 sc-pb-7 sc-pb-md-8" id="main-cart-footer" data-id="{{ section.id }}">
+      <div class="js-contents2">
       <div class="sc-fs-2 sc-fs-md-21px sc-ff-heading sc-fw-600 sc-lh-24px sc-lh-md-28px sc-pt-0 sc-pb-3">
         Bestellübersicht
       </div>
       <div class="sc-flex sc-row sc-jc-spb sc-pb-3">
         <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
-          {{ cart.item_count }} Artikel
+          <span id="item-count">{{ cart.item_count }}</span> Artikel
         </div>
         <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
-          {{ cart.original_total_price | money_without_currency }} €
+          <span id="subtotal">{{ cart.total_price | money_without_currency }}</span> €
         </div>
       </div>
         <div id="couponRow" class="sc-flex sc-row sc-jc-spb sc-pb-3 sc-dn">
@@ -153,13 +160,13 @@
         </div>
         <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
           {% liquid 
-            if cart.original_total_price > 2900 
+            if cart.original_total_price > 2900 or cart.original_total_price == 0
               assign shipping_price = 0
             else
               assign shipping_price = 380
             endif
           %}
-          {{ shipping_price | money_without_currency }} €
+          <span id="shipping">{{ shipping_price | money_without_currency }}</span> €
         </div>
       </div>
       {% comment %} Line {% endcomment %}
@@ -176,7 +183,8 @@
         </div>
       </div>
     </div>
-    <a href="" id="checkout" class="sc-nodec sc-w-100m20 sc-inlineblock sc-mx-auto">
+    </div>
+    <a href="" id="checkoutLink" class="sc-nodec sc-w-100m20 sc-inlineblock sc-mx-auto checkout-link{% if cart.items_count == 0 %} disable-link{% endif %}">
       <button style="background-color: {{ tagBackground }}; color: {{ tagForeground }};" class="sc-flex sc-row sc-jc-c sc-ai-c sc-w-100p sc-inlineblock">
         <span class="sc-mb-2">
         {%- render 'icon-lock', currentColor: "#FFFFFF" -%}
@@ -187,6 +195,7 @@
       </button>
     </a>
   </div>
+  <div id="cart-errors"></div>
 </div>
 {% liquid 
   assign itemCount = cart.item_count
@@ -199,17 +208,17 @@
   endfor
 %}
 <script>
-  document.getElementsByClassName("sc-close-cart")[0].addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.add("overlay-hidden"));
+  document.getElementById("close-cart").addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.add("overlay-hidden"));
   document.getElementById("cart-icon-bubble").addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.remove("overlay-hidden"));
   const shopUrl = "{{ shop.url | escape }}";
   if ({{ itemCount }} > 0){
     const itemString = "{{ itemString | escape }}";
     const urlString = `${shopUrl}/cart/${itemString}`;
-    document.getElementById("checkout").href = urlString;
-    document.querySelector("#checkout > button").disabled = false;
+    document.getElementById("checkoutLink").href = urlString;
+    document.querySelector("#checkoutLink").classList.remove("disable-link");
   } else {
-    document.getElementById("checkout").href = "";
-    document.querySelector("#checkout > button").disabled = true;
+    document.getElementById("checkoutLink").href = "";
+    document.querySelector("#checkoutLink").classList.add("disable-link");
   }
   function checkCoupon() {
     const currCode = document.getElementById("couponInput").value;
@@ -222,7 +231,7 @@
           document.querySelector("#couponRow > div:first-child").innerHTML = res.coupon.couponName;
           const saving = res.coupon.couponType = "percent" ? Math.round({{ cart.original_total_price }} * 0.01 * res.coupon.couponAmount)/ -100 : coupon.couponAmount / -100;
           document.querySelector("#couponRow > div:last-child").innerHTML = `${saving.toFixed(2).replace(".",",")} €`;
-          const shipping = {{ cart.original_total_price }} < 2900 ? 3.80 : 0.00
+          const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00;
           const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
           document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
           const oldCheckoutUrl = document.getElementById("checkout").href;
@@ -236,7 +245,7 @@
         } else {
           document.getElementById("couponRow").style.display = "none";
           const saving = 0;
-          const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00
+          const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00;
           const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
           document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
         }
@@ -244,7 +253,7 @@
     } else {
       document.getElementById("couponRow").style.display = "none";
       const saving = 0;
-      const shipping = {{ cart.original_total_price }} < 2900 ? 3.80 : 0.00
+      const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00
       const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
       document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
     }
@@ -259,6 +268,186 @@
     e.preventDefault();
     checkCoupon();
   });
+
+  class SleepinkCartItems extends HTMLElement {
+    constructor() {
+      super()
+  
+      this.lineItemStatusElement = document.getElementById(
+        "shopping-cart-line-item-status"
+      )
+  
+      this.currentItemCount = Array.from(
+        this.querySelectorAll('[name="updates[]"]')
+      ).reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0)
+  
+      this.debouncedOnChange = debounce((event) => {
+        this.onChange(event)
+      }, 300)
+  
+      this.addEventListener("change", this.debouncedOnChange.bind(this))
+    }
+  
+    onChange(event) {
+      this.updateQuantity(
+        event.target.dataset.index,
+        event.target.value,
+        document.activeElement.getAttribute("name")
+      )
+    }
+  
+    getSectionsToRender() {
+      return [
+        {
+          id: "main-cart-items",
+          section: document.getElementById("main-cart-items").dataset.id,
+          selector: ".js-contents",
+        },
+        {
+          id: "cart-icon-bubble",
+          section: "cart-icon-bubble",
+          selector: ".shopify-section",
+        },
+        {
+          id: "cart-live-region-text",
+          section: "cart-live-region-text",
+          selector: ".shopify-section",
+        },
+        {
+          id: "main-cart-footer",
+          section: document.getElementById("main-cart-footer").dataset.id,
+          selector: ".js-contents2",
+        },
+      ]
+    }
+  
+    updateQuantity(line, quantity, name) {
+      this.enableLoading(line)
+  
+      const body = JSON.stringify({
+        line,
+        quantity,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname,
+      })
+  
+      fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+        .then((response) => {
+          return response.text()
+        })
+        .then((state) => {
+          const parsedState = JSON.parse(state)
+          this.classList.toggle("is-empty", parsedState.item_count === 0)
+          const cartFooter = document.getElementById("main-cart-footer")
+  
+          if (cartFooter)
+            cartFooter.classList.toggle("is-empty", parsedState.item_count === 0)
+  
+          this.getSectionsToRender().forEach((section, index) => {
+            const elementToReplace =
+              document
+                .getElementById(section.id)
+                .querySelector(section.selector) ||
+              document.getElementById(section.id)
+  
+            if (index !== 3) {
+              elementToReplace.innerHTML = this.getSectionInnerHTML(
+                parsedState.sections[section.section],
+                section.selector
+              )
+            }
+          })
+  
+          this.updateLiveRegions(line, parsedState.item_count)
+          const { items_subtotal_price: subtotal } = parsedState
+          const formattedSubtotal = (subtotal / 100).toFixed(2).replace(".", ",")
+          const shipping = subtotal < 2900 && subtotal > 0 ? 380 : 0
+          const formattedShipping = (shipping / 100).toFixed(2).replace(".", ",")
+          const total = subtotal + shipping
+          const formattedTotal = (total / 100).toFixed(2).replace(".", ",")
+          document.getElementById("subtotal").innerHTML = formattedSubtotal
+          document.getElementById("shipping").innerHTML = formattedShipping
+          document.getElementById("totalPrice").innerHTML = `${formattedTotal} €`
+          if (parsedState.item_count == 0) {
+            document.getElementById("checkoutLink").classList.add("disable-link")
+            document.getElementById("checkoutLink").href = ""
+          } else {
+            const productString = parsedState.items
+              .filter((item) => item.quantity > 0)
+              .map((item) => `${item.id}:${item.quantity}`)
+              .join(",")
+            const shopUrl = "{{ shop.url | escape }}"
+            document.getElementById(
+              "checkoutLink"
+            ).href = `https://${shopUrl}/cart/${productString}`
+            document
+              .getElementById("checkoutLink")
+              .classList.remove("disable-link")
+          }
+          const lineItem = document.getElementById(`CartItem-${line}`)
+          if (lineItem) lineItem.querySelector(`[name="${name}"]`).focus()
+          this.disableLoading()
+        })
+        .catch(() => {
+          this.querySelectorAll(".loading-overlay").forEach((overlay) =>
+            overlay.classList.add("hidden")
+          )
+          document.getElementById("cart-errors").textContent =
+            window.cartStrings.error
+          this.disableLoading()
+        })
+    }
+  
+    updateLiveRegions(line, itemCount) {
+      if (this.currentItemCount === itemCount) {
+        // document
+        //   .getElementById(`Line-item-error-${line}`)
+        //   .querySelector(".cart-item__error-text").innerHTML =
+        //   window.cartStrings.quantityError.replace(
+        //     "[quantity]",
+        //     document.getElementById(`Quantity-${line}`).value
+        //   )
+        document.querySelector("#item-count").innerHTML = itemCount
+      }
+  
+      this.currentItemCount = itemCount
+      this.lineItemStatusElement.setAttribute("aria-hidden", true)
+  
+      const cartStatus = document.getElementById("cart-live-region-text")
+      cartStatus.setAttribute("aria-hidden", false)
+  
+      document.querySelector("#item-count").innerHTML = itemCount
+  
+      setTimeout(() => {
+        cartStatus.setAttribute("aria-hidden", true)
+      }, 1000)
+    }
+  
+    getSectionInnerHTML(html, selector) {
+      return new DOMParser()
+        .parseFromString(html, "text/html")
+        .querySelector(selector).innerHTML
+    }
+  
+    enableLoading(line) {
+      document
+        .getElementById("main-cart-items")
+        .classList.add("cart__items--disabled")
+      this.querySelectorAll(`#CartItem-${line} .loading-overlay`).forEach(
+        (overlay) => overlay.classList.remove("hidden")
+      )
+      document.activeElement.blur()
+      this.lineItemStatusElement.setAttribute("aria-hidden", false)
+    }
+  
+    disableLoading() {
+      document
+        .getElementById("main-cart-items")
+        .classList.remove("cart__items--disabled")
+    }
+  }
+  
+  customElements.define("sleepink-cart-items", SleepinkCartItems)
 </script>
 
 {% schema %}
