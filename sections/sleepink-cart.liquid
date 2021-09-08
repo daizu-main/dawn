@@ -55,7 +55,7 @@
     {% endif %}
     {% comment %} Liste der Waren {% endcomment %}
     <sleepink-cart-items class="sc-h-90p">
-      <div id="main-cart-items" class="w-100-p" data-id="{{ section.id }}">
+      <div id="sleepink-cart-items" class="w-100-p" data-id="{{ section.id }}">
         <div class="js-contents">
       {% assign highest_index = cart.items.size | minus: 1 %}
       {% for item in cart.items %}
@@ -135,7 +135,7 @@
     </div>
     <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
     {% comment %} Bestellübersicht {% endcomment %}
-    <div class="sc-flex sc-column sc-px-5 sc-px-md-7 sc-pt-5 sc-pt-md-7 sc-pb-7 sc-pb-md-8" id="main-cart-footer" data-id="{{ section.id }}">
+    <div class="sc-flex sc-column sc-px-5 sc-px-md-7 sc-pt-5 sc-pt-md-7 sc-pb-7 sc-pb-md-8" id="sleepink-cart-footer" data-id="{{ section.id }}">
       <div class="js-contents2">
       <div class="sc-fs-2 sc-fs-md-21px sc-ff-heading sc-fw-600 sc-lh-24px sc-lh-md-28px sc-pt-0 sc-pb-3">
         Bestellübersicht
@@ -313,8 +313,8 @@
     getSectionsToRender() {
       return [
         {
-          id: "main-cart-items",
-          section: document.getElementById("main-cart-items").dataset.id,
+          id: "sleepink-cart-items",
+          section: document.getElementById("sleepink-cart-items").dataset.id,
           selector: ".js-contents",
         },
         {
@@ -328,8 +328,8 @@
           selector: ".shopify-section",
         },
         {
-          id: "main-cart-footer",
-          section: document.getElementById("main-cart-footer").dataset.id,
+          id: "sleepink-cart-footer",
+          section: document.getElementById("sleepink-cart-footer").dataset.id,
           selector: ".js-contents2",
         },
       ]
@@ -365,10 +365,29 @@
               document.getElementById(section.id)
   
             if (index !== 3) {
-              elementToReplace.innerHTML = this.getSectionInnerHTML(
+              const replacementValue = this.getSectionInnerHTML(
                 parsedState.sections[section.section],
                 section.selector
               )
+              if (typeof replacementValue === "string" && replacementValue.length > 0) {
+                elementToReplace.innerHTML = this.getSectionInnerHTML(
+                  parsedState.sections[section.section],
+                  section.selector
+                )
+              } else if (typeof replacementValue === "string" && replacementValue.length == 0) {
+                const childNodes = elementToReplace.childNodes
+                console.log(elementToReplace)
+                console.log(childNodes)
+                for(let i = 0; i < childNodes.length; i++) {
+                  console.log(childNodes[i])
+                  elementToReplace.removeChild(childNodes[i])
+                }
+              } else {
+                elementToReplace.innerHTML = this.getSectionInnerHTML(
+                  parsedState.sections[section.section],
+                  section.selector
+                )
+              }
             }
           })
   
