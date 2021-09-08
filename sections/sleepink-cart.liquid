@@ -433,25 +433,19 @@
           if (lineItem) lineItem.querySelector(`[name="${name}"]`).focus()
           this.disableLoading()
         })
-        .catch(() => {
+        .catch((error) => {
           this.querySelectorAll(".loading-overlay").forEach((overlay) =>
             overlay.classList.add("hidden")
           )
-          document.getElementById("cart-errors").textContent =
-            window.cartStrings.error
+          console.error(error)
+          /* document.getElementById("cart-errors").textContent =
+            window.cartStrings.error */
           this.disableLoading()
         })
     }
   
     updateLiveRegions(line, itemCount) {
       if (this.currentItemCount === itemCount) {
-        // document
-        //   .getElementById(`Line-item-error-${line}`)
-        //   .querySelector(".cart-item__error-text").innerHTML =
-        //   window.cartStrings.quantityError.replace(
-        //     "[quantity]",
-        //     document.getElementById(`Quantity-${line}`).value
-        //   )
         document.querySelector("#item-count").innerHTML = itemCount
       }
   
@@ -476,7 +470,7 @@
   
     enableLoading(line) {
       document
-        .getElementById("main-cart-items")
+        .getElementById("sleepink-cart-items")
         .classList.add("cart__items--disabled")
       this.querySelectorAll(`#CartItem-${line} .loading-overlay`).forEach(
         (overlay) => overlay.classList.remove("hidden")
@@ -487,7 +481,7 @@
   
     disableLoading() {
       document
-        .getElementById("main-cart-items")
+        .getElementById("sleepink-cart-items")
         .classList.remove("cart__items--disabled")
     }
   }

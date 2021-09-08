@@ -131,13 +131,9 @@
                           {% endif %}
                         </p>
                         <div class="bs-flex bs-row bs-jc-c bs-ai-c">
-                          <form method="post" action="/cart/add">
-                            <input type="hidden" name="id" value="{{ variant_id }}" />
-                            <input type="hidden" name="quantity" value="1" id="quantity" />
-                            <button type="submit" class="bs-submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                            <button type="button" class="bs-submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}" data-vid="{{ variant_id }}" data-qty="1">
                               {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                             </button>
-                          </form>
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}">
                             <button class="button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                               {{ section.settings.linkProductPage | escape }}
@@ -283,13 +279,9 @@
                               {% endif %}
                             </p>
                             <div class="bs-flex bs-row bs-jc-c bs-ai-c">
-                              <form method="post" action="/cart/add">
-                                <input type="hidden" name="id" value="{{ variant_id }}" />
-                                <input type="hidden" name="quantity" value="1" id="quantity" />
-                                <button type="submit" class="bs-submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                                <button type="button" class="bs-submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}" data-vid="{{ variant_id }}" data-qty="1">
                                   {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                                 </button>
-                              </form>
                               <a href="{{ product.settings.product.url }}?variant={{ variant_id }}">
                                 <button class="button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                                   {{ section.settings.linkProductPage | escape }}
@@ -437,13 +429,10 @@
                               {% endif %}
                             </p>
                             <div class="bs-flex bs-row bs-jc-c bs-ai-c">
-                              <form method="post" action="/cart/add">
-                                <input type="hidden" name="id" value="{{ variant_id }}" />
-                                <input type="hidden" name="quantity" value="1" id="quantity" />
-                                <button type="submit" class="bs-submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                                <button type="button" class="bs-submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}" data-vid="{{ variant_id }}" data-qty="1">
                                   {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                                 </button>
-                              </form>
+                              {% comment %} </form> {% endcomment %}
                               <a href="{{ product.settings.product.url }}?variant={{ variant_id }}">
                                 <button class="button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                                   {{ section.settings.linkProductPage | escape }}
@@ -479,6 +468,54 @@
     {% comment %} End of Desktop Slider {% endcomment %}
   </div>
 </div>
+<script>
+  const submitArray = [ ...document.querySelectorAll(".bs-submit") ]
+  submitArray.forEach(button => {
+    button.addEventListener("click",(event) => addToCartKeepShopping(event))
+  })
+  function parseQueryString() {
+
+    var str = window.location.search;
+    var objURL = {};
+
+    str.replace(
+        new RegExp( "([^?=&]+)(=([^&]*))?", "g" ),
+        function( $0, $1, $2, $3 ){
+            objURL[ $1 ] = $3;
+        }
+    );
+    return objURL;
+};
+
+
+function addToCartKeepShopping(e) {
+  console.log(e)
+	const addToCartObject = {};
+  if(e.target.localName === "button") {
+    addToCartObject["id"] = e.target.dataset.vid
+    addToCartObject["quantity"] = e.target.dataset.qty
+  } else {
+    const button = e.target.parentNode
+    addToCartObject["id"] = button.dataset.vid 
+    addToCartObject["quantity"] = button.dataset.qty
+  }
+    fetch('/cart/add.js', {
+      method: "POST",
+      body: JSON.stringify(addToCartObject),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if(response.status === 200) {
+        location.reload()
+      }
+    })
+    .catch(error => {
+      console.error(error)
+    })
+}
+</script>
 
 {% schema %}
 {
