@@ -7,7 +7,7 @@
 
 {{ 'sleepink-cart.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'sleepink-cart.js' | asset_url }}" defer="defer"></script>
+{% comment %} <script src="{{ 'sleepink-cart.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 
 {% liquid 
   assign tagBackground = settings.colors_text 
@@ -282,6 +282,18 @@
     e.preventDefault();
     checkCoupon();
   });
+
+  class SleepinkCartRemove extends HTMLElement {
+    constructor() {
+      super()
+      this.addEventListener("click", (event) => {
+        event.preventDefault()
+        this.closest("sleepink-cart-items").updateQuantity(this.dataset.index, 0)
+      })
+    }
+  }
+  
+  customElements.define("sleepink-cart-remove", SleepinkCartRemove)
 
   class SleepinkCartItems extends HTMLElement {
     constructor() {
