@@ -1,0 +1,524 @@
+{% comment %} {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+{{ 'sleepink-cart.css' | asset_url | stylesheet_tag }}
+
+{% comment %} <script src="{{ 'sleepink-cart.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+
+{% liquid 
+  assign tagBackground = settings.colors_text 
+  assign tagForeground = settings.colors_background_1
+%}
+
+<div class="sc-flex sc-column sc-mxh-100p">
+  {% comment %} Shipping Banner {% endcomment %}
+  <div class="sc-flex sc-row sc-jc-c sc-ai-c sc-px-4 sc-h-40px color-invert sc-fs-12px sc-fs-md-0 sc-ff-heading sc-fw-300 sc-lh-16px sc-ls-p05" style="background-color: {{ tagBackground | escape }}; color: {{ tagForeground | escape }}">
+    <div class="sc-flex sc-row sc-ai-c">
+      <img src="{{ section.settings.shippingIconFirst | img_url: '50x' }}" alt="{{ section.settings.shippingIconFirst.alt | escape }}" width="22" height="22" loading="lazy">
+      <div class="sc-ml-3">{{ section.settings.shippingMessageFirst | escape }}</div>
+    </div>
+    <div class="sc-flex sc-row sc-ai-c sc-ml-2">
+      <img src="{{ section.settings.shippingIconSecond | img_url: '50x' }}" alt="{{ section.settings.shippingIconSecond.alt | escape }}" width="22" height="22" loading="lazy">
+      <div class="sc-ml-3">{{ section.settings.shippingMessageSecond | escape }}</div>
+    </div>
+  </div>
+  {% comment %} Title {% endcomment %}
+  <div class="sc-flex sc-row sc-jc-spb sc-ai-c">
+    <div class="sc-w-56px sc-mx-7 sc-mx-md-8">
+      <div class="sc-ff-heading sc-fs-2 sc-fs-md-3 sc-lh-130 sc-fw-500 sc-my-3 sc-my-md-5 sc-uppercase">
+        {{ section.settings.cartTitle | escape }}
+      </div>
+    </div>
+    <button id="close-cart" class="sc-close-cart sc-w-56px sc-mx-7 sc-mx-md-8 sc-pos-rel sc-b-4px" style="background-color: {{ tagForeground | escape }}">
+      {% render 'icon-close-small' %}
+    </button>
+  </div>
+  {% comment %} Line {% endcomment %}
+  <div class="sc-mx-5 sc-mx-md-7 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-mobile">&nbsp;</div>
+  <div class="sc-flex sc-column sc-flex1 sc-ofy-auto sc-ofx-none sc-pb-5">
+    {% comment %} DecisionBanner {% endcomment %}
+    {% if cart.item_count > 0 %}
+      <div class="sc-flex sc-row sc-jc-c sc-ai-c sc-px-4 sc-h-40px sc-bg-e3fff1 sc-col-ff sc-ff-heading sc-fs-3 sc-fw-300 sc-lh-26px sc-nmobileflex sc-mb-4">
+        <div class="sc-col-0A5425">
+          <div class="sc-flex sc-row sc-ai-c">
+            <div class="sc-decban sc-w-16px sc-h-16px">&nbsp;</div>
+            <div class="sc-fs-2 sc-ml-2">
+              <span class="sc-fw-700">Gute Wahl!</span> Hier sind Ihre Produkte:
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% comment %} Liste der Waren {% endcomment %}
+    <sleepink-cart-items class="sc-h-90p">
+      <div id="sleepink-cart-items" class="w-100-p" data-id="{{ section.id }}">
+        <div class="js-contents">
+      {% assign highest_index = cart.items.size | minus: 1 %}
+      {% for item in cart.items %}
+        <div class="sc-flex sc-row sc-ai-str sc-mxw-100vw sc-of-h" id="CartItem-{{ item.index | plus: 1 }}">
+          <div class="sc-flex sc-column sc-ai-c sc-ml-5 sc-ml-md-7 sc-mr-4 sc-mr-md-5 sc-mb-5">
+            {% comment %} Produktbild {% endcomment %}
+            <img src="{{ item.image | img_url: '150x' }}" width="60" height="60" loading="lazy" class="sc-contain">
+            {% comment %} QuantitySpinner {% endcomment %}
+            <quantity-input class="quantity">
+              <button class="quantity__button no-js-hidden" name="minus" type="button">
+                <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                {% render 'icon-minus' %}
+              </button>
+              <input class="quantity__input"
+                type="number"
+                name="updates[]"
+                value="{{ item.quantity }}"
+                min="0"
+                aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                id="Quantity-{{ item.index | plus: 1 }}"
+                data-index="{{ item.index | plus: 1 }}"
+              >
+              <button class="quantity__button no-js-hidden" name="plus" type="button">
+                <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                {% render 'icon-plus' %}
+              </button>
+            </quantity-input>
+          </div>
+          {% comment %} Name des Produktes {% endcomment %}
+          <div class="sc-flex sc-row sc-flex1 sc-my-5 sc-mr-5 sc-mr-md-7">
+            <div class="sc-flex sc-column sc-flex1">
+              <h3 class="sc-ff-heading sc-fs-15px sc-fs-md-2 sc-lh-120 sc-lh-md-133 sc-fw-400 sc-mb-2">
+                {{ item.product.title | escape }}
+              </h3>
+              <h4 class="sc-ff-heading sc-fs-0 sc-fs-md-1 sc-lh-18px sc-lh-md-125 sc-mb-4 sc-fw-300">
+                {%- if item.product.has_only_default_variant == false -%}
+                  {%- for option in item.options_with_values -%}
+                      {{ option.value }}
+                  {%- endfor -%}
+                  {% else %}
+                    &nbsp;
+                {%- endif -%}
+              </h4>
+            </div>
+          </div>
+          {% comment %} Trash Icon und Preis {% endcomment %}
+          <div class="sc-flex sc-column sc-ai-fe">
+            <sleepink-cart-remove id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+              <a href="{{ item.url_to_remove }}" class="button button--tertiary sc-noborder sc-nooutline" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                {% render 'icon-remove' %}
+              </a>
+            </sleepink-cart-remove>
+            <div class="sc-fs-15px sc-fs-md-1 sc-ff-body sc-fw-400 sc-lh-100 sc-lh-md-26px sc-mt-m4px sc-mt-md-m2px sc-mb-5 sc-pt-3">
+              {{ item.final_price | money_without_currency }} €
+            </div>
+          </div>
+        </div>
+        {% if item.index != highest_index %}
+          <div class="sc-w-100p sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    </div>
+    <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+    <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
+    </sleepink-cart-items>
+    {% comment %} Gutscheineingabe {% endcomment %}
+    <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
+    <div>
+      <div class="sc-flex sc-row sc-jc-spb sc-w-100p sc-px-5 sc-px-md-7">
+        <div class="sc-flex sc-column sc-w-100m20">
+          <form class="sc-flex sc-row sc-ai-c sc-px-0 sc-pb-0 sc-pos-rel sc-w-100m20">
+            <input type="text" id="couponInput" placeholder="Gutscheincode einlösen" class="sc-w-100p sc-p-3 sc-p-md-4 sc-border-couponinput sc-fs-1 sc-fw-300">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="sc-w-100m20 sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px sc-my-3 sc-mx-6">&nbsp;</div>
+    {% comment %} Bestellübersicht {% endcomment %}
+    <div class="sc-flex sc-column sc-px-5 sc-px-md-7 sc-pt-5 sc-pt-md-7 sc-pb-7 sc-pb-md-8" id="sleepink-cart-footer" data-id="{{ section.id }}">
+      <div class="js-contents2">
+      <div class="sc-fs-2 sc-fs-md-21px sc-ff-heading sc-fw-600 sc-lh-24px sc-lh-md-28px sc-pt-0 sc-pb-3">
+        Bestellübersicht
+      </div>
+      <div class="sc-flex sc-row sc-jc-spb sc-pb-3">
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          <span id="item-count">{{ cart.item_count }}</span> Artikel
+        </div>
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          <span id="subtotal">{{ cart.total_price | money_without_currency }}</span> €
+        </div>
+      </div>
+        <div id="couponRow" class="sc-flex sc-row sc-jc-spb sc-pb-3 sc-dn">
+          <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          </div>
+          <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          </div>
+        </div>
+      <div class="sc-flex sc-row sc-jc-spb sc-pb-3">
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          Versand
+        </div>
+        <div class="sc-fs-1 sc-fs-md-2 sc-ff-body sc-fw-300 sc-lh-18px sc-lh-md-24px">
+          {% liquid 
+            if cart.original_total_price > 2900 or cart.original_total_price == 0
+              assign shipping_price = 0
+            else
+              assign shipping_price = 380
+            endif
+          %}
+          <span id="shipping">{{ shipping_price | money_without_currency }}</span> €
+        </div>
+      </div>
+      {% comment %} Line {% endcomment %}
+      <div class="sc-w-100p sc-h-0px sc-bts-solid sc-btc-dd sc-btw-1px">&nbsp;</div>
+      {% comment %} Gesamtpreis {% endcomment %}
+      <div class="sc-flex sc-row sc-jc-spb sc-py-4">
+        <div class="sc-flex sc-row sc-ai-base">
+          <div class="sc-ff-heading sc-fs-2 sc-fw-500 sc-lh-28px">
+            Gesamtbetrag
+          </div>
+          <div class="sc-ff-heading sc-fs-0 sc-fw-300 sc-lh-26px sc-ml-1">inkl. MwSt</div>
+        </div>
+        <div id="totalPrice" class="sc-ff-body sc-fs-1 sc-fs-md-2 sc-fw-500 sc-lh-18px sc-lh-md-26px">
+        </div>
+      </div>
+    </div>
+    </div>
+    <a href="" id="checkoutLink" class="sc-nodec sc-w-100m20 sc-inlineblock sc-mx-auto checkout-link{% if cart.items_count == 0 %} disable-link{% endif %}">
+      <button style="background-color: {{ tagBackground }}; color: {{ tagForeground }};" class="sc-flex sc-row sc-jc-c sc-ai-c sc-w-100p sc-inlineblock">
+        <span class="sc-mb-2">
+        {%- render 'icon-lock', currentColor: "#FFFFFF" -%}
+        </span>
+        <div class="sc-mx-3 sc-py-5 sc-ff-heading sc-fs-3 sc-fw-300 sc-lh-26px sc-lh-lg-32px">
+        Zur Kasse
+        </div>
+      </button>
+    </a>
+  </div>
+  <div id="cart-errors"></div>
+</div>
+{% liquid 
+  assign itemCount = cart.item_count
+  for item in cart.items
+    if item.index == 0
+      assign itemString = item.variant_id | append: ':' | append: item.quantity
+    else
+      assign itemString = itemString | append: ',' | append: item.variant_id | append: ':' | append: item.quantity
+    endif
+  endfor
+%}
+<script>
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+  document.getElementById("close-cart").addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.add("overlay-hidden"));
+  document.getElementById("cart-icon-bubble").addEventListener("click", () => document.getElementById("shopify-section-sleepink-cart").classList.remove("overlay-hidden"));
+  const shopUrl = "{{ shop.url | escape }}";
+  if ({{ itemCount }} > 0){
+    const itemString = "{{ itemString | escape }}";
+    const urlString = `${shopUrl}/cart/${itemString}`;
+    document.getElementById("checkoutLink").href = urlString;
+    document.querySelector("#checkoutLink").classList.remove("disable-link");
+  } else {
+    document.getElementById("checkoutLink").href = "";
+    document.querySelector("#checkoutLink").classList.add("disable-link");
+  }
+  function checkCoupon() {
+    const currCode = document.getElementById("couponInput").value;
+    if(currCode && currCode.length > 0) {
+      fetch("https://sleep.ink/.netlify/functions/coupon", { method: "POST", body: JSON.stringify({ code: currCode })})
+      .then(r => r.json())
+      .then(res => {
+        if(res.coupon) {
+          document.getElementById("couponRow").style.display = "flex"
+          document.querySelector("#couponRow > div:first-child").innerHTML = res.coupon.couponName;
+          const saving = res.coupon.couponType = "percent" ? Math.round({{ cart.original_total_price }} * 0.01 * res.coupon.couponAmount)/ -100 : coupon.couponAmount / -100;
+          document.querySelector("#couponRow > div:last-child").innerHTML = `${saving.toFixed(2).replace(".",",")} €`;
+          const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00;
+          const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
+          document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
+          const oldCheckoutUrl = document.getElementById("checkoutLink").href;
+          if (oldCheckoutUrl.includes("discount=")) {
+            const newCheckoutUrl = oldCheckoutUrl.replace(/discount=.*$/,`discount=${res.coupon.couponName}`);
+            document.getElementById("checkoutLink").href = newCheckoutUrl;
+          } else {
+            const checkoutUrl = `${oldCheckoutUrl}?discount=${res.coupon.couponName}`;
+            document.getElementById("checkoutLink").href = checkoutUrl;
+          }
+        } else {
+          document.getElementById("couponRow").style.display = "none";
+          const saving = 0;
+          const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00;
+          const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
+          document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
+        }
+      })
+    } else {
+      document.getElementById("couponRow").style.display = "none";
+      const saving = 0;
+      const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00
+      const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
+      document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
+    }
+  }
+  document.getElementById("couponInput").addEventListener("keypress", (e) => {
+    if(e.key === "Enter") {
+      e.preventDefault();
+      checkCoupon();
+    }
+  });
+
+  class SleepinkCartRemove extends HTMLElement {
+    constructor() {
+      super()
+      this.addEventListener("click", (event) => {
+        event.preventDefault()
+        this.closest("sleepink-cart-items").updateQuantity(this.dataset.index, 0)
+      })
+    }
+  }
+  
+  customElements.define("sleepink-cart-remove", SleepinkCartRemove)
+
+  class SleepinkCartItems extends HTMLElement {
+    constructor() {
+      super()
+  
+      this.lineItemStatusElement = document.getElementById(
+        "shopping-cart-line-item-status"
+      )
+  
+      this.currentItemCount = Array.from(
+        this.querySelectorAll('[name="updates[]"]')
+      ).reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0)
+  
+      this.debouncedOnChange = debounce((event) => {
+        this.onChange(event)
+      }, 300)
+  
+      this.addEventListener("change", this.debouncedOnChange.bind(this))
+    }
+  
+    onChange(event) {
+      this.updateQuantity(
+        event.target.dataset.index,
+        event.target.value,
+        document.activeElement.getAttribute("name")
+      )
+    }
+  
+    getSectionsToRender() {
+      return [
+        {
+          id: "sleepink-cart-items",
+          section: document.getElementById("sleepink-cart-items").dataset.id,
+          selector: ".js-contents",
+        },
+        {
+          id: "cart-icon-bubble",
+          section: "cart-icon-bubble",
+          selector: ".shopify-section",
+        },
+        {
+          id: "cart-live-region-text",
+          section: "cart-live-region-text",
+          selector: ".shopify-section",
+        },
+        {
+          id: "sleepink-cart-footer",
+          section: document.getElementById("sleepink-cart-footer").dataset.id,
+          selector: ".js-contents2",
+        },
+      ]
+    }
+  
+    updateQuantity(line, quantity, name) {
+      this.enableLoading(line)
+  
+      const body = JSON.stringify({
+        line,
+        quantity,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname,
+      })
+  
+      fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+        .then((response) => {
+          return response.text()
+        })
+        .then((state) => {
+          const parsedState = JSON.parse(state)
+          this.classList.toggle("is-empty", parsedState.item_count === 0)
+          const cartFooter = document.getElementById("main-cart-footer")
+  
+          if (cartFooter)
+            cartFooter.classList.toggle("is-empty", parsedState.item_count === 0)
+  
+          this.getSectionsToRender().forEach((section, index) => {
+            const elementToReplace =
+              document
+                .getElementById(section.id)
+                .querySelector(section.selector) ||
+              document.getElementById(section.id)
+  
+            if (index !== 3) {
+              const replacementValue = this.getSectionInnerHTML(
+                parsedState.sections[section.section],
+                section.selector
+              )
+              if (typeof replacementValue === "string" && replacementValue.length > 0) {
+                elementToReplace.innerHTML = this.getSectionInnerHTML(
+                  parsedState.sections[section.section],
+                  section.selector
+                )
+              } else if (typeof replacementValue === "string" && replacementValue.length == 0) {
+                const childNodes = elementToReplace.childNodes
+                console.log(elementToReplace)
+                console.log(childNodes)
+                for(let i = 0; i < childNodes.length; i++) {
+                  console.log(childNodes[i])
+                  elementToReplace.removeChild(childNodes[i])
+                }
+              } else {
+                elementToReplace.innerHTML = this.getSectionInnerHTML(
+                  parsedState.sections[section.section],
+                  section.selector
+                )
+              }
+            }
+          })
+  
+          this.updateLiveRegions(line, parsedState.item_count)
+          const { items_subtotal_price: subtotal } = parsedState
+          const formattedSubtotal = (subtotal / 100).toFixed(2).replace(".", ",")
+          const shipping = subtotal < 2900 && subtotal > 0 ? 380 : 0
+          const formattedShipping = (shipping / 100).toFixed(2).replace(".", ",")
+          const total = subtotal + shipping
+          const formattedTotal = (total / 100).toFixed(2).replace(".", ",")
+          document.getElementById("subtotal").innerHTML = formattedSubtotal
+          document.getElementById("shipping").innerHTML = formattedShipping
+          document.getElementById("totalPrice").innerHTML = `${formattedTotal} €`
+          if (parsedState.item_count == 0) {
+            document.getElementById("checkoutLink").classList.add("disable-link")
+            document.getElementById("checkoutLink").href = ""
+          } else {
+            const productString = parsedState.items
+              .filter((item) => item.quantity > 0)
+              .map((item) => `${item.id}:${item.quantity}`)
+              .join(",")
+            const shopUrl = "{{ shop.url | escape }}"
+            document.getElementById(
+              "checkoutLink"
+            ).href = `https://${shopUrl}/cart/${productString}`
+            document
+              .getElementById("checkoutLink")
+              .classList.remove("disable-link")
+          }
+          const lineItem = document.getElementById(`CartItem-${line}`)
+          if (lineItem) lineItem.querySelector(`[name="${name}"]`).focus()
+          this.disableLoading()
+        })
+        .catch((error) => {
+          this.querySelectorAll(".loading-overlay").forEach((overlay) =>
+            overlay.classList.add("hidden")
+          )
+          console.error(error)
+          /* document.getElementById("cart-errors").textContent =
+            window.cartStrings.error */
+          this.disableLoading()
+        })
+    }
+  
+    updateLiveRegions(line, itemCount) {
+      if (this.currentItemCount === itemCount) {
+        document.querySelector("#item-count").innerHTML = itemCount
+      }
+  
+      this.currentItemCount = itemCount
+      this.lineItemStatusElement.setAttribute("aria-hidden", true)
+  
+      const cartStatus = document.getElementById("cart-live-region-text")
+      cartStatus.setAttribute("aria-hidden", false)
+  
+      document.querySelector("#item-count").innerHTML = itemCount
+  
+      setTimeout(() => {
+        cartStatus.setAttribute("aria-hidden", true)
+      }, 1000)
+    }
+  
+    getSectionInnerHTML(html, selector) {
+      return new DOMParser()
+        .parseFromString(html, "text/html")
+        .querySelector(selector).innerHTML
+    }
+  
+    enableLoading(line) {
+      document
+        .getElementById("sleepink-cart-items")
+        .classList.add("cart__items--disabled")
+      this.querySelectorAll(`#CartItem-${line} .loading-overlay`).forEach(
+        (overlay) => overlay.classList.remove("hidden")
+      )
+      document.activeElement.blur()
+      this.lineItemStatusElement.setAttribute("aria-hidden", false)
+    }
+  
+    disableLoading() {
+      document
+        .getElementById("sleepink-cart-items")
+        .classList.remove("cart__items--disabled")
+    }
+  }
+  
+  customElements.define("sleepink-cart-items", SleepinkCartItems)
+</script>
+
+{% schema %}
+{
+  "name": "Warenkorb",
+  "tag": "div",
+  "class": "overlay-right overlay-hidden sc-animate",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "shippingIconFirst",
+      "label": "erstes Icon in der Versandleiste"
+    },
+    {
+      "type": "text",
+      "id": "shippingMessageFirst",
+      "label": "erste Aussage in der Versandleiste",
+      "default": "Kostenloser Versand ab 29€"
+    },
+    {
+      "type": "image_picker",
+      "id": "shippingIconSecond",
+      "label": "zweites Icon in der Versandleiste"
+    },
+    {
+      "type": "text",
+      "id": "shippingMessageSecond",
+      "label": "zweite Aussage in der Versandleiste",
+      "default": "1 bis 3 Werktage"
+    },
+    {
+      "type": "text",
+      "id": "cartTitle",
+      "label": "Titel des Warenkorbs",
+      "default": "Warenkorb"
+    }
+  ]
+}
+{% endschema %}
