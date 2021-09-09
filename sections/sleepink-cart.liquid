@@ -248,13 +248,13 @@
           const shipping = {{ cart.original_total_price }} < 2900 && {{ cart.original_total_price }} > 0 ? 3.80 : 0.00;
           const totalPrice = ({{ cart.original_total_price }} / 100) + shipping + saving;
           document.querySelector("#totalPrice").innerHTML = `${totalPrice.toFixed(2).replace(".",",")} €`;
-          const oldCheckoutUrl = document.getElementById("checkout").href;
+          const oldCheckoutUrl = document.getElementById("checkoutLink").href;
           if (oldCheckoutUrl.includes("discount=")) {
             const newCheckoutUrl = oldCheckoutUrl.replace(/discount=.*$/,`discount=${res.coupon.couponName}`);
-            document.getElementById("checkout").href = newCheckoutUrl;
+            document.getElementById("checkoutLink").href = newCheckoutUrl;
           } else {
             const checkoutUrl = `${oldCheckoutUrl}?discount=${res.coupon.couponName}`;
-            document.getElementById("checkout").href = checkoutUrl;
+            document.getElementById("checkoutLink").href = checkoutUrl;
           }
         } else {
           document.getElementById("couponRow").style.display = "none";
@@ -273,14 +273,10 @@
     }
   }
   document.getElementById("couponInput").addEventListener("keypress", (e) => {
-    e.preventDefault();
     if(e.key === "Enter") {
+      e.preventDefault();
       checkCoupon();
     }
-  });
-  window.addEventListener("load", (e) => {
-    e.preventDefault();
-    checkCoupon();
   });
 
   class SleepinkCartRemove extends HTMLElement {
