@@ -114,6 +114,17 @@ sleepink-slider::after {
   clear: both;
 }
 
+/*
+.animated-slider ul {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.animated-slider ul::-webkit-scrollbar {
+  display: none !important;
+}
+*/
+
 /* eigene Stile */
 
 details.menu-drawer-container summary span svg:first-child {

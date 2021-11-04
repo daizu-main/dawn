@@ -8,79 +8,102 @@
   {%- endstyle -%}
 {%- endif -%}
 
-{% liquid 
-  case section.settings.color_scheme
-    when 'background-1'
-      assign tagBackground = settings.colors_text 
-      assign tagForeground = settings.colors_background_1
-    when 'background-2'
-      assign tagBackground = settings.colors_text 
-      assign tagForeground = settings.colors_background_2
-    when 'inverse'
-      assign tagBackground = settings.colors_background_1
-      assign tagForeground = settings.colors_text
-    when 'accent-1'
-      assign tagBackground = settings.colors_solid_button_labels
-      assign tagForeground = settings.colors_accent_1
-    when 'accent-2'
-      assign tagBackground = settings.colors_solid_button_labels
-      assign tagForeground = settings.colors_accent_2
-    else
-      assign tagBackground = settings.colors_text 
-      assign tagForeground = settings.colors_background_1
-  endcase
-%}
+{% assign slides = section.blocks | where: 'type', 'slide' %}
+{% assign logos = section.blocks | where: 'type', 'logo' %}
 
 <div class="SectionGrid color-{{ section.settings.color_scheme }}">
   <div class="SectionGrid-Full">
     <div class="ndesktop w-100p">
-      <div class="ngrid onecol onerow">
-      {% if section.settings.video != blank and section.settings.video != "" %}
-        <video
-          muted
-          autoplay
-          loop
-          poster="{{ section.settings.posterImage | img_url: '2000x' }}"
-          src="{{ section.settings.video | escape }}"
-          class="w-100p cover lazy col-1 row-1"
-          height="700"
-        >
-          Sorry, your browser doesn't support embedded videos!
-        </video>
-        {% else %}
-        <img src="{{ section.settings.imageMobile | img_url: '1200x' }}" alt="{{ section.settings.image.alt | escape }}" class="w-100p cover col-1 row-1" width="1000" height="700" loading="lazy">
-      {% endif %}
-      <div class="w-100p col-1 row-1 pt-510px pb-30px px-md-30px">
-        <h1 class="ta-c ta-md-l {% if section.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220">
-          {{ section.settings.title | escape }}
-        </h1>
-        <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l">
-          {{ section.settings.text | escape }}
-        </p>
-        <div class="ta-c ta-md-l w-100p mt-4 mb-8">
-          {% if section.settings.buttonDesign == "filled" %}
-            <a href="{{ section.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
-              {{ section.settings.buttonText | escape }}
-            </a>
-          {% else %}
-            <a href="{{ section.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
-              {{ section.settings.buttonText | escape }}
-            </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-      <div class="w-100p flex column jc-fe">
-        <p class="w-100p ta-c uppercase mb-7">
-          {{ section.settings.introText | escape }}
-        </p>
-        <div class="flex row jc-spb ai-fs wrap h-20px ofh">
-          {% for logo in section.blocks %}
-            {% if logo.settings.showMobile %}
-              <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
-            {% endif %}
-          {% endfor %}
-        </div>
+      <div class="collection {% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif%}">
+        <animated-slider class="slider-mobile-gutter">
+          <ul class="grid slider slider--mobile slider--tablet slider--desktop grid--peek negative-margin negative-margin--small">
+            {% for slide in slides %}
+              <li class="grid__item slider__slide w-100p">
+                {% liquid 
+                  case slide.settings.color_scheme
+                    when 'background-1'
+                      assign tagBackground = settings.colors_text 
+                      assign tagForeground = settings.colors_background_1
+                    when 'background-2'
+                      assign tagBackground = settings.colors_text 
+                      assign tagForeground = settings.colors_background_2
+                    when 'inverse'
+                      assign tagBackground = settings.colors_background_1
+                      assign tagForeground = settings.colors_text
+                    when 'accent-1'
+                      assign tagBackground = settings.colors_solid_button_labels
+                      assign tagForeground = settings.colors_accent_1
+                    when 'accent-2'
+                      assign tagBackground = settings.colors_solid_button_labels
+                      assign tagForeground = settings.colors_accent_2
+                    else
+                      assign tagBackground = settings.colors_text 
+                      assign tagForeground = settings.colors_background_1
+                  endcase
+                %}
+                <div class="ngrid onecol onerow">
+                  {% if slide.settings.video != blank and slide.settings.video != "" %}
+                    <video
+                      muted
+                      autoplay
+                      loop
+                      poster="{{ slide.settings.posterImage | img_url: '2000x' }}"
+                      src="{{ slide.settings.video | escape }}"
+                      class="w-100p cover lazy col-1 row-1"
+                      height="700"
+                    >
+                      Sorry, your browser doesn't support embedded videos!
+                    </video>
+                  {% else %}
+                    <img src="{{ slide.settings.imageMobile | img_url: '1200x' }}" alt="{{ slide.settings.image.alt | escape }}" class="w-100p cover col-1 row-1" width="1000" height="700" loading="lazy">
+                  {% endif %}
+                  <div class="w-100p col-1 row-1 pt-510px px-md-30px">
+                    <h1 class="ta-c ta-md-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
+                      {{ slide.settings.title | escape }}
+                    </h1>
+                    <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l" style="color: {{ tagBackground | escape }};">
+                      {{ slide.settings.text | escape }}
+                    </p>
+                    <div class="ta-c ta-md-l w-100p mt-4 mb-8">
+                      {% if slide.settings.buttonDesign == "filled" %}
+                        <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                          {{ slide.settings.buttonText | escape }}
+                        </a>
+                    {% else %}
+                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                        {{ slide.settings.buttonText | escape }}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="w-100p flex column jc-fe py-7" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
+                  <p class="w-100p ta-c uppercase mb-7">
+                    {{ section.settings.introText | escape }}
+                  </p>
+                  <div class="flex row jc-spb ai-fs wrap h-20px ofh">
+                    {% for logo in logos %}
+                      {% if logo.settings.showMobile %}
+                        <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+          {%- if slides.size > 1 and section.settings.swipe_on_mobile -%}
+            <div class="slider-buttons no-js-hidden w-100p flex row jc-spb ai-c">
+              <button type="button" class="slider-button slider-button--prev produktpreview-button" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+              <div class="slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+                <span class="slider-counter--total">{{ products.size }}</span>
+              </div>
+              <button type="button" class="slider-button slider-button--next produktpreview-button" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
+            </div>
+          {%- endif -%}
+        </animated-slider>
       </div>
     </div>
     <div class="w-100p SectionGrid desktopgrid onerow">
@@ -156,7 +179,7 @@
   "blocks": [
     {
       "name": "Slide",
-      "type": "background",
+      "type": "slide",
       "settings": [
         {
           "type": "select",
@@ -218,18 +241,6 @@
           "label": "Überschrift in Großbuchstaben?"
         },
         {
-          "type": "checkbox",
-          "id": "showDesktop",
-          "label": "show on desktop",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "showMobile",
-          "label": "show on mobile devices",
-          "default": true
-        },
-        {
           "type": "textarea",
           "id": "text",
           "default": "Mehr als 75.000 zufriedene Kunden.",
@@ -273,6 +284,18 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "showDesktop",
+          "label": "show on desktop",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "showMobile",
+          "label": "show on mobile devices",
+          "default": true
         }
       ]
     }
