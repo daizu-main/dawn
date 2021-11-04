@@ -147,100 +147,6 @@
   "class": "spaced-section--full-width",
   "settings": [
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.image-banner.settings.color_scheme.options__1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.image-banner.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "Farbschema"
-    },
-    {
-      "type": "image_picker",
-      "id": "imageDesktop",
-      "label": "Hintergrundbild für Desktop"
-    },
-    {
-      "type": "image_picker",
-      "id": "imageMobile",
-      "label": "Hintergrundbild für Mobil/Tablet"
-    },
-    {
-      "type": "text",
-      "id": "video",
-      "label": "URL des Hintergrundvideos"
-    },
-    {
-      "type": "image_picker",
-      "id": "posterImage",
-      "label": "Platzhalterbild während des Ladens des Videos"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "default": "All you need is sleep.",
-      "label": "Überschrift"
-    },
-    {
-      "type": "checkbox",
-      "id": "uppercaseTitle",
-      "default": true,
-      "label": "Überschrift in Großbuchstaben?"
-    },
-    {
-      "type": "textarea",
-      "id": "text",
-      "default": "Mehr als 75.000 zufriedene Kunden.",
-      "label": "Subline"
-    },
-    {
-      "type": "url",
-      "id": "url",
-      "default": "/collections/all",
-      "label": "URL hinter dem Button"
-    },
-    {
-      "type": "select",
-      "id": "buttonDesign",
-      "default": "outlined",
-      "label": "Layout des Buttons",
-      "options": [
-        {
-          "value": "outlined",
-          "label": "nur Kontur"
-        },
-        {
-          "value": "filled",
-          "label": "ausgefüllt"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "buttonText",
-      "default": "Jetzt einkaufen",
-      "label": "Aufschrift des Buttons"
-    },
-    {
       "type": "text",
       "id": "introText",
       "default": "sleep.ink ist bekannt aus:",
@@ -249,13 +155,67 @@
   ],
   "blocks": [
     {
-      "name": "Presselogo",
-      "type": "image",
+      "name": "Slide",
+      "type": "background",
       "settings": [
         {
+          "type": "select",
+          "id": "color_scheme",
+          "options": [
+            {
+              "value": "accent-1",
+              "label": "t:sections.image-banner.settings.color_scheme.options__1.label"
+            },
+            {
+              "value": "accent-2",
+              "label": "t:sections.image-banner.settings.color_scheme.options__2.label"
+            },
+            {
+              "value": "background-1",
+              "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
+            },
+            {
+              "value": "background-2",
+              "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
+            },
+            {
+              "value": "inverse",
+              "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
+            }
+          ],
+          "default": "background-1",
+          "label": "Farbschema"
+        },
+        {
           "type": "image_picker",
-          "id": "image",
-          "label": "Image"
+          "id": "imageDesktop",
+          "label": "Hintergrundbild (Desktop)"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageMobile",
+          "label": "Hintergrundbild (Mobile/Tablet)"
+        },
+        {
+          "type": "text",
+          "id": "video",
+          "label": "URL des Hintergrundvideos"
+        },
+        {
+          "type": "image_picker",
+          "id": "posterImage",
+          "label": "Platzhalterbild während des Ladens des Videos"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Überschrift"
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercaseTitle",
+          "default": true,
+          "label": "Überschrift in Großbuchstaben?"
         },
         {
           "type": "checkbox",
@@ -268,6 +228,51 @@
           "id": "showMobile",
           "label": "show on mobile devices",
           "default": true
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Mehr als 75.000 zufriedene Kunden.",
+          "label": "Subline"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "default": "/collections/all",
+          "label": "URL hinter dem Button"
+        },
+        {
+          "type": "select",
+          "id": "buttonDesign",
+          "default": "outlined",
+          "label": "Layout des Buttons",
+          "options": [
+            {
+              "value": "outlined",
+              "label": "nur Kontur"
+            },
+            {
+              "value": "filled",
+              "label": "ausgefüllt"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "buttonText",
+          "default": "Jetzt einkaufen",
+          "label": "Aufschrift des Buttons"
+        }
+      ]
+    },
+    {
+      "name": "Presselogo",
+      "type": "logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
       ]
     }
@@ -276,13 +281,6 @@
     {
       "name": "Page Hero",
       "settings": {
-        "color_scheme": "background-1",
-        "title": "All you need is sleep.",
-        "uppercaseTitle": true,
-        "text": "Ihre Experten für Premium-Schlafprodukte",
-        "url": "/collections/all",
-        "buttonDesign": "outlined",
-        "buttonText": "Mehr erfahren",
         "introText": "sleep.ink ist bekannt aus:"
       }
     }
