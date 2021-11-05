@@ -1478,6 +1478,10 @@ button:hover {
   object-position: center center;
 }
 
+.op-ct {
+  object-position: center top;
+}
+
 .ta-c {
   text-align: center;
 }
