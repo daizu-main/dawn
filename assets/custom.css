@@ -432,6 +432,10 @@ button:hover {
   margin: auto;
 }
 
+.mb-m44px {
+  margin-bottom: -44px;
+}
+
 .mb-0 {
   margin-bottom: 0;
 }
@@ -624,6 +628,10 @@ button:hover {
 
 .pb-0 {
   padding-bottom: 0;
+}
+
+.pb-0i {
+  padding-bottom: 0 !important;
 }
 
 .pb-5 {

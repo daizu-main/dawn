@@ -12,7 +12,7 @@
 {% assign logos = section.blocks | where: 'type', 'logo' %}
 
 <div class="SectionGrid color-{{ section.settings.color_scheme }}">
-  <div class="SectionGrid-Full">
+  <div class="SectionGrid-Full ofh">
     <div class="ndesktop w-100p">
       <div class="collection {% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif%}">
         <animated-slider class="slider-mobile-gutter">
@@ -106,59 +106,105 @@
         </animated-slider>
       </div>
     </div>
-    <div class="w-100p SectionGrid desktopgrid onerow">
-      {% if section.settings.video != blank and section.settings.video != "" %}
-        <video
-          muted
-          autoplay
-          loop
-          src="{{ section.settings.video | escape }}"
-          poster="{{ section.settings.posterImage | img_url: '2000x' }}"
-          class="w-100p col-1-5 row-1 mxh-700px cover lazy"
-          height="700"
-        >
-          Sorry, your browser doesn't support embedded videos!
-        </video>
-      {% else %}
-        <img src="{{ section.settings.imageDesktop | img_url: '2000x' }}" alt="{{ section.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p cover" width="1500" height="700" loading="lazy">
-      {% endif %}
-      <div class="col-2-4 row-1 grid twocol z-5">
-        <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
-          <h1 class="mb-8 mt-0 z-5 ff-heading fs-62px fw-500 lh-60px ta-l{% if section.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px;">
-            {% liquid 
-              assign titleSections = section.settings.title | split: ' '
-              assign titlePartA = titleSections[0] | append: ' ' | append: titleSections[1]
-              assign titlePartB = titleSections[2] | append: ' ' | append: titleSections[3] | append: ' ' | append: titleSections[4]
-            %}
-            {{ titlePartA | escape }}<br>
-            {{ titlePartB | escape }}
-          </h1>
-          <p class="ff-body fs-4 lh-32px ls-p024 fw-300 z-5 mt-0 mb-8 ta-l">
-            {{ section.settings.text | escape }}
-          </p>
-          <div class="ta-l w-100p mt-4 mb-5">
-            {% if section.settings.buttonDesign == "filled" %}
-              <a href="{{ section.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
-                {{ section.settings.buttonText | escape }}
-              </a>
-            {% else %}
-              <a href="{{ section.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
-                {{ section.settings.buttonText | escape }}
-              </a>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-        {% if section.blocks.size > 0 %}
-          <div class="col-2-4 row-1 uppercase pt-600px h-620px ofh flex row jc-spb ai-fs wrap w-100p">
-            <p class="uppercase mr-4">{{ section.settings.introText | escape }}</p>
-            {% for logo in section.blocks %}
-              {% if logo.settings.showDesktop %}
-                <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0" loading="lazy">
-              {% endif %}
+    <div class="w-100p desktop">
+      <div class="collection w-100p mb-m44px">
+        <animated-slider class="slider-mobile-gutter">
+          <ul class="grid slider slider--mobile slider--tablet slider--desktop grid--peek negative-margin negative-margin--small w-100p h-100p pb-0i">
+            {% for slide in slides %}
+              <li class="grid__item slider__slide w-100p pb-0i">
+                {% liquid 
+                  case slide.settings.color_scheme
+                    when 'background-1'
+                      assign tagBackground = settings.colors_text 
+                      assign tagForeground = settings.colors_background_1
+                    when 'background-2'
+                      assign tagBackground = settings.colors_text 
+                      assign tagForeground = settings.colors_background_2
+                    when 'inverse'
+                      assign tagBackground = settings.colors_background_1
+                      assign tagForeground = settings.colors_text
+                    when 'accent-1'
+                      assign tagBackground = settings.colors_solid_button_labels
+                      assign tagForeground = settings.colors_accent_1
+                    when 'accent-2'
+                      assign tagBackground = settings.colors_solid_button_labels
+                      assign tagForeground = settings.colors_accent_2
+                    else
+                      assign tagBackground = settings.colors_text 
+                      assign tagForeground = settings.colors_background_1
+                  endcase
+                %}
+                <div class="SectionGrid onerow">
+                  {% if slide.settings.video != blank and slide.settings.video != "" %}
+                    <video
+                      muted
+                      autoplay
+                      loop
+                      src="{{ slide.settings.video | escape }}"
+                      poster="{{ slide.settings.posterImage | img_url: '2000x' }}"
+                      class="w-100p col-1-5 row-1 mxh-700px cover lazy"
+                      height="700"
+                    >
+                      Sorry, your browser doesn't support embedded videos!
+                    </video>
+                  {% else %}
+                    <img src="{{ slide.settings.imageDesktop | img_url: '2000x' }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p cover" width="1500" height="700" loading="lazy">
+                  {% endif %}
+                  <div class="col-2-4 row-1 grid twocol z-5">
+                    <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
+                      <h1 class="mb-8 mt-0 z-5 ff-heading fs-62px fw-500 lh-60px ta-l{% if slide.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px; color: {{ tagBackground | escape }};">
+                        {% liquid 
+                          assign titleSections = slide.settings.title | split: ' '
+                          assign titlePartA = titleSections[0] | append: ' ' | append: titleSections[1]
+                          assign titlePartB = titleSections[2] | append: ' ' | append: titleSections[3] | append: ' ' | append: titleSections[4]
+                        %}
+                        {{ titlePartA | escape }}<br>
+                        {{ titlePartB | escape }}
+                      </h1>
+                      <p class="ff-body fs-4 lh-32px ls-p024 fw-300 z-5 mt-0 mb-8 ta-l" style="color: {{ tagBackground | escape }};">
+                        {{ slide.settings.text | escape }}
+                      </p>
+                      <div class="ta-l w-100p mt-4 mb-5">
+                        {% if slide.settings.buttonDesign == "filled" %}
+                          <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                            {{ slide.settings.buttonText | escape }}
+                          </a>
+                        {% else %}
+                          <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                            {{ slide.settings.buttonText | escape }}
+                          </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                  {% if logos.size > 0 %}
+                    <div class="col-2-4 row-1 uppercase pt-600px h-620px ofh flex row jc-spb ai-fs wrap w-100p">
+                      <p class="uppercase mr-4" style="color: {{ tagBackground }};">{{ section.settings.introText | escape }}</p>
+                      {% for logo in logos %}
+                        {% if logo.settings.showDesktop %}
+                          <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0" loading="lazy">
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </li>
             {% endfor %}
-          </div>
-        {% endif %}
+          </ul>
+          {%- if slides.size > 1 and section.settings.swipe_on_mobile -%}
+            <div class="slider-buttons no-js-hidden w-100p flex row jc-spb ai-c">
+              <button type="button" class="slider-button slider-button--prev hero-button" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+              <div class="slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+                <span class="slider-counter--total">{{ slides.size }}</span>
+              </div>
+              <button type="button" class="slider-button slider-button--next hero-button" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
+            </div>
+          {%- endif -%}
+        </animated-slider>
+      </div>
     </div>
   </div>
 </div>
