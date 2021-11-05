@@ -331,7 +331,6 @@ class DottedAnimatedSlider extends HTMLElement {
   }
 
   onDotClick(event) {
-    console.log("clicked")
     event.preventDefault()
     const number = Number(event.target.dataset.slide)
     const slideScrollPosition = number * this.sliderItems[0].clientWidth
