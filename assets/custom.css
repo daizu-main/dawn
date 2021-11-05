@@ -125,6 +125,12 @@ sleepink-slider::after {
 }
 */
 
+button.dot {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 /* eigene Stile */
 
 details.menu-drawer-container summary span svg:first-child {

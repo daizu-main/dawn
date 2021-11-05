@@ -187,6 +187,19 @@
                       {% endfor %}
                     </div>
                   {% endif %}
+                  {% comment %}
+                  {%- if slides.size > 1 and section.settings.swipe_on_mobile -%}
+                    <div class="slider-dots-outer col-3 row-1 flex column jc-fe ai-c">
+                      <div class="slider-dots-inner ai-c">
+                        {% for slide in slides %}
+                          <button type="button" class="dot" data-slide="{{ forloop.index0 | escape }}">
+                            {% render 'icon-dot', currentColor: tagBackground %}
+                          </button>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% endcomment %}
                 </div>
               </li>
             {% endfor %}
