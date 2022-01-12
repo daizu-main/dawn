@@ -990,7 +990,6 @@ a {
   border: 0;
   border-radius: 0;
   background-color: rgba(var(--color-button));
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-button));
   color: rgba(var(--color-button-text));
   min-width: 12rem;
   min-height: 4.5rem;
