@@ -75,10 +75,10 @@
               endcase
             %}
             <style>
-              .swiper-pagination-bullet {
+              .mobileHeroSwiper .swiper-pagination-bullet {
                 background: rgba({{ dotColor.red }}, {{ dotColor.green }}, {{ dotColor.blue }}, {{ dotColor.alpha }});
               }
-              .swiper-pagination-bullet {
+              .mobileHeroSwiper .swiper-pagination-bullet-active {
                 background: rgba({{ activeDotColor.red }}, {{ activeDotColor.green }}, {{ activeDotColor.blue }}, {{ activeDotColor.alpha }});
               }
             </style>
@@ -101,8 +101,7 @@
                 {% endif %}
                 <div class="w-100p col-1 row-1 px-md-30px flex column jc-fe h-100p">
                   <h1 class="ta-c ta-md-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
-                    {% comment %} {{ slide.settings.title | escape }} {% endcomment %}
-                    {{ section.settings.color_scheme | escape }}
+                    {{ slide.settings.title | escape }}
                   </h1>
                   <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l" style="color: {{ tagBackground | escape }};">
                     {{ slide.settings.text | escape }}
@@ -119,8 +118,8 @@
                     {% endif %}
                   </div>
                 </div>
-                <div class="w-100p flex column jc-fe py-7" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
-                  <p class="w-100p ta-c uppercase mb-7">
+                <div class="w-100p flex column jc-c py-7 pb-9" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
+                  <p class="w-100p ta-c uppercase mb-5">
                     {{ section.settings.introText | escape }}
                   </p>
                   <div class="flex row jc-spb ai-fs wrap h-20px ofh">
@@ -140,6 +139,25 @@
         <div class="swiper-button-next"></div>
       </div>
     </div>
+    <script>
+      const mobileHeroSwiper = new Swiper('.mobileHeroSwiper', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 15000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          clickableClass: "swiper-pagination-clickable"
+        }
+      });
+    </script>
     <div class="w-100p desktop">
       <div class="swiper heroSwiper w-100p">
         <div class="swiper-wrapper">
@@ -149,17 +167,33 @@
                 when 'background-1'
                   assign tagBackground = settings.colors_font_dark 
                   assign tagForeground = settings.colors_background_1
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
                 when 'background-2'
                   assign tagBackground = settings.colors_font_dark
                   assign tagForeground = settings.colors_background_2
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
                 when 'inverse'
                   assign tagBackground = settings.colors_font_light
                   assign tagForeground = settings.colors_font_dark
+                  assign activeDotColor = settings.colors_font_light
+                  assign dotColor = settings.colors_font_light_hover
                 else
                   assign tagBackground = settings.colors_font_dark
                   assign tagForeground = settings.colors_background_1
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
               endcase
             %}
+            <style>
+              .heroSwiper .swiper-pagination-bullet {
+                background: rgba({{ dotColor.red }}, {{ dotColor.green }}, {{ dotColor.blue }}, {{ dotColor.alpha }});
+              }
+              .heroSwiper .swiper-pagination-bullet-active {
+                background: rgba({{ activeDotColor.red }}, {{ activeDotColor.green }}, {{ activeDotColor.blue }}, {{ activeDotColor.alpha }});
+              }
+            </style>
             <div class="swiper-slide w-100p pb-0i{% if forloop.index0 == 0 %} swiper-slide-active{% endif %} color-{{ slide.settings.color_scheme }}">
               <div class="SectionGrid onerow">
                 {% if slide.settings.video != blank and slide.settings.video != "" %}
@@ -229,9 +263,13 @@
   const heroSwiper = new Swiper('.heroSwiper', {
     slidesPerView: 1,
     loop: true,
-    /*keyboard: {
+    autoplay: {
+      delay: 15000,
+      disableOnInteraction: false,
+    },
+    keyboard: {
       enabled: true
-    },*/
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"

@@ -4036,6 +4036,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   object-position: center center;
 }
 
+.op-ct {
+  object-position: center top;
+}
+
 /* STRUCTURE: section 123 */
 
 .container123 {
