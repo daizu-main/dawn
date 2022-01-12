@@ -10,6 +10,22 @@
 
 {% assign slides = section.blocks | where: 'type', 'slide' %}
 {% assign logos = section.blocks | where: 'type', 'logo' %}
+{% liquid 
+  case section.settings.color_scheme
+    when 'background-1'
+      assign tagBackground = settings.colors_font_dark 
+      assign tagForeground = settings.colors_background_1
+    when 'background-2'
+      assign tagBackground = settings.colors_font_dark
+      assign tagForeground = settings.colors_background_2
+    when 'inverse'
+      assign tagBackground = settings.colors_font_light
+      assign tagForeground = settings.colors_font_dark
+    else
+      assign tagBackground = settings.colors_font_dark
+      assign tagForeground = settings.colors_background_1
+  endcase
+%}
 
 <div class="SectionGrid color-{{ section.settings.color_scheme }}">
   <div class="SectionGrid-Full ofh">
@@ -22,22 +38,16 @@
                 {% liquid 
                   case slide.settings.color_scheme
                     when 'background-1'
-                      assign tagBackground = settings.colors_text 
+                      assign tagBackground = settings.colors_font_dark 
                       assign tagForeground = settings.colors_background_1
                     when 'background-2'
-                      assign tagBackground = settings.colors_text 
+                      assign tagBackground = settings.colors_font_dark
                       assign tagForeground = settings.colors_background_2
                     when 'inverse'
-                      assign tagBackground = settings.colors_background_1
-                      assign tagForeground = settings.colors_text
-                    when 'accent-1'
-                      assign tagBackground = settings.colors_solid_button_labels
-                      assign tagForeground = settings.colors_accent_1
-                    when 'accent-2'
-                      assign tagBackground = settings.colors_solid_button_labels
-                      assign tagForeground = settings.colors_accent_2
+                      assign tagBackground = settings.colors_font_light
+                      assign tagForeground = settings.colors_font_dark
                     else
-                      assign tagBackground = settings.colors_text 
+                      assign tagBackground = settings.colors_font_dark
                       assign tagForeground = settings.colors_background_1
                   endcase
                 %}
@@ -69,23 +79,24 @@
                         <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                           {{ slide.settings.buttonText | escape }}
                         </a>
-                    {% else %}
-                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
-                        {{ slide.settings.buttonText | escape }}
-                      </a>
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="w-100p flex column jc-fe py-7" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
-                  <p class="w-100p ta-c uppercase mb-7">
-                    {{ section.settings.introText | escape }}
-                  </p>
-                  <div class="flex row jc-spb ai-fs wrap h-20px ofh">
-                    {% for logo in logos %}
-                      {% if logo.settings.showMobile %}
-                        <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
+                      {% else %}
+                        <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                          {{ slide.settings.buttonText | escape }}
+                        </a>
                       {% endif %}
-                    {% endfor %}
+                    </div>
+                  </div>
+                  <div class="w-100p flex column jc-fe py-7" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
+                    <p class="w-100p ta-c uppercase mb-7">
+                      {{ section.settings.introText | escape }}
+                    </p>
+                    <div class="flex row jc-spb ai-fs wrap h-20px ofh">
+                      {% for logo in logos %}
+                        {% if logo.settings.showMobile %}
+                          <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
+                        {% endif %}
+                      {% endfor %}
+                    </div>
                   </div>
                 </div>
               </li>
@@ -115,22 +126,16 @@
                 {% liquid 
                   case slide.settings.color_scheme
                     when 'background-1'
-                      assign tagBackground = settings.colors_text 
+                      assign tagBackground = settings.colors_font_dark 
                       assign tagForeground = settings.colors_background_1
                     when 'background-2'
-                      assign tagBackground = settings.colors_text 
+                      assign tagBackground = settings.colors_font_dark
                       assign tagForeground = settings.colors_background_2
                     when 'inverse'
-                      assign tagBackground = settings.colors_background_1
-                      assign tagForeground = settings.colors_text
-                    when 'accent-1'
-                      assign tagBackground = settings.colors_solid_button_labels
-                      assign tagForeground = settings.colors_accent_1
-                    when 'accent-2'
-                      assign tagBackground = settings.colors_solid_button_labels
-                      assign tagForeground = settings.colors_accent_2
+                      assign tagBackground = settings.colors_font_light
+                      assign tagForeground = settings.colors_font_dark
                     else
-                      assign tagBackground = settings.colors_text 
+                      assign tagBackground = settings.colors_font_dark
                       assign tagForeground = settings.colors_background_1
                   endcase
                 %}
@@ -187,23 +192,10 @@
                       {% endfor %}
                     </div>
                   {% endif %}
-                  {% comment %}
-                  {%- if slides.size > 1 and section.settings.swipe_on_mobile -%}
-                    <div class="slider-dots-outer col-3 row-1 flex column jc-fe ai-c">
-                      <div class="slider-dots-inner ai-c">
-                        {% for slide in slides %}
-                          <button type="button" class="dot" data-slide="{{ forloop.index0 | escape }}">
-                            {% render 'icon-dot', currentColor: tagBackground %}
-                          </button>
-                        {% endfor %}
-                      </div>
-                    </div>
-                  {% endif %}
-                  {% endcomment %}
                 </div>
               </li>
             {% endfor %}
-          </ul>
+          </ul>}
           {%- if slides.size > 1 and section.settings.swipe_on_mobile -%}
             <div class="slider-buttons no-js-hidden w-100p flex row jc-spb ai-c">
               <button type="button" class="slider-button slider-button--prev hero-button" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
@@ -250,14 +242,6 @@
           "type": "select",
           "id": "color_scheme",
           "options": [
-            {
-              "value": "accent-1",
-              "label": "t:sections.image-banner.settings.color_scheme.options__1.label"
-            },
-            {
-              "value": "accent-2",
-              "label": "t:sections.image-banner.settings.color_scheme.options__2.label"
-            },
             {
               "value": "background-1",
               "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
