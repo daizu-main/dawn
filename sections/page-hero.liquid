@@ -118,7 +118,7 @@
                     {% endif %}
                   </div>
                 </div>
-                <div class="w-100p flex column jc-c py-7 pb-9" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
+                <div class="flex column jc-c py-7 pb-9" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
                   <p class="w-100p ta-c uppercase mb-5">
                     {{ section.settings.introText | escape }}
                   </p>
@@ -239,7 +239,7 @@
                   </div>
                 </div>
                 {% if logos.size > 0 %}
-                  <div class="col-2-4 row-1 uppercase pt-600px h-620px ofh flex row jc-spb ai-fs wrap w-100p">
+                  <div class="col-2-4 row-1 uppercase pt-600px h-620px ofh flex row jc-spb ai-fs wrap ml-5">
                     <p class="uppercase mr-4" style="color: {{ tagBackground }};">{{ section.settings.introText | escape }}</p>
                     {% for logo in logos %}
                       {% if logo.settings.showDesktop %}
