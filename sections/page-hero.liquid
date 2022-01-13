@@ -146,8 +146,6 @@
         </div>
         {% if slides.size > 1 %}
           <div class="swiper-pagination swiper-pagination-clickable"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         {% endif %}
       </div>
     </div>
@@ -159,10 +157,6 @@
         autoplay: {
           delay: 15000,
           disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
         },
         pagination: {
           el: ".swiper-pagination",
