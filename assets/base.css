@@ -3154,6 +3154,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   height: 95%;
 }
 
+.h-87vh {
+  height: 87vh;
+}
+
 .h-0 {
   height: 0;
 }
@@ -3296,6 +3300,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .mnh-350px {
   min-height: 350px;
+}
+
+.mnh-500px {
+  min-height: 500px;
+}
+
+.mxh-700px {
+  max-height: 700px;
 }
 
 .mxh-full {

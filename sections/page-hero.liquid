@@ -217,18 +217,18 @@
                     loop
                     src="{{ slide.settings.video | escape }}"
                     poster="{{ slide.settings.posterImage | img_url: '2000x' }}"
-                    class="w-100p col-1-5 row-1 mxh-700px cover lazy"
+                    class="w-100p col-1-5 row-1 mxh-700px mnh-500px cover lazy"
                     height="700"
                   >
                     Sorry, your browser doesn't support embedded videos!
                   </video>
                 {% else %}
-                  <img src="{{ slide.settings.imageDesktop | img_url: '2000x' }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p cover" width="1500" height="700" loading="lazy">
+                  <img src="{{ slide.settings.imageDesktop | img_url: '2000x' }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p h-87vh mxh-700px mnh-500px cover" width="1500" height="700" loading="lazy">
                 {% endif %}
                 {% if slide.settings.overlay %}
-                  <div class="col-2-4 row-1 overlay">&nbsp;</div>
+                  <div class="col-2-4 row-1 overlay h-87vh mxh-700px mnh-500px">&nbsp;</div>
                 {% endif %}
-                <div class="col-2-4 row-1 grid twocol z-5">
+                <div class="col-2-4 row-1 grid twocol z-5 h-87vh mxh-700px mnh-500px">
                   <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
                     <h1 class="mb-8 mt-0 z-5 ff-heading fs-62px fw-500 lh-60px ta-l{% if slide.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px; color: {{ tagBackground | escape }};">
                       {% liquid 
@@ -256,11 +256,11 @@
                   </div>
                 </div>
                 {% if logos.size > 0 %}
-                  <div class="col-2-4 row-1 uppercase pt-600px h-620px ofh flex row jc-spb ai-fs wrap ml-5">
-                    <p class="uppercase mr-4" style="color: {{ tagBackground }};">{{ section.settings.introText | escape }}</p>
+                  <div class="col-2-4 row-1 uppercase ofh flex row jc-spb ai-fs wrap ml-5" style="height: clamp(460px,87vw - 40px,660px); padding-top: clamp(435px,87vw - 65px,635px);">
+                    <p class="uppercase mr-4" style="color: {{ tagBackground }}; line-height: 25px;">{{ section.settings.introText | escape }}</p>
                     {% for logo in logos %}
                       {% if logo.settings.showDesktop %}
-                        <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0" loading="lazy">
+                        <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="w-auto mx-5 grow-0 shrink-0" loading="lazy" style="height: 25px;">
                       {% endif %}
                     {% endfor %}
                   </div>
