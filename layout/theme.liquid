@@ -117,7 +117,7 @@
     {%- endif -%}
     {% comment %} Swiper assets {% endcomment %}
     {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" async></script>
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
     
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
