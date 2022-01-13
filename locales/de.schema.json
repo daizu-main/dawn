@@ -729,23 +729,17 @@
           "label": "Desktop-Textposition"
         },
         "color_scheme": {
-          "options__1": {
-            "label": "Akzent 1"
-          },
-          "options__2": {
-            "label": "Akzent 2"
-          },
           "options__3": {
-            "label": "Hintergrund 1"
+            "label": "dunkle Textfarbe auf HG-Farbe 1"
           },
           "options__4": {
-            "label": "Hintergrund 2"
+            "label": "dunkle Textfarbe auf HG-Farbe 2"
           },
           "options__5": {
-            "label": "Invertiert"
+            "label": "HG-Farbe 1 auf dunkler Textfarbe"
           },
-          "label": "Farbschema",
-          "info": "Sichtbar, wenn Textfeld angezeigt wird"
+          "label": "Color scheme",
+          "info": "Visible when text box displayed"
         },
         "stack_images_on_mobile": {
           "label": "Gestapelte Bilder auf Mobilgeräten"
