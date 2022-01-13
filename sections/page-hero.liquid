@@ -117,24 +117,24 @@
                       </a>
                     {% endif %}
                   </div>
-                </div>
-                <div class="flex column jc-c py-7 pb-9" style="background-color: {{ tagForeground | escape }}; color: {{ tagBackground | escape }};">
-                  <p class="w-100p ta-c uppercase mb-5">
-                    {{ section.settings.introText | escape }}
-                  </p>
-                  <div class="flex row jc-spb ai-fs wrap h-20px ofh">
-                    {% for logo in logos %}
-                      {% if logo.settings.showMobile %}
-                        <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
-                      {% endif %}
-                    {% endfor %}
+                  <div class="flex column jc-c py-7 pb-9" style="color: {{ tagBackground | escape }};">
+                    <p class="w-100p ta-c uppercase mb-5">
+                      {% if logos.size > 0 %}{{ section.settings.introText | escape }}{% else %}&nbsp;{% endif %}
+                    </p>
+                    <div class="flex row jc-spb ai-fs wrap h-20px ofh">
+                      {% for logo in logos %}
+                        {% if logo.settings.showMobile %}
+                          <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
+                        {% endif %}
+                      {% endfor %}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           {% endfor %}
         </div>
-        {% if slides.size > 0 %}
+        {% if slides.size > 1 %}
           <div class="swiper-pagination swiper-pagination-clickable"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -144,6 +144,7 @@
     <script>
       const mobileHeroSwiper = new Swiper('.mobileHeroSwiper', {
         slidesPerView: 1,
+        {% if slides.size > 1 %}
         loop: true,
         autoplay: {
           delay: 15000,
@@ -158,6 +159,7 @@
           clickable: true,
           clickableClass: "swiper-pagination-clickable"
         }
+        {% endif %}
       });
     </script>
     <div class="w-100p desktop">
@@ -394,6 +396,13 @@
           "id": "buttonText",
           "default": "Jetzt einkaufen",
           "label": "Aufschrift des Buttons"
+        },
+        {
+          "type": "checkbox",
+          "id": "overlay",
+          "default": true,
+          "label": "schwarzes Overlay",
+          "info": "für weiße Presselogos"
         }
       ]
     },
