@@ -278,6 +278,7 @@
 <script>
   const heroSwiper = new Swiper('.heroSwiper', {
     slidesPerView: 1,
+    {% if slides.size > 1 %}
     loop: true,
     autoplay: {
       delay: 15000,
@@ -295,6 +296,7 @@
       clickable: true,
       clickableClass: "swiper-pagination-clickable"
     }
+    {% endif %}
   });
 </script>
 
