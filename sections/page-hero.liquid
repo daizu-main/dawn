@@ -49,8 +49,8 @@
     font-size: 14px;
   }
   .darklayer {
-    background-image: linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.9));
-    z-index: 5;
+    background-image: linear-gradient(to bottom, transparent, transparent, transparent, rgba(0,0,0,1));
+    z-index: 4;
     position: relative;
   }
 </style>
@@ -224,6 +224,9 @@
                   </video>
                 {% else %}
                   <img src="{{ slide.settings.imageDesktop | img_url: '2000x' }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p cover" width="1500" height="700" loading="lazy">
+                {% endif %}
+                {% if slide.settings.overlay %}
+                  <div class="col-2-4 row-1 overlay">&nbsp;</div>
                 {% endif %}
                 <div class="col-2-4 row-1 grid twocol z-5">
                   <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
