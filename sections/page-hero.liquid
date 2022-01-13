@@ -134,9 +134,11 @@
             </div>
           {% endfor %}
         </div>
-        <div class="swiper-pagination swiper-pagination-clickable"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        {% if slides.size > 0 %}
+          <div class="swiper-pagination swiper-pagination-clickable"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        {% endif %}
       </div>
     </div>
     <script>
@@ -252,9 +254,11 @@
             </div>
           {% endfor %}
         </div>
-        <div class="swiper-pagination swiper-pagination-clickable"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        {% if slides.size > 1 %}
+          <div class="swiper-pagination swiper-pagination-clickable"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        {% endif %}
       </div>
     </div>
   </div>
