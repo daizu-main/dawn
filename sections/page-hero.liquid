@@ -20,6 +20,7 @@
   }
   .swiper-button-prev, .swiper-button-next {
     display: block !important;
+    visibility: hidden;
     cursor: pointer;
     background-color: rgba(255,255,255,0.6);
     border: none;
@@ -35,6 +36,11 @@
     box-shadow: rgba(27, 45, 69, 0.1) 0px 5px 10px 0px;
     margin-left: 0;
     color: #111111;
+  }
+  @media screen and (min-width: 1400px) {
+    .swiper-button-prev, .swiper-button-next {
+      visibility: visible;
+    }
   }
   .swiper-button-prev:hover, .swiper-button-next:hover {
     background-color: rgba(255,255,255,1);
