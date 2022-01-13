@@ -42,6 +42,11 @@
   .swiper-button-prev::after, .swiper-button-next::after {
     font-size: 14px;
   }
+  .darklayer {
+    background-image: linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.9));
+    z-index: 5;
+    position: relative;
+  }
 </style>
 
 <div class="SectionGrid">
@@ -99,7 +104,12 @@
                 {% else %}
                   <img src="{{ slide.settings.imageMobile | img_url: '1200x' }}" alt="{{ slide.settings.image.alt | escape }}" class="w-100p cover col-1 row-1 op-ct" width="1000" height="700" loading="lazy">
                 {% endif %}
-                <div class="w-100p col-1 row-1 px-md-30px flex column jc-fe h-100p">
+                {% if slide.settings.overlay %}
+                  <div class="col-1 row-1 w-100p darklayer">
+                    &nbsp;
+                  </div>
+                {% endif %}
+                <div class="w-100p col-1 row-1 px-md-30px flex column jc-fe h-100p" style="z-index: 10; position: relative;">
                   <h1 class="ta-c ta-md-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
                     {{ slide.settings.title | escape }}
                   </h1>
