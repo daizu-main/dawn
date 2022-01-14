@@ -990,7 +990,6 @@ a {
   border: 0;
   border-radius: 0;
   background-color: rgba(var(--color-button));
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-button));
   color: rgba(var(--color-button-text));
   min-width: 12rem;
   min-height: 4.5rem;
@@ -3155,6 +3154,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   height: 95%;
 }
 
+.h-87vh {
+  height: 87vh;
+}
+
 .h-0 {
   height: 0;
 }
@@ -3177,6 +3180,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .h-22px {
   height: 22px;
+}
+
+.h-25px {
+  height: 25px;
 }
 
 .h-28px {
@@ -3297,6 +3304,22 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .mnh-350px {
   min-height: 350px;
+}
+
+.mnh-450px {
+  min-height: 450px;
+}
+
+.mnh-500px {
+  min-height: 500px;
+}
+
+.mxh-500px {
+  max-height: 600px;
+}
+
+.mxh-700px {
+  max-height: 700px;
 }
 
 .mxh-full {
@@ -3698,6 +3721,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   line-height: 1.62;
 }
 
+.lh-180 {
+  line-height: 1.8;
+}
+
 .lh-186 {
   line-height: 1.86;
 }
@@ -4035,6 +4062,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .op-cc {
   object-position: center center;
+}
+
+.op-ct {
+  object-position: center top;
 }
 
 /* STRUCTURE: section 123 */

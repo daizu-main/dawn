@@ -8,131 +8,306 @@
   {%- endstyle -%}
 {%- endif -%}
 
-{% liquid 
-  case section.settings.color_scheme
-    when 'background-1'
-      assign tagBackground = settings.colors_font_dark 
-      assign tagForeground = settings.colors_background_1
-    when 'background-2'
-      assign tagBackground = settings.colors_font_dark
-      assign tagForeground = settings.colors_background_2
-    when 'inverse'
-      assign tagBackground = settings.colors_font_light
-      assign tagForeground = settings.colors_font_dark
-    else
-      assign tagBackground = settings.colors_font_dark
-      assign tagForeground = settings.colors_background_1
-  endcase
-%}
+{% assign slides = section.blocks | where: 'type', 'slide' %}
+{% assign logos = section.blocks | where: 'type', 'logo' %}
 
-<div class="SectionGrid color-{{ section.settings.color_scheme }}">
-  <div class="SectionGrid-Full">
+<style>
+  .heroSwiper {
+    width: 100vw;
+  }
+  .mobileHeroSwiper {
+    width: 100vw;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    display: block !important;
+    visibility: hidden;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.6);
+    border: none;
+    width: 55px;
+    height: 55px;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: rgba(27, 45, 69, 0.1) 0px 5px 10px 0px;
+    margin-left: 0;
+    color: #111111;
+  }
+  .swiper-button-prev {
+    margin-left: 32px;
+  }
+  .swiper-button-next {
+    margin-right: 32px;
+  }
+  @media screen and (min-width: 1475px) {
+    .swiper-button-prev, .swiper-button-next {
+      visibility: visible;
+    }
+  }
+  .swiper-button-prev:hover, .swiper-button-next:hover {
+    background-color: rgba(255,255,255,1);
+  }
+  .swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 14px;
+  }
+  .darklayer {
+    background-image: linear-gradient(to bottom, transparent, transparent, transparent, rgba(0,0,0,1));
+    z-index: 4;
+    position: relative;
+  }
+</style>
+
+<div class="SectionGrid">
+  <div class="SectionGrid-Full ofh">
     <div class="ndesktop w-100p">
-      <div class="ngrid onecol onerow">
-      {% if section.settings.video != blank and section.settings.video != "" %}
-        <video
-          muted
-          autoplay
-          loop
-          poster="{{ section.settings.posterImage | img_url: '2000x' }}"
-          src="{{ section.settings.video | escape }}"
-          class="w-100p cover lazy col-1 row-1"
-          height="700"
-        >
-          Sorry, your browser doesn't support embedded videos!
-        </video>
-        {% else %}
-        <img src="{{ section.settings.imageMobile | img_url: '1200x' }}" alt="{{ section.settings.image.alt | escape }}" class="w-100p cover col-1 row-1" width="1000" height="700" loading="lazy">
-      {% endif %}
-      <div class="w-100p col-1 row-1 pt-510px pb-30px px-md-30px">
-        <h1 class="ta-c ta-md-l {% if section.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-116 ls-m220">
-          {{ section.settings.title | escape }}
-        </h1>
-        <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l">
-          {{ section.settings.text | escape }}
-        </p>
-        <div class="ta-c ta-md-l w-100p mt-4 mb-8">
-          {% if section.settings.buttonDesign == "filled" %}
-            <a href="{{ section.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
-              {{ section.settings.buttonText | escape }}
-            </a>
-          {% else %}
-            <a href="{{ section.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
-              {{ section.settings.buttonText | escape }}
-            </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-      <div class="w-100p flex column jc-fe">
-        <p class="w-100p ta-c uppercase mb-7">
-          {{ section.settings.introText | escape }}
-        </p>
-        <div class="flex row jc-spb ai-fs wrap h-20px ofh">
-          {% for logo in section.blocks %}
-            {% if logo.settings.showMobile %}
-              <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0">
-            {% endif %}
+      <div class="swiper mobileHeroSwiper w-100p">
+        <div class="swiper-wrapper w-100p">
+          {% for slide in slides %}
+            {% liquid 
+              case slide.settings.color_scheme
+                when 'background-1'
+                  assign tagBackground = settings.colors_font_dark 
+                  assign tagForeground = settings.colors_background_1
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
+                when 'background-2'
+                  assign tagBackground = settings.colors_font_dark
+                  assign tagForeground = settings.colors_background_2
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
+                when 'inverse'
+                  assign tagBackground = settings.colors_font_light
+                  assign tagForeground = settings.colors_font_dark
+                  assign activeDotColor = settings.colors_font_light
+                  assign dotColor = settings.colors_font_light_hover
+                else
+                  assign tagBackground = settings.colors_font_dark
+                  assign tagForeground = settings.colors_background_1
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
+              endcase
+            %}
+            <style>
+              .mobileHeroSwiper .swiper-pagination-bullet {
+                background: rgba({{ dotColor.red }}, {{ dotColor.green }}, {{ dotColor.blue }}, {{ dotColor.alpha }});
+              }
+              .mobileHeroSwiper .swiper-pagination-bullet-active {
+                background: rgba({{ activeDotColor.red }}, {{ activeDotColor.green }}, {{ activeDotColor.blue }}, {{ activeDotColor.alpha }});
+              }
+            </style>
+            <div class="swiper-slide color-{{ slide.settings.color_scheme }}">
+              <div class="ngrid onecol onerow">
+                {% if slide.settings.video != blank and slide.settings.video != "" %}
+                  <video
+                    muted
+                    autoplay
+                    loop
+                    poster="{{ slide.settings.posterImage | img_url: '2000x' }}"
+                    src="{{ slide.settings.video | escape }}"
+                    class="w-100p cover lazy col-1 row-1 h-87vh mnh-450px mxh-500px"
+                    height="700"
+                  >
+                    Sorry, your browser doesn't support embedded videos!
+                  </video>
+                {% else %}
+                  <img src="{{ slide.settings.imageMobile | img_url: '1200x' }}" alt="{{ slide.settings.image.alt | escape }}" class="w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" width="1000" height="700" loading="lazy">
+                {% endif %}
+                {% if slide.settings.overlay %}
+                  <div class="col-1 row-1 w-100p darklayer h-87vh mnh-450px mxh-500px">
+                    &nbsp;
+                  </div>
+                {% endif %}
+                <div class="w-100p col-1 row-1 px-md-30px flex column jc-fe h-100p h-87vh mnh-450px mxh-500px" style="z-index: 10; position: relative;">
+                  <h1 class="ta-c ta-md-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
+                    {{ slide.settings.title | escape }}
+                  </h1>
+                  <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l" style="color: {{ tagBackground | escape }};">
+                    {{ slide.settings.text | escape }}
+                  </p>
+                  <div class="ta-c ta-md-l w-100p mt-4 mb-8">
+                    {% if slide.settings.buttonDesign == "filled" %}
+                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button lh-180" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                        {{ slide.settings.buttonText | escape }}
+                      </a>
+                    {% else %}
+                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button lh-180" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                        {{ slide.settings.buttonText | escape }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  <div class="flex column jc-c py-7 pb-11 mb-4" style="color: {{ tagBackground | escape }};">
+                    <p class="w-100p ta-c uppercase mb-5">
+                      {% if logos.size > 0 %}{{ section.settings.introText | escape }}{% else %}&nbsp;{% endif %}
+                    </p>
+                    <div class="flex row jc-spb ai-fs wrap h-25px ofh">
+                      {% for logo in logos %}
+                        {% if logo.settings.showMobile %}
+                          <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="25" class="h-25px w-auto mx-5 grow-0 shrink-0">
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           {% endfor %}
         </div>
+        {% if slides.size > 1 %}
+          <div class="swiper-pagination swiper-pagination-clickable"></div>
+        {% endif %}
       </div>
     </div>
-    <div class="w-100p SectionGrid desktopgrid onerow">
-      {% if section.settings.video != blank and section.settings.video != "" %}
-        <video
-          muted
-          autoplay
-          loop
-          src="{{ section.settings.video | escape }}"
-          poster="{{ section.settings.posterImage | img_url: '2000x' }}"
-          class="w-100p col-1-5 row-1 mxh-700px cover lazy"
-          height="700"
-        >
-          Sorry, your browser doesn't support embedded videos!
-        </video>
-      {% else %}
-        <img src="{{ section.settings.imageDesktop | img_url: '2000x' }}" alt="{{ section.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p cover" width="1500" height="700" loading="lazy">
-      {% endif %}
-      <div class="col-2-4 row-1 grid twocol z-5">
-        <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
-          <h1 class="mb-8 mt-0 z-5 ff-heading fs-62px fw-500 lh-100 ta-l{% if section.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px;">
-            {% liquid 
-              assign titleSections = section.settings.title | split: ' '
-              assign titlePartA = titleSections[0] | append: ' ' | append: titleSections[1]
-              assign titlePartB = titleSections[2] | append: ' ' | append: titleSections[3] | append: ' ' | append: titleSections[4]
-            %}
-            {{ titlePartA | escape }}<br>
-            {{ titlePartB | escape }}
-          </h1>
-          <p class="ff-body fs-4 lh-145 ls-p024 fw-300 z-5 mt-0 mb-8 ta-l" style="color: {{ tagBackground }};">
-            {{ section.settings.text | escape }}
-          </p>
-          <div class="ta-l w-100p mt-4 mb-5">
-            {% if section.settings.buttonDesign == "filled" %}
-              <a href="{{ section.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
-                {{ section.settings.buttonText | escape }}
-              </a>
-            {% else %}
-              <a href="{{ section.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
-                {{ section.settings.buttonText | escape }}
-              </a>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-        {% if section.blocks.size > 0 %}
-          <div class="col-2-4 row-1 uppercase pt-600px h-620px ofh flex row jc-spb ai-fs wrap w-100p">
-            <p class="uppercase mr-4" style="color: {{ tagBackground}};">{{ section.settings.introText | escape }}</p>
-            {% for logo in section.blocks %}
-              {% if logo.settings.showDesktop %}
-                <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="h-20px w-auto mx-5 grow-0 shrink-0" loading="lazy">
-              {% endif %}
-            {% endfor %}
-          </div>
+    <script>
+      const mobileHeroSwiper = new Swiper('.mobileHeroSwiper', {
+        slidesPerView: 1,
+        {% if slides.size > 1 %}
+        loop: true,
+        autoplay: {
+          delay: 15000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          clickableClass: "swiper-pagination-clickable"
+        }
         {% endif %}
+      });
+    </script>
+    <div class="w-100p desktop">
+      <div class="swiper heroSwiper w-100p">
+        <div class="swiper-wrapper">
+          {% for slide in slides %}
+            {% liquid 
+              case slide.settings.color_scheme
+                when 'background-1'
+                  assign tagBackground = settings.colors_font_dark 
+                  assign tagForeground = settings.colors_background_1
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
+                when 'background-2'
+                  assign tagBackground = settings.colors_font_dark
+                  assign tagForeground = settings.colors_background_2
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
+                when 'inverse'
+                  assign tagBackground = settings.colors_font_light
+                  assign tagForeground = settings.colors_font_dark
+                  assign activeDotColor = settings.colors_font_light
+                  assign dotColor = settings.colors_font_light_hover
+                else
+                  assign tagBackground = settings.colors_font_dark
+                  assign tagForeground = settings.colors_background_1
+                  assign activeDotColor = settings.colors_font_dark
+                  assign dotColor = settings.colors_font_dark_hover
+              endcase
+            %}
+            <style>
+              .heroSwiper .swiper-pagination-bullet {
+                background: rgba({{ dotColor.red }}, {{ dotColor.green }}, {{ dotColor.blue }}, {{ dotColor.alpha }});
+              }
+              .heroSwiper .swiper-pagination-bullet-active {
+                background: rgba({{ activeDotColor.red }}, {{ activeDotColor.green }}, {{ activeDotColor.blue }}, {{ activeDotColor.alpha }});
+              }
+            </style>
+            <div class="swiper-slide w-100p pb-0i{% if forloop.index0 == 0 %} swiper-slide-active{% endif %} color-{{ slide.settings.color_scheme }}">
+              <div class="SectionGrid onerow">
+                {% if slide.settings.video != blank and slide.settings.video != "" %}
+                  <video
+                    muted
+                    autoplay
+                    loop
+                    src="{{ slide.settings.video | escape }}"
+                    poster="{{ slide.settings.posterImage | img_url: '2000x' }}"
+                    class="w-100p col-1-5 row-1 h-87vh mxh-700px mnh-500px cover lazy"
+                    height="700"
+                  >
+                    Sorry, your browser doesn't support embedded videos!
+                  </video>
+                {% else %}
+                  <img src="{{ slide.settings.imageDesktop | img_url: '2000x' }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p h-87vh mxh-700px mnh-500px cover" width="1500" height="700" loading="lazy">
+                {% endif %}
+                {% if slide.settings.overlay %}
+                  <div class="col-2-4 row-1 overlay h-87vh mxh-700px mnh-500px">&nbsp;</div>
+                {% endif %}
+                <div class="col-2-4 row-1 grid twocol z-5 h-87vh mxh-700px mnh-500px">
+                  <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
+                    <h1 class="mb-8 mt-0 z-5 ff-heading fs-62px fw-500 lh-60px ta-l{% if slide.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px; color: {{ tagBackground | escape }};">
+                      {% liquid 
+                        assign titleSections = slide.settings.title | split: ' '
+                        assign titlePartA = titleSections[0] | append: ' ' | append: titleSections[1]
+                        assign titlePartB = titleSections[2] | append: ' ' | append: titleSections[3] | append: ' ' | append: titleSections[4]
+                      %}
+                      {{ titlePartA | escape }}<br>
+                      {{ titlePartB | escape }}
+                    </h1>
+                    <p class="ff-body fs-4 lh-32px ls-p024 fw-300 z-5 mt-0 mb-8 ta-l" style="color: {{ tagBackground | escape }};">
+                      {{ slide.settings.text | escape }}
+                    </p>
+                    <div class="ta-l w-100p mt-4 mb-5">
+                      {% if slide.settings.buttonDesign == "filled" %}
+                        <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-180 fw-300 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                          {{ slide.settings.buttonText | escape }}
+                        </a>
+                      {% else %}
+                        <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                          {{ slide.settings.buttonText | escape }}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                {% if logos.size > 0 %}
+                  <div class="col-2-4 row-1 uppercase ofh flex row jc-spb ai-fs wrap ml-5" style="height: clamp(460px,87vw - 40px,660px); padding-top: clamp(435px,87vw - 65px,635px);">
+                    <p class="uppercase mr-4" style="color: {{ tagBackground }}; line-height: 25px;">{{ section.settings.introText | escape }}</p>
+                    {% for logo in logos %}
+                      {% if logo.settings.showDesktop %}
+                        <img src="{{ logo.settings.image | img_url: 'x50' }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="w-auto mx-5 grow-0 shrink-0" loading="lazy" style="height: 25px;">
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% if slides.size > 1 %}
+          <div class="swiper-pagination swiper-pagination-clickable"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
+<script>
+  const heroSwiper = new Swiper('.heroSwiper', {
+    slidesPerView: 1,
+    {% if slides.size > 1 %}
+    loop: true,
+    autoplay: {
+      delay: 15000,
+      disableOnInteraction: false,
+    },
+    keyboard: {
+      enabled: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      clickableClass: "swiper-pagination-clickable"
+    }
+    {% endif %}
+  });
+</script>
 
 {% schema %}
 {
@@ -141,102 +316,120 @@
   "class": "spaced-section--full-width",
   "settings": [
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "background-1",
-          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "Farbschema"
-    },
-    {
-      "type": "image_picker",
-      "id": "imageDesktop",
-      "label": "Hintergrundbild für Desktop"
-    },
-    {
-      "type": "image_picker",
-      "id": "imageMobile",
-      "label": "Hintergrundbild für Mobil/Tablet"
-    },
-    {
-      "type": "text",
-      "id": "video",
-      "label": "URL des Hintergrundvideos"
-    },
-    {
-      "type": "image_picker",
-      "id": "posterImage",
-      "label": "Platzhalterbild während des Ladens des Videos"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "default": "All you need is sleep.",
-      "label": "Überschrift"
-    },
-    {
-      "type": "checkbox",
-      "id": "uppercaseTitle",
-      "default": true,
-      "label": "Überschrift in Großbuchstaben?"
-    },
-    {
-      "type": "textarea",
-      "id": "text",
-      "default": "Mehr als 75.000 zufriedene Kunden.",
-      "label": "Subline"
-    },
-    {
-      "type": "url",
-      "id": "url",
-      "default": "/collections/all",
-      "label": "URL hinter dem Button"
-    },
-    {
-      "type": "select",
-      "id": "buttonDesign",
-      "default": "outlined",
-      "label": "Layout des Buttons",
-      "options": [
-        {
-          "value": "outlined",
-          "label": "nur Kontur"
-        },
-        {
-          "value": "filled",
-          "label": "ausgefüllt"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "buttonText",
-      "default": "Jetzt einkaufen",
-      "label": "Aufschrift des Buttons"
-    },
-    {
       "type": "text",
       "id": "introText",
       "default": "sleep.ink ist bekannt aus:",
       "label": "einleitender Text für Presselogos"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "auf Mobilgeräten swipen?"
     }
   ],
   "blocks": [
     {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "options": [
+            {
+              "value": "background-1",
+              "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
+            },
+            {
+              "value": "background-2",
+              "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
+            },
+            {
+              "value": "inverse",
+              "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
+            }
+          ],
+          "default": "background-1",
+          "label": "Farbschema"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageDesktop",
+          "label": "Hintergrundbild (Desktop)"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageMobile",
+          "label": "Hintergrundbild (Mobile/Tablet)"
+        },
+        {
+          "type": "text",
+          "id": "video",
+          "label": "URL des Hintergrundvideos"
+        },
+        {
+          "type": "image_picker",
+          "id": "posterImage",
+          "label": "Platzhalterbild während des Ladens des Videos"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Überschrift"
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercaseTitle",
+          "default": true,
+          "label": "Überschrift in Großbuchstaben?"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Mehr als 75.000 zufriedene Kunden.",
+          "label": "Subline"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "default": "/collections/all",
+          "label": "URL hinter dem Button"
+        },
+        {
+          "type": "select",
+          "id": "buttonDesign",
+          "default": "outlined",
+          "label": "Layout des Buttons",
+          "options": [
+            {
+              "value": "outlined",
+              "label": "nur Kontur"
+            },
+            {
+              "value": "filled",
+              "label": "ausgefüllt"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "buttonText",
+          "default": "Jetzt einkaufen",
+          "label": "Aufschrift des Buttons"
+        },
+        {
+          "type": "checkbox",
+          "id": "overlay",
+          "default": true,
+          "label": "schwarzes Overlay",
+          "info": "für weiße Presselogos"
+        }
+      ]
+    },
+    {
       "name": "Presselogo",
-      "type": "image",
+      "type": "logo",
       "settings": [
         {
           "type": "image_picker",
@@ -262,13 +455,6 @@
     {
       "name": "Page Hero",
       "settings": {
-        "color_scheme": "background-1",
-        "title": "All you need is sleep.",
-        "uppercaseTitle": true,
-        "text": "Ihre Experten für Premium-Schlafprodukte",
-        "url": "/collections/all",
-        "buttonDesign": "outlined",
-        "buttonText": "Mehr erfahren",
         "introText": "sleep.ink ist bekannt aus:"
       }
     }
