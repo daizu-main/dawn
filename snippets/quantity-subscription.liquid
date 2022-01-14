@@ -470,7 +470,7 @@
       document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
     }
   }))
-  document.querySelector("#quantity-input-nosub > input[type=number]").addEventListener("change", (e) => {
+  document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
     console.log("change")
     const quantity = e.target.value
     const prices = {{ curr_variant.metafields.global.prices }}
@@ -512,7 +512,7 @@
       unitPrice = prices[2].reference * (3 * prices[2].cost) / prices[2].content
       document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
     }
-  })
+  }))
   document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
