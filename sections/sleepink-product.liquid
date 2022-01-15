@@ -135,12 +135,12 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | img_url: '250x' }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 250 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | img_url: '250x' }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy">
+              <img src="{{ media.preview_image | image_url: width: 250 }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy">
             </div>
           {% endfor %}
         </div>
@@ -150,12 +150,12 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | img_url: '1600x' }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1600 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | img_url: '1600x' }}" alt="{{ media.preview_image.alt }}" width="500" height="500" loading="lazy">
+              <img src="{{ media.preview_image | image_url: width: 1600 }}" alt="{{ media.preview_image.alt }}" width="500" height="500" loading="lazy">
             </div>
           {% endfor %}
         </div>
@@ -405,12 +405,12 @@
                   {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
                   {%- if product.selected_or_first_available_variant.featured_media != null -%}
                     <div class="swiper-slide">
-                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | img_url: '1200x' }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1200 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
                     </div>
                   {%- endif -%}
                   {% for media in product.media %}
                     <div class="swiper-slide">
-                      <img src="{{ media.preview_image | img_url: '1200x' }}" alt="{{ media.preview_image.alt }}" width="250" height="250" loading="lazy">
+                      <img src="{{ media.preview_image | image_url: width: 1200 }}" alt="{{ media.preview_image.alt }}" width="250" height="250" loading="lazy">
                     </div>
                   {% endfor %}
                 </div>
@@ -420,12 +420,12 @@
                   {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
                   {%- if product.selected_or_first_available_variant.featured_media != null -%}
                     <div class="swiper-slide">
-                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | img_url: '150x' }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="50" height="50" loading="lazy">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 150 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="50" height="50" loading="lazy">
                     </div>
                   {%- endif -%}
                   {% for media in product.media %}
                     <div class="swiper-slide">
-                      <img src="{{ media.preview_image | img_url: '150x' }}" alt="{{ media.preview_image.alt }}" width="50" height="50" loading="lazy">
+                      <img src="{{ media.preview_image | image_url: width: 150 }}" alt="{{ media.preview_image.alt }}" width="50" height="50" loading="lazy">
                     </div>
                   {% endfor %}
                 </div>
@@ -1334,7 +1334,7 @@
             },
             {
               "value": "cycle",
-              "label": "Zyklus" 
+              "label": "Zyklus"
             }
           ]
         },
@@ -1430,7 +1430,7 @@
             },
             {
               "value": "cycle",
-              "label": "Zyklus" 
+              "label": "Zyklus"
             }
           ]
         },
@@ -1526,7 +1526,7 @@
             },
             {
               "value": "cycle",
-              "label": "Zyklus" 
+              "label": "Zyklus"
             }
           ]
         },
@@ -1540,12 +1540,16 @@
     {
       "type": "features",
       "name": "Vorteile (unter dem CTA)",
-      "settings": []
+      "settings": [
+
+      ]
     },
     {
       "type": "payment_icons",
       "name": "Payment Icons",
-      "settings": []
+      "settings": [
+
+      ]
     },
     {
       "type": "paragraph_title",

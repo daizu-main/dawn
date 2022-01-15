@@ -10,7 +10,7 @@
         {% assign bSettings = block.settings %}
         {% if bSettings.showMobile %}
         <img 
-          src="{{ bSettings.image | img_url: 'x36' }}" 
+          src="{{ bSettings.image | image_url: height: 36 }}" 
           alt="{{ bSettings.image.alt | escape }}" 
           loading="lazy" 
           height="18"
@@ -39,7 +39,7 @@
         {% assign bSettings = block.settings %}
         {% if bSettings.showDesktop %}
         <img 
-          src="{{ bSettings.image | img_url: 'x82' }}" 
+          src="{{ bSettings.image | image_url: height: 82 }}" 
           alt="{{ bSettings.image.alt | escape }}" 
           loading="lazy" 
           height="41" 
@@ -84,18 +84,18 @@
       "id": "color_scheme",
       "label": "Farbschema",
       "options": [
-            {
-              "value": "background-1",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
-            },
-            {
-              "value": "background-2",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
-            },
-            {
-              "value": "inverse",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
-            }
+        {
+          "value": "background-1",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
+        }
       ],
       "default": "background-2"
     }
@@ -135,7 +135,8 @@
       "blocks": [
         {
           "type": "image",
-          "settings": {}
+          "settings": {
+          }
         }
       ]
     }
