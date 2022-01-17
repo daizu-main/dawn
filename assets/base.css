@@ -4366,7 +4366,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-weight: bold;
 }
 
-.pre-head-txt {
+.pre-head-txt,
+.pre-head-txt * {
   font-size: 11px;
   line-height: 14px;
   font-weight: 400;
@@ -4427,7 +4428,8 @@ details[open].menu-opening > .menu-drawer__submenu {
     margin-top: 4px;
   }
   .ts-text,
-  .pre-head-txt {
+  .pre-head-txt,
+  .pre-head-txt * {
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0;
@@ -4453,6 +4455,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 
   .pre-head-wrapper:nth-of-type(3) {
     order: 3;
+  }
+  .ts-text,
+  .pre-head-txt,
+  .pre-head-txt * {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: normal;
   }
 }
 
