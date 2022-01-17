@@ -4308,8 +4308,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
   min-height: 35px;
   max-height: 65px;
   height: min-content;
