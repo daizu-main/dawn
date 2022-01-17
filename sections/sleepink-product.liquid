@@ -160,8 +160,6 @@
           {% endfor %}
         </div>
         <div class="swiper-pagination swiper-pagination-clickable"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
       <script>
         const swiper = new Swiper(".mySwiper", {
@@ -176,10 +174,6 @@
           loop: true,
           keyboard: {
             enabled: true
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
           },
           pagination: {
             el: ".swiper-pagination",
@@ -420,8 +414,6 @@
                     </div>
                   {% endfor %}
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
               </div>
               <div thumbsSlider="" class="swiper myMobSwiper">
                 <div class="swiper-wrapper flex row jc-c ai-fe">
@@ -452,10 +444,6 @@
                   loop: true,
                   keyboard: {
                     enabled: true
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
                   },
                   thumbs: {
                     swiper: mobileSwiper
