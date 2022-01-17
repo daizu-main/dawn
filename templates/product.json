@@ -33,9 +33,6 @@
         "payment_icons": {
           "type": "payment_icons"
         },
-        "description": {
-          "type": "description"
-        },
         "share": {
           "type": "share"
         }
@@ -49,8 +46,7 @@
         "subscription_selector",
         "buy_buttons",
         "features",
-        "payment_icons",
-        "description"
+        "payment_icons"
       ]
     }
   },
