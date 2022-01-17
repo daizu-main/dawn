@@ -84,19 +84,19 @@
       <div class="flex row jc-fs ai-c h-12px mt-0i mr-2i">
       {% if wholeRating > 0 %}
         {% for i in (1..wholeRating) %}
-          <span>
+          <span style="position: relative; top: 2px;"">
             {%- render 'icon-star', currentColor: "#ffd900" -%}
           </span>
         {% endfor %}
       {% endif %}
       {% if halfStars == 1 %}
-        <span>
+        <span style="position: relative; top: 2px;">
           {%- render 'icon-star-half' -%}
         </span>
       {% endif %}
       {% if missing_stars > 0 %}
         {% for j in (1..missing_stars) %}
-          <span>
+          <span style="position: relative; top: 2px;">
             {%- render 'icon-star', currentColor: "#dddddd" -%}
           </span>
         {% endfor %}
