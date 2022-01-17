@@ -4050,6 +4050,12 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
 }
 
+@media screen and (min-width: 990px) {
+  .lg-bxsh {
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
 /* STRUCTURE: Images */
 
 .cover {
