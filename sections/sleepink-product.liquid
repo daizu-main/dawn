@@ -52,20 +52,20 @@
     text-align: center;
   }
   .mySwiper {
-    width: 12vw;
+    width: 8vw;
     height: 48vw;
-    min-width: 108.4px;
+    min-width: 80.6px;
     min-height: 483.6px;
-    max-width: 156px;
+    max-width: 104px;
     max-height: 624px;
   }
   .mySwiper img {
-    width: 10vw;
-    height: 10vw;
-    min-width: 90.33px;
-    min-height: 90.33px;
-    max-width: 130px;
-    max-height: 130px;
+    width: 6.15vw;
+    height: 6.15vw;
+    min-width: 55.59px;
+    min-height: 55.59px;
+    max-width: 80px;
+    max-height: 80px;
   }
   .myMobSwiper {
     width: calc(100vw - 32px);
@@ -135,12 +135,12 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | img_url: '250x' }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="100" height="100" loading="lazy">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | img_url: '250x' }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | img_url: '250x' }}" alt="{{ media.preview_image.alt }}" width="100" height="100" loading="lazy">
+              <img src="{{ media.preview_image | img_url: '250x' }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy">
             </div>
           {% endfor %}
         </div>
@@ -160,13 +160,11 @@
           {% endfor %}
         </div>
         <div class="swiper-pagination swiper-pagination-clickable"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
       <script>
         const swiper = new Swiper(".mySwiper", {
           spaceBetween: 10,
-          slidesPerView: 4,
+          slidesPerView: 6,
           freeMode: true,
           watchSlidesProgress: true,
           direction: "vertical"
@@ -176,10 +174,6 @@
           loop: true,
           keyboard: {
             enabled: true
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
           },
           pagination: {
             el: ".swiper-pagination",
@@ -207,7 +201,7 @@
       {%- endif -%}
     </div>
     <div class="col-2">
-      <div class="px-5 py-7 px-lg-7 bxsh mx-auto mx-lg-unset">
+      <div class="px-5 py-7 px-lg-7 lg-bxsh mx-auto mx-lg-unset">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -420,8 +414,6 @@
                     </div>
                   {% endfor %}
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
               </div>
               <div thumbsSlider="" class="swiper myMobSwiper">
                 <div class="swiper-wrapper flex row jc-c ai-fe">
@@ -452,10 +444,6 @@
                   loop: true,
                   keyboard: {
                     enabled: true
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
                   },
                   thumbs: {
                     swiper: mobileSwiper

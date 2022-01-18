@@ -4050,6 +4050,12 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
 }
 
+@media screen and (min-width: 990px) {
+  .lg-bxsh {
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
 /* STRUCTURE: Images */
 
 .cover {
@@ -4308,8 +4314,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
   min-height: 35px;
   max-height: 65px;
   height: min-content;
@@ -4355,6 +4361,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 .pre-head-img {
   margin-top: 4px;
   margin-right: 4px;
+  position: relative;
+  top: 3px;
 }
 
 .pre-head-img-inner {
@@ -4377,12 +4385,16 @@ details[open].menu-opening > .menu-drawer__submenu {
 .ts-logo svg {
   height: 16px;
   width: 16px;
+  position: relative;
+  top: 3px;
 }
 
 .ts-stars {
   height: 12px;
   margin-left: 4px;
   margin-top: 4px;
+  position: relative;
+  top: 3px;
 }
 
 .ts-text {
@@ -4393,6 +4405,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-weight: 400;
   text-align: left;
   margin-left: 4px;
+  position: relative;
+  top: 3px;
 }
 
 .pre-head-combo {
@@ -4411,7 +4425,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 @media screen and (min-width: 500px) {
   .pre-header {
     justify-content: space-between;
-    width: 420px;
+    width: 440px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -4459,8 +4473,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   .ts-text,
   .pre-head-txt,
   .pre-head-txt * {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1;
     font-weight: 300;
     letter-spacing: normal;
   }

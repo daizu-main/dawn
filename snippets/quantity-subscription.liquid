@@ -57,6 +57,7 @@
   }
   quantity-input {
     background-color: #ffffff;
+    border: 1px solid #cccccc !important;
   }
   .hidden-vis {
     visibility: hidden;
@@ -83,8 +84,8 @@
     background: #ffd940;
   }
   #sparabo-info {
-    background-color: rgba(var(--color-background), 1);
-    color: rgba(var(--color-foreground), 1);
+    background-color: rgba(var(--color-background));
+    color: rgba(var(--color-foreground));
     box-shadow: 0 0 14px 0 rgba(0,0,0,0.15);
   }
   #sparabo-close {
@@ -122,10 +123,10 @@
       <label for="once" class="checked" id="oncelabel">Einzelkauf</label>
       <input type="radio" value="subs" name="mode" id="subs">
       <label for="subs" id="subslabel" class="flex row ai-c">
-        <span>
+        <span style="position: relative; bottom: 4px;">
           Sparabo
         </span> 
-        <span class="pos-rel t-2" id="info-container">
+        <span class="pos-rel" id="info-container">
           {% render 'icon-info' %}
         </span>
       </label>
@@ -163,7 +164,7 @@
             assign savings = 100 | times: diffs | divided_by: refs | round
           %}
           <div class="flex row ai-c px-4 py-5{% if forloop.index0 == 0 %} active-variant{% endif %}" style="{% if forloop.index0 != 0 %}border-top: 2px solid white;{% endif %}" id="once-{{ forloop.index0 }}-wrapper">
-            <input type="radio" name="onetime" id="once-{{ forloop.index0 }}" disabled {% if forloop.index0 == 0 %}checked{% endif %} class="mr-5">
+            <input type="radio" name="onetime" id="once-{{ forloop.index0 }}" {% if forloop.index0 == 0 %}checked{% endif %} class="mr-5">
             <label class="w-100p flexi row jc-fs ai-c mx-0i my-0i px-0i py-0i">
               <img src="{{ product.featured_image | img_url: '100x' }}" alt="{{ product.featured_image.alt | escape }}" width="50" height="50" loading="lazy" class="mr-4">
               <div class="flex row jc-spb ai-c w-100p">
@@ -298,7 +299,7 @@
           assign savings = 100 | times: diffs | divided_by: refs | round
         %}
         <div class="flex row ai-c px-4 py-5{% if forloop.index0 == 0 %} active-variant{% endif %}" style="{% if forloop.index0 != 0 %}border-top: 2px solid white;{% endif %}" id="once-{{ forloop.index0 }}-wrapper-nosub">
-          <input type="radio" name="onetime-nosub" id="once-{{ forloop.index0 }}-nosub" disabled {% if forloop.index0 == 0 %}checked{% endif %} class="mr-5">
+          <input type="radio" name="onetime-nosub" id="once-{{ forloop.index0 }}-nosub" {% if forloop.index0 == 0 %}checked{% endif %} class="mr-5">
           <label class="w-100p flexi row jc-fs ai-c mx-0i my-0i px-0i py-0i">
             <img src="{{ product.featured_image | img_url: '100x' }}" alt="{{ product.featured_image.alt | escape }}" width="50" height="50" loading="lazy" class="mr-4">
             <div class="flex row jc-spb ai-c w-100p">
@@ -470,8 +471,19 @@
       document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
     }
   }))
+  document.querySelectorAll("input[name=onetime]").forEach((element, index) => element.addEventListener("change", (e) => {
+    const quantity = index + 1
+    const prices = {{ curr_variant.metafields.global.prices }}
+    prices.forEach((price, pindex ) => {
+      if (pindex == index) {
+        document.getElementById(`once-${pindex}-wrapper`).classList.add("active-variant")
+      } else {
+        document.getElementById(`once-${pindex}-wrapper`).classList.remove("active-variant")
+      }
+    })
+    document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
+  }))
   document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
-    console.log("change")
     const quantity = e.target.value
     const prices = {{ curr_variant.metafields.global.prices }}
     let unitPrice
@@ -513,6 +525,18 @@
       document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
     }
   }))
+  document.querySelectorAll("input[name=onetime-nosub]").forEach((element, index) => element.addEventListener("change", (e) => {
+    const quantity = index + 1
+    const prices = {{ curr_variant.metafields.global.prices }}
+    prices.forEach((price, pindex ) => {
+      if (pindex == index) {
+        document.getElementById(`once-${pindex}-wrapper-nosub`).classList.add("active-variant")
+      } else {
+        document.getElementById(`once-${pindex}-wrapper-nosub`).classList.remove("active-variant")
+      }
+    })
+    document.querySelector("#quantity-input-nosub > input[type=number]").value = `${quantity}`
+  }))
   document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
@@ -542,7 +566,7 @@
   document.querySelectorAll("#info-container").forEach(element => element.addEventListener("click", (e) => {
     document.getElementById("sparabo-info").classList.remove("hidden-element")
   }))
-  document.querySelectorAll("sparabo-close").forEach(element => element.addEventListener("click", () => {
+  document.querySelectorAll("#sparabo-close").forEach(element => element.addEventListener("click", () => {
     document.getElementById("sparabo-info").classList.add("hidden-element")
   }))
   function changeLink(e) {
