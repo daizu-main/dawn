@@ -540,15 +540,16 @@
   document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
-        const subscriptions = {{ curr_variant.metafields.global.subscriptions | json }} ? {{ curr_variant.metafields.global.subscriptions | json }} : []
+        const subscriptions = {{ curr_variant.metafields.global.subscriptions }} ? {{ curr_variant.metafields.global.subscriptions }} : []
         const prices = {{ curr_variant.metafields.global.prices }}
         const number = Number(e.target.id.replace("sub-",""))
-        document.getElementById(`sub-${number}-wrapper`).classList.add("active-variant")
         subscriptions.forEach((subscription, index) => {
-        if(index != number) {
+          if(index == number) {
+          document.getElementById(`sub-${index}-wrapper`).classList.add("active-variant")
+          } else {
           document.getElementById(`sub-${index}-wrapper`).classList.remove("active-variant")
-        }
-      })
+          }
+        })
         document.getElementById("substotal").innerHTML = `${(subscriptions[number].cost / 100).toFixed(2).replace(".", ",")} €`
         const compareIndex = prices.findIndex(obj => obj.content === subscriptions[number].content)
         const quantity = compareIndex + 1
