@@ -252,7 +252,7 @@
                 {% endif %}
                 <div class="col-2-4 row-1 grid twocol z-5 h-87vh mxh-700px mnh-500px">
                   <div class="col-1 flex column jc-c ai-fs mxh-700px ml-5">
-                    <h1 class="mb-8 mt-0 z-5 ff-heading fs-62px fw-500 lh-60px ta-l{% if slide.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px; color: {{ tagBackground | escape }};">
+                    <h1 class="mb-3 mt-0 z-5 ff-heading fs-62px fw-500 lh-60px ta-l{% if slide.settings.uppercaseTitle %} uppercase{% endif %}" style="max-width: 450px; color: {{ tagBackground | escape }};">
                       {% liquid 
                         assign titleSections = slide.settings.title | split: ' '
                         assign titlePartA = titleSections[0] | append: ' ' | append: titleSections[1]
@@ -261,7 +261,7 @@
                       {{ titlePartA | escape }}<br>
                       {{ titlePartB | escape }}
                     </h1>
-                    <p class="ff-body fs-4 lh-32px ls-p024 fw-300 z-5 mt-0 mb-8 ta-l" style="color: {{ tagBackground | escape }};">
+                    <p class="ff-body fs-4 lh-32px ls-p024 fw-300 z-5 mt-0 mb-7 ta-l" style="color: {{ tagBackground | escape }};">
                       {{ slide.settings.text | escape }}
                     </p>
                     <div class="ta-l w-100p mt-4 mb-5">
