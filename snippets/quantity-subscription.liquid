@@ -471,6 +471,10 @@
       document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
     }
   }))
+  document.querySelectorAll("input[name=onetime]").forEach((element, index) => element.addEventListener("change", (e) => {
+    const quantity = index + 1
+    document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
+  }))
   document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
     console.log("change")
     const quantity = e.target.value
