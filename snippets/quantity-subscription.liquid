@@ -445,6 +445,7 @@
       document.getElementById("totalcompare").innerHTML = ""
       unitPrice = prices[0].reference * prices[0].cost / prices[0].content
       document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[0].reference} ${prices[0].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
     } else if (quantity == 2) {
       document.getElementById("once-1").checked = true
       document.getElementById("once-1-wrapper").classList.add("active-variant")
@@ -457,6 +458,7 @@
       document.getElementById("totalcompare").innerHTML = `${(2 * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
       unitPrice = prices[1].reference * (2 * prices[1].cost) / prices[1].content
       document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[1].reference} ${prices[1].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
     } else {
       document.getElementById("once-2").checked = true
       document.getElementById("once-2-wrapper").classList.add("active-variant")
@@ -469,6 +471,7 @@
       document.getElementById("totalcompare").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
       unitPrice = prices[2].reference * (3 * prices[2].cost) / prices[2].content
       document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
     }
   }))
   document.querySelectorAll("input[name=onetime]").forEach((element, index) => element.addEventListener("change", (e) => {
@@ -482,6 +485,7 @@
       }
     })
     document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
+    document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
   }))
   document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
     const quantity = e.target.value
@@ -499,6 +503,7 @@
       document.getElementById("totalcompare-nosub").innerHTML = ""
       unitPrice = prices[0].reference * prices[0].cost / prices[0].content
       document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[0].reference} ${prices[0].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
     } else if (quantity == 2) {
       document.getElementById("once-1-nosub").checked = true
       document.getElementById("once-1-wrapper-nosub").classList.add("active-variant")
@@ -511,6 +516,7 @@
       document.getElementById("totalcompare-nosub").innerHTML = `${(2 * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
       unitPrice = prices[1].reference * (2 * prices[1].cost) / prices[1].content
       document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[1].reference} ${prices[1].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
     } else {
       document.getElementById("once-2-nosub").checked = true
       document.getElementById("once-2-wrapper-nosub").classList.add("active-variant")
@@ -523,6 +529,7 @@
       document.getElementById("totalcompare-nosub").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
       unitPrice = prices[2].reference * (3 * prices[2].cost) / prices[2].content
       document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
     }
   }))
   document.querySelectorAll("input[name=onetime-nosub]").forEach((element, index) => element.addEventListener("change", (e) => {
@@ -536,6 +543,7 @@
       }
     })
     document.querySelector("#quantity-input-nosub > input[type=number]").value = `${quantity}`
+    document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
   }))
   document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
     element.addEventListener("change", (e) => {
