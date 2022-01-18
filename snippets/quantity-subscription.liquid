@@ -473,10 +473,17 @@
   }))
   document.querySelectorAll("input[name=onetime]").forEach((element, index) => element.addEventListener("change", (e) => {
     const quantity = index + 1
+    const prices = {{ curr_variant.metafields.global.prices }}
+    prices.forEach((price, pindex ) => {
+      if (pindex == index) {
+        document.getElementById(`once-${pindex}-wrapper`).classList.add("active-variant")
+      } else {
+        document.getElementById(`once-${pindex}-wrapper`).classList.remove("active-variant")
+      }
+    })
     document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
   }))
   document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
-    console.log("change")
     const quantity = e.target.value
     const prices = {{ curr_variant.metafields.global.prices }}
     let unitPrice
