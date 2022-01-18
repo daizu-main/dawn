@@ -130,11 +130,11 @@
                   </p>
                   <div class="ta-c ta-md-l w-100p mt-4 mb-8">
                     {% if slide.settings.buttonDesign == "filled" %}
-                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button lh-180" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-body uppercase z-1000 nodec button lh-180" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                         {{ slide.settings.buttonText | escape }}
                       </a>
                     {% else %}
-                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-heading uppercase z-1000 nodec button lh-180" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                      <a href="{{ slide.settings.url }}" class="py-3 px-8 mxh-60px inlblock ta-c ff-body uppercase z-1000 nodec button lh-180" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
                         {{ slide.settings.buttonText | escape }}
                       </a>
                     {% endif %}
@@ -250,11 +250,11 @@
                     </p>
                     <div class="ta-l w-100p mt-4 mb-5">
                       {% if slide.settings.buttonDesign == "filled" %}
-                        <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-180 fw-300 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                        <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-body uppercase fs-1 lh-180 fw-300 nodec button" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                           {{ slide.settings.buttonText | escape }}
                         </a>
                       {% else %}
-                        <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-heading uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
+                        <a href="{{ slide.settings.url }}" class="py-5 px-7 ta-c ff-body uppercase fs-1 lh-100 fw-300 nodec button" style="background-color: transparent; border-color: {{ tagBackground }}; border-width: 2px; border-style: solid; color: {{ tagBackground }};">
                           {{ slide.settings.buttonText | escape }}
                         </a>
                       {% endif %}
