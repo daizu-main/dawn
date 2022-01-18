@@ -165,7 +165,7 @@
           %}
           <div class="flex row ai-c px-4 py-5{% if forloop.index0 == 0 %} active-variant{% endif %}" style="{% if forloop.index0 != 0 %}border-top: 2px solid white;{% endif %}" id="once-{{ forloop.index0 }}-wrapper">
             <input type="radio" name="onetime" id="once-{{ forloop.index0 }}" {% if forloop.index0 == 0 %}checked{% endif %} class="mr-5">
-            <label class="w-100p flexi row jc-fs ai-c mx-0i my-0i px-0i py-0i">
+            <label class="w-100p flexi row jc-fs ai-c mx-0i my-0i px-0i py-0i" for="once-{{ forloop.index0 }}">
               <img src="{{ product.featured_image | img_url: '100x' }}" alt="{{ product.featured_image.alt | escape }}" width="50" height="50" loading="lazy" class="mr-4">
               <div class="flex row jc-spb ai-c w-100p">
                 <span class="flex column jc-fs ai-fs fs-0">
@@ -300,7 +300,7 @@
         %}
         <div class="flex row ai-c px-4 py-5{% if forloop.index0 == 0 %} active-variant{% endif %}" style="{% if forloop.index0 != 0 %}border-top: 2px solid white;{% endif %}" id="once-{{ forloop.index0 }}-wrapper-nosub">
           <input type="radio" name="onetime-nosub" id="once-{{ forloop.index0 }}-nosub" {% if forloop.index0 == 0 %}checked{% endif %} class="mr-5">
-          <label class="w-100p flexi row jc-fs ai-c mx-0i my-0i px-0i py-0i">
+          <label class="w-100p flexi row jc-fs ai-c mx-0i my-0i px-0i py-0i" for="once-{{ forloop.index0 }}-nosub">
             <img src="{{ product.featured_image | img_url: '100x' }}" alt="{{ product.featured_image.alt | escape }}" width="50" height="50" loading="lazy" class="mr-4">
             <div class="flex row jc-spb ai-c w-100p">
               <span class="flex column jc-fs ai-fs fs-0">
@@ -540,15 +540,16 @@
   document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
-        const subscriptions = {{ curr_variant.metafields.global.subscriptions | json }} ? {{ curr_variant.metafields.global.subscriptions | json }} : []
+        const subscriptions = {{ curr_variant.metafields.global.subscriptions }} ? {{ curr_variant.metafields.global.subscriptions }} : []
         const prices = {{ curr_variant.metafields.global.prices }}
         const number = Number(e.target.id.replace("sub-",""))
-        document.getElementById(`sub-${number}-wrapper`).classList.add("active-variant")
         subscriptions.forEach((subscription, index) => {
-        if(index != number) {
+          if(index == number) {
+          document.getElementById(`sub-${index}-wrapper`).classList.add("active-variant")
+          } else {
           document.getElementById(`sub-${index}-wrapper`).classList.remove("active-variant")
-        }
-      })
+          }
+        })
         document.getElementById("substotal").innerHTML = `${(subscriptions[number].cost / 100).toFixed(2).replace(".", ",")} €`
         const compareIndex = prices.findIndex(obj => obj.content === subscriptions[number].content)
         const quantity = compareIndex + 1
