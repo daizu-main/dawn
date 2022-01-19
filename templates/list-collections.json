@@ -10,11 +10,120 @@
         "alignment": "center",
         "backgroundColor": "#111111",
         "fontColor": "bright",
-        "text": "Ihre Experten für Premium-Schlafprodukte"
+        "text": "<p class=\"inherit\">Ihre Experten für Premium-Schlafprodukte</p>"
       }
     },
     "sleepink-shop": {
-      "type": "sleepink-shop"
+      "type": "sleepink-shop",
+      "settings": {
+        "title": "Alle Produkte in der Übersicht",
+        "color_scheme": "background-1",
+        "backgroundProductCards": "#F9F9FA",
+        "linkProductPage": "Mehr erfahren"
+      },
+      "blocks": {
+        "drink-14": {
+          "type": "product",
+          "settings": {
+            "product": "sleep-ink",
+            "variant": "01xBox14-fold-filled"
+          }
+        },
+        "schlafessenz": {
+          "type": "product",
+          "settings": {
+            "product": "schlafessenz"
+          }
+        },
+        "schlafspray": {
+          "type": "product",
+          "settings": {
+            "product": "schlafspray"
+          }
+        },
+        "schlafduo": {
+          "type": "product",
+          "settings": {
+            "product": "schlafduo"
+          }
+        },
+        "resleep": {
+          "type": "product",
+          "settings": {
+            "product": "resleep"
+          }
+        },
+        "gute-nacht": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-gute-nacht"
+          }
+        },
+        "relax": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-relax"
+          }
+        },
+        "gums": {
+          "type": "product",
+          "settings": {
+            "product": "schlafgums-60-stuck"
+          }
+        },
+        "kerze": {
+          "type": "product",
+          "settings": {
+            "product": "duftkerze"
+          }
+        },
+        "maske": {
+          "type": "product",
+          "settings": {
+            "product": "schlafmaske"
+          }
+        },
+        "matte": {
+          "type": "product",
+          "settings": {
+            "product": "akupressurmatte"
+          }
+        },
+        "teeflasche": {
+          "type": "product",
+          "settings": {
+            "product": "teeflasche"
+          }
+        },
+        "allyouneed": {
+          "type": "product",
+          "settings": {
+            "product": "tragetasche-all-you-need-is-sleep"
+          }
+        },
+        "letstalk": {
+          "type": "product",
+          "settings": {
+            "product": "tragetasche-lets-talk-about-sleep-baby"
+          }
+        }
+      },
+      "block_order": [
+        "drink-14",
+        "schlafessenz",
+        "schlafspray",
+        "schlafduo",
+        "resleep",
+        "gute-nacht",
+        "relax",
+        "gums",
+        "kerze",
+        "maske",
+        "matte",
+        "teeflasche",
+        "allyouneed",
+        "letstalk"
+      ]
     }
   },
   "order": ["small-page-hero", "sleepink-shop"]
