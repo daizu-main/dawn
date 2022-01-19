@@ -22,6 +22,13 @@
         "linkProductPage": "Mehr erfahren"
       },
       "blocks": {
+        "drink-7": {
+          "type": "product",
+          "settings": {
+            "product": "sleep-ink",
+            "variant": "01xBox7-no-inlay-filled"
+          }
+        },
         "drink-14": {
           "type": "product",
           "settings": {
@@ -109,6 +116,7 @@
         }
       },
       "block_order": [
+        "drink-7",
         "drink-14",
         "schlafessenz",
         "schlafspray",
