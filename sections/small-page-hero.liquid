@@ -101,16 +101,19 @@ function resizeImage(){
   const contentDesktop = document.getElementById("header-content-desktop").offsetHeight;
   const contentMobile = document.getElementById("header-content-mobile").offsetHeight;
   const idealDesktopHeight = "{{ section.settings.height }}" === "high" ? `${contentDesktop + 540}` : `${contentDesktop + 290}`;
-  console.log(idealDesktopHeight);
   const idealMobileHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 438}` : `${contentMobile + 113}`;
   const idealTabletHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 424}` : `${contentMobile + 184}`;
   const screenWidth = document.body.offsetWidth;
   if (screenWidth >= 500) {
-    document.getElementById("header-img-mobile").height = idealTabletHeight;
-    document.getElementById("header-img-desktop").height = idealDesktopHeight;
+    if(document.querySelectorAll("#header-img-mobile").length > 0) 
+      document.getElementById("header-img-mobile").height = idealTabletHeight;
+    if(document.querySelectorAll("#header-img-desktop").length > 0)
+      document.getElementById("header-img-desktop").height = idealDesktopHeight;
   } else {
-    document.getElementById("header-img-mobile").height = idealMobileHeight;
-    document.getElementById("header-img-desktop").height = idealDesktopHeight;
+    if(document.querySelectorAll("#header-img-mobile").length > 0)
+      document.getElementById("header-img-mobile").height = idealMobileHeight;
+    if(document.querySelectorAll("#header-img-desktop").length > 0)
+      document.getElementById("header-img-desktop").height = idealDesktopHeight;
   }
 }
 window.addEventListener("load",resizeImage);
