@@ -36,7 +36,11 @@
           }
         }
       },
-      "block_order": ["block1", "block2", "block3"]
+      "block_order": [
+        "block1",
+        "block2",
+        "block3"
+      ]
     },
     "presseslider": {
       "type": "presseslider"

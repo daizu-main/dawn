@@ -28,7 +28,7 @@
                           {% else %}
                             <div class="pre-head-img">
                                 <img
-                                src="{{ block.settings.image | img_url: '44x' }}"
+                                src="{{ block.settings.image | image_url: width: 44 }}"
                                 alt="{{ block.settings.title }}"
                                 width="22"
                                 height="22"
@@ -79,24 +79,24 @@
   "tag": "section",
   "settings": [
     {
-        "type": "select",
-        "id": "color_scheme",
-        "options": [
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
         {
-            "value": "background-1",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
+          "value": "background-1",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
         },
         {
-            "value": "background-2",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
+          "value": "background-2",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
         },
         {
-            "value": "inverse",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
+          "value": "inverse",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
         }
-        ],
-        "default": "background-1",
-        "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
+      ],
+      "default": "background-1",
+      "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
     },
     {
       "type": "color",
@@ -105,10 +105,10 @@
       "label": "Hintergrundfarbe der Section"
     },
     {
-        "type": "checkbox",
-        "id": "hidden",
-        "label": "Pre-Header ausblenden", 
-        "default": false
+      "type": "checkbox",
+      "id": "hidden",
+      "label": "Pre-Header ausblenden",
+      "default": false
     },
     {
       "type": "text",
@@ -162,7 +162,7 @@
           "showTrustedShops": false,
           "image": null
         }
-      }, 
+      },
       {
         "type": "preHeader",
         "settings": {
@@ -182,6 +182,6 @@
         }
       }
     ]
-    }
+  }
 }
 {% endschema %}

@@ -26,7 +26,7 @@
 
 <{% if section.settings.enable_sticky_header %}sticky-sleepink-header{% else %}div{% endif %} class="header-wrapper{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} SectionGrid shadow sticky color-{{ section.settings.color_scheme }}">
   <header class="SectionGrid-Wide header header--has-menu flex row jc-spb ai-c px-6 pt-0 h-80px z-100 shadow sticky z-10000 color-{{ section.settings.color_scheme }}" id="shopify-section-header">
-    {% comment  %} Hamburger-Menü {% endcomment %}
+    {% comment %} Hamburger-Menü {% endcomment %}
     <header-drawer data-breakpoint="tablet" class="color-{{ section.settings.color_scheme }} ndesktop">
       <details class="menu-drawer-container color-{{ section.settings.color_scheme }}">
         <summary class="header__icon header__icon-menu header__icon--summary link link--text focus-inset color-{{ section.settings.color_scheme }}" aria-label="{{ 'sections.header.menu' | t }}"">
@@ -111,9 +111,9 @@
     {% comment %} Markenlogo {% endcomment %}
     <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset w-auto">
       {%- if section.settings.logo != blank -%}
-        {%- assign image_size = section.settings.logo_width | append: 'x' -%}
-        <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-          src="{{ section.settings.logo | img_url: image_size }}"
+        {%- assign image_width = section.settings.logo_width -%}
+        <img srcset="{{ section.settings.logo | image_url: width: image_width }} 1x, {{ section.settings.logo | image_url: width: image_width, scale: 2 }} 2x"
+          src="{{ section.settings.logo | image_url: width: image_width }}"
           loading="lazy"
           class="header__heading-logo"
           width="{{ section.settings.logo.width }}"
@@ -129,7 +129,7 @@
       {%- for link in section.settings.menu.links -%}
         {%- if link.url != blank -%}
           <a href="{{ link.url }}" class="mx-7 nodec col-fg uppercase ff-heading fs-3 fw-400">
-            {{link.title}}
+            {{ link.title }}
           </a>
         {%- endif -%}
       {%- endfor -%}
@@ -294,8 +294,7 @@
     "@type": "Organization",
     "name": {{ shop.name | json }},
     {% if section.settings.logo %}
-      {% assign image_size = section.settings.logo.width | append: 'x' %}
-      "logo": {{ section.settings.logo | img_url: image_size | prepend: "https:" | json }},
+      "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
       {{ settings.social_twitter_link | json }},
