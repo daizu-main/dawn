@@ -135,9 +135,13 @@
     {%- if settings.predictive_search_enabled -%}
       <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
+    
     {% comment %} Swiper assets {% endcomment %}
     {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+    {% comment %}theme-check-disable ParserBlockingJavaScript{% endcomment %}
+    {% comment %} The swiper does not work reliably when the script is loaded async / deferred {% endcomment %}
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+    {% comment %}theme-check-enable ParserBlockingJavaScript{% endcomment %}
     
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
