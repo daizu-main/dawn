@@ -5,3 +5,6 @@ MatchingTranslations:
 # https://shopify.dev/themes/tools/theme-check/checks/missing-required-template-files
 MissingRequiredTemplateFiles:
   enabled: false
+
+ignore:
+  - snippets/hulkcode_common.liquid
