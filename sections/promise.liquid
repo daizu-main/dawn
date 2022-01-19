@@ -8,7 +8,7 @@
               <div class="promise-card">
                   <div class="promise-image">
                       <img
-                      src="{{ block.settings.image | img_url: 'x200' }}"
+                      src="{{ block.settings.image | image_url: height: 200 }}"
                       alt="{{ block.settings.title }}"
                       height="100"
                       width="100"
@@ -28,56 +28,58 @@
 
 {% schema %}
 {
-"name": "Versprechen",
-"max_blocks": 3,
-"tag": "section",
-"class": "spaced-section--full-width",
-"settings": [
-  {
+  "name": "Versprechen",
+  "max_blocks": 3,
+  "tag": "section",
+  "class": "spaced-section--full-width",
+  "settings": [
+    {
       "type": "text",
       "id": "promise_headline",
-      "label": "Überschrift", 
+      "label": "Überschrift",
       "default": "Unser Versprechen"
-  },
-  {
+    },
+    {
       "type": "richtext",
       "id": "paragraph",
-      "label": "Einleitung", 
+      "label": "Einleitung",
       "default": "<p>So wichtig wie die Lebensqualität unserer Kunden ist uns die Qualität unserer Produkte. Hergestellt, geprüft und zertifiziert in Deutschland, bieten wir ausschließlich Schlafprodukte, die höchsten Standards entsprechen, an.</p>"
-  }
-],
-"blocks": [
-  {
-    "type": "promise",
-    "name": "Versprechen",
-    "settings": [
-      {
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promise",
+      "name": "Versprechen",
+      "settings": [
+        {
           "type": "text",
           "id": "text",
           "default": "Hergestellt in Deutschland",
           "label": "Text"
-      },
-      {
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
-      }
-    ]
-  }
-],
-"presets": [{
-  "name": "Versprechen",
-  "blocks": [
+        }
+      ]
+    }
+  ],
+  "presets": [
     {
-      "type": "promise"
-    }, 
-    {
-      "type": "promise"
-    },
-    {
-      "type": "promise"
+      "name": "Versprechen",
+      "blocks": [
+        {
+          "type": "promise"
+        },
+        {
+          "type": "promise"
+        },
+        {
+          "type": "promise"
+        }
+      ]
     }
   ]
-  }]
 }
 {% endschema %}

@@ -50,5 +50,7 @@
       ]
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
