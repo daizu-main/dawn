@@ -1,5 +1,4 @@
 {
-  "name": "Default collection template",
   "sections": {
     "small-page-hero": {
       "type": "small-page-hero",
@@ -15,12 +14,6 @@
     },
     "sleepink-shop": {
       "type": "sleepink-shop",
-      "settings": {
-        "title": "Alle Produkte in der Übersicht",
-        "color_scheme": "background-1",
-        "backgroundProductCards": "#F9F9FA",
-        "linkProductPage": "Mehr erfahren"
-      },
       "blocks": {
         "drink-7": {
           "type": "product",
@@ -131,8 +124,17 @@
         "teeflasche",
         "allyouneed",
         "letstalk"
-      ]
+      ],
+      "settings": {
+        "title": "Alle Produkte in der Übersicht",
+        "color_scheme": "background-1",
+        "backgroundProductCards": "#F9F9FA",
+        "linkProductPage": "Mehr erfahren"
+      }
     }
   },
-  "order": ["small-page-hero", "sleepink-shop"]
+  "order": [
+    "small-page-hero",
+    "sleepink-shop"
+  ]
 }
