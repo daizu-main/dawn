@@ -1,2 +1,95 @@
 {
+  "current": {
+    "redirect_external": false,
+    "sections": {
+      "pre-header": {
+        "type": "pre-header",
+        "blocks": {
+          "pre-header-0": {
+            "type": "preHeader",
+            "settings": {
+              "text": "Kostenloser Versand ab 29€",
+              "link": "https:\/\/sleep.ink\/versand",
+              "showTrustedShops": false
+            }
+          },
+          "pre-header-1": {
+            "type": "preHeader",
+            "settings": {
+              "text": "",
+              "link": "",
+              "showTrustedShops": true
+            }
+          },
+          "pre-header-2": {
+            "type": "preHeader",
+            "settings": {
+              "text": "30 Tage Geld-zurück-Garantie",
+              "link": "https:\/\/sleep.ink\/geld-zurueck-garantie",
+              "showTrustedShops": false
+            }
+          }
+        },
+        "block_order": [
+          "pre-header-0",
+          "pre-header-1",
+          "pre-header-2"
+        ],
+        "settings": {
+          "color_scheme": "background-1",
+          "backgroundColor": "#faf9f8",
+          "hidden": false,
+          "tsId": "X171CC05C7CF0FBC03EB75B9E6E73D132"
+        }
+      },
+      "sleepink-header": {
+        "type": "sleepink-header",
+        "settings": {
+          "color_scheme": "background-1",
+          "logo_width": 180,
+          "menu": "main-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": true
+        }
+      },
+      "sleepink-footer": {
+        "type": "sleepink-footer",
+        "blocks": {
+          "sleepink-footer-0": {
+            "type": "link_list",
+            "settings": {
+              "linkList": "",
+              "showMobile": false
+            }
+          },
+          "sleepink-footer-1": {
+            "type": "image",
+            "settings": {
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          }
+        },
+        "block_order": [
+          "sleepink-footer-0",
+          "sleepink-footer-1"
+        ],
+        "settings": {
+          "color_scheme": "inverse",
+          "newsletter_enable": true,
+          "newsletter_heading": "NewzZzletter abonnieren und 10% Gutschein sichern",
+          "payment_heading": "Sicher bezahlen",
+          "shipping_heading": "Versand",
+          "social_heading": "Folge uns",
+          "quality_heading": "Qualitätsstandards",
+          "corporate_slogan": "#allyouneedissleep",
+          "legalLinks": ""
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
 }
