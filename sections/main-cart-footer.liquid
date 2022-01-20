@@ -22,7 +22,7 @@
               <div class="js-contents" {{ block.shopify_attributes }}>
                 <div class="totals">
                   <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
-                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                  <p class="totals__subtotal-value"><span id='revy-cart-subtotal-price'>{{ cart.total_price | money_with_currency }}</span></p>
                 </div>
 
                 <div>
