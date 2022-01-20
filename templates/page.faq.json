@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#111111",
+        "fontColor": "bright",
+        "text": "Fragen und Antworten"
+      }
+    },
+    "faq": {
+      "type": "faq"
+    }
+  },
+  "order": ["hero", "faq"]
+}
