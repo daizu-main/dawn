@@ -75,7 +75,7 @@
     <div class="desktopgrid pagegrid" style="background-color: {{ section.settings.backgroundColor }};">
       {% if section.settings.imageDesktop %}
         <div class="col-1-5 row-1 w-100p">
-          <img src="{{ section.settings.imageDesktop | img_url: '4000x' }}" alt="{{ section.settings.imageDesktop.alt }}" class="w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
+          <img src="{{ section.settings.imageDesktop | image_url: width: 4000 }}" alt="{{ section.settings.imageDesktop.alt }}" class="w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
         </div>
       {% endif %}
       <div class="flex row ai-c {{ justify | escape }} {{ column | escape }} {{ jc | escape }} row-1 w-95p {{ pl | escape }} fs-52px lh-116 ls-m200 {{ paddings | escape }}" style="color: {{ color | escape }}">
@@ -86,7 +86,7 @@
     </div>
     <div class="ndesktopgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
       {% if section.settings.imageMobile %}
-        <img src="{{ section.settings.imageMobile | img_url: '2000x' }}" alt="{{ section.settings.imageMobile.alt }}" class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
+        <img src="{{ section.settings.imageMobile | image_url: width: 2000 }}" alt="{{ section.settings.imageMobile.alt }}" class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
       {% endif %}
       <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-mobile">
@@ -101,16 +101,19 @@ function resizeImage(){
   const contentDesktop = document.getElementById("header-content-desktop").offsetHeight;
   const contentMobile = document.getElementById("header-content-mobile").offsetHeight;
   const idealDesktopHeight = "{{ section.settings.height }}" === "high" ? `${contentDesktop + 540}` : `${contentDesktop + 290}`;
-  console.log(idealDesktopHeight);
   const idealMobileHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 438}` : `${contentMobile + 113}`;
   const idealTabletHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 424}` : `${contentMobile + 184}`;
   const screenWidth = document.body.offsetWidth;
   if (screenWidth >= 500) {
-    document.getElementById("header-img-mobile").height = idealTabletHeight;
-    document.getElementById("header-img-desktop").height = idealDesktopHeight;
+    if(document.querySelectorAll("#header-img-mobile").length > 0) 
+      document.getElementById("header-img-mobile").height = idealTabletHeight;
+    if(document.querySelectorAll("#header-img-desktop").length > 0)
+      document.getElementById("header-img-desktop").height = idealDesktopHeight;
   } else {
-    document.getElementById("header-img-mobile").height = idealMobileHeight;
-    document.getElementById("header-img-desktop").height = idealDesktopHeight;
+    if(document.querySelectorAll("#header-img-mobile").length > 0)
+      document.getElementById("header-img-mobile").height = idealMobileHeight;
+    if(document.querySelectorAll("#header-img-desktop").length > 0)
+      document.getElementById("header-img-desktop").height = idealDesktopHeight;
   }
 }
 window.addEventListener("load",resizeImage);
@@ -227,7 +230,7 @@ window.addEventListener("resize",resizeImage);
       "label": "Hintergrundbild für Mobil/Tablet"
     },
     {
-      "type": "richtext",
+      "type": "text",
       "id": "text",
       "label": "Text"
     }

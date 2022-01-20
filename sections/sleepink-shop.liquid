@@ -25,10 +25,12 @@
         {% assign product = thisProduct.settings.product %}
         {% liquid 
           assign variants = product.variants
-          if variants.size == 1
+          if thisProduct.settings.variant != blank
+            assign sku = thisProduct.settings.variant
+          elsif variants.size > 0
             assign sku = variants[0].sku
           else
-            assign sku = thisProduct.settings.variant
+            assign sku = nil
           endif 
         %}
         {% for variant in product.variants %}
@@ -38,11 +40,11 @@
               <a href="{{ product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                 <div class="square col-1 row-1">
                   {% if thisProduct.settings.image %}
-                    <img src="{{ thisProduct.settings.image | img_url: '400x' }}" alt="{{ thisProduct.settings.image.alt }}" width="300" height="300" loading="lazy" class="contain productimage">
+                    <img src="{{ thisProduct.settings.image | image_url: width: 400 }}" alt="{{ thisProduct.settings.image.alt }}" width="300" height="300" loading="lazy" class="contain productimage">
                   {% elsif variant.featured_image %}
-                    <img src="{{ variant.featured_image | img_url: '400x' }}" alt="{{ variant.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain productimage">
+                    <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain productimage">
                   {% else %}
-                    <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain productimage">
+                    <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain productimage">
                   {% endif %}
                   <div class="col-1 row-1 pos-abs l-0 t-10px t-lg-16px">
                     {% assign tags = product.metafields.global.tags | split: ', ' %}
@@ -114,7 +116,6 @@
   "name": "Produktgitter",
   "tag": "section",
   "class": "spaced-section collection-list-section",
-  "max_blocks": 15,
   "settings": [
     {
       "type": "text",

@@ -3529,6 +3529,13 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 /* STRUCTURE: Font Sizes */
 
+.inherit {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  font-weight: inherit !important;
+}
+
 .fs-87p {
   font-size: 0.87em;
 }
