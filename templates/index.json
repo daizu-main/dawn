@@ -1,18 +1,76 @@
 {
   "sections": {
     "page-hero": {
-      "type": "page-hero"
+      "type": "page-hero",
+      "settings": {
+        "introText": "Bekannt aus:",
+        "swipe_on_mobile": true
+      }
     },
     "bestseller": {
-      "type": "bestseller"
+      "type": "bestseller",
+      "blocks": {
+        "bc1b17f2-2bd4-4d76-b693-b9150c790221": {
+          "type": "product",
+          "settings": {
+            "product": "akupressurmatte",
+            "variant": ""
+          }
+        },
+        "1eb0f07e-2718-4972-b933-345fc90826b0": {
+          "type": "product",
+          "settings": {
+            "product": "duftkerze",
+            "variant": ""
+          }
+        },
+        "1a38d4db-9dee-4338-bc0d-7af2bf5efc0c": {
+          "type": "product",
+          "settings": {
+            "product": "schlafmaske",
+            "variant": ""
+          }
+        },
+        "5b1caa4d-6c99-4794-b7a7-226f4c3b90a2": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-relax",
+            "variant": ""
+          }
+        },
+        "26621dfd-37c7-4d7c-b6c4-1f5030c5f22b": {
+          "type": "product",
+          "settings": {
+            "product": "schlafessenz",
+            "variant": ""
+          }
+        },
+        "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6": {
+          "type": "product",
+          "settings": {
+            "product": "teeflasche",
+            "variant": ""
+          }
+        }
+      },
+      "block_order": [
+        "bc1b17f2-2bd4-4d76-b693-b9150c790221",
+        "1eb0f07e-2718-4972-b933-345fc90826b0",
+        "1a38d4db-9dee-4338-bc0d-7af2bf5efc0c",
+        "5b1caa4d-6c99-4794-b7a7-226f4c3b90a2",
+        "26621dfd-37c7-4d7c-b6c4-1f5030c5f22b",
+        "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6"
+      ],
+      "settings": {
+        "title": "Unsere Bestseller",
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1",
+        "backgroundProductCards": "#f9f9fa",
+        "linkProductPage": "Mehr erfahren"
+      }
     },
     "123": {
       "type": "123",
-      "settings": {
-        "headline": "Einfach gut schlafen!",
-        "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht</p>",
-        "decorate": true
-      },
       "blocks": {
         "block1": {
           "type": "advantage",
@@ -40,16 +98,38 @@
         "block1",
         "block2",
         "block3"
-      ]
-    },
-    "presseslider": {
-      "type": "presseslider"
+      ],
+      "settings": {
+        "headline": "Endlich gut schlafen!",
+        "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
+        "decorate": true
+      }
     },
     "kundenstimmen": {
-      "type": "kundenstimmen"
+      "type": "kundenstimmen",
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Bereits über 50.000 ausgeschlafene Kunden",
+        "swipe_on_mobile": true
+      }
     },
     "produktberater": {
-      "type": "produktberater"
+      "type": "produktberater",
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Deine Online-Schlafberatung",
+        "subline": "Finde dein passendes Schlafprodukt in weniger als 1 Minute",
+        "buttonText": "Zur Produktempfehlung",
+        "influencerName": "Sylvie Meis"
+      }
+    },
+    "presseslider": {
+      "type": "presseslider",
+      "settings": {
+        "title": "Die Presse schwebt auf Wolke 7",
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1"
+      }
     }
   },
   "order": [
