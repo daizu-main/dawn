@@ -429,6 +429,8 @@
       document.getElementById("subscription-checkmark-wrapper").classList.remove("hidden-element")
     }
   }
+  const metafields = {{ curr_variant.metafields.global | json }}
+  const subscriptionSize = metafields.hasOwnProperty("subscriptions") ? metafields.subscriptions.length : 0
   document.querySelectorAll("#quantity-input > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
     const quantity = e.target.value
     const prices = {{ curr_variant.metafields.global.prices }}
@@ -548,7 +550,10 @@
   document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
-        const subscriptions = {{ curr_variant.metafields.global.subscriptions }} ? {{ curr_variant.metafields.global.subscriptions }} : []
+        let subscriptions = []
+        if (subscriptions.size > 0 ) {
+          subscriptions = metafields.subscriptions
+        }
         const prices = {{ curr_variant.metafields.global.prices }}
         const number = Number(e.target.id.replace("sub-",""))
         subscriptions.forEach((subscription, index) => {

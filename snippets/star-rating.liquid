@@ -19,7 +19,9 @@
         {% endfor %}
       {% endif %}
       {% if halfStars == 1 %}
-        {%- render 'icon-star-half' -%}
+        <span>
+          {%- render 'icon-star-half' -%}
+        </span>
       {% endif %}
       {% if missing_stars > 0 %}
         {% for j in (1..missing_stars) %}
