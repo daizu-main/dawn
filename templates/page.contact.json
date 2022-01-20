@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#111111",
+        "fontColor": "bright",
+        "text": "Kontakt"
+      }
+    },
+    "contact": {
+      "type": "sleepink-contact-form",
+      "settings": {
+        "heading": "Wir sind für Sie da!",
+        "name_label": "Name",
+        "email_label": "E-Mail",
+        "message_label": "Ihre Nachricht",
+        "success_message": "Vielen Dank für Ihre Nachricht! Wir melden uns bei Ihnen so bald wie möglich.",
+        "fail_message": "Da ist etwas schiefgelaufen. Leider ist während der Verarbeitung Ihrer Nachricht ein Fehler aufgetreten. Versuchen Sie es bitte erneut."
+      }
+    }
+  },
+  "order": ["hero", "contact"]
+}
