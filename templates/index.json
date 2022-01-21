@@ -206,12 +206,24 @@
             "title": "Noch nie so gut geschlafen",
             "text": "Ich schlafe sehr viel schneller, fester und länger und fühle mich morgens ausgeschlafen. Womöglich zur Zeit die besten Produkte auf dem Markt."
           }
+        },
+        "38794abd-eac3-4848-9bc1-0a68a9e84594": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vera.png",
+            "reviewer": "Vera L.",
+            "source": "Facebook",
+            "rating": 5,
+            "title": "Schnell geliefert, schnell geschlafen",
+            "text": "Von Bestellung bis zur Lieferung sind wenige Tage vergangen und eins kann ich nur sagen: Es hilft, ich schlafe besser, wache erholter auf und stecke jetzt nach und nach auch Freunde und Bekannte damit an"
+          }
         }
       },
       "block_order": [
         "82bd5714-ce93-403f-bfb6-84d8896c5045",
         "74085eaf-987e-4e52-bf5a-5e2c30cbb218",
-        "f67dbaa1-d189-41b5-9204-384658fd2bc3"
+        "f67dbaa1-d189-41b5-9204-384658fd2bc3",
+        "38794abd-eac3-4848-9bc1-0a68a9e84594"
       ],
       "settings": {
         "color_scheme": "background-1",
