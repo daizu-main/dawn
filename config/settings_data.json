@@ -61,8 +61,8 @@
           "sleepink-footer-0": {
             "type": "link_list",
             "settings": {
-              "linkList": "",
-              "showMobile": false
+              "linkList": "footermenu1",
+              "showMobile": true
             }
           },
           "sleepink-footer-1": {
