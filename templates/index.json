@@ -42,13 +42,22 @@
             "showDesktop": true,
             "showMobile": false
           }
+        },
+        "1f5fe31a-b0c0-4782-ba3b-8d6e907f3457": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Welt-w.png",
+            "showDesktop": true,
+            "showMobile": true
+          }
         }
       },
       "block_order": [
         "7e52d7f7-20f6-45fe-92fe-85656cb770ed",
         "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6",
         "b4fcb627-d690-400b-ae31-0e3d39f1205a",
-        "0f27e900-35cd-4663-993f-b068b9a1d453"
+        "0f27e900-35cd-4663-993f-b068b9a1d453",
+        "1f5fe31a-b0c0-4782-ba3b-8d6e907f3457"
       ],
       "settings": {
         "introText": "Bekannt aus:",
