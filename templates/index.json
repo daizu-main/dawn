@@ -209,13 +209,21 @@
             "product": "schlafduo",
             "elementId": "duo"
           }
+        },
+        "0e7d32b0-e871-421f-a726-ff08ebf3af31": {
+          "type": "product",
+          "settings": {
+            "product": "resleep",
+            "elementId": "resleep"
+          }
         }
       },
       "block_order": [
         "b1c236a8-24d6-464d-969b-629335bb5373",
         "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13",
         "aef38039-ea5c-4d14-af45-e6d551e16dec",
-        "ed640b95-992a-4d42-9bec-c9d2cb526af2"
+        "ed640b95-992a-4d42-9bec-c9d2cb526af2",
+        "0e7d32b0-e871-421f-a726-ff08ebf3af31"
       ],
       "settings": {
         "color_scheme": "background-1",
