@@ -9,6 +9,7 @@
             "type": "preHeader",
             "settings": {
               "text": "Kostenloser Versand ab 29€",
+              "image": "shopify:\/\/shop_images\/Package_256c6637-cfa0-4743-8a80-f2d223de5dc5.png",
               "link": "https:\/\/sleep.ink\/versand",
               "showTrustedShops": false
             }
@@ -25,6 +26,7 @@
             "type": "preHeader",
             "settings": {
               "text": "30 Tage Geld-zurück-Garantie",
+              "image": "shopify:\/\/shop_images\/money-back_dd69af74-ca57-478b-b5cb-bc0c4a8b9e4a.png",
               "link": "https:\/\/sleep.ink\/geld-zurueck-garantie",
               "showTrustedShops": false
             }
