@@ -65,6 +65,13 @@
               "showMobile": true
             }
           },
+          "b900d3f1-109f-4bd9-bd85-44d18abf253f": {
+            "type": "link_list",
+            "settings": {
+              "linkList": "footermenu2",
+              "showMobile": false
+            }
+          },
           "sleepink-footer-1": {
             "type": "image",
             "settings": {
@@ -76,6 +83,7 @@
         },
         "block_order": [
           "sleepink-footer-0",
+          "b900d3f1-109f-4bd9-bd85-44d18abf253f",
           "sleepink-footer-1"
         ],
         "settings": {
