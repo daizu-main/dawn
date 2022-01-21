@@ -223,6 +223,13 @@
             "product": "schlaftee-gute-nacht",
             "elementId": "gute-nacht"
           }
+        },
+        "22d03b9e-fe15-427a-826e-629922eccfec": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-relax",
+            "elementId": "relax"
+          }
         }
       },
       "block_order": [
@@ -231,7 +238,8 @@
         "aef38039-ea5c-4d14-af45-e6d551e16dec",
         "ed640b95-992a-4d42-9bec-c9d2cb526af2",
         "0e7d32b0-e871-421f-a726-ff08ebf3af31",
-        "f709af7a-53b2-4696-bce6-b6b7d3930517"
+        "f709af7a-53b2-4696-bce6-b6b7d3930517",
+        "22d03b9e-fe15-427a-826e-629922eccfec"
       ],
       "settings": {
         "color_scheme": "background-1",
