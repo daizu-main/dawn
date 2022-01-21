@@ -45,9 +45,10 @@
       "sleepink-header": {
         "type": "sleepink-header",
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "inverse",
+          "logo": "shopify:\/\/shop_images\/SleepInk_e2b723b3-ecee-4554-a41f-8ef9f12bcfb1.png",
           "logo_width": 180,
-          "menu": "main-menu",
+          "menu": "headermenu",
           "show_line_separator": true,
           "enable_sticky_header": true
         }
