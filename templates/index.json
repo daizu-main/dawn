@@ -173,6 +173,22 @@
     },
     "kundenstimmen": {
       "type": "kundenstimmen",
+      "blocks": {
+        "82bd5714-ce93-403f-bfb6-84d8896c5045": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/deniz_00b2a165-44c5-4533-b414-478e88fb8b64.png",
+            "reviewer": "Deniz K.",
+            "source": "Trusted Shops",
+            "rating": 5,
+            "title": "Ich bin überzeugt",
+            "text": "Ich war mir zu Beginn noch nicht sicher, aber mit der Garantie, dass ich mein Geld zurück bekomme hab ich es mal getestet. Und das Ergebnis: Ich will das Geld nicht zurück, aber schickt mir mehr von eurem Schlaftrunk :D"
+          }
+        }
+      },
+      "block_order": [
+        "82bd5714-ce93-403f-bfb6-84d8896c5045"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "title": "Bereits über 75.000 ausgeschlafene Kunden",
