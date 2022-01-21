@@ -184,10 +184,22 @@
             "title": "Ich bin überzeugt",
             "text": "Ich war mir zu Beginn noch nicht sicher, aber mit der Garantie, dass ich mein Geld zurück bekomme hab ich es mal getestet. Und das Ergebnis: Ich will das Geld nicht zurück, aber schickt mir mehr von eurem Schlaftrunk :D"
           }
+        },
+        "74085eaf-987e-4e52-bf5a-5e2c30cbb218": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/anja_6e530adb-5f38-4d14-85e4-f867dd220194.png",
+            "reviewer": "Anja C.",
+            "source": "Facebook",
+            "rating": 5,
+            "title": "Den Versuch wert",
+            "text": "Auch wenn ich gerne neue Dinge teste war ich doch ziemlich skeptisch.Aber was soll ich sagen, ich kriege endlich wieder mehr Schlaf. Ich fühle mich toll und nehme es immer bei Bedarf."
+          }
         }
       },
       "block_order": [
-        "82bd5714-ce93-403f-bfb6-84d8896c5045"
+        "82bd5714-ce93-403f-bfb6-84d8896c5045",
+        "74085eaf-987e-4e52-bf5a-5e2c30cbb218"
       ],
       "settings": {
         "color_scheme": "background-1",
