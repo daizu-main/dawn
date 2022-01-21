@@ -195,11 +195,19 @@
             "product": "schlafessenz",
             "elementId": "essenz"
           }
+        },
+        "aef38039-ea5c-4d14-af45-e6d551e16dec": {
+          "type": "product",
+          "settings": {
+            "product": "schlafspray",
+            "elementId": "spray"
+          }
         }
       },
       "block_order": [
         "b1c236a8-24d6-464d-969b-629335bb5373",
-        "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13"
+        "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13",
+        "aef38039-ea5c-4d14-af45-e6d551e16dec"
       ],
       "settings": {
         "color_scheme": "background-1",
