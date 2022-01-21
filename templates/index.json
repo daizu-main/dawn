@@ -258,6 +258,13 @@
             "product": "teeflasche",
             "elementId": "teeflasche"
           }
+        },
+        "c510c414-2391-42d7-8839-cad04787ab03": {
+          "type": "product",
+          "settings": {
+            "product": "tragetasche-all-you-need-is-sleep",
+            "elementId": "allyouneed"
+          }
         }
       },
       "block_order": [
@@ -271,7 +278,8 @@
         "b3c452cd-d935-40bc-aeca-244bc0a45f8c",
         "6fd5808d-d284-4dc1-9780-919868153271",
         "dafe8443-b266-45d7-b6b6-96e9f93d85c0",
-        "4782f9f4-62e2-439a-8874-e6806e5f6ca1"
+        "4782f9f4-62e2-439a-8874-e6806e5f6ca1",
+        "c510c414-2391-42d7-8839-cad04787ab03"
       ],
       "settings": {
         "color_scheme": "background-1",
