@@ -125,6 +125,33 @@
               "largeLogos": false,
               "sections": "shipping"
             }
+          },
+          "691a7883-95b5-4008-a594-3c30ecf33328": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TS.png",
+              "url": "",
+              "largeLogos": true,
+              "sections": "quality"
+            }
+          },
+          "3764b682-3479-4e7d-b114-ccd0b18161b8": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/GzG.png",
+              "url": "",
+              "largeLogos": true,
+              "sections": "quality"
+            }
+          },
+          "001dcd4c-5969-4046-b728-ea6a16049c65": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SSL.png",
+              "url": "",
+              "largeLogos": true,
+              "sections": "quality"
+            }
           }
         },
         "block_order": [
@@ -135,7 +162,10 @@
           "f5d06da7-a568-4194-8548-6f85236d7f48",
           "f69428fe-5643-4844-b848-cd3207369095",
           "e172bd09-f4de-423c-8c5f-bc43d864a064",
-          "b0d4a70d-1d44-48df-b0f7-27992236f656"
+          "b0d4a70d-1d44-48df-b0f7-27992236f656",
+          "691a7883-95b5-4008-a594-3c30ecf33328",
+          "3764b682-3479-4e7d-b114-ccd0b18161b8",
+          "001dcd4c-5969-4046-b728-ea6a16049c65"
         ],
         "settings": {
           "color_scheme": "inverse",
