@@ -195,11 +195,23 @@
             "title": "Den Versuch wert",
             "text": "Auch wenn ich gerne neue Dinge teste war ich doch ziemlich skeptisch.Aber was soll ich sagen, ich kriege endlich wieder mehr Schlaf. Ich fühle mich toll und nehme es immer bei Bedarf."
           }
+        },
+        "f67dbaa1-d189-41b5-9204-384658fd2bc3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andre_6a0a1f07-b2d1-4314-89bc-d1ec1678d769.png",
+            "reviewer": "André K.",
+            "source": "Google",
+            "rating": 5,
+            "title": "Noch nie so gut geschlafen",
+            "text": "Ich schlafe sehr viel schneller, fester und länger und fühle mich morgens ausgeschlafen. Womöglich zur Zeit die besten Produkte auf dem Markt."
+          }
         }
       },
       "block_order": [
         "82bd5714-ce93-403f-bfb6-84d8896c5045",
-        "74085eaf-987e-4e52-bf5a-5e2c30cbb218"
+        "74085eaf-987e-4e52-bf5a-5e2c30cbb218",
+        "f67dbaa1-d189-41b5-9204-384658fd2bc3"
       ],
       "settings": {
         "color_scheme": "background-1",
