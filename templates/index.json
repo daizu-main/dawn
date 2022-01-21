@@ -230,6 +230,13 @@
             "product": "schlaftee-relax",
             "elementId": "relax"
           }
+        },
+        "b3c452cd-d935-40bc-aeca-244bc0a45f8c": {
+          "type": "product",
+          "settings": {
+            "product": "duftkerze",
+            "elementId": "kerze"
+          }
         }
       },
       "block_order": [
@@ -239,7 +246,8 @@
         "ed640b95-992a-4d42-9bec-c9d2cb526af2",
         "0e7d32b0-e871-421f-a726-ff08ebf3af31",
         "f709af7a-53b2-4696-bce6-b6b7d3930517",
-        "22d03b9e-fe15-427a-826e-629922eccfec"
+        "22d03b9e-fe15-427a-826e-629922eccfec",
+        "b3c452cd-d935-40bc-aeca-244bc0a45f8c"
       ],
       "settings": {
         "color_scheme": "background-1",
