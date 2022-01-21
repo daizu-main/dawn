@@ -116,6 +116,15 @@
               "largeLogos": false,
               "sections": "payment"
             }
+          },
+          "b0d4a70d-1d44-48df-b0f7-27992236f656": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DHL.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "shipping"
+            }
           }
         },
         "block_order": [
@@ -125,7 +134,8 @@
           "11253528-16ac-4854-84b1-80d6b4a57538",
           "f5d06da7-a568-4194-8548-6f85236d7f48",
           "f69428fe-5643-4844-b848-cd3207369095",
-          "e172bd09-f4de-423c-8c5f-bc43d864a064"
+          "e172bd09-f4de-423c-8c5f-bc43d864a064",
+          "b0d4a70d-1d44-48df-b0f7-27992236f656"
         ],
         "settings": {
           "color_scheme": "inverse",
