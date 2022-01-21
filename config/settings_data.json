@@ -86,8 +86,9 @@
           "shipping_heading": "Versand",
           "social_heading": "Folge uns",
           "quality_heading": "Qualitätsstandards",
+          "corporate_logo": "shopify:\/\/shop_images\/SleepInk_4890c66d-714e-433b-8db0-1cbec1929c53.png",
           "corporate_slogan": "#allyouneedissleep",
-          "legalLinks": ""
+          "legalLinks": "legalmenu"
         }
       }
     },
