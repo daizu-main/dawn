@@ -2,6 +2,27 @@
   "sections": {
     "page-hero": {
       "type": "page-hero",
+      "blocks": {
+        "7e52d7f7-20f6-45fe-92fe-85656cb770ed": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "inverse",
+            "imageDesktop": "shopify:\/\/shop_images\/frauke-desktop.jpg",
+            "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
+            "video": "",
+            "title": "Endlich besser schlafen!",
+            "uppercaseTitle": false,
+            "text": "Mehr als 75.000 zufriedene Kunden.",
+            "url": "shopify:\/\/collections",
+            "buttonDesign": "outlined",
+            "buttonText": "Jetzt einkaufen",
+            "overlay": true
+          }
+        }
+      },
+      "block_order": [
+        "7e52d7f7-20f6-45fe-92fe-85656cb770ed"
+      ],
       "settings": {
         "introText": "Bekannt aus:",
         "swipe_on_mobile": true
