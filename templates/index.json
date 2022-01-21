@@ -359,10 +359,18 @@
             "image": "shopify:\/\/shop_images\/Cosmopolitan-color.png",
             "text": "„Tipps, die beim Einschlafen helfen sollen, gibt es viele, aber so richtig bringen will eigentlich nichts – bis jetzt!”"
           }
+        },
+        "9257f642-b38a-4182-a8af-5d6d76a26cec": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/freundin_3a266e01-d012-42e8-bd83-9a8adb81c432.png",
+            "text": "„Sie trinken abends gerne noch eine Tasse Tee? Dann werden Sie die Schlaftees von sleep.ink lieben!”"
+          }
         }
       },
       "block_order": [
-        "0063a3a1-18c2-48c7-acb4-df2ea870030e"
+        "0063a3a1-18c2-48c7-acb4-df2ea870030e",
+        "9257f642-b38a-4182-a8af-5d6d76a26cec"
       ],
       "settings": {
         "title": "Die Presse schwebt auf Wolke 7",
