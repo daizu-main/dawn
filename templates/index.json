@@ -216,6 +216,13 @@
             "product": "resleep",
             "elementId": "resleep"
           }
+        },
+        "f709af7a-53b2-4696-bce6-b6b7d3930517": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-gute-nacht",
+            "elementId": "gute-nacht"
+          }
         }
       },
       "block_order": [
@@ -223,7 +230,8 @@
         "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13",
         "aef38039-ea5c-4d14-af45-e6d551e16dec",
         "ed640b95-992a-4d42-9bec-c9d2cb526af2",
-        "0e7d32b0-e871-421f-a726-ff08ebf3af31"
+        "0e7d32b0-e871-421f-a726-ff08ebf3af31",
+        "f709af7a-53b2-4696-bce6-b6b7d3930517"
       ],
       "settings": {
         "color_scheme": "background-1",
