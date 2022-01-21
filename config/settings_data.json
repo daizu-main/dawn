@@ -75,6 +75,43 @@
           "sleepink-footer-1": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/paypal.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "11253528-16ac-4854-84b1-80d6b4a57538": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/visa_54320b38-fc31-48c3-bbc8-0a9b69bd3ebd.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "f5d06da7-a568-4194-8548-6f85236d7f48": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mastercard.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "f69428fe-5643-4844-b848-cd3207369095": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icon.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "e172bd09-f4de-423c-8c5f-bc43d864a064": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/klarna-white.png",
               "url": "",
               "largeLogos": false,
               "sections": "payment"
@@ -84,7 +121,11 @@
         "block_order": [
           "sleepink-footer-0",
           "b900d3f1-109f-4bd9-bd85-44d18abf253f",
-          "sleepink-footer-1"
+          "sleepink-footer-1",
+          "11253528-16ac-4854-84b1-80d6b4a57538",
+          "f5d06da7-a568-4194-8548-6f85236d7f48",
+          "f69428fe-5643-4844-b848-cd3207369095",
+          "e172bd09-f4de-423c-8c5f-bc43d864a064"
         ],
         "settings": {
           "color_scheme": "inverse",
