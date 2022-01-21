@@ -26,11 +26,20 @@
             "showDesktop": true,
             "showMobile": true
           }
+        },
+        "b4fcb627-d690-400b-ae31-0e3d39f1205a": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cosmopolitan-w.png",
+            "showDesktop": true,
+            "showMobile": false
+          }
         }
       },
       "block_order": [
         "7e52d7f7-20f6-45fe-92fe-85656cb770ed",
-        "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6"
+        "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6",
+        "b4fcb627-d690-400b-ae31-0e3d39f1205a"
       ],
       "settings": {
         "introText": "Bekannt aus:",
