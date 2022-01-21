@@ -50,6 +50,14 @@
             "showDesktop": true,
             "showMobile": true
           }
+        },
+        "73217337-90ce-49e6-addd-1c2d1db4482d": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/InStyle-w.png",
+            "showDesktop": false,
+            "showMobile": true
+          }
         }
       },
       "block_order": [
@@ -57,7 +65,8 @@
         "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6",
         "b4fcb627-d690-400b-ae31-0e3d39f1205a",
         "0f27e900-35cd-4663-993f-b068b9a1d453",
-        "1f5fe31a-b0c0-4782-ba3b-8d6e907f3457"
+        "1f5fe31a-b0c0-4782-ba3b-8d6e907f3457",
+        "73217337-90ce-49e6-addd-1c2d1db4482d"
       ],
       "settings": {
         "introText": "Bekannt aus:",
