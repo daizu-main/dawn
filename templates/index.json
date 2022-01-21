@@ -265,6 +265,13 @@
             "product": "tragetasche-all-you-need-is-sleep",
             "elementId": "allyouneed"
           }
+        },
+        "4ee5b80d-e459-44d8-9c64-f02f4b40e707": {
+          "type": "product",
+          "settings": {
+            "product": "tragetasche-lets-talk-about-sleep-baby",
+            "elementId": "letstalk"
+          }
         }
       },
       "block_order": [
@@ -279,7 +286,8 @@
         "6fd5808d-d284-4dc1-9780-919868153271",
         "dafe8443-b266-45d7-b6b6-96e9f93d85c0",
         "4782f9f4-62e2-439a-8874-e6806e5f6ca1",
-        "c510c414-2391-42d7-8839-cad04787ab03"
+        "c510c414-2391-42d7-8839-cad04787ab03",
+        "4ee5b80d-e459-44d8-9c64-f02f4b40e707"
       ],
       "settings": {
         "color_scheme": "background-1",
