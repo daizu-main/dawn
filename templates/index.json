@@ -237,6 +237,20 @@
             "product": "duftkerze",
             "elementId": "kerze"
           }
+        },
+        "6fd5808d-d284-4dc1-9780-919868153271": {
+          "type": "product",
+          "settings": {
+            "product": "schlafmaske",
+            "elementId": "maske"
+          }
+        },
+        "dafe8443-b266-45d7-b6b6-96e9f93d85c0": {
+          "type": "product",
+          "settings": {
+            "product": "akupressurmatte",
+            "elementId": "matte"
+          }
         }
       },
       "block_order": [
@@ -247,7 +261,9 @@
         "0e7d32b0-e871-421f-a726-ff08ebf3af31",
         "f709af7a-53b2-4696-bce6-b6b7d3930517",
         "22d03b9e-fe15-427a-826e-629922eccfec",
-        "b3c452cd-d935-40bc-aeca-244bc0a45f8c"
+        "b3c452cd-d935-40bc-aeca-244bc0a45f8c",
+        "6fd5808d-d284-4dc1-9780-919868153271",
+        "dafe8443-b266-45d7-b6b6-96e9f93d85c0"
       ],
       "settings": {
         "color_scheme": "background-1",
