@@ -181,6 +181,26 @@
     },
     "produktberater": {
       "type": "produktberater",
+      "blocks": {
+        "b1c236a8-24d6-464d-969b-629335bb5373": {
+          "type": "product",
+          "settings": {
+            "product": "sleep-ink",
+            "elementId": "drink14"
+          }
+        },
+        "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13": {
+          "type": "product",
+          "settings": {
+            "product": "schlafessenz",
+            "elementId": "essenz"
+          }
+        }
+      },
+      "block_order": [
+        "b1c236a8-24d6-464d-969b-629335bb5373",
+        "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "title": "Deine Online-Schlafberatung",
