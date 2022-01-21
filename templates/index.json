@@ -373,12 +373,20 @@
             "image": "shopify:\/\/shop_images\/Bunte.png",
             "text": "„Dank 'sleep.ink' ist Schluss mit Schlafstörungen”"
           }
+        },
+        "fb33e1ca-4810-4500-86f5-8d089020ac3b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/faz.png",
+            "text": "„Zum Einschlafen”"
+          }
         }
       },
       "block_order": [
         "0063a3a1-18c2-48c7-acb4-df2ea870030e",
         "9257f642-b38a-4182-a8af-5d6d76a26cec",
-        "f052a979-5130-41d3-b90f-93a1f81cc7e7"
+        "f052a979-5130-41d3-b90f-93a1f81cc7e7",
+        "fb33e1ca-4810-4500-86f5-8d089020ac3b"
       ],
       "settings": {
         "title": "Die Presse schwebt auf Wolke 7",
