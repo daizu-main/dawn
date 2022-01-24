@@ -134,12 +134,20 @@
             "question": "Kann die Bestellung widerrufen werden?",
             "answer": "<p>Ja. Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen die Bestellung, und damit den Kaufvertrag, zu widerrufen.<\/p>"
           }
+        },
+        "6f00e3e4-cb76-43a9-9580-9906f3f555d3": {
+          "type": "text",
+          "settings": {
+            "question": "Wo ist die Bestellung?",
+            "answer": "<p>Sobald Ihr Paket an DHL übergeben wurde, wird Ihnen per E-Mail die Sendungsnummer zugesandt. So haben Sie stets die Möglichkeit ihre Bestellung zu verfolgen.<\/p>"
+          }
         }
       },
       "block_order": [
         "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a",
         "3ab628c1-d404-4e10-bd21-5182323786cd",
-        "f44e8039-8c88-4c0b-900f-a59a508e0af2"
+        "f44e8039-8c88-4c0b-900f-a59a508e0af2",
+        "6f00e3e4-cb76-43a9-9580-9906f3f555d3"
       ],
       "settings": {
         "heading": "Bestellung",
