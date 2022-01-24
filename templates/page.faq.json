@@ -180,12 +180,48 @@
         "heading": "Zahlung",
         "color_scheme": "background-1"
       }
+    },
+    "164302374387205872": {
+      "type": "faq",
+      "blocks": {
+        "8a15c296-dff5-4b9d-95c5-de8e168519b5": {
+          "type": "text",
+          "settings": {
+            "question": "Wie lange dauert der Versand?",
+            "answer": "<p>Die Lieferzeit liegt in der Regel innerhalb Deutschlands bei ca. 1-3 Werktagen, innerhalb der EU bei ca. 3-5 Werktagen. <\/p>"
+          }
+        },
+        "c910f519-fda8-4c10-80d9-6714fccf5e04": {
+          "type": "text",
+          "settings": {
+            "question": "In welche Länder wird sleep.ink® versendet?",
+            "answer": "<p>Bestellungen werden innerhalb Deutschlands, nach Österreich und in die Schweiz versendet. <\/p>"
+          }
+        },
+        "524919a0-fd32-4cad-8d9a-b81c59742814": {
+          "type": "text",
+          "settings": {
+            "question": "Was kostet der Versand?",
+            "answer": "<p><strong>Ab einem Bestellwert von 29€ liefern wir versandkostenfrei.<\/strong><\/p><p>Für Bestellungen unter 29€ werden innerhalb Deutschlands Versandkosten von <strong>3,80€ <\/strong>berechnet. <\/p><p>Für Lieferungen ins Ausland werden die Versandkosten pauschal wie folgt berechnet:<\/p><p><strong>Österreich: 6,49 €<\/strong><\/p><p><strong>Schweiz: 14,90 €<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8a15c296-dff5-4b9d-95c5-de8e168519b5",
+        "c910f519-fda8-4c10-80d9-6714fccf5e04",
+        "524919a0-fd32-4cad-8d9a-b81c59742814"
+      ],
+      "settings": {
+        "heading": "Versand und Lieferung",
+        "color_scheme": "background-1"
+      }
     }
   },
   "order": [
     "hero",
     "faq",
     "1643023319a70e2cf1",
-    "164302362563ba4abc"
+    "164302362563ba4abc",
+    "164302374387205872"
   ]
 }
