@@ -35,12 +35,20 @@
             "question": "Wirken die Produkte ab der ersten Einnahme?",
             "answer": "<p>Ja, die Produkte wirken ab der ersten Anwendung. Das bedeutet, dass man die Schlafprodukte situativ nach Bedarf einnehmen kann und der Effekt nicht erst über einen längeren Zeitraum der Einnahme eintritt.<\/p>"
           }
+        },
+        "848749d4-bf2d-4c79-9936-ed31d8af4394": {
+          "type": "text",
+          "settings": {
+            "question": "Gibt es Studien zur Wirksamkeit?",
+            "answer": "<p>Im Vergleich zu vielen anderen Produkten ist die Wirkung unserer Schlafprodukte aufgrund der breiten Studienlage der von uns verwendeten Inhaltsstoffe wissenschaftlich bewiesen. <\/p><p>Selbst die Europäische Behörde für Lebensmittelsicherheit, kurz EFSA, erkennt offizielle Gesundheitsaussagen, genannt Health Claims, an.<\/p><p>Eine Aufstellung der Studien ist in unserer Studienübersicht zu finden. <\/p>"
+          }
         }
       },
       "block_order": [
         "20308ff2-483a-4826-b81d-a75c0363c49b",
         "3e459477-14d8-4d34-9b6a-f4508ab880ad",
-        "c6a770da-fffb-47cb-a8a3-0551c5ff70f0"
+        "c6a770da-fffb-47cb-a8a3-0551c5ff70f0",
+        "848749d4-bf2d-4c79-9936-ed31d8af4394"
       ],
       "settings": {
         "heading": "Allgemeine Fragen",
