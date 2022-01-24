@@ -285,6 +285,26 @@
     },
     "1643023924e3445a3d": {
       "type": "faq",
+      "blocks": {
+        "38ade313-c4cc-4c4b-8af8-9d92c3f5e864": {
+          "type": "text",
+          "settings": {
+            "question": "Wie kann man einen Rabattcode einlösen?",
+            "answer": "<p>Besuchen Sie einfach unseren Shop unter <a href=\"http:\/\/www.sleep.ink\"><span style=\"text-decoration:underline\">www.sleep.ink<\/span><\/a>. Nachdem Sie die gewünschten Produkte in den Warenkorb gelegt haben, geben Sie den Rabattcode im Checkout in das Gutscheinfeld ein und der Wert wird automatisch um den Gutschein reduziert. Wir behalten uns dabei das Recht vor, Rabatt-Kombination einzugrenzen.<\/p>"
+          }
+        },
+        "1aa70c5c-a259-45f0-a0bd-d4075969c153": {
+          "type": "text",
+          "settings": {
+            "question": "Können Rabattcodes kombiniert werden?",
+            "answer": "<p>Es ist leider nicht möglich, Gutscheine zu kombinieren.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "38ade313-c4cc-4c4b-8af8-9d92c3f5e864",
+        "1aa70c5c-a259-45f0-a0bd-d4075969c153"
+      ],
       "settings": {
         "heading": "Gutscheine",
         "color_scheme": "background-1"
