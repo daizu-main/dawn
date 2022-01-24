@@ -5160,10 +5160,6 @@ deferred-media {
   object-position: 50% 50%;
 }
 
-#starhalf {
-  visibility: visible;
-}
-
 .bewertungen {
   margin-bottom: 24px;
   font-family: var(--font-body-family);
