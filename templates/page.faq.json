@@ -241,13 +241,52 @@
             "question": "Wie kann eine Bestellung retourniert werden?",
             "answer": "<p>In unserem Hilfecenter finden Sie das  <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Rücksendedokument<\/span><\/a> um ihre Ware ordnungsgemäß an uns zurückzusenden. <\/p>"
           }
+        },
+        "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f": {
+          "type": "text",
+          "settings": {
+            "question": "Was tun, wenn die Bestellung fehlerhaft geliefert wurde?",
+            "answer": "<p>Bitte kontaktieren Sie in diesem Fall unseren Kundenservice über das <a href=\"https:\/\/sleep.ink\/kontakt\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf oder schreiben eine E-Mail an hallo@sleep.ink. <\/p>"
+          }
+        },
+        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788": {
+          "type": "text",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "df59ebd0-af87-4e3d-b759-bc373031d6dd": {
+          "type": "text",
+          "settings": {
+            "question": "Wie funktioniert die Geld-Zurück-Garantie?",
+            "answer": "<p>Für unsere Produkte bieten wir zusätzlich zum gesetzlich vorgeschriebenen Widerrufsrecht eine erweiterte freiwillige 30 Tage Geld-zurück-Garantie an. Sollten Sie mit einem erworbenen Produkt nicht zufrieden sein und auch noch nicht die Hälfte verbraucht haben, dann finden Sie hier entsprechend unsere <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Informationen und Rücksendedokument<\/span><\/a>. <\/p>"
+          }
+        },
+        "d77b08da-4328-4083-b692-2b70dfa707d2": {
+          "type": "text",
+          "settings": {
+            "question": "Ist das Abo jederzeit kündbar?",
+            "answer": "<p>Ja, Sie können Ihr Abo jederzeit und ohne Angabe von Gründen kündigen. Bitte nutzen Sie hierfür Ihren persönlichen <a href=\"https:\/\/shop.sleep.ink\/account\/login?return_url=%2Faccount%3F_ga%3D2.55973739.1976536996.1642404775-856071152.1625680582\"><span style=\"text-decoration:underline\">Login<\/span><\/a>.<\/p>"
+          }
         }
       },
       "block_order": [
-        "f229da51-9234-435c-88a5-f44a38c703c6"
+        "f229da51-9234-435c-88a5-f44a38c703c6",
+        "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f",
+        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788",
+        "df59ebd0-af87-4e3d-b759-bc373031d6dd",
+        "d77b08da-4328-4083-b692-2b70dfa707d2"
       ],
       "settings": {
         "heading": "Retoure und Garantie",
+        "color_scheme": "background-1"
+      }
+    },
+    "1643023924e3445a3d": {
+      "type": "faq",
+      "settings": {
+        "heading": "Gutscheine",
         "color_scheme": "background-1"
       }
     }
@@ -258,6 +297,7 @@
     "1643023319a70e2cf1",
     "164302362563ba4abc",
     "164302374387205872",
-    "16430237989332a5da"
+    "16430237989332a5da",
+    "1643023924e3445a3d"
   ]
 }
