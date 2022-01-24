@@ -84,6 +84,13 @@
             "question": "Wo kann man die Produkte im Handel kaufen?",
             "answer": "<p>Neben dem Online-Shop sind die sleep.ink® Schlafprodukte mittlerweile deutschlandweit im stationären Handel in der Apotheke und Partnern wie Douglas, Sanitätshäusern und der Drogerie Bipa erhätlich.<\/p>"
           }
+        },
+        "a73d4a00-e09e-4d15-88d7-2186636f31f2": {
+          "type": "text",
+          "settings": {
+            "question": "Welche Firma steckt hinter sleep.ink®?",
+            "answer": "<p>Hinter der Marke sleep.ink® steht das Berliner Jungunternehmen Daizu GmbH. Gemeinsam mit Schlafforschern und Experten aus der Pharmaindustrie, entwickeln wir seit 2017 natürliche wirkende Schlafprodukte mit hoch wissenschaftlichem Ansatz und wurden dafür bereits mehrfach ausgezeichnet. Seit 2018 operiert sleep.ink® unter dem Dach des familiengeführten Pharmaunternehmens DR.KADE Health Care mit über 140 Jahren Expertise.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -96,7 +103,8 @@
         "65cec467-effb-47ff-95e1-b338d90d26c5",
         "27a268ed-e267-4b45-a39d-cba517137631",
         "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6",
-        "d832fa03-94bc-4e88-aee6-9b243be22d5c"
+        "d832fa03-94bc-4e88-aee6-9b243be22d5c",
+        "a73d4a00-e09e-4d15-88d7-2186636f31f2"
       ],
       "settings": {
         "heading": "Allgemeine Fragen",
