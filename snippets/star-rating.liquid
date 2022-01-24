@@ -14,19 +14,19 @@
       {% if wholeRating > 0 %}
         {% for i in (1..wholeRating) %}
           <span>
-            {%- render 'icon-star', currentColor: "#ffd900" -%}
+            {%- render 'star-yellow-full' -%}
           </span>
         {% endfor %}
       {% endif %}
       {% if halfStars == 1 %}
         <span>
-          {%- render 'icon-star-half' -%}
+          {%- render 'star-yellow-half' -%}
         </span>
       {% endif %}
       {% if missing_stars > 0 %}
         {% for j in (1..missing_stars) %}
           <span>
-            {%- render 'icon-star', currentColor: "#dddddd" -%}
+            {%- render 'star-yellow-none' -%}
           </span>
         {% endfor %}
       {% endif %}
@@ -40,19 +40,19 @@
         {% if wholeRating > 0 %}
           {% for i in (1..wholeRating) %}
             <span>
-              {%- render 'icon-star', currentColor: "#ffd900" -%}
+              {%- render 'star-yellow-full' -%}
             </span>
           {% endfor %}
         {% endif %}
         {% if halfStars == 1 %}
           <span>
-            {%- render 'icon-star-half' -%}
+            {%- render 'star-yellow-half' -%}
           </span>
         {% endif %}
         {% if missing_stars > 0 %}
           {% for j in (1..missing_stars) %}
             <span>
-              {%- render 'icon-star', currentColor: "#dddddd" -%}
+              {%- render 'star-yellow-none' -%}
             </span>
           {% endfor %}
         {% endif %}
@@ -65,19 +65,19 @@
       {% if wholeRating > 0 %}
         {% for i in (1..wholeRating) %}
           <span>
-            {%- render 'icon-star', currentColor: "#ffd900" -%}
+            {%- render 'star-yellow-full' -%}
           </span>
         {% endfor %}
       {% endif %}
       {% if halfStars == 1 %}
         <span>
-          {%- render 'icon-star-half' -%}
+          {%- render 'star-yellow-half' -%}
         </span>
       {% endif %}
       {% if missing_stars > 0 %}
         {% for j in (1..missing_stars) %}
           <span>
-            {%- render 'icon-star', currentColor: "#dddddd" -%}
+            {%- render 'star-yellow-none' -%}
           </span>
         {% endfor %}
       {% endif %}
@@ -91,17 +91,17 @@
       {% if rating > 0 %}
         {% for i in (1..fullRating) %}
           <span>
-            {%- render 'icon-star', currentColor: "#ffd900" -%}
+            {%- render 'star-yellow-full' -%}
           </span>
         {% endfor %}
       {% endif %}
       {% if halfStars == 1 %}
-        {%- render 'icon-star-half' -%}
+        {%- render 'star-yellow-half' -%}
       {% endif %}
       {% if missingStars > 0 %}
         {% for j in (1..missingStars) %}
           <span>
-            {%- render 'icon-star', currentColor: "#dddddd" -%}
+            {%- render 'star-yellow-none' -%}
           </span>
         {% endfor %}
       {% endif %}
@@ -112,19 +112,19 @@
       {% if wholeRating > 0 %}
         {% for i in (1..wholeRating) %}
           <span style="position: relative; top: 2px;"">
-            {%- render 'icon-star', currentColor: "#ffd900" -%}
+            {%- render 'star-yellow-full' -%}
           </span>
         {% endfor %}
       {% endif %}
       {% if halfStars == 1 %}
         <span style="position: relative; top: 2px;">
-          {%- render 'icon-star-half' -%}
+          {%- render 'star-yellow-half' -%}
         </span>
       {% endif %}
       {% if missing_stars > 0 %}
         {% for j in (1..missing_stars) %}
           <span style="position: relative; top: 2px;">
-            {%- render 'icon-star', currentColor: "#dddddd" -%}
+            {%- render 'star-yellow-none' -%}
           </span>
         {% endfor %}
       {% endif %}
