@@ -56,6 +56,13 @@
             "question": "Wie fühlt man sich am Morgen nach der Einnahme?",
             "answer": "<p>Die in den Produkten enthaltenen Wirkstoffe sind am Morgen nach der Einnahme bereits verstoffwechselt. Eine Art “Kater”-Gefühl, Überhangeffekte oder übermäßige Müdigkeit am nächsten Morgen treten somit nicht auf.<\/p>"
           }
+        },
+        "65cec467-effb-47ff-95e1-b338d90d26c5": {
+          "type": "text",
+          "settings": {
+            "question": "Machen die Produkte abhängig?",
+            "answer": "<p>Nein. Aufgrund der natürlichen Formulierung unserer Produkte gibt es weder einen Gewöhnungseffekt, noch Abhängigkeitspotenziale.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -64,7 +71,8 @@
         "c6a770da-fffb-47cb-a8a3-0551c5ff70f0",
         "848749d4-bf2d-4c79-9936-ed31d8af4394",
         "d3cd5f7e-8be2-4e17-95cc-a93da41bc5df",
-        "ae4074a2-5291-4d8a-b2a4-5d55288edac2"
+        "ae4074a2-5291-4d8a-b2a4-5d55288edac2",
+        "65cec467-effb-47ff-95e1-b338d90d26c5"
       ],
       "settings": {
         "heading": "Allgemeine Fragen",
