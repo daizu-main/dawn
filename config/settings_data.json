@@ -53,7 +53,7 @@
           "logo": "shopify:\/\/shop_images\/SleepInk_e2b723b3-ecee-4554-a41f-8ef9f12bcfb1.png",
           "logo_width": 180,
           "menu": "headermenu",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": true
         }
       },
