@@ -231,6 +231,25 @@
         "heading": "Versand und Lieferung",
         "color_scheme": "background-1"
       }
+    },
+    "16430237989332a5da": {
+      "type": "faq",
+      "blocks": {
+        "f229da51-9234-435c-88a5-f44a38c703c6": {
+          "type": "text",
+          "settings": {
+            "question": "Wie kann eine Bestellung retourniert werden?",
+            "answer": "<p>In unserem Hilfecenter finden Sie das  <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Rücksendedokument<\/span><\/a> um ihre Ware ordnungsgemäß an uns zurückzusenden. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f229da51-9234-435c-88a5-f44a38c703c6"
+      ],
+      "settings": {
+        "heading": "Retoure und Garantie",
+        "color_scheme": "background-1"
+      }
     }
   },
   "order": [
@@ -238,6 +257,7 @@
     "faq",
     "1643023319a70e2cf1",
     "164302362563ba4abc",
-    "164302374387205872"
+    "164302374387205872",
+    "16430237989332a5da"
   ]
 }
