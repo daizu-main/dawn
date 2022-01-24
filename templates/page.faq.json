@@ -21,10 +21,18 @@
             "question": "Wo werden die Produkte hergestellt?",
             "answer": "<p>Die sleep.ink® Produkte zum Ein- und Durchschlafen werden bis auf das Schlafspray, welches in Österreich produziert wird,  in Deutschland hergestellt.<\/p>"
           }
+        },
+        "3e459477-14d8-4d34-9b6a-f4508ab880ad": {
+          "type": "text",
+          "settings": {
+            "question": "Sind die Produkte von sleep.ink® zertifiziert?",
+            "answer": "<p>Ja. Alle sleep.ink® Schlafprodukte sind unter EInhaltung höchster Qualitätsstandards zertifiziert und als sichere Nahrungsergänzungsmittel zugelassen.<\/p>"
+          }
         }
       },
       "block_order": [
-        "20308ff2-483a-4826-b81d-a75c0363c49b"
+        "20308ff2-483a-4826-b81d-a75c0363c49b",
+        "3e459477-14d8-4d34-9b6a-f4508ab880ad"
       ],
       "settings": {
         "heading": "",
