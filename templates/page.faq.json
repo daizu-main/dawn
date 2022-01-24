@@ -120,10 +120,18 @@
             "question": "Warum kam nach der Bestellung keine Bestätigungsmail?",
             "answer": "<p>Nach Eingang Ihrer Bestellung erhalten Sie eine Bestellbestätigung per E-Mail von uns. Prüfen Sie bitte ggf. auch Ihren Spam-Ordner. Sollte sich auch dort keine Bestellbestätigung befinden, kontaktieren Sie bitte unseren Kundenservice über das <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf unserer Website oder per E-Mail (hallo@sleep.ink)<strong>. <\/strong><\/p>"
           }
+        },
+        "3ab628c1-d404-4e10-bd21-5182323786cd": {
+          "type": "text",
+          "settings": {
+            "question": "Ist der Kauf abgesichert?",
+            "answer": "<p>Ja, der Kauf wird automatisch über den Käuferschutz unseres Partners Trusted Shops abgesichert.<\/p>"
+          }
         }
       },
       "block_order": [
-        "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a"
+        "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a",
+        "3ab628c1-d404-4e10-bd21-5182323786cd"
       ],
       "settings": {
         "heading": "Bestellung",
