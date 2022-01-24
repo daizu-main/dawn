@@ -28,14 +28,22 @@
             "question": "Sind die Produkte von sleep.ink® zertifiziert?",
             "answer": "<p>Ja. Alle sleep.ink® Schlafprodukte sind unter EInhaltung höchster Qualitätsstandards zertifiziert und als sichere Nahrungsergänzungsmittel zugelassen.<\/p>"
           }
+        },
+        "c6a770da-fffb-47cb-a8a3-0551c5ff70f0": {
+          "type": "text",
+          "settings": {
+            "question": "Wirken die Produkte ab der ersten Einnahme?",
+            "answer": "<p>Ja, die Produkte wirken ab der ersten Anwendung. Das bedeutet, dass man die Schlafprodukte situativ nach Bedarf einnehmen kann und der Effekt nicht erst über einen längeren Zeitraum der Einnahme eintritt.<\/p>"
+          }
         }
       },
       "block_order": [
         "20308ff2-483a-4826-b81d-a75c0363c49b",
-        "3e459477-14d8-4d34-9b6a-f4508ab880ad"
+        "3e459477-14d8-4d34-9b6a-f4508ab880ad",
+        "c6a770da-fffb-47cb-a8a3-0551c5ff70f0"
       ],
       "settings": {
-        "heading": "",
+        "heading": "Allgemeine Fragen",
         "color_scheme": "background-1"
       }
     }
