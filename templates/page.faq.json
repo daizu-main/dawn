@@ -153,11 +153,31 @@
         "heading": "Bestellung",
         "color_scheme": "background-1"
       }
+    },
+    "164302362563ba4abc": {
+      "type": "faq",
+      "blocks": {
+        "bc38d820-a0e1-40c9-a68f-6a21c69ff76c": {
+          "type": "text",
+          "settings": {
+            "question": "Welche Zahlungsarten gibt es?",
+            "answer": "<p>Wir bieten folgende Zahlungsmöglichkeiten an: PayPal, Rechnung mit Klarna, Ratenkauf mit Klarna, Kreditkarte (VISA, Mastercard, AmericanExpress), Sofortkauf mit Klarna und Vorkasse.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bc38d820-a0e1-40c9-a68f-6a21c69ff76c"
+      ],
+      "settings": {
+        "heading": "Zahlung",
+        "color_scheme": "background-1"
+      }
     }
   },
   "order": [
     "hero",
     "faq",
-    "1643023319a70e2cf1"
+    "1643023319a70e2cf1",
+    "164302362563ba4abc"
   ]
 }
