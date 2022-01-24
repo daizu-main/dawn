@@ -14,7 +14,7 @@
             "uppercaseTitle": false,
             "text": "Mehr als 75.000 zufriedene Kunden.",
             "url": "shopify:\/\/collections",
-            "buttonDesign": "outlined",
+            "buttonDesign": "filled",
             "buttonText": "Jetzt einkaufen",
             "overlay": true
           }
