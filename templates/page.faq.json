@@ -110,10 +110,30 @@
         "heading": "Allgemeine Fragen",
         "color_scheme": "background-1"
       }
+    },
+    "1643023319a70e2cf1": {
+      "type": "faq",
+      "blocks": {
+        "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a": {
+          "type": "text",
+          "settings": {
+            "question": "Warum kam nach der Bestellung keine Bestätigungsmail?",
+            "answer": "<p>Nach Eingang Ihrer Bestellung erhalten Sie eine Bestellbestätigung per E-Mail von uns. Prüfen Sie bitte ggf. auch Ihren Spam-Ordner. Sollte sich auch dort keine Bestellbestätigung befinden, kontaktieren Sie bitte unseren Kundenservice über das <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf unserer Website oder per E-Mail (hallo@sleep.ink)<strong>. <\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a"
+      ],
+      "settings": {
+        "heading": "Bestellung",
+        "color_scheme": "background-1"
+      }
     }
   },
   "order": [
     "hero",
-    "faq"
+    "faq",
+    "1643023319a70e2cf1"
   ]
 }
