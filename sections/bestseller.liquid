@@ -40,7 +40,7 @@
                 {% assign variant_id = variant.id %}
                 <li class="grid__item slider__slide px-0">
                   <div>
-                    <div class="flex column ai-c pb-5 mx-auto mxw-300px mnw-300px w-100p">
+                    <div class="flex column ai-c pb-5 mx-auto w-280px">
                       <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                         <div class="square col-1 row-1">
                           {% if product.settings.image %}
@@ -162,7 +162,7 @@
                     {% for variant in product.settings.product.variants %}
                       {% if variant.sku == sku %}
                         {% assign variant_id = variant.id %}
-                        <div class="flex column ai-c pb-5 mx-auto mxw-300px mnw-210px w-100p">
+                        <div class="flex column ai-c pb-5 mx-auto w-280px">
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                             <div class="square col-1 row-1">
                               {% if product.settings.image %}
@@ -288,15 +288,15 @@
                     {% for variant in product.settings.product.variants %}
                       {% if variant.sku == sku %}
                         {% assign variant_id = variant.id %}
-                        <div class="flex column ai-c pb-5 mx-unset w-100p">
+                        <div class="flex column ai-c pb-5 mx-unset w-280px">
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                             <div class="square col-1 row-1">
                               {% if product.settings.image %}
-                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain w-100p h-auto">
                               {% elsif variant.featured_image %}
-                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain w-100p h-auto">
                               {% else %}
-                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain w-100p h-auto">
                               {% endif %}
                               <div class="col-1 row-1 pos-abs l-0 t-16px">
                                 {% assign tags = product.settings.product.metafields.global.tags | split: ", " %}
