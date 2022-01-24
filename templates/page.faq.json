@@ -70,6 +70,13 @@
             "question": "Können die Produkte in Kombination mit anderen Medikamenten eingenommen werden?",
             "answer": "<p>Auch wenn keine Wechselwirkungen mit anderen Medikamenten bekannt sind, empfehlen wir in diesem Fall mit Ihrem Hausarzt über die Einnahme von sleep.ink® zu sprechen.<\/p>"
           }
+        },
+        "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6": {
+          "type": "text",
+          "settings": {
+            "question": "Sind die Produkte vegan?",
+            "answer": "<p>Ja, alle Schlafprodukte von sleep.ink® sind vegan. Darüber hinaus sind die meisten der Produkte gluten-, laktose- und zuckerfrei.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -80,7 +87,8 @@
         "d3cd5f7e-8be2-4e17-95cc-a93da41bc5df",
         "ae4074a2-5291-4d8a-b2a4-5d55288edac2",
         "65cec467-effb-47ff-95e1-b338d90d26c5",
-        "27a268ed-e267-4b45-a39d-cba517137631"
+        "27a268ed-e267-4b45-a39d-cba517137631",
+        "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6"
       ],
       "settings": {
         "heading": "Allgemeine Fragen",
