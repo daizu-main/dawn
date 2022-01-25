@@ -4695,7 +4695,7 @@ sleepink-slider::after {
   box-shadow: rgba(27, 45, 69, 0.1) 0px 5px 10px 0px;
   margin-left: 0;
   position: relative;
-  bottom: 320px;
+  bottom: clamp(350px, 22vw + 240px, 385px);
 }
 
 .bestseller-button-mobile {
