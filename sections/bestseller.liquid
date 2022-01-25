@@ -312,7 +312,7 @@
                             <div class="flex row jc-c ai-fs ml-2 mr-3 mb-4 h-16px">
                               {% render 'star-rating', rating: product.settings.product.metafields.global.rating.value, reviewCount: product.settings.product.metafields.global.reviewCount.value, type: 'bestseller' %}
                             </div>
-                            <h3 class="ff-heading fs-3 lh-110 ls-m100 fw-400 ta-c mb-2">
+                            <h3 class="ff-heading fs-3 lh-110 ls-m100 fw-400 ta-c mb-0">
                               {% if variant.metafields.global.variantName.value %}
                                 {{ variant.metafields.global.variantName.value | escape }}
                               {% elsif product.settings.product.metafields.global.productName.value %}
