@@ -1041,10 +1041,10 @@ button:active {
 .submit {
   text-align: center;
   text-transform: uppercase;
-  padding-top: 13.85px;
-  padding-bottom: 10.85px;
-  padding-left: 14.7933px;
-  padding-right: 14.7933px;
+  padding-top: 14px; /*13.85px; */
+  padding-bottom: 13px; /*10.85px;*/
+  padding-left: 16px; /*14.7933px;*/
+  padding-right: 16px; /*14.7933px;*/
   margin-top: 16px;
   margin-right: 4px;
   margin-bottom: 16px;
@@ -1054,10 +1054,10 @@ button:active {
 .linkbutton-to-product-page {
   text-align: center;
   text-transform: uppercase;
-  padding-top: 12.95px;
-  padding-bottom: 11.05px;
-  padding-left: 14.7933px;
-  padding-right: 14.7933px;
+  padding-top: 14.5px; /*14.3px;*/
+  padding-bottom: 14.5px; /*12.4px;*/
+  padding-left: 16px; /*14.7933px;*/
+  padding-right: 16px; /*14.7933px;*/
   margin-top: 16px;
   margin-right: 4px;
   margin-bottom: 16px;
@@ -3126,6 +3126,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   width: 269px;
 }
 
+.w-280px {
+  width: 280px;
+}
+
 .w-300px {
   width: 300px;
 }
@@ -4664,7 +4668,7 @@ sleepink-slider::after {
   box-shadow: rgba(27, 45, 69, 0.1) 0px 5px 10px 0px;
   margin-left: 0;
   position: relative;
-  bottom: 350px;
+  bottom: clamp(370px, 10vw + 270px, 400px);
 }
 
 .bestseller-button:first-of-type {
@@ -4691,7 +4695,7 @@ sleepink-slider::after {
   box-shadow: rgba(27, 45, 69, 0.1) 0px 5px 10px 0px;
   margin-left: 0;
   position: relative;
-  bottom: 320px;
+  bottom: clamp(350px, 22vw + 240px, 385px);
 }
 
 .bestseller-button-mobile {
@@ -4711,7 +4715,7 @@ sleepink-slider::after {
   box-shadow: rgba(27, 45, 69, 0.1) 0px 5px 10px 0px;
   margin-left: 0;
   position: relative;
-  bottom: 320px;
+  bottom: 385px;
 }
 
 .produktpreview-button {

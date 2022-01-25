@@ -40,15 +40,15 @@
                 {% assign variant_id = variant.id %}
                 <li class="grid__item slider__slide px-0">
                   <div>
-                    <div class="flex column ai-c pb-5 mx-auto mxw-300px mnw-300px w-100p">
+                    <div class="flex column ai-c pb-5 mx-auto w-280px">
                       <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                         <div class="square col-1 row-1">
                           {% if product.settings.image %}
-                            <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="300" height="300" loading="lazy" class="contain w-300px h-300px">
+                            <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain w-280px h-280px">
                           {% elsif variant.featured_image %}
-                            <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-300px h-300px">
+                            <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain w-280px h-280px">
                           {% else %}
-                            <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-300px h-300px">
+                            <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain w-280px h-280px">
                           {% endif %}
                           <div class="col-1 row-1 pos-abs l-0 t-10px t-lg-16px">
                             {% assign tags = product.settings.product.metafields.global.tags.value | split: ', ' %}
@@ -61,44 +61,10 @@
                         </div>
                       </a>
                       <div>
-                        <div class="flex row jc-c ai-c ml-2 mr-3 mb-2 h-16px">
-                          {% liquid 
-                            assign rating = product.settings.product.metafields.global.rating.value
-                            assign wholeRating = rating | floor
-                            assign missing_stars = 5 | minus: rating | floor
-                            assign sum = wholeRating | plus: missing_stars
-                            if sum != 5
-                              assign halfStars = 1
-                            else
-                              assign halfStars = 0
-                            endif
-                          %}
-                          {% if wholeRating > 0 %}
-                            {% for i in (1..wholeRating) %}
-                              <span>
-                                {%- render 'icon-star', currentColor: "#ffd900" -%}
-                              </span>
-                            {% endfor %}
-                          {% endif %}
-                          {% if halfStars == 1 %}
-                            <span>
-                              {%- render 'icon-star-half' -%}
-                            </span>
-                          {% endif %}
-                          {% if missing_stars > 0 %}
-                            {% for j in (1..missing_stars) %}
-                              <span>
-                                {%- render 'icon-star', currentColor: "#dddddd" -%}
-                              </span>
-                            {% endfor %}
-                          {% endif %}
+                        <div class="flex row jc-c ai-fs ml-2 mr-3 mb-4 h-16px">
+                          {% render 'star-rating', rating: product.settings.product.metafields.global.rating.value, reviewCount: product.settings.product.metafields.global.reviewCount.value, type: 'bestseller' %}
                         </div>
-                        {% assign reviewCount = product.settings.product.metafields.global.reviewCount %}
-                        <div class="ff-body fw-400 fs-12px lh-100 mt-0 ta-c">
-                          ({% if reviewCount > 0 %}{{ reviewCount }} {% else %}0 {% endif %}
-                          {% if reviewCount == 1 %}Bewertung{% else %}Bewertungen{% endif %})
-                        </div>
-                        <h3 class="ff-heading fs-1 lh-100 ls-m100 fw-400 ta-c mb-1 mt-5">
+                        <h3 class="ff-heading fs-1 lh-100 ls-m100 fw-400 ta-c mb-2">
                           {% if variant.metafields.global.variantName.value %}
                             {{ variant.metafields.global.variantName.value | escape }}
                           {% elsif product.metafields.global.productName.value %}
@@ -109,7 +75,7 @@
                             {{ product.title | remove: 'sleep.ink' }}
                           {% endif %}
                         </h3>
-                        <p class="ff-body fs-11px lh-145 fw-300 ta-c mb-5">
+                        <p class="ff-body fs-11px lh-145 fw-300 ta-c mb-4">
                           {% if variant.metafields.global.description %}
                             {{ variant.metafields.global.description | escape }}
                           {% elsif product.settings.product.metafields.global.description %}
@@ -130,7 +96,7 @@
                           <form method="post" action="/cart/add">
                             <input type="hidden" name="id" value="{{ variant_id }}" />
                             <input type="hidden" name="quantity" value="1" id="quantity" />
-                            <button type="submit" class="submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                            <button type="submit" class="submit fs-15px" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
                               {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                             </button>
                           </form>
@@ -180,7 +146,7 @@
 
           {%- for s in (1..numberOfSlides) -%}
             <li class="grid__item slider__slide px-0">
-              <div class="ngrid twocol gap-4">
+              <div class="ngrid twocol gap-4 mx-auto" style="width: clamp(412px,100vw - 88px,902px);">
                 {%- for p in (0..1) -%}
                   {% assign index = s | times: 2 | minus: 2 | plus: p %}
                   {% assign product = products[index] %}
@@ -196,15 +162,15 @@
                     {% for variant in product.settings.product.variants %}
                       {% if variant.sku == sku %}
                         {% assign variant_id = variant.id %}
-                        <div class="flex column ai-c pb-5 mx-auto mxw-300px mnw-210px w-100p">
+                        <div class="flex column ai-c pb-5 mx-auto" style="width: clamp(200px, 50vw - 50px, 280px);">
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                             <div class="square col-1 row-1">
                               {% if product.settings.image %}
-                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
                               {% elsif variant.featured_image %}
-                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
                               {% else %}
-                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
                               {% endif %}
                               <div class="col-1 row-1 pos-abs l-0 t-10px">
                                 {% assign tags = product.settings.product.metafields.global.tags | split: ', ' %}
@@ -217,44 +183,10 @@
                             </div>
                           </a>
                           <div>
-                            <div class="flex row jc-c ai-c ml-2 mr-3 mb-2 h-16px">
-                              {% liquid 
-                                assign rating = product.settings.product.metafields.global.rating.value
-                                assign wholeRating = rating | floor
-                                assign missing_stars = 5 | minus: rating | floor
-                                assign sum = wholeRating | plus: missing_stars
-                                if sum != 5
-                                  assign halfStars = 1
-                                else
-                                  assign halfStars = 0
-                                endif
-                              %}
-                              {% if wholeRating > 0 %}
-                                {% for i in (1..wholeRating) %}
-                                  <span>
-                                    {%- render 'icon-star', currentColor: "#ffd900" -%}
-                                  </span>
-                                {% endfor %}
-                              {% endif %}
-                              {% if halfStars == 1 %}
-                                <span>
-                                  {%- render 'icon-star-half' -%}
-                                </span>
-                              {% endif %}
-                              {% if missing_stars > 0 %}
-                                {% for j in (1..missing_stars) %}
-                                  <span>
-                                    {%- render 'icon-star', currentColor: "#dddddd" -%}
-                                  </span>
-                                {% endfor %}
-                              {% endif %}
+                            <div class="flex row jc-c ai-fs ml-2 mr-3 mb-4 h-16px">
+                              {% render 'star-rating', rating: product.settings.product.metafields.global.rating.value, reviewCount: product.settings.product.metafields.global.reviewCount.value, type: 'bestseller' %}
                             </div>
-                            <div class="ff-body fw-400 fs-12px lh-100 mt-0 ta-c">
-                              {% assign reviewCount = product.settings.product.metafields.global.reviewCount.value %}
-                              ({% if reviewCount > 0 %}{{ reviewCount }} {% else %}0 {% endif %}
-                              {% if reviewCount == 1 %}Bewertung{% else %}Bewertungen{% endif %})
-                            </div>
-                            <h3 class="ff-heading fs-1 lh-100 ls-m100 ls-m070 fw-400 ta-c mb-1 mt-5">
+                            <h3 class="ff-heading fs-1 lh-100 ls-m100 ls-m070 fw-400 ta-c mb-2">
                               {% if variant.metafields.global.variantName.value %}
                                 {{ variant.metafields.global.variantName.value | escape }}
                               {% elsif product.settings.product.metafields.global.productName.value %}
@@ -265,7 +197,7 @@
                                 {{ product.settings.product.title | escape }}
                               {% endif %}
                             </h3>
-                            <p class="ff-body fs-12px lh-136 fw-300 ta-c mb-5">
+                            <p class="ff-body fs-12px lh-136 fw-300 ta-c mb-4">
                               {% if variant.metafields.global.description %}
                                 {{ variant.metafields.global.description | escape }}
                               {% elsif product.settings.product.metafields.global.description %}
@@ -286,7 +218,7 @@
                               <form method="post" action="/cart/add">
                                 <input type="hidden" name="id" value="{{ variant_id }}" />
                                 <input type="hidden" name="quantity" value="1" id="quantity" />
-                                <button type="submit" class="submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                                <button type="submit" class="submit fs-15px" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
                                   {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                                 </button>
                               </form>
@@ -340,7 +272,7 @@
 
           {%- for s in (1..numberOfSlides) -%}
             <li class="grid__item slider__slide w-100p px-0">
-              <div class="ngrid fourcol gap-4">
+              <div class="ngrid fourcol gap-4 mx-auto" style="width: clamp(902px,100vw - 88px,1156px);">
                 {%- for p in (0..3) -%}
                   {% assign index = s | times: 4 | minus: 4 | plus: p %}
                   {% assign product = products[index] %}
@@ -356,15 +288,15 @@
                     {% for variant in product.settings.product.variants %}
                       {% if variant.sku == sku %}
                         {% assign variant_id = variant.id %}
-                        <div class="flex column ai-c pb-5 mx-unset w-100p">
+                        <div class="flex column ai-c pb-5 mx-unset" style="width: clamp(215px,25vw - 31px,280px);">
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                             <div class="square col-1 row-1">
                               {% if product.settings.image %}
-                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
                               {% elsif variant.featured_image %}
-                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
                               {% else %}
-                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="300" height="300" loading="lazy" class="contain w-100p h-auto">
+                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
                               {% endif %}
                               <div class="col-1 row-1 pos-abs l-0 t-16px">
                                 {% assign tags = product.settings.product.metafields.global.tags | split: ", " %}
@@ -377,8 +309,10 @@
                             </div>
                           </a>
                           <div>
-                            {% render 'star-rating', rating: product.settings.product.metafields.global.rating.value, reviewCount: product.settings.product.metafields.global.reviewCount.value, type: 'card' %}
-                            <h3 class="ff-heading fs-3 lh-110 ls-m100 fw-400 ta-c mb-1 mt-5">
+                            <div class="flex row jc-c ai-fs ml-2 mr-3 mb-4 h-16px">
+                              {% render 'star-rating', rating: product.settings.product.metafields.global.rating.value, reviewCount: product.settings.product.metafields.global.reviewCount.value, type: 'bestseller' %}
+                            </div>
+                            <h3 class="ff-heading fs-3 lh-110 ls-m100 fw-400 ta-c mb-0">
                               {% if variant.metafields.global.variantName.value %}
                                 {{ variant.metafields.global.variantName.value | escape }}
                               {% elsif product.settings.product.metafields.global.productName.value %}
@@ -389,7 +323,7 @@
                                 {{ product.settings.product.title | escape }}
                               {% endif %}
                             </h3>
-                            <p class="ff-body fs-12px lh-133 fw-300 ta-c mb-5">
+                            <p class="ff-body fs-12px lh-133 fw-300 ta-c mb-4">
                               {% if variant.metafields.global.description.value %}
                                 {{ variant.metafields.global.description.value | escape }}
                               {% elsif product.settings.product.metafields.global.description.value %}
@@ -410,7 +344,7 @@
                               <form method="post" action="/cart/add">
                                 <input type="hidden" name="id" value="{{ variant_id }}" />
                                 <input type="hidden" name="quantity" value="1" id="quantity" />
-                                <button type="submit" class="submit" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                                <button type="submit" class="submit fs-15px" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
                                   {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                                 </button>
                               </form>

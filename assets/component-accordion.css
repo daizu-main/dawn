@@ -18,8 +18,8 @@
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: 0.1rem solid rgba(var(--color-foreground));
-  border-bottom: 0.1rem solid rgba(var(--color-foreground));
+  border-top: 0.1rem solid #e5e5e5;
+  border-bottom: 0.1rem solid #e5e5e5;
 }
 
 .accordion__title {

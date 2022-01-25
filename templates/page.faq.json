@@ -1,0 +1,325 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#111111",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/frauke-desktop.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
+        "text": "Fragen und Antworten"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "20308ff2-483a-4826-b81d-a75c0363c49b": {
+          "type": "text",
+          "settings": {
+            "question": "Wo werden die Produkte hergestellt?",
+            "answer": "<p>Die sleep.ink® Produkte zum Ein- und Durchschlafen werden bis auf das Schlafspray, welches in Österreich produziert wird,  in Deutschland hergestellt.<\/p>"
+          }
+        },
+        "3e459477-14d8-4d34-9b6a-f4508ab880ad": {
+          "type": "text",
+          "settings": {
+            "question": "Sind die Produkte von sleep.ink® zertifiziert?",
+            "answer": "<p>Ja. Alle sleep.ink® Schlafprodukte sind unter EInhaltung höchster Qualitätsstandards zertifiziert und als sichere Nahrungsergänzungsmittel zugelassen.<\/p>"
+          }
+        },
+        "c6a770da-fffb-47cb-a8a3-0551c5ff70f0": {
+          "type": "text",
+          "settings": {
+            "question": "Wirken die Produkte ab der ersten Einnahme?",
+            "answer": "<p>Ja, die Produkte wirken ab der ersten Anwendung. Das bedeutet, dass man die Schlafprodukte situativ nach Bedarf einnehmen kann und der Effekt nicht erst über einen längeren Zeitraum der Einnahme eintritt.<\/p>"
+          }
+        },
+        "848749d4-bf2d-4c79-9936-ed31d8af4394": {
+          "type": "text",
+          "settings": {
+            "question": "Gibt es Studien zur Wirksamkeit?",
+            "answer": "<p>Im Vergleich zu vielen anderen Produkten ist die Wirkung unserer Schlafprodukte aufgrund der breiten Studienlage der von uns verwendeten Inhaltsstoffe wissenschaftlich bewiesen. <\/p><p>Selbst die Europäische Behörde für Lebensmittelsicherheit, kurz EFSA, erkennt offizielle Gesundheitsaussagen, genannt Health Claims, an.<\/p><p>Eine Aufstellung der Studien ist in unserer Studienübersicht zu finden. <\/p>"
+          }
+        },
+        "d3cd5f7e-8be2-4e17-95cc-a93da41bc5df": {
+          "type": "text",
+          "settings": {
+            "question": "Wirken die Produkte ohne Nebenwirkungen?",
+            "answer": "<p>Die einzigartige Formulierung der Schlafprodukte mit Melatonin und verschiedenen Pflanzenextrakten ist so konzipiert, dass Sie keine Nebenwirkungen aufweisen.<\/p>"
+          }
+        },
+        "ae4074a2-5291-4d8a-b2a4-5d55288edac2": {
+          "type": "text",
+          "settings": {
+            "question": "Wie fühlt man sich am Morgen nach der Einnahme?",
+            "answer": "<p>Die in den Produkten enthaltenen Wirkstoffe sind am Morgen nach der Einnahme bereits verstoffwechselt. Eine Art “Kater”-Gefühl, Überhangeffekte oder übermäßige Müdigkeit am nächsten Morgen treten somit nicht auf.<\/p>"
+          }
+        },
+        "65cec467-effb-47ff-95e1-b338d90d26c5": {
+          "type": "text",
+          "settings": {
+            "question": "Machen die Produkte abhängig?",
+            "answer": "<p>Nein. Aufgrund der natürlichen Formulierung unserer Produkte gibt es weder einen Gewöhnungseffekt, noch Abhängigkeitspotenziale.<\/p>"
+          }
+        },
+        "27a268ed-e267-4b45-a39d-cba517137631": {
+          "type": "text",
+          "settings": {
+            "question": "Können die Produkte in Kombination mit anderen Medikamenten eingenommen werden?",
+            "answer": "<p>Auch wenn keine Wechselwirkungen mit anderen Medikamenten bekannt sind, empfehlen wir in diesem Fall mit Ihrem Hausarzt über die Einnahme von sleep.ink® zu sprechen.<\/p>"
+          }
+        },
+        "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6": {
+          "type": "text",
+          "settings": {
+            "question": "Sind die Produkte vegan?",
+            "answer": "<p>Ja, alle Schlafprodukte von sleep.ink® sind vegan. Darüber hinaus sind die meisten der Produkte gluten-, laktose- und zuckerfrei.<\/p>"
+          }
+        },
+        "d832fa03-94bc-4e88-aee6-9b243be22d5c": {
+          "type": "text",
+          "settings": {
+            "question": "Wo kann man die Produkte im Handel kaufen?",
+            "answer": "<p>Neben dem Online-Shop sind die sleep.ink® Schlafprodukte mittlerweile deutschlandweit im stationären Handel in der Apotheke und Partnern wie Douglas, Sanitätshäusern und der Drogerie Bipa erhätlich.<\/p>"
+          }
+        },
+        "a73d4a00-e09e-4d15-88d7-2186636f31f2": {
+          "type": "text",
+          "settings": {
+            "question": "Welche Firma steckt hinter sleep.ink®?",
+            "answer": "<p>Hinter der Marke sleep.ink® steht das Berliner Jungunternehmen Daizu GmbH. Gemeinsam mit Schlafforschern und Experten aus der Pharmaindustrie, entwickeln wir seit 2017 natürliche wirkende Schlafprodukte mit hoch wissenschaftlichem Ansatz und wurden dafür bereits mehrfach ausgezeichnet. Seit 2018 operiert sleep.ink® unter dem Dach des familiengeführten Pharmaunternehmens DR.KADE Health Care mit über 140 Jahren Expertise.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "20308ff2-483a-4826-b81d-a75c0363c49b",
+        "3e459477-14d8-4d34-9b6a-f4508ab880ad",
+        "c6a770da-fffb-47cb-a8a3-0551c5ff70f0",
+        "848749d4-bf2d-4c79-9936-ed31d8af4394",
+        "d3cd5f7e-8be2-4e17-95cc-a93da41bc5df",
+        "ae4074a2-5291-4d8a-b2a4-5d55288edac2",
+        "65cec467-effb-47ff-95e1-b338d90d26c5",
+        "27a268ed-e267-4b45-a39d-cba517137631",
+        "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6",
+        "d832fa03-94bc-4e88-aee6-9b243be22d5c",
+        "a73d4a00-e09e-4d15-88d7-2186636f31f2"
+      ],
+      "settings": {
+        "heading": "Allgemeine Fragen",
+        "color_scheme": "background-1"
+      }
+    },
+    "1643023319a70e2cf1": {
+      "type": "faq",
+      "blocks": {
+        "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a": {
+          "type": "text",
+          "settings": {
+            "question": "Warum kam nach der Bestellung keine Bestätigungsmail?",
+            "answer": "<p>Nach Eingang Ihrer Bestellung erhalten Sie eine Bestellbestätigung per E-Mail von uns. Prüfen Sie bitte ggf. auch Ihren Spam-Ordner. Sollte sich auch dort keine Bestellbestätigung befinden, kontaktieren Sie bitte unseren Kundenservice über das <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf unserer Website oder per E-Mail (hallo@sleep.ink)<strong>. <\/strong><\/p>"
+          }
+        },
+        "3ab628c1-d404-4e10-bd21-5182323786cd": {
+          "type": "text",
+          "settings": {
+            "question": "Ist der Kauf abgesichert?",
+            "answer": "<p>Ja, der Kauf wird automatisch über den Käuferschutz unseres Partners Trusted Shops abgesichert.<\/p>"
+          }
+        },
+        "f44e8039-8c88-4c0b-900f-a59a508e0af2": {
+          "type": "text",
+          "settings": {
+            "question": "Kann die Bestellung widerrufen werden?",
+            "answer": "<p>Ja. Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen die Bestellung, und damit den Kaufvertrag, zu widerrufen.<\/p>"
+          }
+        },
+        "6f00e3e4-cb76-43a9-9580-9906f3f555d3": {
+          "type": "text",
+          "settings": {
+            "question": "Wo ist die Bestellung?",
+            "answer": "<p>Sobald Ihr Paket an DHL übergeben wurde, wird Ihnen per E-Mail die Sendungsnummer zugesandt. So haben Sie stets die Möglichkeit ihre Bestellung zu verfolgen.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a12bae7f-1b72-4d0d-96fd-6f517ac1c04a",
+        "3ab628c1-d404-4e10-bd21-5182323786cd",
+        "f44e8039-8c88-4c0b-900f-a59a508e0af2",
+        "6f00e3e4-cb76-43a9-9580-9906f3f555d3"
+      ],
+      "settings": {
+        "heading": "Bestellung",
+        "color_scheme": "background-1"
+      }
+    },
+    "164302362563ba4abc": {
+      "type": "faq",
+      "blocks": {
+        "bc38d820-a0e1-40c9-a68f-6a21c69ff76c": {
+          "type": "text",
+          "settings": {
+            "question": "Welche Zahlungsarten gibt es?",
+            "answer": "<p>Wir bieten folgende Zahlungsmöglichkeiten an: PayPal, Rechnung mit Klarna, Ratenkauf mit Klarna, Kreditkarte (VISA, Mastercard, AmericanExpress), Sofortkauf mit Klarna und Vorkasse.<\/p>"
+          }
+        },
+        "a01a493e-8f52-47cf-96b0-a25eccaaa397": {
+          "type": "text",
+          "settings": {
+            "question": "Was ist Klarna?",
+            "answer": "<p>Klarna ist ein kundenfreundlicher Zahlungsdienstleister, der die Zahlungsansprüche von Händlern übernimmt und Kundenzahlungen abwickelt. Klarna bietet Ihnen die Möglichkeit, Ihre bestellte Ware mittels Rechnung, Ratenkauf oder Sofortüberweisung zu bezahlen. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bc38d820-a0e1-40c9-a68f-6a21c69ff76c",
+        "a01a493e-8f52-47cf-96b0-a25eccaaa397"
+      ],
+      "settings": {
+        "heading": "Zahlung",
+        "color_scheme": "background-1"
+      }
+    },
+    "164302374387205872": {
+      "type": "faq",
+      "blocks": {
+        "8a15c296-dff5-4b9d-95c5-de8e168519b5": {
+          "type": "text",
+          "settings": {
+            "question": "Wie lange dauert der Versand?",
+            "answer": "<p>Die Lieferzeit liegt in der Regel innerhalb Deutschlands bei ca. 1-3 Werktagen, innerhalb der EU bei ca. 3-5 Werktagen. <\/p>"
+          }
+        },
+        "c910f519-fda8-4c10-80d9-6714fccf5e04": {
+          "type": "text",
+          "settings": {
+            "question": "In welche Länder wird sleep.ink® versendet?",
+            "answer": "<p>Bestellungen werden innerhalb Deutschlands, nach Österreich und in die Schweiz versendet. <\/p>"
+          }
+        },
+        "524919a0-fd32-4cad-8d9a-b81c59742814": {
+          "type": "text",
+          "settings": {
+            "question": "Was kostet der Versand?",
+            "answer": "<p><strong>Ab einem Bestellwert von 29€ liefern wir versandkostenfrei.<\/strong><\/p><p>Für Bestellungen unter 29€ werden innerhalb Deutschlands Versandkosten von <strong>3,80€ <\/strong>berechnet. <\/p><p>Für Lieferungen ins Ausland werden die Versandkosten pauschal wie folgt berechnet:<\/p><p><strong>Österreich: 6,49 €<\/strong><\/p><p><strong>Schweiz: 14,90 €<\/strong><\/p>"
+          }
+        },
+        "0fde0aa8-91b9-406f-a230-4fa5fd20c158": {
+          "type": "text",
+          "settings": {
+            "question": "Lässt sich die Bestellung an eine Packstation liefern?",
+            "answer": "<p>Ja, die Lieferung an eine Packstation ist möglich. Vergessen Sie bitte nicht, Ihre Postnummer mit anzugeben.<\/p>"
+          }
+        },
+        "ae8060c7-30f3-4be5-b307-1ee106f9e2f3": {
+          "type": "text",
+          "settings": {
+            "question": "Mit welchem Versanddienstleister werden die Bestellungen verschickt?",
+            "answer": "<p>Unsere Pakete werden ausschließlich mit DHL oder der Post versendet.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8a15c296-dff5-4b9d-95c5-de8e168519b5",
+        "c910f519-fda8-4c10-80d9-6714fccf5e04",
+        "524919a0-fd32-4cad-8d9a-b81c59742814",
+        "0fde0aa8-91b9-406f-a230-4fa5fd20c158",
+        "ae8060c7-30f3-4be5-b307-1ee106f9e2f3"
+      ],
+      "settings": {
+        "heading": "Versand und Lieferung",
+        "color_scheme": "background-1"
+      }
+    },
+    "16430237989332a5da": {
+      "type": "faq",
+      "blocks": {
+        "f229da51-9234-435c-88a5-f44a38c703c6": {
+          "type": "text",
+          "settings": {
+            "question": "Wie kann eine Bestellung retourniert werden?",
+            "answer": "<p>In unserem Hilfecenter finden Sie das  <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Rücksendedokument<\/span><\/a> um ihre Ware ordnungsgemäß an uns zurückzusenden. <\/p>"
+          }
+        },
+        "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f": {
+          "type": "text",
+          "settings": {
+            "question": "Was tun, wenn die Bestellung fehlerhaft geliefert wurde?",
+            "answer": "<p>Bitte kontaktieren Sie in diesem Fall unseren Kundenservice über das <a href=\"https:\/\/sleep.ink\/kontakt\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf oder schreiben eine E-Mail an hallo@sleep.ink. <\/p>"
+          }
+        },
+        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788": {
+          "type": "text",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "df59ebd0-af87-4e3d-b759-bc373031d6dd": {
+          "type": "text",
+          "settings": {
+            "question": "Wie funktioniert die Geld-Zurück-Garantie?",
+            "answer": "<p>Für unsere Produkte bieten wir zusätzlich zum gesetzlich vorgeschriebenen Widerrufsrecht eine erweiterte freiwillige 30 Tage Geld-zurück-Garantie an. Sollten Sie mit einem erworbenen Produkt nicht zufrieden sein und auch noch nicht die Hälfte verbraucht haben, dann finden Sie hier entsprechend unsere <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Informationen und Rücksendedokument<\/span><\/a>. <\/p>"
+          }
+        },
+        "d77b08da-4328-4083-b692-2b70dfa707d2": {
+          "type": "text",
+          "settings": {
+            "question": "Ist das Abo jederzeit kündbar?",
+            "answer": "<p>Ja, Sie können Ihr Abo jederzeit und ohne Angabe von Gründen kündigen. Bitte nutzen Sie hierfür Ihren persönlichen <a href=\"https:\/\/shop.sleep.ink\/account\/login?return_url=%2Faccount%3F_ga%3D2.55973739.1976536996.1642404775-856071152.1625680582\"><span style=\"text-decoration:underline\">Login<\/span><\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f229da51-9234-435c-88a5-f44a38c703c6",
+        "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f",
+        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788",
+        "df59ebd0-af87-4e3d-b759-bc373031d6dd",
+        "d77b08da-4328-4083-b692-2b70dfa707d2"
+      ],
+      "settings": {
+        "heading": "Retoure und Garantie",
+        "color_scheme": "background-1"
+      }
+    },
+    "1643023924e3445a3d": {
+      "type": "faq",
+      "blocks": {
+        "38ade313-c4cc-4c4b-8af8-9d92c3f5e864": {
+          "type": "text",
+          "settings": {
+            "question": "Wie kann man einen Rabattcode einlösen?",
+            "answer": "<p>Besuchen Sie einfach unseren Shop unter <a href=\"http:\/\/www.sleep.ink\"><span style=\"text-decoration:underline\">www.sleep.ink<\/span><\/a>. Nachdem Sie die gewünschten Produkte in den Warenkorb gelegt haben, geben Sie den Rabattcode im Checkout in das Gutscheinfeld ein und der Wert wird automatisch um den Gutschein reduziert. Wir behalten uns dabei das Recht vor, Rabatt-Kombination einzugrenzen.<\/p>"
+          }
+        },
+        "1aa70c5c-a259-45f0-a0bd-d4075969c153": {
+          "type": "text",
+          "settings": {
+            "question": "Können Rabattcodes kombiniert werden?",
+            "answer": "<p>Es ist leider nicht möglich, Gutscheine zu kombinieren.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "38ade313-c4cc-4c4b-8af8-9d92c3f5e864",
+        "1aa70c5c-a259-45f0-a0bd-d4075969c153"
+      ],
+      "settings": {
+        "heading": "Gutscheine",
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "faq",
+    "1643023319a70e2cf1",
+    "164302362563ba4abc",
+    "164302374387205872",
+    "16430237989332a5da",
+    "1643023924e3445a3d"
+  ]
+}

@@ -1,5 +1,7 @@
 {
   "current": {
+    "social_facebook_link": "https:\/\/facebook.com\/schlafdrink",
+    "social_instagram_link": "https:\/\/instagram.com\/sleep.ink",
     "redirect_external": false,
     "sections": {
       "pre-header": {
@@ -9,6 +11,7 @@
             "type": "preHeader",
             "settings": {
               "text": "Kostenloser Versand ab 29€",
+              "image": "shopify:\/\/shop_images\/Package_256c6637-cfa0-4743-8a80-f2d223de5dc5.png",
               "link": "https:\/\/sleep.ink\/versand",
               "showTrustedShops": false
             }
@@ -25,6 +28,7 @@
             "type": "preHeader",
             "settings": {
               "text": "30 Tage Geld-zurück-Garantie",
+              "image": "shopify:\/\/shop_images\/money-back_dd69af74-ca57-478b-b5cb-bc0c4a8b9e4a.png",
               "link": "https:\/\/sleep.ink\/geld-zurueck-garantie",
               "showTrustedShops": false
             }
@@ -45,10 +49,11 @@
       "sleepink-header": {
         "type": "sleepink-header",
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "inverse",
+          "logo": "shopify:\/\/shop_images\/SleepInk_e2b723b3-ecee-4554-a41f-8ef9f12bcfb1.png",
           "logo_width": 180,
-          "menu": "main-menu",
-          "show_line_separator": true,
+          "menu": "headermenu",
+          "show_line_separator": false,
           "enable_sticky_header": true
         }
       },
@@ -58,22 +63,111 @@
           "sleepink-footer-0": {
             "type": "link_list",
             "settings": {
-              "linkList": "",
+              "linkList": "footermenu1",
+              "showMobile": true
+            }
+          },
+          "b900d3f1-109f-4bd9-bd85-44d18abf253f": {
+            "type": "link_list",
+            "settings": {
+              "linkList": "footermenu2",
               "showMobile": false
             }
           },
           "sleepink-footer-1": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/paypal.png",
               "url": "",
               "largeLogos": false,
               "sections": "payment"
+            }
+          },
+          "11253528-16ac-4854-84b1-80d6b4a57538": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/visa_54320b38-fc31-48c3-bbc8-0a9b69bd3ebd.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "f5d06da7-a568-4194-8548-6f85236d7f48": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mastercard.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "f69428fe-5643-4844-b848-cd3207369095": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icon.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "e172bd09-f4de-423c-8c5f-bc43d864a064": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/klarna-white.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "payment"
+            }
+          },
+          "b0d4a70d-1d44-48df-b0f7-27992236f656": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DHL.png",
+              "url": "",
+              "largeLogos": false,
+              "sections": "shipping"
+            }
+          },
+          "691a7883-95b5-4008-a594-3c30ecf33328": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TS.png",
+              "url": "",
+              "largeLogos": true,
+              "sections": "quality"
+            }
+          },
+          "3764b682-3479-4e7d-b114-ccd0b18161b8": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/GzG.png",
+              "url": "",
+              "largeLogos": true,
+              "sections": "quality"
+            }
+          },
+          "001dcd4c-5969-4046-b728-ea6a16049c65": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SSL.png",
+              "url": "",
+              "largeLogos": true,
+              "sections": "quality"
             }
           }
         },
         "block_order": [
           "sleepink-footer-0",
-          "sleepink-footer-1"
+          "b900d3f1-109f-4bd9-bd85-44d18abf253f",
+          "sleepink-footer-1",
+          "11253528-16ac-4854-84b1-80d6b4a57538",
+          "f5d06da7-a568-4194-8548-6f85236d7f48",
+          "f69428fe-5643-4844-b848-cd3207369095",
+          "e172bd09-f4de-423c-8c5f-bc43d864a064",
+          "b0d4a70d-1d44-48df-b0f7-27992236f656",
+          "691a7883-95b5-4008-a594-3c30ecf33328",
+          "3764b682-3479-4e7d-b114-ccd0b18161b8",
+          "001dcd4c-5969-4046-b728-ea6a16049c65"
         ],
         "settings": {
           "color_scheme": "inverse",
@@ -83,8 +177,9 @@
           "shipping_heading": "Versand",
           "social_heading": "Folge uns",
           "quality_heading": "Qualitätsstandards",
+          "corporate_logo": "shopify:\/\/shop_images\/SleepInk_4890c66d-714e-433b-8db0-1cbec1929c53.png",
           "corporate_slogan": "#allyouneedissleep",
-          "legalLinks": ""
+          "legalLinks": "legalmenu"
         }
       }
     },

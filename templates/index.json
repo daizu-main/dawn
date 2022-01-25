@@ -1,18 +1,142 @@
 {
   "sections": {
     "page-hero": {
-      "type": "page-hero"
+      "type": "page-hero",
+      "blocks": {
+        "7e52d7f7-20f6-45fe-92fe-85656cb770ed": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "inverse",
+            "imageDesktop": "shopify:\/\/shop_images\/frauke-desktop.jpg",
+            "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
+            "video": "",
+            "title": "Endlich besser schlafen!",
+            "uppercaseTitle": false,
+            "text": "Mehr als 75.000 zufriedene Kunden.",
+            "url": "shopify:\/\/collections",
+            "buttonDesign": "filled",
+            "buttonText": "Jetzt einkaufen",
+            "overlay": true
+          }
+        },
+        "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ARD-w.png",
+            "showDesktop": true,
+            "showMobile": true
+          }
+        },
+        "b4fcb627-d690-400b-ae31-0e3d39f1205a": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cosmopolitan-w.png",
+            "showDesktop": true,
+            "showMobile": false
+          }
+        },
+        "0f27e900-35cd-4663-993f-b068b9a1d453": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SZ-w.png",
+            "showDesktop": true,
+            "showMobile": false
+          }
+        },
+        "1f5fe31a-b0c0-4782-ba3b-8d6e907f3457": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Welt-w.png",
+            "showDesktop": true,
+            "showMobile": true
+          }
+        },
+        "73217337-90ce-49e6-addd-1c2d1db4482d": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/InStyle-w.png",
+            "showDesktop": false,
+            "showMobile": true
+          }
+        }
+      },
+      "block_order": [
+        "7e52d7f7-20f6-45fe-92fe-85656cb770ed",
+        "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6",
+        "b4fcb627-d690-400b-ae31-0e3d39f1205a",
+        "0f27e900-35cd-4663-993f-b068b9a1d453",
+        "1f5fe31a-b0c0-4782-ba3b-8d6e907f3457",
+        "73217337-90ce-49e6-addd-1c2d1db4482d"
+      ],
+      "settings": {
+        "introText": "Bekannt aus:",
+        "swipe_on_mobile": true
+      }
     },
     "bestseller": {
-      "type": "bestseller"
+      "type": "bestseller",
+      "blocks": {
+        "bc1b17f2-2bd4-4d76-b693-b9150c790221": {
+          "type": "product",
+          "settings": {
+            "product": "akupressurmatte",
+            "variant": ""
+          }
+        },
+        "1eb0f07e-2718-4972-b933-345fc90826b0": {
+          "type": "product",
+          "settings": {
+            "product": "duftkerze",
+            "variant": ""
+          }
+        },
+        "1a38d4db-9dee-4338-bc0d-7af2bf5efc0c": {
+          "type": "product",
+          "settings": {
+            "product": "schlafmaske",
+            "variant": ""
+          }
+        },
+        "5b1caa4d-6c99-4794-b7a7-226f4c3b90a2": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-relax",
+            "variant": ""
+          }
+        },
+        "26621dfd-37c7-4d7c-b6c4-1f5030c5f22b": {
+          "type": "product",
+          "settings": {
+            "product": "schlafessenz",
+            "variant": ""
+          }
+        },
+        "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6": {
+          "type": "product",
+          "settings": {
+            "product": "teeflasche",
+            "variant": ""
+          }
+        }
+      },
+      "block_order": [
+        "bc1b17f2-2bd4-4d76-b693-b9150c790221",
+        "1eb0f07e-2718-4972-b933-345fc90826b0",
+        "1a38d4db-9dee-4338-bc0d-7af2bf5efc0c",
+        "5b1caa4d-6c99-4794-b7a7-226f4c3b90a2",
+        "26621dfd-37c7-4d7c-b6c4-1f5030c5f22b",
+        "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6"
+      ],
+      "settings": {
+        "title": "Unsere Bestseller",
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1",
+        "backgroundProductCards": "#f9f9fa",
+        "linkProductPage": "Mehr erfahren"
+      }
     },
     "123": {
       "type": "123",
-      "settings": {
-        "headline": "Einfach gut schlafen!",
-        "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht</p>",
-        "decorate": true
-      },
       "blocks": {
         "block1": {
           "type": "advantage",
@@ -40,16 +164,235 @@
         "block1",
         "block2",
         "block3"
-      ]
-    },
-    "presseslider": {
-      "type": "presseslider"
+      ],
+      "settings": {
+        "headline": "Endlich gut schlafen!",
+        "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
+        "decorate": true
+      }
     },
     "kundenstimmen": {
-      "type": "kundenstimmen"
+      "type": "kundenstimmen",
+      "blocks": {
+        "82bd5714-ce93-403f-bfb6-84d8896c5045": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/deniz_00b2a165-44c5-4533-b414-478e88fb8b64.png",
+            "reviewer": "Deniz K.",
+            "source": "Trusted Shops",
+            "rating": 5,
+            "title": "Ich bin überzeugt",
+            "text": "Ich war mir zu Beginn noch nicht sicher, aber mit der Garantie, dass ich mein Geld zurück bekomme hab ich es mal getestet. Und das Ergebnis: Ich will das Geld nicht zurück, aber schickt mir mehr von eurem Schlaftrunk :D"
+          }
+        },
+        "74085eaf-987e-4e52-bf5a-5e2c30cbb218": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/anja_6e530adb-5f38-4d14-85e4-f867dd220194.png",
+            "reviewer": "Anja C.",
+            "source": "Facebook",
+            "rating": 5,
+            "title": "Den Versuch wert",
+            "text": "Auch wenn ich gerne neue Dinge teste war ich doch ziemlich skeptisch.Aber was soll ich sagen, ich kriege endlich wieder mehr Schlaf. Ich fühle mich toll und nehme es immer bei Bedarf."
+          }
+        },
+        "f67dbaa1-d189-41b5-9204-384658fd2bc3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andre_6a0a1f07-b2d1-4314-89bc-d1ec1678d769.png",
+            "reviewer": "André K.",
+            "source": "Google",
+            "rating": 5,
+            "title": "Noch nie so gut geschlafen",
+            "text": "Ich schlafe sehr viel schneller, fester und länger und fühle mich morgens ausgeschlafen. Womöglich zur Zeit die besten Produkte auf dem Markt."
+          }
+        },
+        "38794abd-eac3-4848-9bc1-0a68a9e84594": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vera.png",
+            "reviewer": "Vera L.",
+            "source": "Facebook",
+            "rating": 5,
+            "title": "Schnell geliefert, schnell geschlafen",
+            "text": "Von Bestellung bis zur Lieferung sind wenige Tage vergangen und eins kann ich nur sagen: Es hilft, ich schlafe besser, wache erholter auf und stecke jetzt nach und nach auch Freunde und Bekannte damit an"
+          }
+        }
+      },
+      "block_order": [
+        "82bd5714-ce93-403f-bfb6-84d8896c5045",
+        "74085eaf-987e-4e52-bf5a-5e2c30cbb218",
+        "f67dbaa1-d189-41b5-9204-384658fd2bc3",
+        "38794abd-eac3-4848-9bc1-0a68a9e84594"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Bereits über 75.000 ausgeschlafene Kunden",
+        "swipe_on_mobile": true
+      }
     },
     "produktberater": {
-      "type": "produktberater"
+      "type": "produktberater",
+      "blocks": {
+        "b1c236a8-24d6-464d-969b-629335bb5373": {
+          "type": "product",
+          "settings": {
+            "product": "sleep-ink",
+            "elementId": "drink14"
+          }
+        },
+        "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13": {
+          "type": "product",
+          "settings": {
+            "product": "schlafessenz",
+            "elementId": "essenz"
+          }
+        },
+        "aef38039-ea5c-4d14-af45-e6d551e16dec": {
+          "type": "product",
+          "settings": {
+            "product": "schlafspray",
+            "elementId": "spray"
+          }
+        },
+        "ed640b95-992a-4d42-9bec-c9d2cb526af2": {
+          "type": "product",
+          "settings": {
+            "product": "schlafduo",
+            "elementId": "duo"
+          }
+        },
+        "0e7d32b0-e871-421f-a726-ff08ebf3af31": {
+          "type": "product",
+          "settings": {
+            "product": "resleep",
+            "elementId": "resleep"
+          }
+        },
+        "f709af7a-53b2-4696-bce6-b6b7d3930517": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-gute-nacht",
+            "elementId": "gute-nacht"
+          }
+        },
+        "22d03b9e-fe15-427a-826e-629922eccfec": {
+          "type": "product",
+          "settings": {
+            "product": "schlaftee-relax",
+            "elementId": "relax"
+          }
+        },
+        "b3c452cd-d935-40bc-aeca-244bc0a45f8c": {
+          "type": "product",
+          "settings": {
+            "product": "duftkerze",
+            "elementId": "kerze"
+          }
+        },
+        "6fd5808d-d284-4dc1-9780-919868153271": {
+          "type": "product",
+          "settings": {
+            "product": "schlafmaske",
+            "elementId": "maske"
+          }
+        },
+        "dafe8443-b266-45d7-b6b6-96e9f93d85c0": {
+          "type": "product",
+          "settings": {
+            "product": "akupressurmatte",
+            "elementId": "matte"
+          }
+        },
+        "4782f9f4-62e2-439a-8874-e6806e5f6ca1": {
+          "type": "product",
+          "settings": {
+            "product": "teeflasche",
+            "elementId": "teeflasche"
+          }
+        },
+        "c510c414-2391-42d7-8839-cad04787ab03": {
+          "type": "product",
+          "settings": {
+            "product": "tragetasche-all-you-need-is-sleep",
+            "elementId": "allyouneed"
+          }
+        },
+        "4ee5b80d-e459-44d8-9c64-f02f4b40e707": {
+          "type": "product",
+          "settings": {
+            "product": "tragetasche-lets-talk-about-sleep-baby",
+            "elementId": "letstalk"
+          }
+        }
+      },
+      "block_order": [
+        "b1c236a8-24d6-464d-969b-629335bb5373",
+        "3ea79bb7-8aaa-43a4-9605-c192a5ea8f13",
+        "aef38039-ea5c-4d14-af45-e6d551e16dec",
+        "ed640b95-992a-4d42-9bec-c9d2cb526af2",
+        "0e7d32b0-e871-421f-a726-ff08ebf3af31",
+        "f709af7a-53b2-4696-bce6-b6b7d3930517",
+        "22d03b9e-fe15-427a-826e-629922eccfec",
+        "b3c452cd-d935-40bc-aeca-244bc0a45f8c",
+        "6fd5808d-d284-4dc1-9780-919868153271",
+        "dafe8443-b266-45d7-b6b6-96e9f93d85c0",
+        "4782f9f4-62e2-439a-8874-e6806e5f6ca1",
+        "c510c414-2391-42d7-8839-cad04787ab03",
+        "4ee5b80d-e459-44d8-9c64-f02f4b40e707"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Deine Online-Schlafberatung",
+        "subline": "Finde dein passendes Schlafprodukt in weniger als 1 Minute",
+        "buttonText": "Zur Produktempfehlung",
+        "influencerImage": "shopify:\/\/shop_images\/Meis-LP.png",
+        "influencerName": "Sylvie Meis"
+      }
+    },
+    "presseslider": {
+      "type": "presseslider",
+      "blocks": {
+        "0063a3a1-18c2-48c7-acb4-df2ea870030e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cosmopolitan-color.png",
+            "text": "„Tipps, die beim Einschlafen helfen sollen, gibt es viele, aber so richtig bringen will eigentlich nichts – bis jetzt!”"
+          }
+        },
+        "9257f642-b38a-4182-a8af-5d6d76a26cec": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/freundin_3a266e01-d012-42e8-bd83-9a8adb81c432.png",
+            "text": "„Sie trinken abends gerne noch eine Tasse Tee? Dann werden Sie die Schlaftees von sleep.ink lieben!”"
+          }
+        },
+        "f052a979-5130-41d3-b90f-93a1f81cc7e7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bunte.png",
+            "text": "„Dank 'sleep.ink' ist Schluss mit Schlafstörungen”"
+          }
+        },
+        "fb33e1ca-4810-4500-86f5-8d089020ac3b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/faz.png",
+            "text": "„Zum Einschlafen”"
+          }
+        }
+      },
+      "block_order": [
+        "0063a3a1-18c2-48c7-acb4-df2ea870030e",
+        "9257f642-b38a-4182-a8af-5d6d76a26cec",
+        "f052a979-5130-41d3-b90f-93a1f81cc7e7",
+        "fb33e1ca-4810-4500-86f5-8d089020ac3b"
+      ],
+      "settings": {
+        "title": "Die Presse schwebt auf Wolke 7",
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1"
+      }
     }
   },
   "order": [
