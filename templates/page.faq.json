@@ -69,8 +69,8 @@
         "27a268ed-e267-4b45-a39d-cba517137631": {
           "type": "text",
           "settings": {
-            "question": "Können die Produkte in Kombination mit anderen Medikamenten eingenommen werden?",
-            "answer": "<p>Auch wenn keine Wechselwirkungen mit anderen Medikamenten bekannt sind, empfehlen wir in diesem Fall mit Ihrem Hausarzt über die Einnahme von sleep.ink® zu sprechen.<\/p>"
+            "question": "Können die Produkte in Kombination mit verschreibungspflichtigen Medikamenten eingenommen werden?",
+            "answer": "<p>Auch wenn keine Wechselwirkungen mit verschreibungspflichtigen Medikamenten bekannt sind, empfehlen wir in diesem Fall mit Ihrem behandelnden Arzt über die Einnahme von sleep.ink® zu sprechen.<\/p>"
           }
         },
         "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6": {
