@@ -251,13 +251,6 @@
             "answer": "<p>Bitte kontaktieren Sie in diesem Fall unseren Kundenservice über das <a href=\"https:\/\/sleep.ink\/kontakt\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf oder schreiben eine E-Mail an hallo@sleep.ink. <\/p>"
           }
         },
-        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788": {
-          "type": "text",
-          "settings": {
-            "question": "",
-            "answer": ""
-          }
-        },
         "df59ebd0-af87-4e3d-b759-bc373031d6dd": {
           "type": "text",
           "settings": {
@@ -276,7 +269,6 @@
       "block_order": [
         "f229da51-9234-435c-88a5-f44a38c703c6",
         "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f",
-        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788",
         "df59ebd0-af87-4e3d-b759-bc373031d6dd",
         "d77b08da-4328-4083-b692-2b70dfa707d2"
       ],
