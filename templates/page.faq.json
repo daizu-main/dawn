@@ -141,7 +141,7 @@
           "type": "text",
           "settings": {
             "question": "Wo ist die Bestellung?",
-            "answer": "<p>Sobald Ihr Paket an DHL übergeben wurde, wird Ihnen per E-Mail die Sendungsnummer zugesandt. So haben Sie stets die Möglichkeit ihre Bestellung zu verfolgen.<br\/>Darüber hinaus bieten wir die Möglichkeit <a href=\"https:\/\/sleep.ink\/sendung-verfolgen\" target=\"_blank\" title=\"https:\/\/sleep.ink\/sendung-verfolgen\">hier<\/a> Ihre Bestellung unter Angabe der Bestellnummer und der Postleitzahl der Lieferadresse zu verfolgen.<\/p>"
+            "answer": "<p>Sobald Ihr Paket an DHL übergeben wurde, wird Ihnen per E-Mail die Sendungsnummer zugesandt. So haben Sie stets die Möglichkeit ihre Bestellung zu verfolgen.<br\/>Darüber hinaus bieten wir die Möglichkeit <a href=\"https:\/\/sleep.ink\/sendung-verfolgen\" target=\"_blank\" title=\"https:\/\/sleep.ink\/sendung-verfolgen\"><span style=\"text-decoration:underline\">hier<\/span><\/a> Ihre Bestellung unter Angabe der Bestellnummer und der Postleitzahl der Lieferadresse zu verfolgen.<\/p>"
           }
         }
       },
