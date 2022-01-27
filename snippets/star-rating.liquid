@@ -133,4 +133,30 @@
         ({% if reviewCount > 0 %}{{ reviewCount }}{% else %}0{% endif %})
       </div>
     </div>
+  {% when 'preview' %}
+    {% if reviewCount and rating %}
+      <div>({{ reviewCount }})</div>
+      <div class="flex row ml-2 mr-3 ai-c">
+        {% if wholeRating > 0 %}
+          {% for i in (1..wholeRating) %}
+            <span class="mt-2">
+              {%- render 'star-yellow-full' -%}
+            </span>
+          {% endfor %}
+        {% endif %}
+        {% if halfStars == 1 %}
+          <span class="mt-2">
+            {%- render 'star-yellow-half' -%}
+          </span>
+        {% endif %}
+        {% for j in (1..missing_stars) %}
+          <span class="mt-2">
+            {%- render 'star-yellow-none' -%}
+          </span>
+        {% endfor %}
+      </div>
+      <a href="https://www.trustedshops.de/bewertung/bewerten_X171CC05C7CF0FBC03EB75B9E6E73D132.html" class="nodec mt-1 ml-1" style="color: {{ tagBackground }};">Jetzt bewerten</a>
+    {% else %}
+      &nbsp;
+    {% endif %}
 {% endcase %}
