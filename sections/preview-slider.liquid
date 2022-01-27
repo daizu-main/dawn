@@ -54,42 +54,7 @@
                         {% endif %}
                       </h3>
                       <div class="flex js-c ai-c">
-                        {% if product.settings.product.metafields.global.reviewCount and product.settings.product.metafields.global.rating %}
-                          <div>({{ product.settings.product.metafields.global.reviewCount }})</div>
-                          <div class="flex row ml-2 mr-3 ai-c">
-                            {% liquid 
-                              assign rating = product.settings.product.metafields.global.rating
-                              assign wholeRating = rating | floor
-                              assign missing_stars = 5 | minus: rating | floor
-                              assign sum = wholeRating | plus: missing_stars
-                              if sum != 5
-                                assign halfStars = 1
-                              else
-                                assign halfStars = 0
-                              endif
-                            %}
-                            {% if wholeRating > 0 %}
-                              {% for i in (1..wholeRating) %}
-                                <span class="mt-2">
-                                  {%- render 'icon-star', currentColor: '#ffd000' -%}
-                                </span>
-                              {% endfor %}
-                            {% endif %}
-                            {% if halfStars == 1 %}
-                              <span class="mt-2">
-                                {%- render 'icon-star-half' -%}
-                              </span>
-                            {% endif %}
-                            {% for j in (1..missing_stars) %}
-                              <span class="mt-2">
-                                {%- render 'icon-star', currentColor: '#dddddd' -%}
-                              </span>
-                            {% endfor %}
-                          </div>
-                          <a href="https://www.trustedshops.de/bewertung/bewerten_X171CC05C7CF0FBC03EB75B9E6E73D132.html" class="nodec mt-1 ml-1" style="color: {{ tagBackground }};">Jetzt bewerten</a>
-                        {% else %}
-                          &nbsp;
-                        {% endif %}
+                        {%- render 'star-rating', type: 'review', rating: product.settings.product.metafields.global.rating.value, reviewCount: product.settings.product.metafields.global.reviewCount.value -%}
                       </div>
                     </div>
                     <div class="col-1-2 lg-col-2 grid">
