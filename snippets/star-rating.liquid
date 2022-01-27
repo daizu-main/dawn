@@ -88,8 +88,8 @@
     </div>
   {% when 'review' %}
     <div class="flex pos-rel">
-      {% if rating > 0 %}
-        {% for i in (1..fullRating) %}
+      {% if wholeRating > 0 %}
+        {% for i in (1..wholeRating) %}
           <span>
             {%- render 'star-yellow-full' -%}
           </span>
