@@ -134,7 +134,7 @@
           "type": "text",
           "settings": {
             "question": "Kann die Bestellung widerrufen werden?",
-            "answer": "<p>Ja. Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen die Bestellung, und damit den Kaufvertrag, zu widerrufen. Unsere Widerrufsbelehrung und ein Formular finden Sie <a href=\"https:\/\/sleep.ink\/widerrufsbelehrung\" target=\"_blank\" title=\"https:\/\/sleep.ink\/widerrufsbelehrung\">hier<\/a>.<\/p>"
+            "answer": "<p>Ja. Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen die Bestellung, und damit den Kaufvertrag, zu widerrufen. Unsere Widerrufsbelehrung und ein Formular finden Sie <a href=\"https:\/\/sleep.ink\/widerrufsbelehrung\" target=\"_blank\" title=\"https:\/\/sleep.ink\/widerrufsbelehrung\"><span style=\"text-decoration:underline\">hier<\/span><\/a>.<\/p>"
           }
         },
         "6f00e3e4-cb76-43a9-9580-9906f3f555d3": {
