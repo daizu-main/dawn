@@ -7,7 +7,7 @@
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "#ffffff",
         "fontColor": "dark",
         "text": "Impressum"
       }
@@ -16,6 +16,7 @@
       "type": "rich-text-image",
       "settings": {
         "color_scheme": "background-1",
+        "image": "shopify:\/\/shop_images\/1uhmgfvpe1nyA1cEgBCqgzBsqzemTQknN.jpg",
         "imagePosition": "right",
         "heading": "Dem guten Schlaf verpflichtet",
         "headingPosition": "aboveText",
