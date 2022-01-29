@@ -3,16 +3,45 @@
     "hero": {
       "type": "small-page-hero",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
-        "backgroundColor": "#111111",
-        "fontColor": "bright",
+        "backgroundColor": "#FFFFFF",
+        "fontColor": "dark",
         "text": "Impressum"
       }
+    },
+    "1643452829ae41e3cb": {
+      "type": "rich-text-image",
+      "settings": {
+        "color_scheme": "background-1",
+        "imagePosition": "right",
+        "heading": "Dem guten Schlaf verpflichtet",
+        "headingPosition": "aboveText",
+        "blockText": "<p>Schön, dass Sie sich dafür interessieren, mit wem Sie es hier zu tun haben! Bei der Daizu GmbH ist unsere Mission seit 2015 Ihren Schlaf zu verbessern. Dafür entwickeln wir hochwertige und natürlich wirkende Produkte.<\/p><p>Am Anfang unserer Unternehmensgeschichte stand der schlechte Schlaf, der die Gründer Malte, Frieder und Jakob plagte. Unzufrieden mit den Optionen die damals existierten, entwickelten wir 2017 den sleep.ink Schlafdrink.<\/p>",
+        "buttonDesign": "outlined",
+        "buttonText": "",
+        "buttonLink": ""
+      }
+    },
+    "1643452962c461b757": {
+      "type": "rich-text-image",
+      "settings": {
+        "color_scheme": "background-1",
+        "imagePosition": "left",
+        "heading": "Produktportfolio",
+        "headingPosition": "aboveText",
+        "blockText": "<p>Der Erfolg des sleep.ink <a href=\"https:\/\/sleep.ink\/schlafdrink\" title=\"Schlafdrinks\">Schlafdrinks<\/a> ermutigte uns, in die Entwicklung weiterer Produkte zu investieren. Mit der Zeit entstanden Produkte wie die <a href=\"https:\/\/sleep.ink\/schlafessenz\" title=\"Schlafessenz\">Schlafessenz<\/a>, das <a href=\"https:\/\/sleep.ink\/schlafspray\" title=\"Schlafspray\">Schlafspray<\/a> oder zuletzt das <a href=\"https:\/\/sleep.ink\/schlafduo\" title=\"Schlafduo\">Schlafduo<\/a>.<br\/><\/p><p>Oft kamen die besten Ideen für neue Produkte von unseren Kundinnen und Kunden, die sich mit Ihren individuellen Problemen an uns gewendet haben. Die <a href=\"https:\/\/sleep.ink\/schlafessenz\" title=\"Schlafessenz\">Schlafessenz<\/a> zum Beispiel schafft es, die Wirkung von 60 Flaschen des Schlafdrinks in einen Spender zu komprimieren. So sparen wir viel Verpackungsmaterial und jedes beliebige Getränk wird zum Schlafdrink.<\/p>",
+        "buttonDesign": "outlined",
+        "buttonText": "",
+        "buttonLink": ""
+      }
     }
-    
   },
-  "order": ["hero"]
+  "order": [
+    "hero",
+    "1643452829ae41e3cb",
+    "1643452962c461b757"
+  ]
 }
