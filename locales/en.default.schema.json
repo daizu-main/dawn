@@ -1732,13 +1732,13 @@
       "name": "Small Page Hero",
       "settings": {
         "element_width": {
-          "options__1": {
+          "option_full": {
             "label": "Full screen width"
           },
-          "options__2": {
+          "option_wide": {
             "label": "Wide (max. 1300px)"
           },
-          "options__3": {
+          "option_narrow": {
             "label": "Narrow (max. 900px)"
           },
           "label": "Element width"

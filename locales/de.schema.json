@@ -1660,13 +1660,13 @@
       "name": "Kleiner Seiten Hero",
       "settings": {
         "element_width": {
-          "options__1": {
+          "option_full": {
             "label": "Volle Bildschirmbreite"
           },
-          "options__2": {
+          "option_wide": {
             "label": "Breit (max. 1300px)"
           },
-          "options__3": {
+          "option_narrow": {
             "label": "Schmal (max. 900px)"
           },
           "label": "Breite des Elements"
