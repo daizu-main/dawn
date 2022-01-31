@@ -168,7 +168,7 @@
       "settings": {
         "headline": "Endlich gut schlafen!",
         "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
-        "decorate": true
+        "decorate": false
       }
     },
     "kundenstimmen": {
