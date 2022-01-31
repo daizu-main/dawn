@@ -836,13 +836,13 @@
         },
         "color_scheme": {
           "options__3": {
-            "label": "dunkle Textfarbe auf HG-Farbe 1"
+            "label": "Dark text on bg-color 1"
           },
           "options__4": {
-            "label": "dunkle Textfarbe auf HG-Farbe 2"
+            "label": "Dark text on bg-color 2"
           },
           "options__5": {
-            "label": "HG-Farbe 1 auf dunkler Textfarbe"
+            "label": "BG color 1 on dark text color"
           },
           "label": "Color scheme",
           "info": "Visible when text box displayed"
@@ -1728,6 +1728,44 @@
         }
       }
     },
+    "small-page-hero": {
+      "name": "Small Page Hero",
+      "settings": {
+        "element_width": {
+          "full": {
+            "label": "Full screen width"
+          },
+          "wide": {
+            "label": "Wide (max. 1300px)"
+          },
+          "narrow": {
+            "label": "Narrow (max. 900px)"
+          },
+          "label": "Element width"
+        },
+        "element_height": {
+          "high": {
+            "label": "High (ca. 600px)"
+          },
+          "flat": {
+            "label": "Flat (ca. 350px)"
+          },
+          "label": "Element height"
+        },
+        "text_align": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          },
+          "label": "Text alignment"
+        }
+      }
+    },
     "rich-text": {
       "name": "Rich text",
       "settings": {
@@ -1814,6 +1852,7 @@
         "name": "Rich text"
       }
     },
+    
     "video": {
       "name": "Video",
       "settings": {

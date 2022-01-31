@@ -1656,6 +1656,44 @@
         }
       }
     },
+    "small-page-hero": {
+      "name": "Kleiner Seiten Hero",
+      "settings": {
+        "element_width": {
+          "full": {
+            "label": "Volle Bildschirmbreite"
+          },
+          "wide": {
+            "label": "Breit (max. 1300px)"
+          },
+          "narrow": {
+            "label": "Schmal (max. 900px)"
+          },
+          "label": "Breite des Elements"
+        },
+        "element_height": {
+          "high": {
+            "label": "Hoch (ca. 600px)"
+          },
+          "flat": {
+            "label": "Flach (ca. 350px)"
+          },
+          "label": "Höhe des Elements"
+        },
+        "text_align": {
+          "options__1": {
+            "label": "Linksbündig"
+          },
+          "options__2": {
+            "label": "Zentriert"
+          },
+          "options__3": {
+            "label": "Rechtsbündig"
+          },
+          "label": "Textausrichtung"
+        }
+      }
+    },
     "rich-text": {
       "name": "Rich Text",
       "settings": {
@@ -1682,13 +1720,13 @@
         },
         "text_align": {
           "options__1": {
-            "label": "Links"
+            "label": "Linksbündig"
           },
           "options__2": {
             "label": "Zentriert"
           },
           "options__3": {
-            "label": "Rechts"
+            "label": "Rechtsbündig"
           },
           "label": "Textausrichtung"
         }

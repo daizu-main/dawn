@@ -122,7 +122,7 @@ window.addEventListener("resize",resizeImage);
 
 {% schema %}
 {
-  "name": "kleiner Header",
+  "name": "t:sections.small-page-hero.name",
   "tag": "section",
   "class": "spaced-section--full-width",
   "settings": [
@@ -144,7 +144,7 @@ window.addEventListener("resize",resizeImage);
         }
       ],
       "default": "background-1",
-      "label": "Farbschema"
+      "label": "t:sections.image-banner.settings.color_scheme.label"
     },
     {
       "type": "select",
@@ -153,15 +153,15 @@ window.addEventListener("resize",resizeImage);
       "options": [
         {
           "value": "full",
-          "label": "volle Bildschirmbreite"
+          "label": "t:sections.small-page-hero.settings.element_width.full"
         },
         {
           "value": "wide",
-          "label": "breit (max. 1300px)"
+          "label": "t:sections.small-page-hero.settings.element_width.wide"
         },
         {
           "value": "narrow",
-          "label": "schmal (max. 900px)"
+          "label": "t:sections.small-page-hero.settings.element_width.narrow"
         }
       ],
       "default": "full"
@@ -173,11 +173,11 @@ window.addEventListener("resize",resizeImage);
       "options": [
         {
           "value": "high",
-          "label": "hoch (ca. 600px)"
+          "label": "t:sections.small-page-hero.settings.element_width.high"
         },
         {
           "value": "flat",
-          "label": "flach (ca. 350px)"
+          "label": "t:sections.small-page-hero.settings.element_width.flat"
         }
       ],
       "default": "flat"
@@ -185,15 +185,15 @@ window.addEventListener("resize",resizeImage);
     {
       "type": "select",
       "id": "alignment",
-      "label": "Ausrichtung des Textes",
+      "label": "t:sections.small-page-hero.settings.text_align.label",
       "options": [
         {
           "value": "left",
-          "label": "linksbündig"
+          "label": "t:sections.small-page-hero.settings.text_align.left"
         },
         {
           "value": "center",
-          "label": "zentriert"
+          "label": "t:sections.small-page-hero.settings.text_align.center"
         }
       ],
       "default": "center"
