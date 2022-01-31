@@ -1741,6 +1741,12 @@
             "label": "Right"
           },
           "label": "Text alignment"
+        },
+        "background_image_mobile": {
+          "label": "Background image for mobile / tablet"
+        },
+        "background_image_desktop": {
+          "label": "Background image for desktop"
         }
       }
     },
@@ -1767,6 +1773,18 @@
             "label": "Flat (ca. 350px)"
           },
           "label": "Element height"
+        },
+        "background_color": {
+          "label": "Element background color"
+        },
+        "font_color": {
+          "option_bright": {
+            "label": "Bright"
+          },
+          "option_dark": {
+            "label": "Dark"
+          },
+          "label": "Font color"
         }
       }
     },

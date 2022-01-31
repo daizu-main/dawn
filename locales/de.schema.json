@@ -1669,6 +1669,12 @@
             "label": "Rechtsbündig"
           },
           "label": "Textausrichtung"
+        },
+        "background_image_mobile": {
+          "label": "Hintergrundbild für Mobil / Tablet"
+        },
+        "background_image_desktop": {
+          "label": "Hintergrundbild für Desktop"
         }
       }
     },
@@ -1695,6 +1701,18 @@
             "label": "Flach (ca. 350px)"
           },
           "label": "Höhe des Elements"
+        },
+        "background_color": {
+          "label": "Hingergrundfarbe des Elements"
+        },
+        "font_color": {
+          "option_bright": {
+            "label": "Hell"
+          },
+          "option_dark": {
+            "label": "Dunkel"
+          },
+          "label": "Schriftfarbe"
         }
       }
     },
