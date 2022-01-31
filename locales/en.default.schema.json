@@ -1728,6 +1728,22 @@
         }
       }
     },
+    "common-across-sections": {
+      "settings": {
+        "text_align": {
+          "option_left": {
+            "label": "Left"
+          },
+          "option_center": {
+            "label": "Center"
+          },
+          "option_right": {
+            "label": "Right"
+          },
+          "label": "Text alignment"
+        }
+      }
+    },
     "small-page-hero": {
       "name": "Small Page Hero",
       "settings": {
@@ -1744,25 +1760,13 @@
           "label": "Element width"
         },
         "element_height": {
-          "options__1": {
+          "option_high": {
             "label": "High (ca. 600px)"
           },
-          "options__2": {
+          "option_flat": {
             "label": "Flat (ca. 350px)"
           },
           "label": "Element height"
-        },
-        "text_align": {
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          },
-          "label": "Text alignment"
         }
       }
     },
@@ -1789,18 +1793,6 @@
         },
         "full_width": {
           "label": "Make section full width"
-        },
-        "text_align": {
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          },
-          "label": "Text alignment"
         }
       },
       "blocks": {
@@ -1811,13 +1803,13 @@
               "label": "Heading"
             },
             "heading_size": {
-              "options__1": {
+              "option_small": {
                 "label": "Small"
               },
-              "options__2": {
+              "option_medium": {
                 "label": "Medium"
               },
-              "options__3": {
+              "option_large": {
                 "label": "Large"
               },
               "label": "Heading font size"

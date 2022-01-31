@@ -1656,6 +1656,22 @@
         }
       }
     },
+    "common-across-sections": {
+      "settings": {
+        "text_align": {
+          "option_left": {
+            "label": "Linksbündig"
+          },
+          "option_center": {
+            "label": "Zentriert"
+          },
+          "option_right": {
+            "label": "Rechtsbündig"
+          },
+          "label": "Textausrichtung"
+        }
+      }
+    },
     "small-page-hero": {
       "name": "Kleiner Seiten Hero",
       "settings": {
@@ -1672,25 +1688,13 @@
           "label": "Breite des Elements"
         },
         "element_height": {
-          "options__1": {
+          "option_high": {
             "label": "Hoch (ca. 600px)"
           },
-          "options__2": {
+          "option_flat": {
             "label": "Flach (ca. 350px)"
           },
           "label": "Höhe des Elements"
-        },
-        "text_align": {
-          "options__1": {
-            "label": "Linksbündig"
-          },
-          "options__2": {
-            "label": "Zentriert"
-          },
-          "options__3": {
-            "label": "Rechtsbündig"
-          },
-          "label": "Textausrichtung"
         }
       }
     },
@@ -1717,18 +1721,6 @@
         },
         "full_width": {
           "label": "Abschnitt über die gesamte Breite"
-        },
-        "text_align": {
-          "options__1": {
-            "label": "Linksbündig"
-          },
-          "options__2": {
-            "label": "Zentriert"
-          },
-          "options__3": {
-            "label": "Rechtsbündig"
-          },
-          "label": "Textausrichtung"
         }
       },
       "blocks": {
@@ -1739,14 +1731,14 @@
               "label": "Überschrift"
             },
             "heading_size": {
-              "options__1": {
+              "option_small": {
                 "label": "Klein"
               },
-              "options__2": {
+              "option_medium": {
                 "label": "Mittel"
               },
               "label": "Schriftgröße der Überschrift",
-              "options__3": {
+              "option_large": {
                 "label": "Groß"
               }
             }
