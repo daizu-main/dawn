@@ -1732,22 +1732,22 @@
       "name": "Small Page Hero",
       "settings": {
         "element_width": {
-          "full": {
+          "options__1": {
             "label": "Full screen width"
           },
-          "wide": {
+          "options__2": {
             "label": "Wide (max. 1300px)"
           },
-          "narrow": {
+          "options__3": {
             "label": "Narrow (max. 900px)"
           },
           "label": "Element width"
         },
         "element_height": {
-          "high": {
+          "options__1": {
             "label": "High (ca. 600px)"
           },
-          "flat": {
+          "options__2": {
             "label": "Flat (ca. 350px)"
           },
           "label": "Element height"

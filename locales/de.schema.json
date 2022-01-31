@@ -1660,22 +1660,22 @@
       "name": "Kleiner Seiten Hero",
       "settings": {
         "element_width": {
-          "full": {
+          "options__1": {
             "label": "Volle Bildschirmbreite"
           },
-          "wide": {
+          "options__2": {
             "label": "Breit (max. 1300px)"
           },
-          "narrow": {
+          "options__3": {
             "label": "Schmal (max. 900px)"
           },
           "label": "Breite des Elements"
         },
         "element_height": {
-          "high": {
+          "options__1": {
             "label": "Hoch (ca. 600px)"
           },
-          "flat": {
+          "options__2": {
             "label": "Flach (ca. 350px)"
           },
           "label": "Höhe des Elements"
