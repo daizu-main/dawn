@@ -1679,6 +1679,18 @@
         },
         "full_width": {
           "label": "Abschnitt über die gesamte Breite"
+        },
+        "text_align": {
+          "options__1": {
+            "label": "Links"
+          },
+          "options__2": {
+            "label": "Zentriert"
+          },
+          "options__3": {
+            "label": "Rechts"
+          },
+          "label": "Textausrichtung"
         }
       },
       "blocks": {
