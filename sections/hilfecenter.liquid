@@ -1,0 +1,91 @@
+{% assign taskTitles = 'Häufig gestellte Fragen, Bestellung verfolgen, Geld-zurück-Garantie, Bestellung widerrufen, Abo verwalten, Support kontaktieren' | split: ', ' %}
+{% assign taskUrls = '/pages/faq-haufig-gestellte-fragen, /pages/sendung-verfolgen, /pages/geld-zurueck-garantie, /pages/widerrufsbelehrung, https://abo.schlafdrink.de/account, pages/kontakt' | split: ', ' %} 
+
+<div class="SectionGrid">
+  <div class="SectionGrid-Narrow pt-8 px-5px-lg-0 pb-13">
+    <h2 class="hilfecenter-title">
+      {{ section.settings.title | escape }}
+    </h2>
+    <p class="ff-body fs-2 fw-300 lh-26px ls-p024">
+      <strong>{{ section.settings.subline | escape }}</strong>
+    </p>
+    <div class="hilfecenter-hauptgrid">
+      {% for taskTitle in taskTitles %}
+        <div class="hilfecenter-link-wrapper">
+          <a href="{{ taskUrls[forloop.index0] }}" class="kachel-link">
+            <span class="hilfecenter-element-wrapper">
+              {% liquid 
+                case forloop.index0
+                  when 0
+                    render 'icon-faq'
+                  when 1
+                    render 'icon-sendungsverfolgung'
+                  when 2
+                    render 'icon-money-back'
+                  when 3
+                    render 'icon-widerrufen'
+                  when 4
+                    render 'icon-abo-verwalten'
+                  when 5
+                    render 'icon-kontakt'
+                endcase
+              %}
+              <h4 class="hilfecenter-element-title">{{ taskTitle | escape }}</h4>
+            <span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hilfecenter",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.footer.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.footer.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.footer.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.footer.settings.color_scheme.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Hilfe und Kontakt",
+      "label": "Überschrift"
+    },
+    {
+      "type": "text",
+      "id": "subline",
+      "default": "Bitte wählen Sie ein Thema, zu dem Sie Unterstützung benötigen:",
+      "label": "Subline"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hilfecenter",
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Hilfe und Kontakt",
+        "subline": "Bitte wählen Sie ein Thema, zu dem Sie Unterstützung benötigen:"
+      }
+    }
+  ]
+}
+{% endschema %}
