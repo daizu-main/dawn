@@ -29,6 +29,19 @@
         },
         "payment_icons": {
           "type": "payment_icons"
+        },
+        "acc1": {
+          "type": "accordion_rt",
+          "title": "Produktbeschreibung"
+        },
+        "acc2": {
+          "type": "accordion_rt",
+          "title": "Anwendung"
+        },
+        "nutrition": {
+          "type": "nutrition",
+          "accordionTitle": "Zutaten und Inhaltsstoffe",
+          "messageMissingReference": "** Keine Referenzmenge durch die EU definiert"
         }
       },
       "block_order": [
@@ -40,7 +53,10 @@
         "subscription_selector",
         "buy_buttons",
         "features",
-        "payment_icons"
+        "payment_icons",
+        "acc1",
+        "nutrition",
+        "acc2"
       ]
     }
   },
