@@ -34,14 +34,13 @@
           "type": "accordion_rt",
           "title": "Produktbeschreibung"
         },
-        "acc2": {
-          "type": "accordion_rt",
-          "title": "Anwendung"
-        },
         "nutrition": {
           "type": "nutrition",
           "accordionTitle": "Zutaten und Inhaltsstoffe",
           "messageMissingReference": "** Keine Referenzmenge durch die EU definiert"
+        },
+        "usage": {
+          "type": "usage"
         }
       },
       "block_order": [
@@ -56,7 +55,7 @@
         "payment_icons",
         "acc1",
         "nutrition",
-        "acc2"
+        "usage"
       ]
     }
   },
