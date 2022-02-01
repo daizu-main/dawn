@@ -487,6 +487,14 @@
       }
     })
     document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
+    document.getElementById("total").innerHTML = `${(Number(quantity) * prices[Number(quantity) - 1].cost / 100).toFixed(2).replace(".",",")} €`
+      if(quantity > 1) {
+        document.getElementById("totalcompare").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      } else {
+        document.getElementById("totalcompare").innerHTML = ""
+      }
+      unitPrice = prices[Number(quantity) - 1].reference * (Number(quantity) * prices[Number(quantity) - 1].cost) / prices[Number(quantity) - 1].content
+      document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[Number(quantity) - 1].reference} ${prices[Number(quantity) - 1].unit}`
     document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
   }))
   document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
@@ -560,11 +568,8 @@
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
         const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
-        console.log(subscriptions)
         const prices = {{ curr_variant.metafields.global.prices }}
-        console.log(prices)
         const number = Number(e.target.id.replace("sub-",""))
-        console.log(number)
         subscriptions.forEach((subscription, index) => {
           if(index == number) {
           document.getElementById(`sub-${index}-wrapper`).classList.add("active-variant")
