@@ -487,16 +487,25 @@
                   </div>
                 {%- endform -%}
               </product-form>
-              <div class="mt-4 flex row jc-c ai-c green checkmark ff-body fs-0 lh-100">
-                {% render 'icon-checkmark' %}
-                <span>
-                  <b>
-                    Auf Lager –
-                  </b>
-                  in 1-3 Tagen bei Dir
-                </span>
-              </div>
-              
+              {%- if product.selected_or_first_available_variant.available -%}
+                <div class="mt-4 flex row jc-c ai-c green checkmark ff-body fs-0 lh-100">
+                  {% render 'icon-checkmark' %}
+                  <span>
+                    <b>
+                      Auf Lager –
+                    </b>
+                    in 1-3 Tagen bei Dir
+                  </span>
+                </div>
+              {%- else -%}
+                <div class="mt-4 flex row jc-c ai-c checkmark ff-body fs-0 lh-100" style="color: rgba(var(--color-base-error));">
+                  <span>
+                    <b>
+                      Ausverkauft
+                    </b>
+                  </span>
+                </div>
+              {%- endif -%}
           {%- when 'rating' -%}
             {% render 'star-rating', rating: product.metafields.global.rating.value, reviewCount: product.metafields.global.reviewCount.value, type: 'page' %}
             {%- when 'nutrition' -%}
