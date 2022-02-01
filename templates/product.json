@@ -15,9 +15,6 @@
         "advantages": {
           "type": "advantages"
         },
-        "variant_picker": {
-          "type": "variant_picker"
-        },
         "subscription_selector": {
           "type": "subscription_selector"
         },
@@ -50,7 +47,5 @@
       ]
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main"]
 }
