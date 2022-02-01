@@ -690,6 +690,25 @@
                     <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
                       {{ product.metafields.global.usage.value }}
                     </div>
+                  </details>
+                </div>
+              {% endif %}
+            {%- when 'product_description' -%}
+              {% if product.metafields.global.productDescription %}
+                <div class="accordion" {{ block.shopify_attributes }}>
+                  <details>
+                    <summary class="flex row ai-c">
+                      <div class="summary__title">
+                        <h2 class="h4 accordion__title ff-heading fw-400 fs-1 lh-100 pt-3">
+                          Produktbeschreibung
+                        </h2>
+                      </div>
+                      {% render 'icon-caret' %}
+                    </summary>
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                      {{ product.metafields.global.productDescription.value }}
+                    </div>
+                  </details>
                 </div>
               {% endif %}
             {%- when 'accordion_rt' -%}
@@ -1252,15 +1271,7 @@
     {
       "type": "product_description",
       "name": "Produktbeschreibung",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Überschrift",
-          "default": "Produktbeschreibung"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "accordion_rt",
