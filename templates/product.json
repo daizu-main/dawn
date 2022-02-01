@@ -30,9 +30,8 @@
         "payment_icons": {
           "type": "payment_icons"
         },
-        "acc1": {
-          "type": "accordion_rt",
-          "title": "Produktbeschreibung"
+        "pdesc": {
+          "type": "product_description"
         },
         "nutrition": {
           "type": "nutrition",
@@ -53,7 +52,7 @@
         "buy_buttons",
         "features",
         "payment_icons",
-        "acc1",
+        "pdesc",
         "nutrition",
         "usage"
       ]
