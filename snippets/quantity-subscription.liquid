@@ -547,15 +547,16 @@
     document.querySelector("#quantity-input-nosub > input[type=number]").value = `${quantity}`
     document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
   }))
-  document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
+  document.querySelectorAll("#subscription input[type=radio]").forEach((element, sindex, subsarray) => {
+    if(subsarray.length > 0) {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
-        let subscriptions = []
-        if (subscriptions.size > 0 ) {
-          subscriptions = metafields.subscriptions
-        }
+        const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
+        console.log(subscriptions)
         const prices = {{ curr_variant.metafields.global.prices }}
+        console.log(prices)
         const number = Number(e.target.id.replace("sub-",""))
+        console.log(number)
         subscriptions.forEach((subscription, index) => {
           if(index == number) {
           document.getElementById(`sub-${index}-wrapper`).classList.add("active-variant")
@@ -576,6 +577,7 @@
         document.getElementById("subsunitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
       }
     })
+  }
   })
   document.querySelectorAll("#info-container").forEach(element => element.addEventListener("click", (e) => {
     document.getElementById("sparabo-info").classList.remove("hidden-element")
