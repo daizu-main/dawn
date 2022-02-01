@@ -18,14 +18,14 @@
         "drink-7": {
           "type": "product",
           "settings": {
-            "product": "sleep-ink",
+            "product": "schlafdrink-1",
             "variant": "01xBox7-no-inlay-filled"
           }
         },
         "drink-14": {
           "type": "product",
           "settings": {
-            "product": "sleep-ink",
+            "product": "schlafdrink-1",
             "variant": "01xBox14-fold-filled"
           }
         },
@@ -50,7 +50,7 @@
         "resleep": {
           "type": "product",
           "settings": {
-            "product": "resleep"
+            "product": "resleep-schlafkapseln"
           }
         },
         "gute-nacht": {
@@ -68,7 +68,7 @@
         "gums": {
           "type": "product",
           "settings": {
-            "product": "schlafgums-60-stuck"
+            "product": "schlafgums"
           }
         },
         "kerze": {
