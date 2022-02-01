@@ -676,7 +676,7 @@
               </div>
               {% endif %}
             {%- when 'usage' -%}
-              {% if product.metafields.global.productDescription %}
+              {% if product.metafields.global.usage %}
                 <div class="accordion" {{ block.shopify_attributes }}>
                   <details>
                     <summary class="flex row ai-c">
@@ -688,7 +688,7 @@
                       {% render 'icon-caret' %}
                     </summary>
                     <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
-                      {{ product.metafields.global.productDescription.value }}
+                      {{ product.metafields.global.usage.value }}
                     </div>
                 </div>
               {% endif %}
