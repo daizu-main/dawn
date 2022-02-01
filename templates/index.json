@@ -237,7 +237,7 @@
         "b1c236a8-24d6-464d-969b-629335bb5373": {
           "type": "product",
           "settings": {
-            "product": "sleep-ink",
+            "product": "schlafdrink-1",
             "elementId": "drink14"
           }
         },
@@ -265,7 +265,7 @@
         "0e7d32b0-e871-421f-a726-ff08ebf3af31": {
           "type": "product",
           "settings": {
-            "product": "resleep",
+            "product": "resleep-schlafkapseln",
             "elementId": "resleep"
           }
         },
