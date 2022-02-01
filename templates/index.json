@@ -7,7 +7,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "inverse",
-            "imageDesktop": "shopify:\/\/shop_images\/frauke-desktop.jpg",
+            "imageDesktop": "shopify:\/\/shop_images\/hero-retina-frauke.jpg",
             "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
             "video": "",
             "title": "Endlich besser schlafen!",
@@ -168,7 +168,7 @@
       "settings": {
         "headline": "Endlich gut schlafen!",
         "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
-        "decorate": true
+        "decorate": false
       }
     },
     "kundenstimmen": {
@@ -237,7 +237,7 @@
         "b1c236a8-24d6-464d-969b-629335bb5373": {
           "type": "product",
           "settings": {
-            "product": "sleep-ink",
+            "product": "schlafdrink-1",
             "elementId": "drink14"
           }
         },
@@ -265,7 +265,7 @@
         "0e7d32b0-e871-421f-a726-ff08ebf3af31": {
           "type": "product",
           "settings": {
-            "product": "resleep",
+            "product": "resleep-schlafkapseln",
             "elementId": "resleep"
           }
         },

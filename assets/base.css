@@ -2803,6 +2803,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding-bottom: 64px;
 }
 
+.pb-13 {
+  padding-bottom: 72px;
+}
+
 .pl-5px {
   padding-left: 5px;
 }
@@ -5377,4 +5381,70 @@ deferred-media {
 .checkmark svg {
   height: 16px;
   margin-right: 8px;
+}
+
+/* STRUCTURE: Hilfecenter */
+
+.hilfecenter-hauptgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+@media screen and (min-width: 500px) {
+  .hilfecenter-hauptgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .hilfecenter-hauptgrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+.hilfecenter-link-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 2px solid black;
+  align-items: center;
+  justify-items: center;
+}
+
+.kachel-link {
+  text-decoration: none;
+  color: currentColor;
+  position: relative;
+  flex-shrink: 0;
+  opacity: 1;
+  transition: all 0.1s linear;
+}
+
+.kachel-link:hover {
+  opacity: 0.6;
+}
+
+.hilfecenter-element-wrapper {
+  display: grid;
+}
+
+.helpcenter-icon {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  color: #000000;
+  justify-self: center;
+  padding-top: 8px;
+}
+
+.hilfecenter-element-title {
+  text-align: center;
+  padding-bottom: 12px;
+  margin: 0;
+  font-family: var(--font-body-family);
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
 }
