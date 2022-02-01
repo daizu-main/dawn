@@ -7,7 +7,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "inverse",
-            "imageDesktop": "shopify:\/\/shop_images\/frauke-desktop.jpg",
+            "imageDesktop": "shopify:\/\/shop_images\/hero-retina-frauke.jpg",
             "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
             "video": "",
             "title": "Endlich besser schlafen!",
@@ -168,7 +168,7 @@
       "settings": {
         "headline": "Endlich gut schlafen!",
         "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
-        "decorate": true
+        "decorate": false
       }
     },
     "kundenstimmen": {

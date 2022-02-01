@@ -9,8 +9,8 @@
         "alignment": "center",
         "backgroundColor": "#111111",
         "fontColor": "bright",
-        "imageDesktop": "shopify:\/\/shop_images\/frauke-desktop.jpg",
-        "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-faq-2_9e453cf5-3595-46bc-8d0c-d707828bfe20.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-faq_86a2c750-3d51-435c-9775-1e9f741395c3.jpg",
         "text": "Fragen und Antworten"
       }
     },
@@ -21,14 +21,14 @@
           "type": "text",
           "settings": {
             "question": "Wo werden die Produkte hergestellt?",
-            "answer": "<p>Die sleep.ink® Produkte zum Ein- und Durchschlafen werden bis auf das Schlafspray, welches in Österreich produziert wird,  in Deutschland hergestellt.<\/p>"
+            "answer": "<p>Die sleep.ink® Produkte zum Ein- und Durchschlafen werden bis auf das Schlafspray, welches in Österreich produziert wird, in Deutschland hergestellt.<\/p>"
           }
         },
         "3e459477-14d8-4d34-9b6a-f4508ab880ad": {
           "type": "text",
           "settings": {
             "question": "Sind die Produkte von sleep.ink® zertifiziert?",
-            "answer": "<p>Ja. Alle sleep.ink® Schlafprodukte sind unter EInhaltung höchster Qualitätsstandards zertifiziert und als sichere Nahrungsergänzungsmittel zugelassen.<\/p>"
+            "answer": "<p>Ja. Alle sleep.ink® Schlafprodukte sind unter Einhaltung höchster Qualitätsstandards zertifiziert und als sichere Nahrungsergänzungsmittel, funktionelle Nahrungsmittel oder Nahrungsmittel zugelassen.<\/p>"
           }
         },
         "c6a770da-fffb-47cb-a8a3-0551c5ff70f0": {
@@ -69,8 +69,8 @@
         "27a268ed-e267-4b45-a39d-cba517137631": {
           "type": "text",
           "settings": {
-            "question": "Können die Produkte in Kombination mit anderen Medikamenten eingenommen werden?",
-            "answer": "<p>Auch wenn keine Wechselwirkungen mit anderen Medikamenten bekannt sind, empfehlen wir in diesem Fall mit Ihrem Hausarzt über die Einnahme von sleep.ink® zu sprechen.<\/p>"
+            "question": "Können die Produkte in Kombination mit verschreibungspflichtigen Medikamenten eingenommen werden?",
+            "answer": "<p>Auch wenn keine Wechselwirkungen mit verschreibungspflichtigen Medikamenten bekannt sind, empfehlen wir in diesem Fall mit Ihrem behandelnden Arzt über die Einnahme von sleep.ink® zu sprechen.<\/p>"
           }
         },
         "506433b3-9b7d-44dc-8884-1e3ae8e6aaa6": {
@@ -134,14 +134,14 @@
           "type": "text",
           "settings": {
             "question": "Kann die Bestellung widerrufen werden?",
-            "answer": "<p>Ja. Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen die Bestellung, und damit den Kaufvertrag, zu widerrufen.<\/p>"
+            "answer": "<p>Ja. Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen die Bestellung, und damit den Kaufvertrag, zu widerrufen. Unsere Widerrufsbelehrung und ein Formular finden Sie <a href=\"https:\/\/sleep.ink\/widerrufsbelehrung\" target=\"_blank\" title=\"https:\/\/sleep.ink\/widerrufsbelehrung\"><span style=\"text-decoration:underline\">hier<\/span><\/a>.<\/p>"
           }
         },
         "6f00e3e4-cb76-43a9-9580-9906f3f555d3": {
           "type": "text",
           "settings": {
             "question": "Wo ist die Bestellung?",
-            "answer": "<p>Sobald Ihr Paket an DHL übergeben wurde, wird Ihnen per E-Mail die Sendungsnummer zugesandt. So haben Sie stets die Möglichkeit ihre Bestellung zu verfolgen.<\/p>"
+            "answer": "<p>Sobald Ihr Paket an DHL übergeben wurde, wird Ihnen per E-Mail die Sendungsnummer zugesandt. So haben Sie stets die Möglichkeit ihre Bestellung zu verfolgen.<br\/>Darüber hinaus bieten wir die Möglichkeit <a href=\"https:\/\/sleep.ink\/sendung-verfolgen\" target=\"_blank\" title=\"https:\/\/sleep.ink\/sendung-verfolgen\"><span style=\"text-decoration:underline\">hier<\/span><\/a> Ihre Bestellung unter Angabe der Bestellnummer und der Postleitzahl der Lieferadresse zu verfolgen.<\/p>"
           }
         }
       },
@@ -241,7 +241,7 @@
           "type": "text",
           "settings": {
             "question": "Wie kann eine Bestellung retourniert werden?",
-            "answer": "<p>In unserem Hilfecenter finden Sie das  <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Rücksendedokument<\/span><\/a> um ihre Ware ordnungsgemäß an uns zurückzusenden. <\/p>"
+            "answer": "<p>In unserem Hilfecenter finden Sie das <a href=\"https:\/\/sleep.ink\/geld-zurueck-garantie\"><span style=\"text-decoration:underline\">Rücksendedokument<\/span><\/a> um ihre Ware ordnungsgemäß an uns zurückzusenden. <\/p>"
           }
         },
         "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f": {
@@ -249,13 +249,6 @@
           "settings": {
             "question": "Was tun, wenn die Bestellung fehlerhaft geliefert wurde?",
             "answer": "<p>Bitte kontaktieren Sie in diesem Fall unseren Kundenservice über das <a href=\"https:\/\/sleep.ink\/kontakt\"><span style=\"text-decoration:underline\">Kontaktformular<\/span><\/a> auf oder schreiben eine E-Mail an hallo@sleep.ink. <\/p>"
-          }
-        },
-        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788": {
-          "type": "text",
-          "settings": {
-            "question": "",
-            "answer": ""
           }
         },
         "df59ebd0-af87-4e3d-b759-bc373031d6dd": {
@@ -276,7 +269,6 @@
       "block_order": [
         "f229da51-9234-435c-88a5-f44a38c703c6",
         "683a526e-eb7f-4fc0-9376-8c3bf9dcad5f",
-        "a2eb3c89-0246-45fd-80ca-7ea6ee9b1788",
         "df59ebd0-af87-4e3d-b759-bc373031d6dd",
         "d77b08da-4328-4083-b692-2b70dfa707d2"
       ],
