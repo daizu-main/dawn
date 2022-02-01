@@ -372,18 +372,20 @@
 </div>
   {% endif %}
 </div>
-<div {{ block.shopify_attributes }} id="subscription-btn-wrapper" class="hidden-element">
-  <div>
-    <a href="https://abo.schlafdrink.de/cart/{{ curr_variant.metafields.global.subscriptions.value[0].vid | escape }}:1" class="make-subscription nodec" id="subscription-link">
-      <button
-        type="button"
-        class="button button--full-width py-5 px-7 fw-700 ls-p080 fs-0 ff-body uppercase"
-      >
-        Abonnement abschließen
-      </button>
-    </a>
+{% if curr_variant.available %}
+  <div {{ block.shopify_attributes }} id="subscription-btn-wrapper" class="hidden-element">
+    <div>
+      <a href="https://abo.schlafdrink.de/cart/{{ curr_variant.metafields.global.subscriptions.value[0].vid | escape }}:1"  class="make-subscription nodec" id="subscription-link">
+        <button
+          type="button"
+          class="button button--full-width py-5 px-7 fw-700 ls-p080 fs-0 ff-body uppercase"
+        >
+          Abonnement abschließen
+        </button>
+      </a>
+    </div>
   </div>
-</div>
+{% endif %}
 {% if curr_variant.available %}
 <div class="mt-4 flex row jc-c ai-c checkmark ff-body fs-0 lh-100 hidden-element green" id="subscription-checkmark-wrapper" style="color: #00706e !inportant;">
   {% render 'icon-checkmark' %}
