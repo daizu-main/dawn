@@ -29,9 +29,6 @@
         },
         "payment_icons": {
           "type": "payment_icons"
-        },
-        "share": {
-          "type": "share"
         }
       },
       "block_order": [
