@@ -10,9 +10,9 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
+            <h2 class="{{ block.settings.heading_size }} {{ block.settings.heading_align }}" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
           {%- when 'text' -%}
-            <div class="rich-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+            <div class="rich-text__text rte {{ block.settings.text_align }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
           {%- when 'button' -%}
             <a{% if block.settings.button_link == blank %} aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
               {{ block.settings.button_label | escape }}
@@ -74,19 +74,39 @@
           "options": [
             {
               "value": "h2",
-              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__1.label"
+              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.option_small.label"
             },
             {
               "value": "h1",
-              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__2.label"
+              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.option_medium.label"
             },
             {
               "value": "h0",
-              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__3.label"
+              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.option_large.label"
             }
           ],
-          "default": "h1",
+          "default": "h2",
           "label": "t:sections.rich-text.blocks.heading.settings.heading_size.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_align",
+          "options": [
+            {
+              "value": "ta-l",
+              "label": "t:sections.common-across-sections.settings.text_align.option_left.label"
+            },
+            {
+              "value": "ta-c",
+              "label": "t:sections.common-across-sections.settings.text_align.option_center.label"
+            },
+            {
+              "value": "ta-r",
+              "label": "t:sections.common-across-sections.settings.text_align.option_right.label"
+            }
+          ],
+          "default": "ta-l",
+          "label": "t:sections.common-across-sections.settings.text_align.label"
         }
       ]
     },
@@ -100,6 +120,26 @@
           "id": "text",
           "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "options": [
+            {
+              "value": "ta-l",
+              "label": "t:sections.common-across-sections.settings.text_align.option_left.label"
+            },
+            {
+              "value": "ta-c",
+              "label": "t:sections.common-across-sections.settings.text_align.option_center.label"
+            },
+            {
+              "value": "ta-r",
+              "label": "t:sections.common-across-sections.settings.text_align.option_right.label"
+            }
+          ],
+          "default": "ta-l",
+          "label": "t:sections.common-across-sections.settings.text_align.label"
         }
       ]
     },
@@ -137,9 +177,6 @@
         },
         {
           "type": "text"
-        },
-        {
-          "type": "button"
         }
       ]
     }

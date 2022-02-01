@@ -1656,6 +1656,66 @@
         }
       }
     },
+    "common-across-sections": {
+      "settings": {
+        "text_align": {
+          "option_left": {
+            "label": "Linksbündig"
+          },
+          "option_center": {
+            "label": "Zentriert"
+          },
+          "option_right": {
+            "label": "Rechtsbündig"
+          },
+          "label": "Textausrichtung"
+        },
+        "background_image_mobile": {
+          "label": "Hintergrundbild für Mobil / Tablet"
+        },
+        "background_image_desktop": {
+          "label": "Hintergrundbild für Desktop"
+        }
+      }
+    },
+    "small-page-hero": {
+      "name": "Kleiner Seiten Hero",
+      "settings": {
+        "element_width": {
+          "option_full": {
+            "label": "Volle Bildschirmbreite"
+          },
+          "option_wide": {
+            "label": "Breit (max. 1300px)"
+          },
+          "option_narrow": {
+            "label": "Schmal (max. 900px)"
+          },
+          "label": "Breite des Elements"
+        },
+        "element_height": {
+          "option_high": {
+            "label": "Hoch (ca. 600px)"
+          },
+          "option_flat": {
+            "label": "Flach (ca. 350px)"
+          },
+          "label": "Höhe des Elements"
+        },
+        "background_color": {
+          "label": "Hingergrundfarbe des Elements"
+        },
+        "font_color": {
+          "option_bright": {
+            "label": "Hell"
+          },
+          "option_dark": {
+            "label": "Dunkel"
+          },
+          "label": "Schriftfarbe"
+        }
+      }
+    },
     "rich-text": {
       "name": "Rich Text",
       "settings": {
@@ -1689,14 +1749,14 @@
               "label": "Überschrift"
             },
             "heading_size": {
-              "options__1": {
+              "option_small": {
                 "label": "Klein"
               },
-              "options__2": {
+              "option_medium": {
                 "label": "Mittel"
               },
               "label": "Schriftgröße der Überschrift",
-              "options__3": {
+              "option_large": {
                 "label": "Groß"
               }
             }
