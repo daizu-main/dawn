@@ -9,11 +9,60 @@
         "alignment": "center",
         "backgroundColor": "#111111",
         "fontColor": "bright",
-        "text": "Kontakt"
+        "text": "Werde ein Teil des Teams #Schlaf"
       }
     },
-    "richtext": {
-      "type": "rich-text"
+    "rich1": {
+      "type": "rich-text",
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Was wir tun",
+            "heading_size": "h2",
+            "heading_align": "ta-l"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "hyphenation": "de",
+            "text_align": "ta-l",
+            "text": "<p>Der gute Schlaf zu den entscheidenden Zeiten ist die Grundlage für gute Tage und hilft Dir Deine Tage nach Deinen eigenen Vorstellungen optimal nutzen zu können.<br>Uns bei sleep.ink treibt an den Menschen zu helfen, das meiste aus ihrer Nacht herauszuholen und sie damit in die Lage zu versetzen, selbst das meiste aus ihren Tagen holen zu können.<br>Wir wollen Menschen auf ihrer persönlichen Reise hin zum guten Schlaf begleiten. Deswegen entwickeln, kuratieren und empfehlen wir natürliche Schlaf-Supplements und digitale Schlafhelfer für unsere Kunden. Und dies auf Basis ihrer qualitativen und quantitativen Schlafdaten, ihrer Bedürfnisse und ihrer individuellen Wünsche. sleep.ink verknüpft als erstes Unternehmen den Bereich natürlicher Supplements mit einem personalisierten, digitalen Kanal für den Konsumenten und schafft damit die erste, funktionierenden, voll digital integrierte Lösung für den guten Schlaf zu den entscheidenden Zeiten.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"]
+    },
+    "rich2": {
+      "type": "rich-text",
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Was uns für gemeinsames Arbeiten wichtig ist",
+            "heading_size": "h2",
+            "heading_align": "ta-l"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "hyphenation": "de",
+            "text_align": "ta-l",
+            "text": "<p><strong>Verantwortung und Vertrauen</strong></p><p>Wir wollen mit Menschen arbeiten, die Experten sind, oder werden möchten und sich nicht davor scheuen, Verantwortung zu übernehmen. Hierbei vertrauen wir Dir Projekte, Aufgaben und Bereiche eigenverantwortlich zu gestalten und zu verantworten. Das reicht bis zu flexibel gestaltbaren Arbeitszeiten oder Konzepten der Arbeitsgestaltung.</p><p><strong>Gestaltungsspielräume und eigenständiges Denken</strong></p><p>Wenn wir zusammenarbeiten, dann soll der inhaltliche Gestaltungsspielraum des Einzelnen möglichst groß sein. Wer gestalten möchte muss verstehen wohin die gemeinsame Reise geht, kreativ Lösungen entwickeln und nicht erwarten gesagt zu bekommen, wie er einen Fuß vor den anderen zu setzen hat um ans gemeinsame Ziel zu gelangen. Wir wollen mit Dir arbeiten, weil Du die genau richtigen Ideen hast wie wir gemeinsam besser werden können.</p><p><strong>Teamarbeit und Feedbackkultur</strong></p><p>Großartige Dinge werden in den allermeisten Fällen von großartige Teams geschaffen. Kollaborative Arbeit, die hierfür nötigen Umgangsformen und eine Kultur ehrlichen Feedbacks aller Beteiligten versetzen uns in die Lage gemeinsam Dinge zu erschaffen und uns gemeinsam weiter zu entwickeln. Von Dir erwarten wir uns konstruktiv zu kritisieren und konstruktives Feedback anzunehmen.</p><p><strong>Entwicklungspotential des Einzelnen</strong></p><p>Keiner muss alles beherrschen und die Fähigkeit so wie der Wille sich persönlich weiterzuentwickeln sind uns mindestens so wichtig wie Erfahrung, Skills oder Abschlüsse. Wir wollen mit ambitionierten Menschen arbeiten, die Lust haben sich weiterzuentwickeln und vor Neuem nicht zurückschrecken.</p><p><strong>Offenheit und Wertschätzung</strong></p><p>Bei allem was wir tun geht es um den Menschen und die Wertschätzung für den Einzelnen und das Gegenüber. Bei uns kannst Du so sein, wie Du bist. Egal woher Du kommst, was Du gerne anziehst, oder was Du in deiner Freizeit tust. Offenheit für die Vielzahl möglicher Lebenskonzepte und Lebenshintergründe wir bei uns groß geschrieben.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"]
     },
     "jobs": {
       "type": "jobs-widget",
@@ -24,5 +73,5 @@
       }
     }
   },
-  "order": ["hero", "richtext", "jobs"]
+  "order": ["hero", "rich1", "rich2", "jobs"]
 }
