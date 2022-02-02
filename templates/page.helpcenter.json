@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "left",
+        "backgroundColor": "#111111",
+        "fontColor": "bright",
+        "text": "Hilfe und Kontakt"
+      }
+    },
+    "hilfecenter": {
+      "type": "hilfecenter",
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Hilfe und Kontakt",
+        "subline": "Bitte wählen Sie ein Thema, zu dem Sie unterstützung benötigen:"
+      }
+    }
+  },
+  "order": ["hero", "hilfecenter"]
+}

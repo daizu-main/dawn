@@ -74,9 +74,7 @@
   <div class="{{ heroWidth | escape }}">
     <div class="desktopgrid pagegrid" style="background-color: {{ section.settings.backgroundColor }};">
       {% if section.settings.imageDesktop %}
-        <div class="col-1-5 row-1 w-100p">
-          <img src="{{ section.settings.imageDesktop | image_url: width: 4000 }}" alt="{{ section.settings.imageDesktop.alt }}" class="w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
-        </div>
+          <img src="{{ section.settings.imageDesktop | image_url: width: 4000 }}" alt="{{ section.settings.imageDesktop.alt }}" class="col-1-5 row-1 w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
       {% endif %}
       <div class="flex row ai-c {{ justify | escape }} {{ column | escape }} {{ jc | escape }} row-1 w-95p {{ pl | escape }} fs-52px lh-116 ls-m200 {{ paddings | escape }}" style="color: {{ color | escape }}">
         <div id="header-content-desktop">
@@ -122,7 +120,7 @@ window.addEventListener("resize",resizeImage);
 
 {% schema %}
 {
-  "name": "kleiner Header",
+  "name": "t:sections.small-page-hero.name",
   "tag": "section",
   "class": "spaced-section--full-width",
   "settings": [
@@ -144,24 +142,24 @@ window.addEventListener("resize",resizeImage);
         }
       ],
       "default": "background-1",
-      "label": "Farbschema"
+      "label": "t:sections.image-banner.settings.color_scheme.label"
     },
     {
       "type": "select",
       "id": "heroWidth",
-      "label": "Breite des Elements",
+      "label": "t:sections.small-page-hero.settings.element_width.label",
       "options": [
         {
           "value": "full",
-          "label": "volle Bildschirmbreite"
+          "label": "t:sections.small-page-hero.settings.element_width.option_full.label"
         },
         {
           "value": "wide",
-          "label": "breit (max. 1300px)"
+          "label": "t:sections.small-page-hero.settings.element_width.option_wide.label"
         },
         {
           "value": "narrow",
-          "label": "schmal (max. 900px)"
+          "label": "t:sections.small-page-hero.settings.element_width.option_narrow.label"
         }
       ],
       "default": "full"
@@ -169,15 +167,15 @@ window.addEventListener("resize",resizeImage);
     {
       "type": "select",
       "id": "height",
-      "label": "Höhe des Elements",
+      "label": "t:sections.small-page-hero.settings.element_height.label",
       "options": [
         {
           "value": "high",
-          "label": "hoch (ca. 600px)"
+          "label": "t:sections.small-page-hero.settings.element_height.option_high.label"
         },
         {
           "value": "flat",
-          "label": "flach (ca. 350px)"
+          "label": "t:sections.small-page-hero.settings.element_height.option_flat.label"
         }
       ],
       "default": "flat"
@@ -185,15 +183,15 @@ window.addEventListener("resize",resizeImage);
     {
       "type": "select",
       "id": "alignment",
-      "label": "Ausrichtung des Textes",
+      "label": "t:sections.common-across-sections.settings.text_align.label",
       "options": [
         {
           "value": "left",
-          "label": "linksbündig"
+          "label": "t:sections.common-across-sections.settings.text_align.option_left.label"
         },
         {
           "value": "center",
-          "label": "zentriert"
+          "label": "t:sections.common-across-sections.settings.text_align.option_center.label"
         }
       ],
       "default": "center"
@@ -201,20 +199,20 @@ window.addEventListener("resize",resizeImage);
     {
       "type": "color",
       "id": "backgroundColor",
-      "label": "Hintergrundfarbe des Elements"
+      "label": "t:sections.small-page-hero.settings.background_color.label"
     },
     {
       "type": "select",
       "id": "fontColor",
-      "label": "Schriftfarbe",
+      "label": "t:sections.small-page-hero.settings.font_color.label",
       "options": [
         {
           "value": "dark",
-          "label": "dunkel"
+          "label": "t:sections.small-page-hero.settings.font_color.option_dark.label"
         },
         {
           "value": "bright",
-          "label": "hell"
+          "label": "t:sections.small-page-hero.settings.font_color.option_bright.label"
         }
       ],
       "default": "bright"
@@ -222,12 +220,12 @@ window.addEventListener("resize",resizeImage);
     {
       "type": "image_picker",
       "id": "imageDesktop",
-      "label": "Hintergrundbild für Desktop"
+      "label": "t:sections.common-across-sections.settings.background_image_desktop.label"
     },
     {
       "type": "image_picker",
       "id": "imageMobile",
-      "label": "Hintergrundbild für Mobil/Tablet"
+      "label": "t:sections.common-across-sections.settings.background_image_mobile.label"
     },
     {
       "type": "text",
@@ -237,7 +235,7 @@ window.addEventListener("resize",resizeImage);
   ],
   "presets": [
     {
-      "name": "kleiner Header",
+      "name": "t:sections.small-page-hero.name",
       "settings": {
         "color_scheme": "background-1",
         "heroWidth": "full",
