@@ -487,16 +487,25 @@
                   </div>
                 {%- endform -%}
               </product-form>
-              <div class="mt-4 flex row jc-c ai-c green checkmark ff-body fs-0 lh-100">
-                {% render 'icon-checkmark' %}
-                <span>
-                  <b>
-                    Auf Lager –
-                  </b>
-                  in 1-3 Tagen bei Dir
-                </span>
-              </div>
-              
+              {%- if product.selected_or_first_available_variant.available -%}
+                <div class="mt-4 flex row jc-c ai-c green checkmark ff-body fs-0 lh-100">
+                  {% render 'icon-checkmark' %}
+                  <span>
+                    <b>
+                      Auf Lager –
+                    </b>
+                    in 1-3 Tagen bei Dir
+                  </span>
+                </div>
+              {%- else -%}
+                <div class="mt-4 flex row jc-c ai-c checkmark ff-body fs-0 lh-100" style="color: rgba(var(--color-base-error));">
+                  <span>
+                    <b>
+                      Ausverkauft
+                    </b>
+                  </span>
+                </div>
+              {%- endif -%}
           {%- when 'rating' -%}
             {% render 'star-rating', rating: product.metafields.global.rating.value, reviewCount: product.metafields.global.reviewCount.value, type: 'page' %}
             {%- when 'nutrition' -%}
@@ -674,6 +683,42 @@
                   </div>
                 </details>
               </div>
+              {% endif %}
+            {%- when 'usage' -%}
+              {% if product.metafields.global.usage %}
+                <div class="accordion" {{ block.shopify_attributes }}>
+                  <details>
+                    <summary class="flex row ai-c">
+                      <div class="summary__title">
+                        <h2 class="h4 accordion__title ff-heading fw-400 fs-1 lh-100 pt-3">
+                          Anwendung
+                        </h2>
+                      </div>
+                      {% render 'icon-caret' %}
+                    </summary>
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                      {{ product.metafields.global.usage.value }}
+                    </div>
+                  </details>
+                </div>
+              {% endif %}
+            {%- when 'product_description' -%}
+              {% if product.metafields.global.productDescription %}
+                <div class="accordion" {{ block.shopify_attributes }}>
+                  <details>
+                    <summary class="flex row ai-c">
+                      <div class="summary__title">
+                        <h2 class="h4 accordion__title ff-heading fw-400 fs-1 lh-100 pt-3">
+                          Produktbeschreibung
+                        </h2>
+                      </div>
+                      {% render 'icon-caret' %}
+                    </summary>
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                      {{ product.metafields.global.productDescription.value }}
+                    </div>
+                  </details>
+                </div>
               {% endif %}
             {%- when 'accordion_rt' -%}
               <div class="accordion" {{ block.shopify_attributes }}>
@@ -1223,9 +1268,19 @@
           "type": "text",
           "id": "messageMissingReference",
           "label": "Text für fehlende NRV-Referenz",
-          "default": "* Keine Referenzmenge durch die EU definiert"
+          "default": "** Keine Referenzmenge durch die EU definiert"
         }
       ]
+    },
+    {
+      "type": "usage",
+      "name": "Anwendung",
+      "limit": 1
+    },
+    {
+      "type": "product_description",
+      "name": "Produktbeschreibung",
+      "limit": 1
     },
     {
       "type": "accordion_rt",

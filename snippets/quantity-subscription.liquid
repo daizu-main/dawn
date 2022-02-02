@@ -372,18 +372,20 @@
 </div>
   {% endif %}
 </div>
-<div {{ block.shopify_attributes }} id="subscription-btn-wrapper" class="hidden-element">
-  <div>
-    <a href="https://abo.schlafdrink.de/cart/{{ curr_variant.metafields.global.subscriptions.value[0].vid | escape }}:1" class="make-subscription nodec" id="subscription-link">
-      <button
-        type="button"
-        class="button button--full-width py-5 px-7 fw-700 ls-p080 fs-0 ff-body uppercase"
-      >
-        Abonnement abschließen
-      </button>
-    </a>
+{% if curr_variant.available %}
+  <div {{ block.shopify_attributes }} id="subscription-btn-wrapper" class="hidden-element">
+    <div>
+      <a href="https://abo.schlafdrink.de/cart/{{ curr_variant.metafields.global.subscriptions.value[0].vid | escape }}:1"  class="make-subscription nodec" id="subscription-link">
+        <button
+          type="button"
+          class="button button--full-width py-5 px-7 fw-700 ls-p080 fs-0 ff-body uppercase"
+        >
+          Abonnement abschließen
+        </button>
+      </a>
+    </div>
   </div>
-</div>
+{% endif %}
 {% if curr_variant.available %}
 <div class="mt-4 flex row jc-c ai-c checkmark ff-body fs-0 lh-100 hidden-element green" id="subscription-checkmark-wrapper" style="color: #00706e !inportant;">
   {% render 'icon-checkmark' %}
@@ -487,6 +489,14 @@
       }
     })
     document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
+    document.getElementById("total").innerHTML = `${(Number(quantity) * prices[Number(quantity) - 1].cost / 100).toFixed(2).replace(".",",")} €`
+      if(quantity > 1) {
+        document.getElementById("totalcompare").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      } else {
+        document.getElementById("totalcompare").innerHTML = ""
+      }
+      unitPrice = prices[Number(quantity) - 1].reference * (Number(quantity) * prices[Number(quantity) - 1].cost) / prices[Number(quantity) - 1].content
+      document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[Number(quantity) - 1].reference} ${prices[Number(quantity) - 1].unit}`
     document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
   }))
   document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
@@ -545,15 +555,21 @@
       }
     })
     document.querySelector("#quantity-input-nosub > input[type=number]").value = `${quantity}`
+      document.getElementById("total-nosub").innerHTML = `${(Number(quantity) * prices[Number(quantity) - 1].cost / 100).toFixed(2).replace(".",",")} €`
+      if(quantity > 1) {
+        document.getElementById("totalcompare-nosub").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      } else {
+        document.getElementById("totalcompare-nosub").innerHTML = ""
+      }
+      unitPrice = prices[Number(quantity) - 1].reference * (Number(quantity) * prices[Number(quantity) - 1].cost) / prices[Number(quantity) - 1].content
+      document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[Number(quantity) - 1].reference} ${prices[Number(quantity) - 1].unit}`
     document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
   }))
-  document.querySelectorAll("#subscription input[type=radio]").forEach((element) => {
+  document.querySelectorAll("#subscription input[type=radio]").forEach((element, sindex, subsarray) => {
+    if(subsarray.length > 0) {
     element.addEventListener("change", (e) => {
       if(e.target.checked) {
-        let subscriptions = []
-        if (subscriptions.size > 0 ) {
-          subscriptions = metafields.subscriptions
-        }
+        const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
         const prices = {{ curr_variant.metafields.global.prices }}
         const number = Number(e.target.id.replace("sub-",""))
         subscriptions.forEach((subscription, index) => {
@@ -576,6 +592,7 @@
         document.getElementById("subsunitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
       }
     })
+  }
   })
   document.querySelectorAll("#info-container").forEach(element => element.addEventListener("click", (e) => {
     document.getElementById("sparabo-info").classList.remove("hidden-element")

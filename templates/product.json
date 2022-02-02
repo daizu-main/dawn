@@ -15,9 +15,6 @@
         "advantages": {
           "type": "advantages"
         },
-        "variant_picker": {
-          "type": "variant_picker"
-        },
         "subscription_selector": {
           "type": "subscription_selector"
         },
@@ -33,8 +30,16 @@
         "payment_icons": {
           "type": "payment_icons"
         },
-        "share": {
-          "type": "share"
+        "pdesc": {
+          "type": "product_description"
+        },
+        "nutrition": {
+          "type": "nutrition",
+          "accordionTitle": "Zutaten und Inhaltsstoffe",
+          "messageMissingReference": "** Keine Referenzmenge durch die EU definiert"
+        },
+        "usage": {
+          "type": "usage"
         }
       },
       "block_order": [
@@ -46,11 +51,12 @@
         "subscription_selector",
         "buy_buttons",
         "features",
-        "payment_icons"
+        "payment_icons",
+        "pdesc",
+        "nutrition",
+        "usage"
       ]
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main"]
 }
