@@ -142,10 +142,24 @@
           "label": "t:sections.common-across-sections.settings.text_align.label"
         },
         {
-          "type": "checkbox",
+          "type": "select",
           "id": "hyphenation",
           "label": "t:sections.common-across-sections.settings.hyphenation.label",
-          "default": true
+          "default": "de",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
         }
       ]
     },
