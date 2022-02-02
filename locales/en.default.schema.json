@@ -1749,6 +1749,15 @@
           "label": "Background image for desktop"
         },
         "hyphenation": {
+          "option_off": {
+            "label": "no hyphenation"
+          },
+          "option_de": {
+            "label": "hyphenation (german)"
+          },
+          "option_en": {
+            "label": "hyphenation (english)"
+          },
           "label": "hyphenation"
         }
       }

@@ -1677,6 +1677,15 @@
           "label": "Hintergrundbild für Desktop"
         },
         "hyphenation": {
+          "option_off": {
+            "label": "keine Silbentrennung"
+          },
+          "option_de": {
+            "label": "Silbentrennung (deutsch)"
+          },
+          "option_en": {
+            "label": "Silbentrennung (englisch)"
+          },
           "label": "Silbentrennung"
         }
       }
