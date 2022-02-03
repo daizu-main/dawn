@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-2",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#ffffff",
+        "fontColor": "dark",
+        "text": "Presse Info"
+      }
+    },
+    "press-info": {
+      "type": "rich-text",
+      "blocks": {
+        
+        "1643887077a25f1d2f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Für Presseanfragen senden Sie uns gerne eine Email an <a href=\"mailto:hallo@sleep.ink\">hallo@sleep.ink</a>. <br\/><br\/><br\/><\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "1643887077a25f1d2f-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "press-info"
+  ]
+}
