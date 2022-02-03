@@ -32,79 +32,94 @@
         "schlafessenz": {
           "type": "product",
           "settings": {
-            "product": "schlafessenz"
+            "product": "schlafessenz",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafessenz-produktbild.png"
           }
         },
         "schlafspray": {
           "type": "product",
           "settings": {
-            "product": "schlafspray"
+            "product": "schlafspray",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafspray-produktbild.png"
           }
         },
         "schlafduo": {
           "type": "product",
           "settings": {
-            "product": "schlafduo"
+            "product": "schlafduo",
+            "variant": ""
           }
         },
         "resleep": {
           "type": "product",
           "settings": {
-            "product": "resleep-schlafkapseln"
+            "product": "resleep-schlafkapseln",
+            "variant": ""
           }
         },
         "gute-nacht": {
           "type": "product",
           "settings": {
-            "product": "schlaftee-gute-nacht"
+            "product": "schlaftee-gute-nacht",
+            "variant": ""
           }
         },
         "relax": {
           "type": "product",
           "settings": {
-            "product": "schlaftee-relax"
+            "product": "schlaftee-relax",
+            "variant": ""
           }
         },
         "gums": {
           "type": "product",
           "settings": {
-            "product": "schlafgums"
+            "product": "schlafgums",
+            "variant": ""
           }
         },
         "kerze": {
           "type": "product",
           "settings": {
-            "product": "duftkerze"
+            "product": "duftkerze",
+            "variant": ""
           }
         },
         "maske": {
           "type": "product",
           "settings": {
-            "product": "schlafmaske"
+            "product": "schlafmaske",
+            "variant": ""
           }
         },
         "matte": {
           "type": "product",
           "settings": {
-            "product": "akupressurmatte"
+            "product": "akupressurmatte",
+            "variant": ""
           }
         },
         "teeflasche": {
           "type": "product",
           "settings": {
-            "product": "teeflasche"
+            "product": "teeflasche",
+            "variant": ""
           }
         },
         "allyouneed": {
           "type": "product",
           "settings": {
-            "product": "tragetasche-all-you-need-is-sleep"
+            "product": "tragetasche-all-you-need-is-sleep",
+            "variant": ""
           }
         },
         "letstalk": {
           "type": "product",
           "settings": {
-            "product": "tragetasche-lets-talk-about-sleep-baby"
+            "product": "tragetasche-lets-talk-about-sleep-baby",
+            "variant": ""
           }
         }
       },
@@ -128,7 +143,7 @@
       "settings": {
         "title": "Alle Produkte in der Übersicht",
         "color_scheme": "background-1",
-        "backgroundProductCards": "#F9F9FA",
+        "backgroundProductCards": "#f9f9fa",
         "linkProductPage": "Mehr erfahren"
       }
     }
