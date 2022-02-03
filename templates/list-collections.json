@@ -65,14 +65,16 @@
           "type": "product",
           "settings": {
             "product": "schlaftee-gute-nacht",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/gutenacht-schlaftee-produktbild.png"
           }
         },
         "relax": {
           "type": "product",
           "settings": {
             "product": "schlaftee-relax",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/relax-schlaftee-produktbild.png"
           }
         },
         "gums": {
@@ -86,42 +88,48 @@
           "type": "product",
           "settings": {
             "product": "duftkerze",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/duftkerze-produktbild_4ff92c36-1f39-43b4-b87d-30e431db4594.png"
           }
         },
         "maske": {
           "type": "product",
           "settings": {
             "product": "schlafmaske",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafmaske-produktbild.png"
           }
         },
         "matte": {
           "type": "product",
           "settings": {
             "product": "akupressurmatte",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/akupressurmatte-produktbild_a36c068d-8b03-43ba-a571-185be139af60.png"
           }
         },
         "teeflasche": {
           "type": "product",
           "settings": {
             "product": "teeflasche",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/teeflasche-produktbild.png"
           }
         },
         "allyouneed": {
           "type": "product",
           "settings": {
             "product": "tragetasche-all-you-need-is-sleep",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/tasche-allneed-produktbild.png"
           }
         },
         "letstalk": {
           "type": "product",
           "settings": {
             "product": "tragetasche-lets-talk-about-sleep-baby",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/tasche-letstalk-produktbild.png"
           }
         }
       },
