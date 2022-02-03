@@ -96,7 +96,8 @@
           "type": "product",
           "settings": {
             "product": "schlafmaske",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafmaske-produktbild.png"
           }
         },
         "5b1caa4d-6c99-4794-b7a7-226f4c3b90a2": {
