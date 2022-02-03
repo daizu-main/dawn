@@ -2747,6 +2747,10 @@ details[open].menu-opening > .menu-drawer__submenu {
     margin-left: unset;
     margin-right: unset;
   }
+  .mx-lg-8 {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
   .mx-lg-10 {
     margin-left: 48px;
     margin-right: 48px;
@@ -3684,6 +3688,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   .fs-lg-44px {
     font-size: 44px;
   }
+  .fs-lg-62px {
+    font-size: 62px;
+  }
 }
 
 /* STRUCTURE: Line Height */
@@ -3742,6 +3749,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .lh-186 {
   line-height: 1.86;
+}
+
+.lh-38px {
+  line-height: 38px;
 }
 
 @media screen and (min-width: 500px) {
@@ -3885,6 +3896,9 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 @media screen and (min-width: 990px) {
+  .ls-lg-m360 {
+    letter-spacing: -3.6px;
+  }
   .ls-lg-m100 {
     letter-spacing: -1px;
   }
