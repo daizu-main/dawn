@@ -49,14 +49,16 @@
           "type": "product",
           "settings": {
             "product": "schlafduo",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafduo-produktbild.png"
           }
         },
         "resleep": {
           "type": "product",
           "settings": {
             "product": "resleep-schlafkapseln",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/resleep-produktbild.png"
           }
         },
         "gute-nacht": {
