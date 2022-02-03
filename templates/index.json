@@ -80,14 +80,16 @@
           "type": "product",
           "settings": {
             "product": "akupressurmatte",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/akupressurmatte-produktbild_a36c068d-8b03-43ba-a571-185be139af60.png"
           }
         },
         "1eb0f07e-2718-4972-b933-345fc90826b0": {
           "type": "product",
           "settings": {
             "product": "duftkerze",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/duftkerze-produktbild.png"
           }
         },
         "1a38d4db-9dee-4338-bc0d-7af2bf5efc0c": {
@@ -101,21 +103,24 @@
           "type": "product",
           "settings": {
             "product": "schlaftee-relax",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/relax-schlaftee-produktbild.png"
           }
         },
         "26621dfd-37c7-4d7c-b6c4-1f5030c5f22b": {
           "type": "product",
           "settings": {
             "product": "schlafessenz",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafessenz-produktbild.png"
           }
         },
         "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6": {
           "type": "product",
           "settings": {
             "product": "teeflasche",
-            "variant": ""
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/teeflasche-produktbild.png"
           }
         }
       },
