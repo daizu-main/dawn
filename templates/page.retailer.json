@@ -2,6 +2,7 @@
   "sections": {
     "hero": {
       "type": "small-page-hero",
+      "disabled": true,
       "settings": {
         "color_scheme": "background-2",
         "heroWidth": "full",
@@ -15,17 +16,25 @@
     "retailer-info": {
       "type": "rich-text",
       "blocks": {
-        
+        "d98cb221-83d8-4459-ae94-0b99bc0773e1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Retailer werden",
+            "heading_size": "h2",
+            "heading_align": "ta-l"
+          }
+        },
         "1643887077a25f1d2f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Sie möchten unsere innovativen Produkte vertreiben? Senden Sie uns eine Nachricht an <a href=\"mailto:partner@sleep.ink\">partner@sleep.ink</a>partner@sleep.ink und wir melden uns mit einem attraktiven Angebot bei Ihnen.<br\/><br\/><br\/><\/p>",
+            "text": "<p>Sie möchten unsere innovativen Produkte vertreiben?<\/p><p>Senden Sie uns eine Nachricht an <a href=\"mailto:partner@sleep.ink\">partner@sleep.ink<\/a> und wir melden uns mit einem attraktiven Angebot bei Ihnen.<br\/><br\/><br\/><\/p>",
             "text_align": "ta-l",
             "hyphenation": "de"
           }
         }
       },
       "block_order": [
+        "d98cb221-83d8-4459-ae94-0b99bc0773e1",
         "1643887077a25f1d2f-1"
       ],
       "settings": {
