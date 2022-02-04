@@ -32,79 +32,104 @@
         "schlafessenz": {
           "type": "product",
           "settings": {
-            "product": "schlafessenz"
+            "product": "schlafessenz",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafessenz-produktbild.png"
           }
         },
         "schlafspray": {
           "type": "product",
           "settings": {
-            "product": "schlafspray"
+            "product": "schlafspray",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafspray-produktbild.png"
           }
         },
         "schlafduo": {
           "type": "product",
           "settings": {
-            "product": "schlafduo"
+            "product": "schlafduo",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafduo-produktbild.png"
           }
         },
         "resleep": {
           "type": "product",
           "settings": {
-            "product": "resleep-schlafkapseln"
+            "product": "resleep-schlafkapseln",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/resleep-produktbild.png"
           }
         },
         "gute-nacht": {
           "type": "product",
           "settings": {
-            "product": "schlaftee-gute-nacht"
+            "product": "schlaftee-gute-nacht",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/gutenacht-schlaftee-produktbild.png"
           }
         },
         "relax": {
           "type": "product",
           "settings": {
-            "product": "schlaftee-relax"
+            "product": "schlaftee-relax",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/relax-schlaftee-produktbild.png"
           }
         },
         "gums": {
           "type": "product",
           "settings": {
-            "product": "schlafgums"
+            "product": "schlafgums",
+            "variant": ""
           }
         },
         "kerze": {
           "type": "product",
           "settings": {
-            "product": "duftkerze"
+            "product": "duftkerze",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/duftkerze-produktbild_4ff92c36-1f39-43b4-b87d-30e431db4594.png"
           }
         },
         "maske": {
           "type": "product",
           "settings": {
-            "product": "schlafmaske"
+            "product": "schlafmaske",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafmaske-produktbild.png"
           }
         },
         "matte": {
           "type": "product",
           "settings": {
-            "product": "akupressurmatte"
+            "product": "akupressurmatte",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/akupressurmatte-produktbild_a36c068d-8b03-43ba-a571-185be139af60.png"
           }
         },
         "teeflasche": {
           "type": "product",
           "settings": {
-            "product": "teeflasche"
+            "product": "teeflasche",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/teeflasche-produktbild.png"
           }
         },
         "allyouneed": {
           "type": "product",
           "settings": {
-            "product": "tragetasche-all-you-need-is-sleep"
+            "product": "tragetasche-all-you-need-is-sleep",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/tasche-allneed-produktbild.png"
           }
         },
         "letstalk": {
           "type": "product",
           "settings": {
-            "product": "tragetasche-lets-talk-about-sleep-baby"
+            "product": "tragetasche-lets-talk-about-sleep-baby",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/tasche-letstalk-produktbild.png"
           }
         }
       },
@@ -128,7 +153,7 @@
       "settings": {
         "title": "Alle Produkte in der Übersicht",
         "color_scheme": "background-1",
-        "backgroundProductCards": "#F9F9FA",
+        "backgroundProductCards": "#f9f9fa",
         "linkProductPage": "Mehr erfahren"
       }
     }
