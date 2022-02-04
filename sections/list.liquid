@@ -13,17 +13,17 @@
 
 <div class="SectionGrid color-{{ section.settings.color_scheme }}">
   <div class="{{ width }}">
-    <ul class='my-4 mx-5 mx-lg-11'>
+    <{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %} class='my-4 mx-5 mx-lg-11'>
       {% for block in section.blocks %}
         <li class="fs-1">{{ block.text }}</li>
       {% endfor %}
-    </ul>
+    </{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %}>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Bullet-Liste",
+  "name": "Liste",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -66,6 +66,22 @@
         }
       ],
       "default": "wide"
+    },
+    {
+      "type": "select",
+      "id": "list_type",
+      "label": "Listenart",
+      "default": "unordered",
+      "options": [
+        {
+          "value": "unordered",
+          "label": "mit Bullets"
+        },
+        {
+          "value": "ordered",
+          "label": "mit Zahlen"
+        }
+      ]
     }
   ],
   "blocks": [
@@ -83,10 +99,11 @@
   ],
   "presets": [
     {
-      "name": "Bullet-Liste",
+      "name": "Liste",
       "settings": {
         "color_scheme": "background-1",
-        "width": "wide"
+        "width": "wide",
+        "list_type": "unordered"
       },
       "blocks": [
         {
