@@ -88,8 +88,8 @@
   .myMobSwiper img {
     width: calc(20.83vw - 6.67px);
     height: calc(20.83vw - 6.67px);
-    max-width: 130px;
-    max-height: 130px;
+    max-width: min(130px, 100%);
+    max-height: min(130px, 100%);
   }
   .swiper-button-prev, .swiper-button-next {
     display: block !important;
@@ -121,9 +121,16 @@
     align-items: center;
     border: none;
     margin-bottom: 32px;
+    padding: 0;
+    width: calc(6.15vw + 2px);
+    height: calc(6.15vw + 2px);
+    min-width: 57.59px;
+    min-height: 57.59px;
+    max-width: 82px;
+    max-height: 82px;
   }
   .mySwiper .swiper-slide-thumb-active, .myMobSwiper .swiper-slide-thumb-active {
-    border: 2px solid #111111 !important;
+    border: 1px solid #111111 !important;
   }
 </style>
 
@@ -135,12 +142,12 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 250 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 250 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy" class="w-100p h-100p">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | image_url: width: 250 }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy">
+              <img src="{{ media.preview_image | image_url: width: 250 }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy" class="w-100p h-100p">
             </div>
           {% endfor %}
         </div>
