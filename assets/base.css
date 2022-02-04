@@ -972,7 +972,7 @@ deferred-media {
 /* Button - default */
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--color-foreground);
 }
 
