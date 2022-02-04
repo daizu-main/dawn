@@ -15,7 +15,7 @@
   <div class="{{ width }}">
     <{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %} class='my-4 mx-5 mx-lg-11'>
       {% for block in section.blocks %}
-        <li class="fs-1">{{ block.text }}</li>
+        <li class="fs-1">{{ block.settings.text }}</li>
       {% endfor %}
     </{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %}>
   </div>
