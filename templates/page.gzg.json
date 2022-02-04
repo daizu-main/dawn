@@ -4,7 +4,9 @@
       "type": "rich-text",
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": false
       },
       "blocks": {
         "heading": {
@@ -59,7 +61,9 @@
       "type": "rich-text",
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": false,
+        "marginBelow": false
       },
       "blocks": {
         "text": {
@@ -85,7 +89,9 @@
       "type": "rich-text",
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": false,
+        "marginBelow": true
       },
       "blocks": {
         "text": {
