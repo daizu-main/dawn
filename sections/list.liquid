@@ -11,9 +11,15 @@
     endcase
 %}
 
+<style>
+  li p {
+    display: inline;
+  }
+</style>
+
 <div class="SectionGrid color-{{ section.settings.color_scheme }}">
   <div class="{{ width }}">
-    <{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %} class='my-4 mx-5 mx-lg-11'>
+    <{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %} class='my-4 mx-5 mx-lg-11 pl-4 pl-lg-0' style="list-style-position: {% if section.settings.list_type == 'ordered' %}inside{% else %}outside{% endif %};">
       {% for block in section.blocks %}
         <li class="fs-1">{{ block.settings.text }}</li>
       {% endfor %}
