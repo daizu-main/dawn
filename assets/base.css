@@ -3921,6 +3921,13 @@ details[open].menu-opening > .menu-drawer__submenu {
   -ms-hyphens: auto;
 }
 
+.hyphen a {
+  hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
 .nodec {
   text-decoration: none;
 }
