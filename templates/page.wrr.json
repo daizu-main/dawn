@@ -14,7 +14,7 @@
           "settings": {
             "hyphenation": "de",
             "text_align": "ta-l",
-            "text": "<p><strong>Sie sind auf der Suche nach unserer Geld-zurück-Garantie?</strong><br><br>Zusätzlich zum gesetzlich vorgeschriebenen Widerrufsrecht für Verbraucher bieten wir eine erweiterte 30 Tage Geld-zurück-Garantie an. <a href='{{ shop.url }}/pages/geld-zurueck-garantie'>Alle Informationen dazu finden Sie hier.</a><br><br><strong>Widerrufsrecht für Verbraucher</strong><br><br>(Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden können.)</p>"
+            "text": "<p><strong>Sie sind auf der Suche nach unserer Geld-zurück-Garantie?</strong><br><br>Zusätzlich zum gesetzlich vorgeschriebenen Widerrufsrecht für Verbraucher bieten wir eine erweiterte 30 Tage Geld-zurück-Garantie an. <a href='/pages/geld-zurueck-garantie'>Alle Informationen dazu finden Sie hier.</a><br><br><strong>Widerrufsrecht für Verbraucher</strong><br><br>(Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden können.)</p>"
           }
         }
       },
