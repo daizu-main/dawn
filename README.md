@@ -2,7 +2,7 @@
 
 
 [Getting started](#getting-started) |
-[Deployment / CI](#deployment-ci) |
+[Deployment / CI](#deployment--ci) |
 [License](#license)
 
 This theme is based on the Shopify [Dawn Theme](https://github.com/Shopify/dawn).
@@ -10,9 +10,13 @@ See the readme there for general information on the Dawn Theme.
 
 
 
+
+
 ## Getting started
 
+
 ### Clone the repository
+
 ```sh
 git clone git@github.com:daizu-main/dawn.git
 cd dawn
@@ -21,7 +25,10 @@ cd dawn
 > 💡 git via HTTPS is currently limited in the organization settings. 
 > The GitHub docs have a [tutorial to set up SSH for your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
+
+
 ### Install the Shopify CLI
+
 For local development and testing you need to install the Shopify Command Line Interface (CLI).
 
 Shopify provides [installation instructions for all platforms.](https://shopify.dev/themes/tools/cli/installation)  
@@ -44,10 +51,11 @@ However, it is recommended to use the Ruby Gem installer. This is because we hav
 >   gem install shopify-cli -v 2.8
 >   ```
 
+
+
 #### CLI Troubleshooting
 
 If you see any issues with the CLI, check the open issues on the [Shopify CLI GitHub project](https://github.com/Shopify/shopify-cli).
-
 
 > **🚨 Push and Pull**  
 >  
@@ -58,7 +66,9 @@ If you see any issues with the CLI, check the open issues on the [Shopify CLI Gi
 > We use GitHub integration to sync the repository with the stores. (see below), so manual push/pull should not be necessary.
 
 
+
 ### Launch a development server
+
 You can launch a local server to run your local changes.
 
 1. Go to to theme root folder
@@ -90,11 +100,17 @@ You can launch a local server to run your local changes.
 Learn more about [development store in the Shopify docs](https://shopify.dev/themes/tools/development-stores).
 
 
+
+
+
 ## Deployment / CI
 
 We use the Shopify GitHub integration to directly sync the repository with Shopify.
 
+
+
 ### Staging
+
 We follow a three staged deployment process:
 
 1. Developers have their own development stores and can deploy to these for testing and tinkering.
@@ -102,14 +118,20 @@ We follow a three staged deployment process:
 Here marketing and design can review changes before they are merged on `main`
 3. The `main` branch is linked to the production store `sleep-ink.myshopify.com`
 
+
+
 ### Content changes
+
 It is important to understand that a Shopify theme not only contains the layout and design. It also stores content and settings in the templates files.  
 **When content changes are made in the Shopify admin web console, a commit is created on the according git branch.**
 
 As with code changes, content changes should only be made top-down. So content editors should make changes on the development / staging stores (affecting the `develop` branch).  
 Once these changes have been reviewed, they are deployed when `develop` is merged into `main` as part of a pull request.
 
+
+
 ### Development process
+
 The development process looks usually like this:
 
 1. 👩‍💻 A developer creates a feature or fix branch from `develop`
@@ -123,8 +145,22 @@ The development process looks usually like this:
 6. 🚀 When marketing and design approve it, the PR is merged into `main`,
    going live in the production shop
 
-### Force reset on last comit on Shopify admin
-It can happen that the 
+
+
+### Force reset on last commit on Shopify admin
+
+It can happen that Shopify gets out of sync with GitHub. 
+This is hard to spot because on the admin panel, Shopify will claim to be on the latest commit. But sometimes, changes are obviously not applied comletely.
+
+In that case you need to force Shopify to reset to the latest commit.
+There is an option to do that in the theme admin console under `Onlineshop > Themes > Current Theme > Actions > Reset to last commit`.  
+
+However, this sometimes does not work while the theme is active / published.
+
+The workaround is to:
+1. Publish another theme
+2. Select "Reset to last commit" for the now deactivated theme
+3. Re-publish the theme
 
 
 
@@ -147,9 +183,6 @@ shopify theme check
 
 We love fast websites! Which is why we created [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action). This runs a series of [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure code that gets added doesn't degrade storefront performance over time.
 
-#### Shopify/theme-check-action
-
-Dawn runs [Theme Check](#Theme-Check) on every commit via [Shopify/theme-check-action](https://github.com/Shopify/theme-check-action).
 
 
 
