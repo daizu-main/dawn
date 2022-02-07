@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#111111",
+        "fontColor": "bright",
+        "text": "Sendung verfolgen"
+      }
+    },
+    "frame": {
+      "type": "iframe",
+      "settings": {
+        "title": "",
+        "width": "wide",
+        "url": "https://sleep.ink/archive/track"
+      }
+    }
+  },
+  "order": ["hero", "frame"]
+}
