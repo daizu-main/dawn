@@ -1,0 +1,27 @@
+<script>
+  document.querySelector("title").innerHTML = "{{ section.settings.title | escape }}"
+  document.querySelector("meta[name=description]").content = "{{ section.settings.description | escape }}"
+</script>
+
+{% schema %}
+{
+  "name": "metadata",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Seitentitel"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Seitenbeschreibung"
+    }
+  ],
+  "presets": [
+    {
+      "name": "metadata"
+    }
+  ]
+}
+{% endschema %}
