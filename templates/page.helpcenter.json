@@ -10,6 +10,7 @@
         "backgroundColor": "#111111",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-hd-contact.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-contact.png",
         "text": "Hilfe und Kontakt"
       }
     },
