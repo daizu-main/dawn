@@ -2,11 +2,7 @@
 
 
 [Getting started](#getting-started) |
-[Staying up to date with Dawn changes](#staying-up-to-date-with-dawn-changes) |
-[Developer tools](#developer-tools) |
-[Contributing](#contributing) |
-[Code of conduct](#code-of-conduct) |
-[Theme Store submission](#theme-store-submission) |
+[Deployment / CI](#deployment-ci) |
 [License](#license)
 
 This theme is based on the Shopify [Dawn Theme](https://github.com/Shopify/dawn).
@@ -14,9 +10,9 @@ See the readme there for general information on the Dawn Theme.
 
 
 
-# Getting started
+## Getting started
 
-## Clone the repository
+### Clone the repository
 ```sh
 git clone git@github.com:daizu-main/dawn.git
 cd dawn
@@ -25,7 +21,7 @@ cd dawn
 > 💡 git via HTTPS is currently limited in the organization settings. 
 > The GitHub docs have a [tutorial to set up SSH for your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
-## Install the Shopify CLI
+### Install the Shopify CLI
 For local development and testing you need to install the Shopify Command Line Interface (CLI).
 
 Shopify provides [installation instructions for all platforms.](https://shopify.dev/themes/tools/cli/installation)  
@@ -48,7 +44,7 @@ However, it is recommended to use the Ruby Gem installer. This is because we hav
 >   gem install shopify-cli -v 2.8
 >   ```
 
-### CLI Troubleshooting
+#### CLI Troubleshooting
 
 If you see any issues with the CLI, check the open issues on the [Shopify CLI GitHub project](https://github.com/Shopify/shopify-cli).
 
@@ -62,7 +58,7 @@ If you see any issues with the CLI, check the open issues on the [Shopify CLI Gi
 > We use GitHub integration to sync the repository with the stores. (see below), so manual push/pull should not be necessary.
 
 
-## Launch a development server
+### Launch a development server
 You can launch a local server to run your local changes.
 
 1. Go to to theme root folder
@@ -94,8 +90,41 @@ You can launch a local server to run your local changes.
 Learn more about [development store in the Shopify docs](https://shopify.dev/themes/tools/development-stores).
 
 
+## Deployment / CI
 
-# Force reset on last comit on Shopify admin
+We use the Shopify GitHub integration to directly sync the repository with Shopify.
+
+### Staging
+We follow a three staged deployment process:
+
+1. Developers have their own development stores and can deploy to these for testing and tinkering.
+2. The `develop` branch is linked with the `sleep-ink-dev2.myshopify.com` store.  
+Here marketing and design can review changes before they are merged on `main`
+3. The `main` branch is linked to the production store `sleep-ink.myshopify.com`
+
+### Content changes
+It is important to understand that a Shopify theme not only contains the layout and design. It also stores content and settings in the templates files.  
+**When content changes are made in the Shopify admin web console, a commit is created on the according git branch.**
+
+As with code changes, content changes should only be made top-down. So content editors should make changes on the development / staging stores (affecting the `develop` branch).  
+Once these changes have been reviewed, they are deployed when `develop` is merged into `main` as part of a pull request.
+
+### Development process
+The development process looks usually like this:
+
+1. 👩‍💻 A developer creates a feature or fix branch from `develop`
+2. 👀 When they are done, they create a PR against `develop`
+3. ✅ Other developers review and approve the PR so it is merged
+4. 👀 When a meaningful set of changes has accumulated on `develop`, 
+   the devs create a PR against `main` and ask marketing and design to 
+   review the changes on the stating shop.  
+5. 📝 Content editors make changes in the Shopify admin panel (web GUI),
+   which directly comit on `develop`
+6. 🚀 When marketing and design approve it, the PR is merged into `main`,
+   going live in the production shop
+
+### Force reset on last comit on Shopify admin
+It can happen that the 
 
 
 
@@ -113,9 +142,6 @@ You can also run it from a terminal with the following Shopify CLI command:
 shopify theme check
 ```
 
-### Continuous Integration
-
-Dawn uses [GitHub Actions](https://github.com/features/actions) to maintain the quality of the theme. [This is a starting point](https://github.com/Shopify/dawn/blob/main/.github/workflows/ci.yml) and what we suggest to use in order to ensure you're building better themes. Feel free to build off of it!
 
 #### Shopify/lighthouse-ci-action
 
