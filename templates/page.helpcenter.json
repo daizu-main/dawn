@@ -6,9 +6,10 @@
         "color_scheme": "background-1",
         "heroWidth": "full",
         "height": "flat",
-        "alignment": "left",
+        "alignment": "center",
         "backgroundColor": "#111111",
         "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-hd-contact.jpg",
         "text": "Hilfe und Kontakt"
       }
     },
@@ -21,5 +22,8 @@
       }
     }
   },
-  "order": ["hero", "hilfecenter"]
+  "order": [
+    "hero",
+    "hilfecenter"
+  ]
 }
