@@ -1,0 +1,122 @@
+{% liquid 
+  case section.settings.width
+    when 'full'
+      assign width = 'SectionGrid-Full'
+    when 'wide'
+      assign width = 'SectionGrid-Wide'
+    when 'narrow'
+      assign width = 'SectionGrid-Narrow'
+    else
+      assign width = 'SectionGrid-Wide'
+    endcase
+%}
+
+<style>
+  li p {
+    display: inline;
+  }
+</style>
+
+<div class="SectionGrid color-{{ section.settings.color_scheme }}">
+  <div class="{{ width }}">
+    <{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %} class='my-4 mx-5 mx-lg-11 pl-4 pl-lg-0' style="list-style-position: {% if section.settings.list_type == 'ordered' %}inside{% else %}outside{% endif %};">
+      {% for block in section.blocks %}
+        <li class="fs-1">{{ block.settings.text }}</li>
+      {% endfor %}
+    </{% if section.settings.list_type == 'ordered'%}ol{% else %}ul{% endif %}>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Liste",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.rich-text.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.rich-text.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.rich-text.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.rich-text.settings.color_scheme.label"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Breite des Elements",
+      "options": [
+        {
+          "value": "full",
+          "label": "volle Seitenbreite"
+        },
+        {
+          "value": "wide",
+          "label": "breites Layout (max. 1300px)"
+        },
+        {
+          "value": "narrow",
+          "label": "schmales Layout (max. 900px)"
+        }
+      ],
+      "default": "wide"
+    },
+    {
+      "type": "select",
+      "id": "list_type",
+      "label": "Listenart",
+      "default": "unordered",
+      "options": [
+        {
+          "value": "unordered",
+          "label": "mit Bullets"
+        },
+        {
+          "value": "ordered",
+          "label": "mit Zahlen"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "Listeneintrag",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Liste",
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "wide",
+        "list_type": "unordered"
+      },
+      "blocks": [
+        {
+          "type": "list_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

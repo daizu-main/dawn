@@ -27,7 +27,7 @@
         "1643887077a25f1d2f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Für Presseanfragen senden Sie uns gerne eine Email an <a href=\"mailto:hallo@sleep.ink\">hallo@sleep.ink<\/a>. <br\/><br\/><br\/><\/p>",
+            "text": "<p>Für Presseanfragen senden Sie uns gerne eine Email an <a href=\"mailto:hallo@sleep.ink\">hallo@sleep.ink</a>. <br/><br/><br/></p>",
             "text_align": "ta-l",
             "hyphenation": "de"
           }
@@ -39,12 +39,11 @@
       ],
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
       }
     }
   },
-  "order": [
-    "hero",
-    "press-info"
-  ]
+  "order": ["hero", "press-info"]
 }

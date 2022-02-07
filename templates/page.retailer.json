@@ -27,7 +27,7 @@
         "1643887077a25f1d2f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Sie möchten unsere innovativen Produkte vertreiben?<\/p><p>Senden Sie uns eine Nachricht an <a href=\"mailto:partner@sleep.ink\">partner@sleep.ink<\/a> und wir melden uns mit einem attraktiven Angebot bei Ihnen.<br\/><br\/><br\/><\/p>",
+            "text": "<p>Sie möchten unsere innovativen Produkte vertreiben?</p><p>Senden Sie uns eine Nachricht an <a href=\"mailto:partner@sleep.ink\">partner@sleep.ink</a> und wir melden uns mit einem attraktiven Angebot bei Ihnen.<br/><br/><br/></p>",
             "text_align": "ta-l",
             "hyphenation": "de"
           }
@@ -39,12 +39,11 @@
       ],
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
       }
     }
   },
-  "order": [
-    "hero",
-    "retailer-info"
-  ]
+  "order": ["hero", "retailer-info"]
 }

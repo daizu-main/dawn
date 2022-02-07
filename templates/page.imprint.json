@@ -16,11 +16,11 @@
       "type": "rich-text-image",
       "settings": {
         "color_scheme": "background-1",
-        "image": "shopify:\/\/shop_images\/1uhmgfvpe1nyA1cEgBCqgzBsqzemTQknN.jpg",
+        "image": "shopify://shop_images/1uhmgfvpe1nyA1cEgBCqgzBsqzemTQknN.jpg",
         "imagePosition": "right",
         "heading": "Dem guten Schlaf verpflichtet",
         "headingPosition": "aboveText",
-        "blockText": "<p>Schön, dass Sie sich dafür interessieren, mit wem Sie es hier zu tun haben! Bei der Daizu GmbH ist unsere Mission seit 2015 Ihren Schlaf zu verbessern. Dafür entwickeln wir hochwertige und natürlich wirkende Produkte.<\/p><p>Am Anfang unserer Unternehmensgeschichte stand der schlechte Schlaf, der die Gründer Malte, Frieder und Jakob plagte. Unzufrieden mit den Optionen die damals existierten, entwickelten wir 2017 den sleep.ink Schlafdrink.<\/p>",
+        "blockText": "<p>Schön, dass Sie sich dafür interessieren, mit wem Sie es hier zu tun haben! Bei der Daizu GmbH ist unsere Mission seit 2015 Ihren Schlaf zu verbessern. Dafür entwickeln wir hochwertige und natürlich wirkende Produkte.</p><p>Am Anfang unserer Unternehmensgeschichte stand der schlechte Schlaf, der die Gründer Malte, Frieder und Jakob plagte. Unzufrieden mit den Optionen die damals existierten, entwickelten wir 2017 den sleep.ink Schlafdrink.</p>",
         "buttonDesign": "outlined",
         "buttonText": "",
         "buttonLink": ""
@@ -30,11 +30,11 @@
       "type": "rich-text-image",
       "settings": {
         "color_scheme": "background-1",
-        "image": "shopify:\/\/shop_images\/1LP_F5r8lH9B7Xz4QYTIhuIZw1UiuBx9h.jpg",
+        "image": "shopify://shop_images/1LP_F5r8lH9B7Xz4QYTIhuIZw1UiuBx9h.jpg",
         "imagePosition": "left",
         "heading": "Produktportfolio",
         "headingPosition": "aboveText",
-        "blockText": "<p>Der Erfolg des sleep.ink <a href=\"https:\/\/sleep.ink\/schlafdrink\" title=\"Schlafdrinks\">Schlafdrinks<\/a> ermutigte uns, in die Entwicklung weiterer Produkte zu investieren. Mit der Zeit entstanden Produkte wie die <a href=\"https:\/\/sleep.ink\/schlafessenz\" title=\"Schlafessenz\">Schlafessenz<\/a>, das <a href=\"https:\/\/sleep.ink\/schlafspray\" title=\"Schlafspray\">Schlafspray<\/a> oder zuletzt das <a href=\"https:\/\/sleep.ink\/schlafduo\" title=\"Schlafduo\">Schlafduo<\/a>.<br\/><\/p><p>Oft kamen die besten Ideen für neue Produkte von unseren Kundinnen und Kunden, die sich mit Ihren individuellen Problemen an uns gewendet haben. Die <a href=\"https:\/\/sleep.ink\/schlafessenz\" title=\"Schlafessenz\">Schlafessenz<\/a> zum Beispiel schafft es, die Wirkung von 60 Flaschen des Schlafdrinks in einen Spender zu komprimieren. So sparen wir viel Verpackungsmaterial und jedes beliebige Getränk wird zum Schlafdrink.<\/p>",
+        "blockText": "<p>Der Erfolg des sleep.ink <a href=\"https://sleep.ink/schlafdrink\" title=\"Schlafdrinks\">Schlafdrinks</a> ermutigte uns, in die Entwicklung weiterer Produkte zu investieren. Mit der Zeit entstanden Produkte wie die <a href=\"https://sleep.ink/schlafessenz\" title=\"Schlafessenz\">Schlafessenz</a>, das <a href=\"https://sleep.ink/schlafspray\" title=\"Schlafspray\">Schlafspray</a> oder zuletzt das <a href=\"https://sleep.ink/schlafduo\" title=\"Schlafduo\">Schlafduo</a>.<br/></p><p>Oft kamen die besten Ideen für neue Produkte von unseren Kundinnen und Kunden, die sich mit Ihren individuellen Problemen an uns gewendet haben. Die <a href=\"https://sleep.ink/schlafessenz\" title=\"Schlafessenz\">Schlafessenz</a> zum Beispiel schafft es, die Wirkung von 60 Flaschen des Schlafdrinks in einen Spender zu komprimieren. So sparen wir viel Verpackungsmaterial und jedes beliebige Getränk wird zum Schlafdrink.</p>",
         "buttonDesign": "outlined",
         "buttonText": "",
         "buttonLink": ""
@@ -44,11 +44,11 @@
       "type": "rich-text-image",
       "settings": {
         "color_scheme": "background-1",
-        "image": "shopify:\/\/shop_images\/1FihIdb-QjGbuErXpXEvvywtH4tbCWBkl.jpg",
+        "image": "shopify://shop_images/1FihIdb-QjGbuErXpXEvvywtH4tbCWBkl.jpg",
         "imagePosition": "right",
         "heading": "Nach dem Einschlafen kommt das Durchschlafen",
         "headingPosition": "aboveText",
-        "blockText": "<p>Um nicht nur das Einschlafen zu verbessern haben wir mit dem sleep.ink <a href=\"https:\/\/sleep.ink\/schlafduo\" title=\"SchlafDuo\">SchlafDuo<\/a> unser erstes Produkt auf den Markt gebracht, das auch das Durchschlafen unterstützt. Mit seiner innovativen Kapsel-in-Kapsel-Technologie ist das SchlafDuo schnell ein Liebling unserer Kundinnen und Kunden geworden.<\/p><p>Wir freuen uns, dass Sie bis hierher gelesen haben und möchten Ihre Neugier gerne belohnen: Mit dem Gutscheincode “spuernase” sparen Sie 15% bei ihrer nächsten Bestellung.<\/p>",
+        "blockText": "<p>Um nicht nur das Einschlafen zu verbessern haben wir mit dem sleep.ink <a href=\"https://sleep.ink/schlafduo\" title=\"SchlafDuo\">SchlafDuo</a> unser erstes Produkt auf den Markt gebracht, das auch das Durchschlafen unterstützt. Mit seiner innovativen Kapsel-in-Kapsel-Technologie ist das SchlafDuo schnell ein Liebling unserer Kundinnen und Kunden geworden.</p><p>Wir freuen uns, dass Sie bis hierher gelesen haben und möchten Ihre Neugier gerne belohnen: Mit dem Gutscheincode “spuernase” sparen Sie 15% bei ihrer nächsten Bestellung.</p>",
         "buttonDesign": "outlined",
         "buttonText": "",
         "buttonLink": ""
@@ -67,17 +67,16 @@
         "16436151568ce97d61-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Sollten Sie Fragen zu unseren Produkten oder zu Ihren Bestellungen haben, können Sie gerne das Chatfenster nutzen um direkt mit uns in Kontakt zu treten. Sollte gerade niemand verfügbar sein, erhalten Sie selbstverständlich auch per eMail eine Antwort. Gerne können Sie uns unter <a href=\"mailto:hallo@sleep.ink\" title=\"hallo@sleep.ink\">hallo@sleep.ink<\/a> eine eMail schicken. In der Regel erhalten Sie in weniger als 24 Stunden eine Antwort von uns. Alternativ erreichen Sie uns von Montag bis Freitag zwischen 09:00 und 18:00 Uhr auch telefonisch unter <a href=\"tel:+49 (0)30 86339722\" title=\"+49 (0)30 86339722\">+49 (0)30 86339722<\/a>. Wir freuen uns, von Ihnen zu hören!<\/p>"
+            "text": "<p>Sollten Sie Fragen zu unseren Produkten oder zu Ihren Bestellungen haben, können Sie gerne das Chatfenster nutzen um direkt mit uns in Kontakt zu treten. Sollte gerade niemand verfügbar sein, erhalten Sie selbstverständlich auch per eMail eine Antwort. Gerne können Sie uns unter <a href=\"mailto:hallo@sleep.ink\" title=\"hallo@sleep.ink\">hallo@sleep.ink</a> eine eMail schicken. In der Regel erhalten Sie in weniger als 24 Stunden eine Antwort von uns. Alternativ erreichen Sie uns von Montag bis Freitag zwischen 09:00 und 18:00 Uhr auch telefonisch unter <a href=\"tel:+49 (0)30 86339722\" title=\"+49 (0)30 86339722\">+49 (0)30 86339722</a>. Wir freuen uns, von Ihnen zu hören!</p>"
           }
         }
       },
-      "block_order": [
-        "16436151568ce97d61-0",
-        "16436151568ce97d61-1"
-      ],
+      "block_order": ["16436151568ce97d61-0", "16436151568ce97d61-1"],
       "settings": {
         "color_scheme": "background-1",
-        "full_width": false
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
       }
     },
     "164361535782d53aac": {
@@ -86,16 +85,16 @@
         "1643615357956c298d-1": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Gesetzliche Anbieterkennung:<\/strong><br\/><br\/><strong>Daizu GmbH<\/strong><br\/><strong>diese vertr. d. d. Geschäftsführer Jakob Repp, Jan-Frieder Damm<\/strong><br\/><strong>Mariendorfer Damm 1<br\/>12099 Berlin<\/strong><br\/><strong>Deutschland<\/strong><br\/><strong>Telefon: +49 (0)30 86339722<\/strong><br\/><strong>E-Mail: hallo@sleep.ink<\/strong><br\/><strong>USt-IdNr.: DE301225118<\/strong><br\/><strong>eingetragen im Handelsregister des Amtsgerichtes Berlin Charlottenburg<\/strong><br\/><strong>Handelsregisternummer HRB 168701B<\/strong><br\/><br\/><br\/><br\/><strong>Inhaltlich Verantwortlicher gemäß § 55 RStV:<\/strong><br\/>Herr Jakob Repp<br\/>Reichenberger Str. 103<br\/>10999 Berlin<br\/>Deutschland<br\/><br\/><br\/><br\/><strong>Alternative Streitbeilegung:<\/strong><br\/>Die Europäische Kommission stellt eine Plattform für die außergerichtliche <br\/>Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter <a href=\"https:\/\/ec.europa.eu\/odr\" target=\"_blank\" title=\"https:\/\/ec.europa.eu\/odr\">https:\/\/ec.europa.eu\/odr<\/a>.<br\/><br\/>Wir sind bereit, an Streitbeilegungsverfahren vor Verbraucherschlichtungsstellen teilzunehmen.<\/p><p><strong><br\/>Kontakt Datenschutzbeauftrager<\/strong><\/p><p>Unseren Datenschutzbeauftragten erreichen Sie direkt unter: <a href=\"mailto:datenschutz@daizu.de\" target=\"_blank\" title=\"datenschutz@daizu.de\">datenschutz@daizu.de<\/a><\/p><p><br\/><strong>Wir sind seit 26.05.2016 Mitglied der Initiative \"FairCommerce\".<\/strong><br\/>Nähere Informationen hierzu finden Sie unter <a href=\"https:\/\/www.fair-commerce.de\" target=\"_blank\" title=\"www.fair-commerce.de\">www.fair-commerce.de.<\/a><\/p>"
+            "text": "<p><strong>Gesetzliche Anbieterkennung:</strong><br/><br/><strong>Daizu GmbH</strong><br/><strong>diese vertr. d. d. Geschäftsführer Jan-Frieder Damm</strong><br/><strong>Mariendorfer Damm 1<br/>12099 Berlin</strong><br/><strong>Deutschland</strong><br/><strong>Telefon: +49 (0)30 86339722</strong><br/><strong>E-Mail: hallo@sleep.ink</strong><br/><strong>USt-IdNr.: DE301225118</strong><br/><strong>eingetragen im Handelsregister des Amtsgerichtes Berlin Charlottenburg</strong><br/><strong>Handelsregisternummer HRB 168701B</strong><br/><br/><br/><br/><strong>Inhaltlich Verantwortlicher gemäß § 55 RStV:</strong><br/>Herr Jan-Frieder Damm<br/>Mariendorfer Damm 1<br/>12099 Berlin<br/>Deutschland<br/><br/><br/><br/><strong>Alternative Streitbeilegung:</strong><br/>Die Europäische Kommission stellt eine Plattform für die außergerichtliche <br/>Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter <a href=\"https://ec.europa.eu/odr\" target=\"_blank\" title=\"https://ec.europa.eu/odr\">https://ec.europa.eu/odr</a>.<br/><br/>Wir sind bereit, an Streitbeilegungsverfahren vor Verbraucherschlichtungsstellen teilzunehmen.</p><p><strong><br/>Kontakt Datenschutzbeauftrager</strong></p><p>Unseren Datenschutzbeauftragten erreichen Sie direkt unter: <a href=\"mailto:datenschutz@daizu.de\" target=\"_blank\" title=\"datenschutz@daizu.de\">datenschutz@daizu.de</a></p><p><br/><strong>Wir sind seit 26.05.2016 Mitglied der Initiative \"FairCommerce\".</strong><br/>Nähere Informationen hierzu finden Sie unter <a href=\"https://www.fair-commerce.de\" target=\"_blank\" title=\"www.fair-commerce.de\">www.fair-commerce.de.</a></p>"
           }
         }
       },
-      "block_order": [
-        "1643615357956c298d-1"
-      ],
+      "block_order": ["1643615357956c298d-1"],
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
       }
     }
   },

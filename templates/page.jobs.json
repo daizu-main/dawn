@@ -16,7 +16,9 @@
       "type": "rich-text",
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
       },
       "blocks": {
         "heading": {
@@ -42,7 +44,9 @@
       "type": "rich-text",
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
       },
       "blocks": {
         "heading": {

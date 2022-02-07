@@ -972,7 +972,8 @@ deferred-media {
 /* Button - default */
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
   color: var(--color-foreground);
 }
 
@@ -2747,6 +2748,10 @@ details[open].menu-opening > .menu-drawer__submenu {
     margin-left: unset;
     margin-right: unset;
   }
+  .mx-lg-8 {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
   .mx-lg-10 {
     margin-left: 48px;
     margin-right: 48px;
@@ -2809,6 +2814,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .pl-5px {
   padding-left: 5px;
+}
+
+.pl-4 {
+  padding-left: 12px;
 }
 
 .pl-8 {
@@ -3046,6 +3055,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
   .pb-lg-16 {
     padding-bottom: 96px;
+  }
+  .pl-lg-0 {
+    padding-left: 0;
   }
   .pt-lg-10 {
     padding-top: 48px;
@@ -3684,6 +3696,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   .fs-lg-44px {
     font-size: 44px;
   }
+  .fs-lg-62px {
+    font-size: 62px;
+  }
 }
 
 /* STRUCTURE: Line Height */
@@ -3742,6 +3757,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .lh-186 {
   line-height: 1.86;
+}
+
+.lh-38px {
+  line-height: 38px;
 }
 
 @media screen and (min-width: 500px) {
@@ -3885,6 +3904,9 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 @media screen and (min-width: 990px) {
+  .ls-lg-m360 {
+    letter-spacing: -3.6px;
+  }
   .ls-lg-m100 {
     letter-spacing: -1px;
   }
@@ -3904,6 +3926,13 @@ details[open].menu-opening > .menu-drawer__submenu {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+}
+
+.hyphen a {
+  hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
 }
 
 .nodec {
