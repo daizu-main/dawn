@@ -20,7 +20,7 @@
     {% if section.settings.headingPosition == 'aboveAll' %}
       <h2 class="ff-heading fs-7 fs-lg-38px fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4 ta-c">{{ section.settings.heading | escape }}</h2>
     {% endif %}
-    <div class="flex ai-fs {% if section.settings.imagePosition == 'left' %}column md-row {% else %}column-reverse md-row-reverse {% endif %} wrap flex-1">
+    <div class="flex ai-c {% if section.settings.imagePosition == 'left' %}column md-row {% else %}column-reverse md-row-reverse {% endif %} wrap flex-1">
       <div class="mnw-220px flex-1 ofh">
         <div class="w-100p square-outer cover mx-5 mx-md-0 mt-md-5 ofh richtext-image-wrapper">
           <img src="{{ section.settings.image | image_url: width: 600 }}" alt="{{ section.settings.image.alt | escape }}" class="richtext-image w-100p h-auto cover square" loading="lazy" width="600" height="600">
