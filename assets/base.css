@@ -2669,6 +2669,11 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-bottom: 12px;
 }
 
+.my-8 {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .my-56d {
   margin-top: 56.5px;
   margin-bottom: 56.5px;
@@ -2709,6 +2714,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mx-md-10 {
     margin-left: 48px;
     margin-right: 48px;
+  }
+  .my-md-0 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .my-md-92px {
     margin-top: 92px;
