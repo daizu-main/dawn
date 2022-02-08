@@ -2748,11 +2748,20 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mb-lg-8 {
     margin-bottom: 32px;
   }
+  .ml-lg-0 {
+    margin-left: 0;
+  }
   .ml-lg-7 {
     margin-left: 24px;
   }
+  .ml-lg-14 {
+    margin-left: 80px;
+  }
   .mr-lg-0 {
     margin-right: 0;
+  }
+  .mr-lg-14 {
+    margin-right: 80px;
   }
   .mt-lg-3 {
     margin-top: 8px;
