@@ -25,7 +25,7 @@
         "drink-14": {
           "type": "product",
           "settings": {
-            "product": "schlafdrink-1",
+            "product": "sleep-ink",
             "variant": "01xBox14-fold-filled"
           }
         },
