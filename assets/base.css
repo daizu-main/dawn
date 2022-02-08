@@ -54,8 +54,8 @@
 
 .color-background-1 .button--secondary:hover,
 .color-background-2 .button--secondary:hover {
-  --color-button-text: var(--color-base-font-dark-hover);
-  --color-button-border: var(--color-base-font-dark-hover);
+  --color-button-text: var(--color-base-font-dark);
+  --color-button-border: var(--color-base-font-dark);
 }
 
 .color-inverse .button--secondary {
@@ -64,8 +64,8 @@
 }
 
 .color-inverse .button--secondary:hover {
-  --color-button-text: var(--color-base-font-light-hover);
-  --color-button-border: var(--color-base-font-light-hover);
+  --color-button-text: var(--color-base-font-light);
+  --color-button-border: var(--color-base-font-light);
 }
 
 .color-background-1 .button--tertiary,
@@ -76,8 +76,8 @@
 
 .color-background-1 .button--tertiary:hover,
 .color-background-2 .button--tertiary:hover {
-  --color-button: var(--color-base-font-dark-hover);
-  --color-button-text: var(--color-base-font-light-hover);
+  --color-button: var(--color-base-font-dark);
+  --color-button-text: var(--color-base-font-light);
 }
 
 .color-inverse .button--tertiary {
@@ -86,8 +86,8 @@
 }
 
 .color-inverse .button--tertiary:hover {
-  --color-button: var(--color-base-font-light-hover);
-  --color-button-text: var(--color-base-font-dark-hover);
+  --color-button: var(--color-base-font-light);
+  --color-button-text: var(--color-base-font-dark);
 }
 
 :root,
@@ -1079,7 +1079,7 @@ button:not([disabled]):hover,
 .submit:not([disabled]):hover,
 .submit:not([disabled]):active,
 .submit:not([disabled]):focus {
-  opacity: 0.6;
+  opacity: 1;
   box-shadow: none !important;
 }
 
@@ -5383,14 +5383,14 @@ deferred-media {
 /* Add-to-cart button */
 
 .product-form__submit {
-  color: #000000;
+  color: #111111;
   background-color: #ffcc00;
   box-shadow: none;
   opacity: 1;
 }
 
 .product-form__submit:hover {
-  color: rgba(0, 0, 0, 0.6);
+  color: #111111;
   background-color: #ffd940;
   opacity: 1 !important;
 }
