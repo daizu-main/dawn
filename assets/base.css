@@ -2511,6 +2511,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-left: 16px;
 }
 
+.ml-14 {
+  margin-left: 80px;
+}
+
 .mr-0 {
   margin-right: 0;
 }
@@ -2531,6 +2535,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 .mr-5 {
   margin-right: 16px;
+}
+
+.mr-14 {
+  margin-right: 80px;
 }
 
 .mt-0 {
@@ -2624,6 +2632,11 @@ details[open].menu-opening > .menu-drawer__submenu {
 .mx-7 {
   margin-left: 24px;
   margin-right: 24px;
+}
+
+.mx-9 {
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .my-auto {
@@ -4993,13 +5006,13 @@ deferred-media {
 }
 
 .richtext-image-wrapper {
-  width: calc(100vw - 32px);
-  height: calc(100vw - 32px);
+  width: 100vw;
+  height: 100vw;
 }
 
 .richtext-image {
-  width: calc(100vw - 32px);
-  height: calc(100vw - 32px);
+  width: 100vw;
+  height: 100vw;
   object-position: center center;
 }
 
