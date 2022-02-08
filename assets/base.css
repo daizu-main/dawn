@@ -1063,6 +1063,25 @@ button:active {
   margin-right: 4px;
   margin-bottom: 16px;
   cursor: pointer;
+  background-color: #111111;
+  color: #ffffff;
+  transition: all 250ms ease;
+}
+
+.linkbutton-to-product-page:hover {
+  background-color: rgba(17, 17, 17, 0.6);
+  color: #ffffff;
+}
+
+.shop-atc {
+  background-color: #111111;
+  color: #ffffff;
+  transition: all 250ms ease;
+}
+
+.shop-atc:hover {
+  background-color: rgba(17, 17, 17, 0.6);
+  color: #ffffff;
 }
 
 .pointer {
