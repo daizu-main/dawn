@@ -142,12 +142,19 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 250 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy" class="w-100p h-100p">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 80 }}" 
+                srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 80 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 160 }} 2x"
+                alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                width="80" height="80" loading="lazy" class="w-100p h-100p">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | image_url: width: 250 }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy" class="w-100p h-100p">
+              <img src="{{ media.preview_image | image_url: width: 80 }}" 
+                srcset="{{ media.preview_image | image_url: width: 80 }} 1x, {{ media.preview_image | image_url: width: 160 }} 2x"
+                alt="{{ media.preview_image.alt }}" 
+                width="80" height="80" loading="lazy" 
+                class="w-100p h-100p">
             </div>
           {% endfor %}
         </div>
@@ -157,12 +164,18 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1600 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }}" 
+                srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1000 }} 2x"
+                alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                width="500" height="500" loading="lazy">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | image_url: width: 1600 }}" alt="{{ media.preview_image.alt }}" width="500" height="500" loading="lazy">
+              <img src="{{ media.preview_image | image_url: width: 500 }}" 
+                srcset="{{ media.preview_image | image_url: width: 500 }} 1x, {{ media.preview_image | image_url: width: 1000 }} 2x"
+                alt="{{ media.preview_image.alt }}" 
+                width="500" height="500" loading="lazy">
             </div>
           {% endfor %}
         </div>
@@ -412,12 +425,18 @@
                   {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
                   {%- if product.selected_or_first_available_variant.featured_media != null -%}
                     <div class="swiper-slide">
-                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1200 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }}" 
+                        srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1000 }} 2x"
+                        alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                        width="500" height="500" loading="lazy">
                     </div>
                   {%- endif -%}
                   {% for media in product.media %}
                     <div class="swiper-slide">
-                      <img src="{{ media.preview_image | image_url: width: 1200 }}" alt="{{ media.preview_image.alt }}" width="250" height="250" loading="lazy">
+                      <img src="{{ media.preview_image | image_url: width: 250 }}" 
+                        srcset="{{ media.preview_image | image_url: width: 250 }} 1x, {{ media.preview_image | image_url: width: 500 }} 2x"
+                        alt="{{ media.preview_image.alt }}" 
+                        width="250" height="250" loading="lazy">
                     </div>
                   {% endfor %}
                 </div>
@@ -427,12 +446,17 @@
                   {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
                   {%- if product.selected_or_first_available_variant.featured_media != null -%}
                     <div class="swiper-slide">
-                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 150 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="50" height="50" loading="lazy">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 50 }}" 
+                        srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 50 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 100 }} 2x"
+                        alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="50" height="50" loading="lazy">
                     </div>
                   {%- endif -%}
                   {% for media in product.media %}
                     <div class="swiper-slide">
-                      <img src="{{ media.preview_image | image_url: width: 150 }}" alt="{{ media.preview_image.alt }}" width="50" height="50" loading="lazy">
+                      <img src="{{ media.preview_image | image_url: width: 50 }}" 
+                        srcset="{{ media.preview_image | image_url: width: 50 }} 1x, {{ media.preview_image | image_url: width: 100 }} 2x"
+                        alt="{{ media.preview_image.alt }}" 
+                        width="50" height="50" loading="lazy">
                     </div>
                   {% endfor %}
                 </div>
