@@ -131,7 +131,13 @@
                     Sorry, your browser doesn't support embedded videos!
                   </video>
                 {% else %}
-                  <img src="{{ slide.settings.imageMobile | image_url: width: 1200 }}" alt="{{ slide.settings.image.alt | escape }}" class="w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" width="1000" height="700" loading="lazy">
+                  <img src="{{ slide.settings.imageMobile | image_url: width: 1200 }}"
+                    srcset="{{ slide.settings.imageMobile | image_url: width: 1200 }} 1x, {{ slide.settings.imageMobile | image_url: width: 2400 }} 2x"
+                    alt="{{ slide.settings.image.alt | escape }}" 
+                    class="w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" 
+                    width="1000" 
+                    height="700" 
+                    loading="lazy">
                 {% endif %}
                 {% if slide.settings.overlay %}
                   <div class="col-1 row-1 w-100p darklayer h-87vh mnh-450px mxh-500px">
@@ -246,7 +252,11 @@
                     Sorry, your browser doesn't support embedded videos!
                   </video>
                 {% else %}
-                  <img src="{{ slide.settings.imageDesktop | image_url: width: 2000 }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p h-87vh mxh-700px mnh-500px cover" width="1500" height="700" loading="lazy">
+                  <img src="{{ slide.settings.imageDesktop | image_url: width: 2000 }}" 
+                    srcset="{{ slide.settings.imageDesktop | image_url: width: 2000 }} 1x, {{ slide.settings.imageDesktop | image_url: width: 4000 }} 2x"
+                     alt="{{ slide.settings.image.alt | escape }}" 
+                     class="col-1-5 row-1 w-100p mxh-700px h-100p mnh-500px cover" width="1500" height="700" 
+                     loading="lazy">
                 {% endif %}
                 {% if slide.settings.overlay %}
                   <div class="col-2-4 row-1 overlay h-87vh mxh-700px mnh-500px">&nbsp;</div>
