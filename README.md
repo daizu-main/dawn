@@ -168,9 +168,7 @@ The workaround is to:
 
 ## Theme Check
 
-We recommend using [Theme Check](https://github.com/shopify/theme-check) as a way to validate and lint your Shopify themes.
-
-We've added Theme Check to Dawn's [list of VS Code extensions](/.vscode/extensions.json) so if you're using Visual Studio Code as your code editor of choice, you'll be prompted to install the [Theme Check VS Code](https://marketplace.visualstudio.com/items?itemName=Shopify.theme-check-vscode) extension upon opening VS Code after you've forked and cloned Dawn.
+The [Theme Check](https://github.com/shopify/theme-check) command of the CLI is useful as a way to validate and lint the theme.
 
 You can also run it from a terminal with the following Shopify CLI command:
 
@@ -178,14 +176,18 @@ You can also run it from a terminal with the following Shopify CLI command:
 shopify theme check
 ```
 
-
-#### Shopify/lighthouse-ci-action
-
-We love fast websites! Which is why we created [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action). This runs a series of [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure code that gets added doesn't degrade storefront performance over time.
+You can configure the check behavior and ignore certain paths or warnings in the `.theme-check.yml` config file.
 
 
+### Shopify/lighthouse-ci-action
+
+There is a dedicated performance check provided by Shopify to run  [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure storefront performance doesn't degrade over time. 
+
+The [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action) can be added as GitHub actions.
+We are currently not using these, however. (as of Feb. 2022)
 
 
 ## License
 
+The Dawn theme license allows using, editing and building upon Dawn for commercial use in Shopify.  
 Copyright (c) 2021-present Shopify Inc. See [LICENSE](/LICENSE.md) for further details.
