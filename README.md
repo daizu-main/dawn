@@ -179,12 +179,18 @@ shopify theme check
 You can configure the check behavior and ignore certain paths or warnings in the `.theme-check.yml` config file.
 
 
-### Shopify/lighthouse-ci-action
+
+
+
+## Shopify/lighthouse-ci-action
 
 There is a dedicated performance check provided by Shopify to run  [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure storefront performance doesn't degrade over time. 
 
 The [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action) can be added as GitHub actions.
 We are currently not using these, however. (as of Feb. 2022)
+
+
+
 
 
 ## License
