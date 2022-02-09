@@ -47,7 +47,8 @@
                   <td class="cart-item__media">
                     {% if item.image %}
                       <img class="cart-item__image"
-                        src="{{ item.image | image_url: width: 300 }}"
+                        src="{{ item.image | image_url: width: 150 }}"
+                        srcset="{{ item.image | image_url: width: 150 }} 1x, {{ item.image | image_url: width: 300 }} 2x"
                         alt="{{ item.image.alt | escape }}"
                         loading="lazy"
                         width="150"

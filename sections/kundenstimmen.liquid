@@ -21,7 +21,8 @@
                       {% comment %} Avatar of customer {% endcomment %}
                       <div class="mr-3">
                         <img 
-                          src="{{ recension.settings.image | image_url: width: 50, height: 50 }}" 
+                          src="{{ recension.settings.image | image_url: width: 49, height: 49 }}"
+                          srcset="{{ recension.settings.image | image_url: width: 49, height: 49 }} 1x, {{ recension.settings.image | image_url: width: 98, height: 98 }} 2x"
                           alt="{{ recension.settings.image.alt }}" 
                           width="49" 
                           height="49"
@@ -97,7 +98,8 @@
                           {% comment %} Avatar of customer {% endcomment %}
                           <div class="mr-3 h-70px flex column jc-c ai-c">
                             <img 
-                              src="{{ recensions[index].settings.image | image_url: width: 100 }}" 
+                              src="{{ recensions[index].settings.image | image_url: width: 49 }}"
+                              srcset="{{ recensions[index].settings.image | image_url: width: 49 }} 1x, {{ recensions[index].settings.image | image_url: width: 98 }} 2x"
                               alt="{{ recensions[index].settings.image.alt }}" 
                               width="49" 
                               height="49"
