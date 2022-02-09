@@ -141,42 +141,6 @@
         "linkProductPage": "Mehr erfahren"
       }
     },
-    "123": {
-      "type": "123",
-      "blocks": {
-        "block1": {
-          "type": "advantage",
-          "settings": {
-            "heading": "Wirksamkeit",
-            "explanation": "Wir vertreiben keine Produkte mit leeren Versprechungen. Alle Produkte sind in ihrer Form und Wirkung bestätigt."
-          }
-        },
-        "block2": {
-          "type": "advantage",
-          "settings": {
-            "heading": "Hochwertigkeit",
-            "explanation": "Unsere innovativen, modernen und hochwertigen Schlafprodukte bestehen aus den bestmöglichen Inhaltstoffen und sind allesamt zertifiziert."
-          }
-        },
-        "block3": {
-          "type": "advantage",
-          "settings": {
-            "heading": "Natürlichkeit",
-            "explanation": "Schlafen? Ja! Um jeden Preis? Nein! Unsere Produkte sind frei von Nebenwirkungen oder Abhängigkeiten."
-          }
-        }
-      },
-      "block_order": [
-        "block1",
-        "block2",
-        "block3"
-      ],
-      "settings": {
-        "headline": "Endlich gut schlafen!",
-        "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
-        "decorate": false
-      }
-    },
     "kundenstimmen": {
       "type": "kundenstimmen",
       "blocks": {
@@ -404,7 +368,6 @@
   "order": [
     "page-hero",
     "bestseller",
-    "123",
     "kundenstimmen",
     "produktberater",
     "presseslider"

@@ -18,17 +18,17 @@
 <div class="SectionGrid py-7 py-md-11 py-lg-13 color-{{ section.settings.color_scheme }}">
   <div class="SectionGrid-Narrow">
     {% if section.settings.headingPosition == 'aboveAll' %}
-      <h2 class="ff-heading fs-7 fs-lg-38px fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4 ta-c">{{ section.settings.heading | escape }}</h2>
+      <h2 class="ff-heading {{ section.settings.heading_size }} fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4 ta-c">{{ section.settings.heading | escape }}</h2>
     {% endif %}
-    <div class="flex ai-fs {% if section.settings.imagePosition == 'left' %}column md-row {% else %}column-reverse md-row-reverse {% endif %} wrap flex-1">
-      <div class="mnw-220px flex-1 ofh">
-        <div class="w-100p square-outer cover mx-5 mx-md-0 mt-md-5 ofh richtext-image-wrapper">
+    <div class="flex ai-c {% if section.settings.imagePosition == 'left' %}column md-row {% else %}column md-row-reverse {% endif %} wrap flex-1">
+      <div class="mnw-220px w-100p flex-1 ofh">
+        <div class="w-100p square-outer cover mx-0 ofh richtext-image-wrapper">
           <img src="{{ section.settings.image | image_url: width: 600 }}" alt="{{ section.settings.image.alt | escape }}" class="richtext-image w-100p h-auto cover square" loading="lazy" width="600" height="600">
         </div>
       </div>
-      <div class="mnw-250px flex-1 ml-5 {% if section.settings.imagePosition == 'left' %}ml-lg-7 mr-5 mr-lg-0{% else %}ml-lg-0 mr-0 mr-md-5 mr-lg-7{% endif %} mt-5 mt-md-0">
+      <div class="mnw-250px flex-1 mx-9 {% if section.settings.imagePosition == 'left' %}ml-lg-14 mr-lg-0{% else %}mr-lg-14 ml-lg-0{% endif %} my-8 my-md-0">
         {% if section.settings.headingPosition == 'aboveText' %}
-          <h2 class="ff-heading fs-7 fs-lg-38px fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4">{{ section.settings.heading | escape }}</h2>
+          <h2 class="ff-heading {{ section.settings.heading_size }} fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4">{{ section.settings.heading | escape }}</h2>
         {% endif %}
         <div class="richtxt hyphen" lang="de">
           {{ section.settings.blockText }}
@@ -121,6 +121,26 @@
       ],
       "default": "aboveAll",
       "label": "Position der Überschrift"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.rich-text.blocks.heading.settings.heading_size.option_small.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.rich-text.blocks.heading.settings.heading_size.option_medium.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.rich-text.blocks.heading.settings.heading_size.option_large.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.rich-text.blocks.heading.settings.heading_size.label"
     },
     {
       "type": "richtext",

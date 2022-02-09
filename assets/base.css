@@ -2530,6 +2530,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-left: 16px;
 }
 
+.ml-14 {
+  margin-left: 80px;
+}
+
 .mr-0 {
   margin-right: 0;
 }
@@ -2550,6 +2554,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 .mr-5 {
   margin-right: 16px;
+}
+
+.mr-14 {
+  margin-right: 80px;
 }
 
 .mt-0 {
@@ -2645,6 +2653,11 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-right: 24px;
 }
 
+.mx-9 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -2673,6 +2686,11 @@ details[open].menu-opening > .menu-drawer__submenu {
 .my-4 {
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+.my-8 {
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .my-56d {
@@ -2716,6 +2734,10 @@ details[open].menu-opening > .menu-drawer__submenu {
     margin-left: 48px;
     margin-right: 48px;
   }
+  .my-md-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   .my-md-92px {
     margin-top: 92px;
     margin-bottom: 92px;
@@ -2745,11 +2767,20 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mb-lg-8 {
     margin-bottom: 32px;
   }
+  .ml-lg-0 {
+    margin-left: 0;
+  }
   .ml-lg-7 {
     margin-left: 24px;
   }
+  .ml-lg-14 {
+    margin-left: 80px;
+  }
   .mr-lg-0 {
     margin-right: 0;
+  }
+  .mr-lg-14 {
+    margin-right: 80px;
   }
   .mt-lg-3 {
     margin-top: 8px;
@@ -3645,6 +3676,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .fs-38px {
   font-size: 38px;
+}
+
+.fs-46px {
+  font-size: 46px;
 }
 
 .fs-52px {
@@ -5012,13 +5047,13 @@ deferred-media {
 }
 
 .richtext-image-wrapper {
-  width: calc(100vw - 32px);
-  height: calc(100vw - 32px);
+  width: 100vw;
+  height: 100vw;
 }
 
 .richtext-image {
-  width: calc(100vw - 32px);
-  height: calc(100vw - 32px);
+  width: 100vw;
+  height: 100vw;
   object-position: center center;
 }
 
