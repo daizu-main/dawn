@@ -9,6 +9,7 @@
         "alignment": "center",
         "backgroundColor": "#ffffff",
         "fontColor": "dark",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-zahlung-versand.jpg",
         "text": "Zahlung und Versand"
       }
     },
