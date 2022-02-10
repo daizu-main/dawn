@@ -5601,6 +5601,19 @@ deferred-media {
   width: 100%;
 }
 
+.gnv-promise-text,
+.gnv-promise-text p {
+  margin-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0;
+  font-family: var(--font-body-family);
+}
+
 @media screen and (min-width: 500px) {
   .gnv-container {
     padding: 60px 24px;
@@ -5640,6 +5653,15 @@ deferred-media {
     line-height: 18px;
     text-align: left;
   }
+
+  .gnv-promise-text,
+  .gnv-promise-text p {
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    letter-spacing: -0.3px;
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -5674,5 +5696,11 @@ deferred-media {
     margin-bottom: 14px;
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .gnv-promise-text,
+  .gnv-promise-text p {
+    font-size: 15px;
+    line-height: 21px;
   }
 }
