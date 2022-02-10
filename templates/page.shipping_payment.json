@@ -3,13 +3,13 @@
     "hero": {
       "type": "small-page-hero",
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "inverse",
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
         "backgroundColor": "#ffffff",
-        "fontColor": "dark",
-        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-zahlung-versand_4138aca0-16cf-484f-8723-31feb45e5a23.jpg",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-zahlung-versand_8930dd82-e8d4-443a-b289-9caeb8560283.jpg",
         "text": "Zahlung und Versand"
       }
     },
