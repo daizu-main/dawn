@@ -10,6 +10,7 @@
         "backgroundColor": "#ffffff",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-zahlung-versand_8930dd82-e8d4-443a-b289-9caeb8560283.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-zahlung_44f6fe77-fa73-44ad-9ba5-8977a5ed408e.jpg",
         "text": "Zahlung und Versand"
       }
     },
