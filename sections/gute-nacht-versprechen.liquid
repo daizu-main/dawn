@@ -1,3 +1,21 @@
+<div class="SectionGrid color-{{ section.settings.color_scheme }}" style="{% if section.settings.backgroundImage != blank %}background-color: url('{{ section.settings.backgroundImage | image_url: width: 2560 }}'){% endif %}">
+  <div class="SectionGrid-Wide ngrid onerow" style="grid-template-columns: repeat({{section.blocks.size}}, 1fr); grid-column-gap: 20px;">
+    {%- for promise in section.blocks -%}
+      <div class="flex column jc-fs ai-c">
+        <div class="ta-l mb-7 w-100p">
+          <div class="flex jc-c ai-c" style="background-color: white; width: 64px; height: 64px; border-radius: 50%;">
+            <img src="{{ promise.settings.image | image_url: width: 45  }}" alt="{{ promise.settings.image.alt }}" loading="lazy" width="28" height="28">
+          </div>
+        </div>
+        <h4 class="ta-l mb-4 w-100p">{{ promise.settings.title }}</h4>
+        <div class="ta-l hyphen" lang="de">
+          {{ promise.settings.text }}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "Gute-Nacht-Versprechen",
