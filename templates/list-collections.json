@@ -27,7 +27,8 @@
           "type": "product",
           "settings": {
             "product": "sleep-ink",
-            "variant": "01xBox14-fold-filled"
+            "variant": "01xBox14-fold-filled",
+            "image": "shopify:\/\/shop_images\/schlafdrink-14er-produktbild.png"
           }
         },
         "schlafessenz": {
