@@ -5589,6 +5589,18 @@ deferred-media {
   height: 26px;
 }
 
+.gnv-promise-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-family: var(--font-heading-family);
+  width: 100%;
+}
+
 @media screen and (min-width: 500px) {
   .gnv-container {
     padding: 60px 24px;
@@ -5622,6 +5634,12 @@ deferred-media {
     width: 20px;
     height: 20px;
   }
+
+  .gnv-promise-title {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -5650,5 +5668,11 @@ deferred-media {
   .gnv-icon {
     width: 28px;
     height: 28px;
+  }
+
+  .gnv-promise-title {
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
