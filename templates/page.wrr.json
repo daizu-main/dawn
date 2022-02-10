@@ -1,258 +1,299 @@
 {
   "sections": {
+    "1644503766a024669f": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-rueckgabe.jpg",
+        "text": "Widerrufsbelehrung"
+      }
+    },
     "rich1": {
       "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Sie sind auf der Suche nach unserer Geld-zurück-Garantie?<\/strong><br><br>Zusätzlich zum gesetzlich vorgeschriebenen Widerrufsrecht für Verbraucher bieten wir eine erweiterte 30 Tage Geld-zurück-Garantie an. <a href='\/pages\/geld-zurueck-garantie'>Alle Informationen dazu finden Sie hier.<\/a><br><br><strong>Widerrufsrecht für Verbraucher<\/strong><br><br>(Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden können.)<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
         "marginAbove": true,
         "marginBelow": true
-      },
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "hyphenation": "de",
-            "text_align": "ta-l",
-            "text": "<p><strong>Sie sind auf der Suche nach unserer Geld-zurück-Garantie?</strong><br><br>Zusätzlich zum gesetzlich vorgeschriebenen Widerrufsrecht für Verbraucher bieten wir eine erweiterte 30 Tage Geld-zurück-Garantie an. <a href='/pages/geld-zurueck-garantie'>Alle Informationen dazu finden Sie hier.</a><br><br><strong>Widerrufsrecht für Verbraucher</strong><br><br>(Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden können.)</p>"
-          }
-        }
-      },
-      "block_order": ["text"]
+      }
     },
     "rich2": {
       "type": "rich-text",
-      "settings": {
-        "color_scheme": "background-1",
-        "width": "narrow",
-        "marginAbove": false,
-        "marginBelow": false
-      },
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
+            "heading": "Widerrufsbelehrung",
             "heading_size": "h2",
-            "heading_align": "ta-l",
-            "heading": "Widerrufsbelehrung"
+            "heading_align": "ta-l"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "hyphenation": "de",
+            "text": "<p><strong>Widerrufsrecht<\/strong><br><br>Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.<br><br>Die Widerrufsfrist beträgt 14 Tage ab dem Tag,<\/p>",
             "text_align": "ta-l",
-            "text": "<p><strong>Widerrufsrecht</strong><br><br>Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.<br><br>Die Widerrufsfrist beträgt 14 Tage ab dem Tag,</p>"
+            "hyphenation": "de"
           }
         }
       },
-      "block_order": ["heading", "text"]
-    },
-    "list1": {
-      "type": "list",
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
-        "list_type": "unordered"
-      },
+        "marginAbove": false,
+        "marginBelow": false
+      }
+    },
+    "list1": {
+      "type": "list",
       "blocks": {
         "bullet1": {
           "type": "list_item",
           "settings": {
-            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat, sofern Sie eine oder mehrere Waren im Rahmen einer einheitlichen Bestellung bestellt haben und diese einheitlich geliefert wird bzw. werden;</p>"
+            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat, sofern Sie eine oder mehrere Waren im Rahmen einer einheitlichen Bestellung bestellt haben und diese einheitlich geliefert wird bzw. werden;<\/p>"
           }
         },
         "bullet2": {
           "type": "list_item",
           "settings": {
-            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat, sofern Sie mehrere Waren im Rahmen einer einheitlichen Bestellung bestellt haben und diese getrennt geliefert werden;</p>"
+            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat, sofern Sie mehrere Waren im Rahmen einer einheitlichen Bestellung bestellt haben und diese getrennt geliefert werden;<\/p>"
           }
         },
         "bullet3": {
           "type": "list_item",
           "settings": {
-            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Teilsendung oder dal letzte Stück in Besitz genommen haben bzw. hat, sofern Sie eine Ware bestellt haben, die in mehreren Teillieferungen oder Stücken geliefert wird;</p>"
+            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Teilsendung oder dal letzte Stück in Besitz genommen haben bzw. hat, sofern Sie eine Ware bestellt haben, die in mehreren Teillieferungen oder Stücken geliefert wird;<\/p>"
           }
         },
         "bullet4": {
           "type": "list_item",
           "settings": {
-            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die erste Ware in Besitz genommen haben bzw. hat, sofern im Rahmen einer Bestellung Waren zur regelmäßigen Lieferung über einen festgelegten Zeitraum hinweg geliefert werden.</p>"
+            "text": "<p>an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die erste Ware in Besitz genommen haben bzw. hat, sofern im Rahmen einer Bestellung Waren zur regelmäßigen Lieferung über einen festgelegten Zeitraum hinweg geliefert werden.<\/p>"
           }
         }
       },
-      "block_order": ["bullet1", "bullet2", "bullet3", "bullet4"]
+      "block_order": [
+        "bullet1",
+        "bullet2",
+        "bullet3",
+        "bullet4"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "list_type": "unordered"
+      }
     },
     "rich3": {
       "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns unter<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
         "marginAbove": false,
         "marginBelow": false
-      },
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "hyphenation": "de",
-            "text_align": "ta-l",
-            "text": "<p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns unter</p>"
-          }
-        }
-      },
-      "block_order": ["text"]
+      }
     },
     "address1": {
       "type": "address",
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
-        "text": "<p>Daizu GmbH c/o DR. KADE Pharma<br>Mariendorfer Damm 1<br>12099 Berlin<br>Telefonnr.: <a href='tel:+493086339722'>+49 (0)30 86339722</a><br>E-Mail-Adresse: <a href='mailto:hallo@sleep.ink'>hallo@sleep.ink</a></p>"
+        "text": "<p>Daizu GmbH c\/o DR. KADE Pharma<br>Mariendorfer Damm 1<br>12099 Berlin<br>Telefonnr.: <a href='tel:+493086339722'>+49 (0)30 86339722<\/a><br>E-Mail-Adresse: <a href='mailto:hallo@sleep.ink'>hallo@sleep.ink<\/a><\/p>"
       }
     },
     "rich4": {
       "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. <strong>Wenn Sie das Rücksendeformular weiter unten auf der Seite nutzen und das Rücksendedokument ausgedruckt der Rücksendung beilegen, entfällt die Pflicht, uns vorher zu informieren.<\/strong><br><br>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden oder das Rücksendedokument vor Ablauf der Widerrufsfrist erstellen.<br><br><strong>Folgen des Widerrufs<\/strong><br><br>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für die Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.<br><br>Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.<br><br>Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen 14Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, an uns oder an<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
         "marginAbove": false,
         "marginBelow": false
-      },
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "hyphenation": "de",
-            "text_align": "ta-l",
-            "text": "<p>mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. <strong>Wenn Sie das Rücksendeformular weiter unten auf der Seite nutzen und das Rücksendedokument ausgedruckt der Rücksendung beilegen, entfällt die Pflicht, uns vorher zu informieren.</strong><br><br>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden oder das Rücksendedokument vor Ablauf der Widerrufsfrist erstellen.<br><br><strong>Folgen des Widerrufs</strong><br><br>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für die Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.<br><br>Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.<br><br>Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen 14Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, an uns oder an</p>"
-          }
-        }
-      },
-      "block_order": ["text"]
+      }
     },
     "address2": {
       "type": "address",
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
-        "text": "<p>Daizu GmbH c/o DR. KADE Pharma<br>Mariendorfer Damm 1<br>12099 Berlin</p>"
+        "text": "<p>Daizu GmbH c\/o DR. KADE Pharma<br>Mariendorfer Damm 1<br>12099 Berlin<\/p>"
       }
     },
     "rich5": {
       "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von 14 Tagen absenden.<br><br>Sie tragen die unmittelbaren Kosten der Rücksendung der Waren.<br><br>Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.<br><br><strong>Ausschluss- bzw. Erlöschensgründe<\/strong><br><br>Das Widerrufsrecht besteht nicht bei Verträgen<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
         "marginAbove": false,
         "marginBelow": false
-      },
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "hyphenation": "de",
-            "text_align": "ta-l",
-            "text": "<p>zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von 14 Tagen absenden.<br><br>Sie tragen die unmittelbaren Kosten der Rücksendung der Waren.<br><br>Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.<br><br><strong>Ausschluss- bzw. Erlöschensgründe</strong><br><br>Das Widerrufsrecht besteht nicht bei Verträgen</p>"
-          }
-        }
-      },
-      "block_order": ["text"]
+      }
     },
     "list2": {
       "type": "list",
-      "settings": {
-        "color_scheme": "background-1",
-        "width": "narrow",
-        "list_type": "unordered"
-      },
       "blocks": {
         "bullet1": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung von Waren, die nicht vorgefertigt sind und für deren Herstellung eine individuelle Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind;</p>"
+            "text": "<p>zur Lieferung von Waren, die nicht vorgefertigt sind und für deren Herstellung eine individuelle Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind;<\/p>"
           }
         },
         "bullet2": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung von Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten würde;</p>"
+            "text": "<p>zur Lieferung von Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten würde;<\/p>"
           }
         },
         "bullet3": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung alkoholischer Getränke, deren Preis bei Vertragsschluss vereinbart wurde, die aber frühestens 30 Tage nach Vertragsschluss geliefert werden können und deren aktueller Wert von Schwankungen auf dem Markt abhängt, auf die der Unternehmer keinen Einfluss hat;</p>"
+            "text": "<p>zur Lieferung alkoholischer Getränke, deren Preis bei Vertragsschluss vereinbart wurde, die aber frühestens 30 Tage nach Vertragsschluss geliefert werden können und deren aktueller Wert von Schwankungen auf dem Markt abhängt, auf die der Unternehmer keinen Einfluss hat;<\/p>"
           }
         },
         "bullet4": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung von Zeitungen, Zeitschriften oder Illustrierten mit Ausnahme von Abonnement-Verträgen.</p>"
+            "text": "<p>zur Lieferung von Zeitungen, Zeitschriften oder Illustrierten mit Ausnahme von Abonnement-Verträgen.<\/p>"
           }
         }
       },
-      "block_order": ["bullet1", "bullet2", "bullet3", "bullet4"]
+      "block_order": [
+        "bullet1",
+        "bullet2",
+        "bullet3",
+        "bullet4"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "list_type": "unordered"
+      }
     },
     "rich6": {
       "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Das Widerrufsrecht erlischt vorzeitig bei Verträgen<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
         "marginAbove": false,
         "marginBelow": false
-      },
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "hyphenation": "de",
-            "text_align": "ta-l",
-            "text": "<p>Das Widerrufsrecht erlischt vorzeitig bei Verträgen</p>"
-          }
-        }
-      },
-      "block_order": ["text"]
+      }
     },
     "list3": {
       "type": "list",
-      "settings": {
-        "color_scheme": "background-1",
-        "width": "narrow",
-        "list_type": "unordered"
-      },
       "blocks": {
         "bullet1": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung versiegelter Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur Rückgabe geeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde;</p>"
+            "text": "<p>zur Lieferung versiegelter Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur Rückgabe geeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde;<\/p>"
           }
         },
         "bullet2": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung von Waren, wenn diese nach der Lieferung aufgrund ihrer Beschaffenheit untrennbar mit anderen Gütern vermischt wurden;</p>"
+            "text": "<p>zur Lieferung von Waren, wenn diese nach der Lieferung aufgrund ihrer Beschaffenheit untrennbar mit anderen Gütern vermischt wurden;<\/p>"
           }
         },
         "bullet3": {
           "type": "list_item",
           "settings": {
-            "text": "<p>zur Lieferung von Ton- oder Videoaufnahmen oder Computersoftware in einer versiegelten Packung, wenn die Versiegelung nach der Lieferung entfernt wurde.</p>"
+            "text": "<p>zur Lieferung von Ton- oder Videoaufnahmen oder Computersoftware in einer versiegelten Packung, wenn die Versiegelung nach der Lieferung entfernt wurde.<\/p>"
           }
         }
       },
-      "block_order": ["bullet1", "bullet2", "bullet3"]
+      "block_order": [
+        "bullet1",
+        "bullet2",
+        "bullet3"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "list_type": "unordered"
+      }
     },
     "iframe": {
       "type": "iframe",
       "settings": {
         "title": "",
-        "width": "wide",
-        "url": "https://sleep.ink/archive/wrr"
+        "url": "https:\/\/sleep.ink\/archive\/wrr",
+        "width": "wide"
       }
     }
   },
   "order": [
+    "1644503766a024669f",
     "rich1",
     "rich2",
     "list1",
