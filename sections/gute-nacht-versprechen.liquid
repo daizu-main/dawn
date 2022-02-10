@@ -1,6 +1,6 @@
-<div class="SectionGrid color-{{ section.settings.color_scheme }}" style="padding-top: 80px; padding-bottom: 80px;{% if section.settings.backgroundImage != blank %}background-color: url('{{ section.settings.backgroundImage | image_url: width: 2560 }}');{% endif %}">
+<div class="SectionGrid color-{{ section.settings.color_scheme }} gnv-container" style="{% if section.settings.backgroundImage != blank %}background-color: url('{{ section.settings.backgroundImage | image_url: width: 2560 }}');{% endif %}">
   <div class="SectionGrid-Wide">
-    <h2 class="mx-auto mb-13 ta-c" style="width: 413.1px;">
+    <h2 class="gnv-headline">
       {{ section.settings.title }}
     </h2>
     <div class="ngrid onerow" style="grid-template-columns: repeat({{section.blocks.size}}, 1fr); grid-column-gap: 20px;">

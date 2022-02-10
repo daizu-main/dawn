@@ -5535,3 +5535,61 @@ deferred-media {
   font-weight: 400;
   font-size: 18px;
 }
+
+/* STRUCTURE: Gute-Nacht-Versprechen */
+
+.gnv-container {
+  overflow: hidden;
+  width: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 24px 16px;
+  background-position: 0 0.62% 50%;
+}
+
+.gnv-headline {
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 35px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: -2px;
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 500px) {
+  .gnv-container {
+    padding: 60px 24px;
+    background-position: 0 0.5% 50%;
+    background-size: auto, cover;
+  }
+
+  .gnv-headline {
+    width: 15ch;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 36px;
+    line-height: 38px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .gnv-container {
+    width: 100%;
+    padding: 80px 0;
+  }
+
+  .gnv-headline {
+    width: 18ch;
+    margin: 0 auto 72px;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 500;
+  }
+}
