@@ -12,7 +12,7 @@
           </div>
         </div>
         <h4 class="gnv-promise-title">{{ promise.settings.title }}</h4>
-        <div class="gnv-promise-text hyphen" lang="de">
+        <div class="gnv-promise-text{% unless section.settings.hyphenation == 'off' %} hyphen{% endunless %}" {% unless section.settings.hyphenation == 'off' %}lang="{{ section.settings.hyphenation }}"{% endunless %}>
           {{ promise.settings.text }}
         </div>
       </div>
@@ -56,6 +56,26 @@
       "id": "title",
       "label": "Überschrift",
       "default": "Unser Gute Nacht Versprechen"
+    },
+    {
+      "type": "select",
+      "id": "hyphenation",
+      "label": "t:sections.common-across-sections.settings.hyphenation.label",
+      "default": "de",
+      "options": [
+        {
+          "value": "off",
+          "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+        },
+        {
+          "value": "de",
+          "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+        },
+        {
+          "value": "en",
+          "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+        }
+      ]
     }
   ],
   "blocks": [
@@ -87,7 +107,8 @@
       "name": "Gute-Nacht-Versprechen",
       "settings": {
         "color_scheme": "inverse",
-        "title": "Unser Gute Nacht Versprechen"
+        "title": "Unser Gute Nacht Versprechen",
+        "hyphenation": "de"
       },
       "blocks": [
         {
