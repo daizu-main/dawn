@@ -1,0 +1,102 @@
+{% schema %}
+{
+  "name": "Gute-Nacht-Versprechen",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.image-banner.settings.color_scheme.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "backgroundImage",
+      "label": "Hintergrundbild"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Überschrift",
+      "default": "Unser Gute Nacht Versprechen"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promise",
+      "name": "promise",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Bild"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Einzelüberschrift"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Einzeltext"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gute-Nacht-Versprechen",
+      "settings": {
+        "color_scheme": "inverse",
+        "title": "Unser Gute Nacht Versprechen"
+      },
+      "blocks": [
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Wissenschaftsbasiert",
+            "text": "<p>Unsere innovativen Schlafprodukte sind in Zusammenarbeit mit Schlafforschern und Ärzten auf Basis aktuellster Studien entwickelt worden und bezüglich ihrer Wirksamkeit optimal dosiert.</p>"
+          }
+        },
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Hochwertig",
+            "text": "<p>Unsere Schlafprodukte werden unter Einhaltung höchster Qualitätsstandards in Deutschland produziert und zertifiziert. Zur vollen Transparenz durchläuft jede Produktion aufwändige Qualitätskontrollen.</p>"
+          }
+        },
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Natürlich",
+            "text": "<p>Unsere natürlich wirkenden Schlafprodukte sind frei von Chemie, Nebenwirkungen, Abhängigkeiten, Gewöhnungseffekten oder einem \"Kater\"-Gefühl am nächsten Morgen.</p>"
+          }
+        },
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Praktisch",
+            "text": "<p>Alle Schlafprodukte sind flexibel in ihrer Anwendung und ideal für zu Hause oder unterwegs. Die Einnahme ist angenehm und unkompliziert, die Wirkung stellt sich ab der ersten Einnahme ein.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
