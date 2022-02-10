@@ -5569,6 +5569,26 @@ deferred-media {
   grid-row-gap: 40px;
 }
 
+.gnv-icon-wrapper {
+  width: 100%;
+}
+
+.gnv-icon-circle {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gnv-icon {
+  width: 26px;
+  height: 26px;
+}
+
 @media screen and (min-width: 500px) {
   .gnv-container {
     padding: 60px 24px;
@@ -5591,6 +5611,17 @@ deferred-media {
     grid-row-gap: 0;
     grid-column-gap: 20px;
   }
+
+  .gnv-icon-circle {
+    margin: 0 0 24px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .gnv-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -5609,5 +5640,15 @@ deferred-media {
 
   .gnv-grid {
     grid-column-gap: 32px;
+  }
+
+  .gnv-icon-circle {
+    width: 64px;
+    height: 64px;
+  }
+
+  .gnv-icon {
+    width: 28px;
+    height: 28px;
   }
 }

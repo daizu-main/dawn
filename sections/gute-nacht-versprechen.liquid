@@ -6,9 +6,9 @@
     <div class="gnv-grid">
     {%- for promise in section.blocks -%}
       <div class="flex column jc-fs ai-c">
-        <div class="ta-l mb-7 w-100p">
-          <div class="flex jc-c ai-c" style="background-color: white; width: 64px; height: 64px; border-radius: 50%;">
-            <img src="{{ promise.settings.image | image_url: width: 45  }}" alt="{{ promise.settings.image.alt }}" loading="lazy" width="28" height="28">
+        <div class="gnv-icon-wrapper">
+          <div class="gnv-icon-circle">
+            <img src="{{ promise.settings.image | image_url: width: 45  }}" alt="{{ promise.settings.image.alt }}" loading="lazy" width="28" height="28" class="gnv-icon">
           </div>
         </div>
         <h4 class="ta-l mb-4 w-100p">{{ promise.settings.title }}</h4>
