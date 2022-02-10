@@ -1,15 +1,15 @@
 {
   "sections": {
-    "hero": {
+    "164450831196e4328c": {
       "type": "small-page-hero",
-      "disabled": true,
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "background-1",
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
-        "backgroundColor": "#ffffff",
-        "fontColor": "dark",
+        "backgroundColor": "",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-retail.jpg",
         "text": "Retailer werden"
       }
     },
@@ -43,24 +43,10 @@
         "marginAbove": true,
         "marginBelow": true
       }
-    },
-    "164450831196e4328c": {
-      "type": "small-page-hero",
-      "settings": {
-        "color_scheme": "background-1",
-        "heroWidth": "full",
-        "height": "flat",
-        "alignment": "center",
-        "backgroundColor": "",
-        "fontColor": "bright",
-        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-retail.jpg",
-        "text": "Retailer werden"
-      }
     }
   },
   "order": [
-    "hero",
-    "retailer-info",
-    "164450831196e4328c"
+    "164450831196e4328c",
+    "retailer-info"
   ]
 }
