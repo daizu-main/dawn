@@ -8,7 +8,8 @@
         "height": "flat",
         "alignment": "center",
         "backgroundColor": "#ffffff",
-        "fontColor": "dark",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-impressum.jpg",
         "text": "Impressum"
       }
     },
@@ -20,6 +21,7 @@
         "imagePosition": "right",
         "heading": "Dem guten Schlaf verpflichtet",
         "headingPosition": "aboveText",
+        "heading_size": "h2",
         "blockText": "<p>Schön, dass Sie sich dafür interessieren, mit wem Sie es hier zu tun haben! Bei der Daizu GmbH ist unsere Mission seit 2015 Ihren Schlaf zu verbessern. Dafür entwickeln wir hochwertige und natürlich wirkende Produkte.<\/p><p>Am Anfang unserer Unternehmensgeschichte stand der schlechte Schlaf, der die Gründer Malte, Frieder und Jakob plagte. Unzufrieden mit den Optionen die damals existierten, entwickelten wir 2017 den sleep.ink Schlafdrink.<\/p>",
         "buttonDesign": "outlined",
         "buttonText": "",
@@ -34,6 +36,7 @@
         "imagePosition": "left",
         "heading": "Produktportfolio",
         "headingPosition": "aboveText",
+        "heading_size": "h2",
         "blockText": "<p>Der Erfolg des sleep.ink <a href=\"https:\/\/sleep.ink\/schlafdrink\" title=\"Schlafdrinks\">Schlafdrinks<\/a> ermutigte uns, in die Entwicklung weiterer Produkte zu investieren. Mit der Zeit entstanden Produkte wie die <a href=\"https:\/\/sleep.ink\/schlafessenz\" title=\"Schlafessenz\">Schlafessenz<\/a>, das <a href=\"https:\/\/sleep.ink\/schlafspray\" title=\"Schlafspray\">Schlafspray<\/a> oder zuletzt das <a href=\"https:\/\/sleep.ink\/schlafduo\" title=\"Schlafduo\">Schlafduo<\/a>.<br\/><\/p><p>Oft kamen die besten Ideen für neue Produkte von unseren Kundinnen und Kunden, die sich mit Ihren individuellen Problemen an uns gewendet haben. Die <a href=\"https:\/\/sleep.ink\/schlafessenz\" title=\"Schlafessenz\">Schlafessenz<\/a> zum Beispiel schafft es, die Wirkung von 60 Flaschen des Schlafdrinks in einen Spender zu komprimieren. So sparen wir viel Verpackungsmaterial und jedes beliebige Getränk wird zum Schlafdrink.<\/p>",
         "buttonDesign": "outlined",
         "buttonText": "",
@@ -48,6 +51,7 @@
         "imagePosition": "right",
         "heading": "Nach dem Einschlafen kommt das Durchschlafen",
         "headingPosition": "aboveText",
+        "heading_size": "h2",
         "blockText": "<p>Um nicht nur das Einschlafen zu verbessern haben wir mit dem sleep.ink <a href=\"https:\/\/sleep.ink\/schlafduo\" title=\"SchlafDuo\">SchlafDuo<\/a> unser erstes Produkt auf den Markt gebracht, das auch das Durchschlafen unterstützt. Mit seiner innovativen Kapsel-in-Kapsel-Technologie ist das SchlafDuo schnell ein Liebling unserer Kundinnen und Kunden geworden.<\/p><p>Wir freuen uns, dass Sie bis hierher gelesen haben und möchten Ihre Neugier gerne belohnen: Mit dem Gutscheincode “spuernase” sparen Sie 15% bei ihrer nächsten Bestellung.<\/p>",
         "buttonDesign": "outlined",
         "buttonText": "",
