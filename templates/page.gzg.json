@@ -10,7 +10,8 @@
         "backgroundColor": "rgba(0,0,0,0)",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-gzg_380e0795-ed4d-43bb-bacb-a8e1b33fad1b.jpg",
-        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-gzg_22b381bc-4bb9-4376-a993-5e3bfb7776d0.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-gzg.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-gzg_fdfdb9f4-d459-425c-a3c3-c577fcc6c0cf.jpg",
         "text": "Geld-zurück-Garantie"
       }
     },
@@ -20,7 +21,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Wir sind so überzeugt von der Wirkung aller sleep.ink Produkte, dass wir eine Geld-zurück-Garantie auf unsere <strong>Nahrungsergänzungsmittel und funktionellen Nahrungsmittel<\/strong> anbieten. Sie können bis zu 49% des Produktes konsumieren, bevor Sie die Geld-zurück-Garantie in Anspruch nehmen. Wenn mehr als die Hälfte verbraucht ist, können wir den Betrag leider nicht zurückerstatten.<br><br>Bestellungen mit einem Gesamtwert inkl. Rabatt unter 20€ sind von der Geld-zurück-Garantie ebenso ausgenommen wie Abo-Bestellungen. Die Rücksendung der Ware muss innerhalb von 30 Tagen nach Zustellung der Bestellung erfolgen.<br><br>Sollten Sie mit dem erworbenen Produkt nicht zufrieden sein, folgen Sie diesen einfachen drei Schritten:<\/p>",
+            "text": "<p>Wir sind so überzeugt von der Wirkung aller sleep.ink Produkte, dass wir eine Geld-zurück-Garantie auf unsere <strong>Nahrungsergänzungsmittel und funktionellen Nahrungsmittel<\/strong> anbieten. Sie können bis zu 49% des Produktes konsumieren, bevor Sie die Geld-zurück-Garantie in Anspruch nehmen. Wenn mehr als die Hälfte verbraucht ist, können wir den Betrag leider nicht zurückerstatten.<br\/><br\/>Bestellungen mit einem Gesamtwert inkl. Rabatt unter 20€ sind von der Geld-zurück-Garantie ebenso ausgenommen wie Abo-Bestellungen. Die Rücksendung der Ware muss innerhalb von 30 Tagen nach Zustellung der Bestellung erfolgen.<br\/><br\/>Sollten Sie mit dem erworbenen Produkt nicht zufrieden sein, folgen Sie diesen einfachen drei Schritten:<\/p>",
             "text_align": "ta-l",
             "hyphenation": "de"
           }
