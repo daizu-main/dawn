@@ -5794,3 +5794,55 @@ deferred-media {
     line-height: 21px;
   }
 }
+
+/* STRUCTURE: Siegel */
+
+.siegel-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  height: 180px;
+  width: 100%;
+}
+
+.siegel-background {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  width: 100%;
+  height: 100%;
+}
+
+.siegel-content {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  padding: 40px 30.5px 0;
+}
+
+.siegel-badges {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.siegel-image {
+  width: 80px;
+  height: 80px;
+}
+
+.siegel-subline {
+  text-align: center;
+  width: 34ch;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-body-family);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.75);
+}
