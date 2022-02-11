@@ -5872,3 +5872,30 @@ deferred-media {
     font-weight: 400;
   }
 }
+
+@media screen and (min-width: 990px) {
+  .siegel-container {
+    grid-template-columns:
+      1fr minmax(25px, 200px) minmax(700px, 900px) minmax(25px, 200px)
+      1fr;
+    height: 320px;
+  }
+
+  .siegel-background {
+    grid-column: 1 / span 5;
+  }
+
+  .siegel-content {
+    grid-column: 2 / span 3;
+    padding: 60px 48px 0;
+  }
+
+  .siegel-badges {
+    margin-bottom: 26px;
+  }
+
+  .siegel-image {
+    width: 200px;
+    height: 200px;
+  }
+}
