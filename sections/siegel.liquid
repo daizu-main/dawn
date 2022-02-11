@@ -2,7 +2,10 @@
   {% unless section.settings.backgroundImage == blank %}
     <img src="{{ section.settings.backgroundImage | image_url: width: 2560 }}" alt="{{ section.settings.backgroundImage.alt }}" width="2560" height="1104" loading="lazy" class="w-100p h-100p" style="grid-column: 1 / span 5; grid-row: 1 / span 1;">
   {% endunless %}
-  <div class="siegel-content" style="padding: 60px 0 0; grid-column: 1 / span 5; grid-row: 1 / span 1;">
+  <div class="siegel-content" style="padding: 60px 0 0; grid-column: 2 / span 3; grid-row: 1 / span 1; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: flex-start;">
+    {%- for badge in section.blocks -%}
+      <img src="{{ badge.image | image_url: width: 750 }}" alt="{{ badge.image.alt }}" width="200" height="200" loading="lazy" class="siegel-image">
+    {%- endfor -%}
   </div>
 </div>
 
