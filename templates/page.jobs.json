@@ -9,17 +9,13 @@
         "alignment": "center",
         "backgroundColor": "#111111",
         "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-jobs_92acd6c6-082c-477a-be8a-da5fdcfd4e83.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-jobs.jpg",
         "text": "Werde ein Teil des Teams #Schlaf"
       }
     },
     "rich1": {
       "type": "rich-text",
-      "settings": {
-        "color_scheme": "background-1",
-        "width": "narrow",
-        "marginAbove": true,
-        "marginBelow": true
-      },
       "blocks": {
         "heading": {
           "type": "heading",
@@ -32,22 +28,25 @@
         "text": {
           "type": "text",
           "settings": {
-            "hyphenation": "de",
+            "text": "<p>Der gute Schlaf zu den entscheidenden Zeiten ist die Grundlage für gute Tage und hilft Dir Deine Tage nach Deinen eigenen Vorstellungen optimal nutzen zu können.<br>Uns bei sleep.ink treibt an den Menschen zu helfen, das meiste aus ihrer Nacht herauszuholen und sie damit in die Lage zu versetzen, selbst das meiste aus ihren Tagen holen zu können.<br>Wir wollen Menschen auf ihrer persönlichen Reise hin zum guten Schlaf begleiten. Deswegen entwickeln, kuratieren und empfehlen wir natürliche Schlaf-Supplements und digitale Schlafhelfer für unsere Kunden. Und dies auf Basis ihrer qualitativen und quantitativen Schlafdaten, ihrer Bedürfnisse und ihrer individuellen Wünsche. sleep.ink verknüpft als erstes Unternehmen den Bereich natürlicher Supplements mit einem personalisierten, digitalen Kanal für den Konsumenten und schafft damit die erste, funktionierenden, voll digital integrierte Lösung für den guten Schlaf zu den entscheidenden Zeiten.<\/p>",
             "text_align": "ta-l",
-            "text": "<p>Der gute Schlaf zu den entscheidenden Zeiten ist die Grundlage für gute Tage und hilft Dir Deine Tage nach Deinen eigenen Vorstellungen optimal nutzen zu können.<br>Uns bei sleep.ink treibt an den Menschen zu helfen, das meiste aus ihrer Nacht herauszuholen und sie damit in die Lage zu versetzen, selbst das meiste aus ihren Tagen holen zu können.<br>Wir wollen Menschen auf ihrer persönlichen Reise hin zum guten Schlaf begleiten. Deswegen entwickeln, kuratieren und empfehlen wir natürliche Schlaf-Supplements und digitale Schlafhelfer für unsere Kunden. Und dies auf Basis ihrer qualitativen und quantitativen Schlafdaten, ihrer Bedürfnisse und ihrer individuellen Wünsche. sleep.ink verknüpft als erstes Unternehmen den Bereich natürlicher Supplements mit einem personalisierten, digitalen Kanal für den Konsumenten und schafft damit die erste, funktionierenden, voll digital integrierte Lösung für den guten Schlaf zu den entscheidenden Zeiten.</p>"
+            "hyphenation": "de"
           }
         }
       },
-      "block_order": ["heading", "text"]
-    },
-    "rich2": {
-      "type": "rich-text",
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "color_scheme": "background-1",
         "width": "narrow",
         "marginAbove": true,
         "marginBelow": true
-      },
+      }
+    },
+    "rich2": {
+      "type": "rich-text",
       "blocks": {
         "heading": {
           "type": "heading",
@@ -60,22 +59,36 @@
         "text": {
           "type": "text",
           "settings": {
-            "hyphenation": "de",
+            "text": "<p><strong>Verantwortung und Vertrauen<\/strong><\/p><p>Wir wollen mit Menschen arbeiten, die Experten sind, oder werden möchten und sich nicht davor scheuen, Verantwortung zu übernehmen. Hierbei vertrauen wir Dir Projekte, Aufgaben und Bereiche eigenverantwortlich zu gestalten und zu verantworten. Das reicht bis zu flexibel gestaltbaren Arbeitszeiten oder Konzepten der Arbeitsgestaltung.<\/p><p><strong>Gestaltungsspielräume und eigenständiges Denken<\/strong><\/p><p>Wenn wir zusammenarbeiten, dann soll der inhaltliche Gestaltungsspielraum des Einzelnen möglichst groß sein. Wer gestalten möchte muss verstehen wohin die gemeinsame Reise geht, kreativ Lösungen entwickeln und nicht erwarten gesagt zu bekommen, wie er einen Fuß vor den anderen zu setzen hat um ans gemeinsame Ziel zu gelangen. Wir wollen mit Dir arbeiten, weil Du die genau richtigen Ideen hast wie wir gemeinsam besser werden können.<\/p><p><strong>Teamarbeit und Feedbackkultur<\/strong><\/p><p>Großartige Dinge werden in den allermeisten Fällen von großartige Teams geschaffen. Kollaborative Arbeit, die hierfür nötigen Umgangsformen und eine Kultur ehrlichen Feedbacks aller Beteiligten versetzen uns in die Lage gemeinsam Dinge zu erschaffen und uns gemeinsam weiter zu entwickeln. Von Dir erwarten wir uns konstruktiv zu kritisieren und konstruktives Feedback anzunehmen.<\/p><p><strong>Entwicklungspotential des Einzelnen<\/strong><\/p><p>Keiner muss alles beherrschen und die Fähigkeit so wie der Wille sich persönlich weiterzuentwickeln sind uns mindestens so wichtig wie Erfahrung, Skills oder Abschlüsse. Wir wollen mit ambitionierten Menschen arbeiten, die Lust haben sich weiterzuentwickeln und vor Neuem nicht zurückschrecken.<\/p><p><strong>Offenheit und Wertschätzung<\/strong><\/p><p>Bei allem was wir tun geht es um den Menschen und die Wertschätzung für den Einzelnen und das Gegenüber. Bei uns kannst Du so sein, wie Du bist. Egal woher Du kommst, was Du gerne anziehst, oder was Du in deiner Freizeit tust. Offenheit für die Vielzahl möglicher Lebenskonzepte und Lebenshintergründe wir bei uns groß geschrieben.<\/p>",
             "text_align": "ta-l",
-            "text": "<p><strong>Verantwortung und Vertrauen</strong></p><p>Wir wollen mit Menschen arbeiten, die Experten sind, oder werden möchten und sich nicht davor scheuen, Verantwortung zu übernehmen. Hierbei vertrauen wir Dir Projekte, Aufgaben und Bereiche eigenverantwortlich zu gestalten und zu verantworten. Das reicht bis zu flexibel gestaltbaren Arbeitszeiten oder Konzepten der Arbeitsgestaltung.</p><p><strong>Gestaltungsspielräume und eigenständiges Denken</strong></p><p>Wenn wir zusammenarbeiten, dann soll der inhaltliche Gestaltungsspielraum des Einzelnen möglichst groß sein. Wer gestalten möchte muss verstehen wohin die gemeinsame Reise geht, kreativ Lösungen entwickeln und nicht erwarten gesagt zu bekommen, wie er einen Fuß vor den anderen zu setzen hat um ans gemeinsame Ziel zu gelangen. Wir wollen mit Dir arbeiten, weil Du die genau richtigen Ideen hast wie wir gemeinsam besser werden können.</p><p><strong>Teamarbeit und Feedbackkultur</strong></p><p>Großartige Dinge werden in den allermeisten Fällen von großartige Teams geschaffen. Kollaborative Arbeit, die hierfür nötigen Umgangsformen und eine Kultur ehrlichen Feedbacks aller Beteiligten versetzen uns in die Lage gemeinsam Dinge zu erschaffen und uns gemeinsam weiter zu entwickeln. Von Dir erwarten wir uns konstruktiv zu kritisieren und konstruktives Feedback anzunehmen.</p><p><strong>Entwicklungspotential des Einzelnen</strong></p><p>Keiner muss alles beherrschen und die Fähigkeit so wie der Wille sich persönlich weiterzuentwickeln sind uns mindestens so wichtig wie Erfahrung, Skills oder Abschlüsse. Wir wollen mit ambitionierten Menschen arbeiten, die Lust haben sich weiterzuentwickeln und vor Neuem nicht zurückschrecken.</p><p><strong>Offenheit und Wertschätzung</strong></p><p>Bei allem was wir tun geht es um den Menschen und die Wertschätzung für den Einzelnen und das Gegenüber. Bei uns kannst Du so sein, wie Du bist. Egal woher Du kommst, was Du gerne anziehst, oder was Du in deiner Freizeit tust. Offenheit für die Vielzahl möglicher Lebenskonzepte und Lebenshintergründe wir bei uns groß geschrieben.</p>"
+            "hyphenation": "de"
           }
         }
       },
-      "block_order": ["heading", "text"]
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
+      }
     },
     "jobs": {
       "type": "jobs-widget",
       "settings": {
         "id": "join-widget",
-        "scriptUrl": "https://join.com/api/widget/bundle/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXR0aW5ncyI6eyJzaG93Q2F0ZWdvcnlGaWx0ZXIiOnRydWUsInNob3dMb2NhdGlvbkZpbHRlciI6dHJ1ZSwic2hvd0VtcGxveW1lbnRUeXBlRmlsdGVyIjp0cnVlLCJsYW5ndWFnZSI6ImVuIiwiam9ic1BlclBhZ2UiOjI1fSwiam9icyI6e30sImRlc2lnbiI6eyJzaG93TG9nbyI6dHJ1ZSwic2hvd0xvY2F0aW9uIjp0cnVlLCJzaG93RW1wbG95bWVudFR5cGUiOnRydWUsInNob3dDYXRlZ29yeSI6dHJ1ZSwiY29sb3JzIjp7IndpZGdldCI6eyJiYWNrZ3JvdW5kIjoiI0ZGRkZGRiIsImZpbHRlckJvcmRlciI6IiNDN0NERDgiLCJwYWdpbmF0aW9uIjoiIzI1OEFGRiJ9LCJqb2JDYXJkIjp7InNoYWRvdyI6IiNDN0NkRDgiLCJiYWNrZ3JvdW5kIjoiI0ZGRkZGRiIsInByaW1hcnlUZXh0IjoiIzMwMzQ0NiIsInNlY29uZGFyeVRleHQiOiIjOEY5Q0IyIn19fSwidmVyc2lvbiI6MiwiY29tcGFueVB1YmxpY0lkIjoiZjMxNzkyM2ZjMTA3ZDU2NjA4ZjdhYTQ5NTFmM2ExOGIiLCJpYXQiOjE2MDY4MTQyOTYsImp0aSI6IjJjOWIwYTg4LWY3MzYtNDJlMC05NDNhLTcxYjEzNjIwZTBmYSJ9.6SHYYO695ArRzGCDxUo6HuDrcm6RD7IwA8qyBfm1uDI",
+        "scriptUrl": "https:\/\/join.com\/api\/widget\/bundle\/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXR0aW5ncyI6eyJzaG93Q2F0ZWdvcnlGaWx0ZXIiOnRydWUsInNob3dMb2NhdGlvbkZpbHRlciI6dHJ1ZSwic2hvd0VtcGxveW1lbnRUeXBlRmlsdGVyIjp0cnVlLCJsYW5ndWFnZSI6ImVuIiwiam9ic1BlclBhZ2UiOjI1fSwiam9icyI6e30sImRlc2lnbiI6eyJzaG93TG9nbyI6dHJ1ZSwic2hvd0xvY2F0aW9uIjp0cnVlLCJzaG93RW1wbG95bWVudFR5cGUiOnRydWUsInNob3dDYXRlZ29yeSI6dHJ1ZSwiY29sb3JzIjp7IndpZGdldCI6eyJiYWNrZ3JvdW5kIjoiI0ZGRkZGRiIsImZpbHRlckJvcmRlciI6IiNDN0NERDgiLCJwYWdpbmF0aW9uIjoiIzI1OEFGRiJ9LCJqb2JDYXJkIjp7InNoYWRvdyI6IiNDN0NkRDgiLCJiYWNrZ3JvdW5kIjoiI0ZGRkZGRiIsInByaW1hcnlUZXh0IjoiIzMwMzQ0NiIsInNlY29uZGFyeVRleHQiOiIjOEY5Q0IyIn19fSwidmVyc2lvbiI6MiwiY29tcGFueVB1YmxpY0lkIjoiZjMxNzkyM2ZjMTA3ZDU2NjA4ZjdhYTQ5NTFmM2ExOGIiLCJpYXQiOjE2MDY4MTQyOTYsImp0aSI6IjJjOWIwYTg4LWY3MzYtNDJlMC05NDNhLTcxYjEzNjIwZTBmYSJ9.6SHYYO695ArRzGCDxUo6HuDrcm6RD7IwA8qyBfm1uDI",
         "color_scheme": "background-1"
       }
     }
   },
-  "order": ["hero", "rich1", "rich2", "jobs"]
+  "order": [
+    "hero",
+    "rich1",
+    "rich2",
+    "jobs"
+  ]
 }
