@@ -5846,3 +5846,29 @@ deferred-media {
   letter-spacing: 0;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.75);
 }
+
+@media screen and (min-width: 500px) {
+  .siegel-container {
+    height: 302px;
+  }
+
+  .siegel-content {
+    padding: 72px 72px 0;
+  }
+
+  .siegel-badges {
+    margin-bottom: 42px;
+  }
+
+  .siegel-image {
+    width: 158px;
+    height: 158px;
+  }
+
+  .siegel-subline {
+    width: unset;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+  }
+}
