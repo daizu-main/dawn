@@ -2072,11 +2072,19 @@ details[open].menu-opening > .menu-drawer__submenu {
   display: block;
 }
 
+.mobilegrid {
+  display: grid;
+}
+
 .nmobile {
   display: none;
 }
 
 .tablet {
+  display: none;
+}
+
+.tabletgrid {
   display: none;
 }
 
@@ -2108,16 +2116,25 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mobile {
     display: none;
   }
+  .mobilegrid {
+    display: none;
+  }
   .nmobile {
     display: block;
   }
   .tablet {
     display: block;
   }
+  .tabletgrid {
+    display: grid;
+  }
 }
 
 @media screen and (min-width: 990px) {
   .tablet {
+    display: none;
+  }
+  .tabletgrid {
     display: none;
   }
   .desktop {

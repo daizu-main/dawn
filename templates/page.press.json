@@ -2,39 +2,30 @@
   "sections": {
     "hero": {
       "type": "small-page-hero",
-      "disabled": true,
       "settings": {
         "color_scheme": "background-2",
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
         "backgroundColor": "#ffffff",
-        "fontColor": "dark",
-        "text": "Presse Info"
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-retail_972e3967-96a0-4d07-82b0-7ae180ddcd2f.jpg",
+        "text": "Presse-Info"
       }
     },
     "press-info": {
       "type": "rich-text",
       "blocks": {
-        "5c72f7a4-c60f-4ff0-9230-c4db1ceec55b": {
-          "type": "heading",
-          "settings": {
-            "heading": "Presse Info",
-            "heading_size": "h2",
-            "heading_align": "ta-l"
-          }
-        },
         "1643887077a25f1d2f-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Für Presseanfragen senden Sie uns gerne eine Email an <a href=\"mailto:hallo@sleep.ink\">hallo@sleep.ink</a>. <br/><br/><br/></p>",
+            "text": "<p>Für Presseanfragen senden Sie uns gerne eine Email an <a href=\"mailto:hallo@sleep.ink\">hallo@sleep.ink<\/a>. <br\/><br\/><br\/><\/p>",
             "text_align": "ta-l",
             "hyphenation": "de"
           }
         }
       },
       "block_order": [
-        "5c72f7a4-c60f-4ff0-9230-c4db1ceec55b",
         "1643887077a25f1d2f-1"
       ],
       "settings": {
@@ -45,5 +36,8 @@
       }
     }
   },
-  "order": ["hero", "press-info"]
+  "order": [
+    "hero",
+    "press-info"
+  ]
 }
