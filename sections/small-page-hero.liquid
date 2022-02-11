@@ -82,9 +82,19 @@
         </div>
       </div>
     </div>
-    <div class="ndesktopgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
+    <div class="tabletgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
+      {% if section.settings.imageTablet %}
+        <img src="{{ section.settings.imageTablet | image_url: width: 2500 }}" alt="{{ section.settings.imageTablet.alt }}" class="col-1 row-1 w-100p cover" id="header-img-tablet" width="800" height="250" loading="lazy">
+      {% endif %}
+      <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p">
+        <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-tablet">
+          {{ section.settings.text }}
+        </div>
+      </div>
+    </div>
+    <div class="mobilegrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
       {% if section.settings.imageMobile %}
-        <img src="{{ section.settings.imageMobile | image_url: width: 2000 }}" alt="{{ section.settings.imageMobile.alt }}" class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
+        <img src="{{ section.settings.imageMobile | image_url: width: 1200 }}" alt="{{ section.settings.imageMobile.alt }}" class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
       {% endif %}
       <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-mobile">
@@ -101,18 +111,12 @@ function resizeImage(){
   const idealDesktopHeight = "{{ section.settings.height }}" === "high" ? `${contentDesktop + 540}` : `${contentDesktop + 290}`;
   const idealMobileHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 438}` : `${contentMobile + 113}`;
   const idealTabletHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 424}` : `${contentMobile + 184}`;
-  const screenWidth = document.body.offsetWidth;
-  if (screenWidth >= 500) {
-    if(document.querySelectorAll("#header-img-mobile").length > 0) 
-      document.getElementById("header-img-mobile").height = idealTabletHeight;
-    if(document.querySelectorAll("#header-img-desktop").length > 0)
-      document.getElementById("header-img-desktop").height = idealDesktopHeight;
-  } else {
-    if(document.querySelectorAll("#header-img-mobile").length > 0)
-      document.getElementById("header-img-mobile").height = idealMobileHeight;
-    if(document.querySelectorAll("#header-img-desktop").length > 0)
-      document.getElementById("header-img-desktop").height = idealDesktopHeight;
-  }
+  if(document.querySelectorAll("#header-img-mobile").length > 0) 
+    document.getElementById("header-img-mobile").height = idealMobileHeight;
+  if(document.querySelectorAll("#header-img-tablet").length > 0)
+    document.getElementById("header-img-tablet").height = idealTabletHeight;
+  if(document.querySelectorAll("#header-img-desktop").length > 0)
+    document.getElementById("header-img-desktop").height = idealDesktopHeight;
 }
 window.addEventListener("load",resizeImage);
 window.addEventListener("resize",resizeImage);
@@ -220,6 +224,11 @@ window.addEventListener("resize",resizeImage);
     {
       "type": "image_picker",
       "id": "imageDesktop",
+      "label": "t:sections.common-across-sections.settings.background_image_desktop.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "imageTablet",
       "label": "t:sections.common-across-sections.settings.background_image_desktop.label"
     },
     {
