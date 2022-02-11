@@ -7,7 +7,7 @@
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
-        "backgroundColor": "",
+        "backgroundColor": "rgba(0,0,0,0)",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-gzg_380e0795-ed4d-43bb-bacb-a8e1b33fad1b.jpg",
         "imageMobile": "shopify:\/\/shop_images\/hero-mobile-gzg_22b381bc-4bb9-4376-a993-5e3bfb7776d0.jpg",
