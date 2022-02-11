@@ -1,3 +1,9 @@
+<div class="SectionGrid color-{{ section.settings.color_scheme }}">
+  {% unless section.settings.backgroundImage == blank %}
+    <img src="{{ section.settings.backgroundImage | image_url: width: 2560 }}" alt="{{ section.settings.backgroundImage.alt }}" width="2560" height="1104" loading="lazy" class="w-100p h-100p" style="grid-column: 1 / span 5;">
+  {% endunless %}
+</div>
+
 {% schema %}
 {
   "name": "Siegel",
@@ -20,7 +26,7 @@
           "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
         }
       ],
-      "default": "background-1",
+      "default": "inverse",
       "label": "t:sections.image-banner.settings.color_scheme.label"
     },
     {
@@ -53,7 +59,7 @@
     {
       "name": "Siegel",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "inverse",
         "subline": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
       },
       "blocks": [
