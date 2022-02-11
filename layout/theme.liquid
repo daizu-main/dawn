@@ -243,6 +243,15 @@
         }
       });
     </script>
+    <script>
+      const pTags = [ ...document.querySelectorAll(".rich-text__text p") ];
+      const emptyPTags = pTags.filter(pTag => pTag.innerHTML == "")
+      emptyPTags.forEach(p => {
+        p.innerHTML = "&nbsp;";
+        p.style.width = "100%";
+        p.style.height = "0.5em";
+      })
+    </script>
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
