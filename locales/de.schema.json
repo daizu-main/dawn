@@ -1671,7 +1671,10 @@
           "label": "Textausrichtung"
         },
         "background_image_mobile": {
-          "label": "Hintergrundbild für Mobil / Tablet"
+          "label": "Hintergrundbild für Mobil"
+        },
+        "background_image_tablet": {
+          "label": "Hintergrundbild für Tablet"
         },
         "background_image_desktop": {
           "label": "Hintergrundbild für Desktop"

@@ -1743,7 +1743,10 @@
           "label": "Text alignment"
         },
         "background_image_mobile": {
-          "label": "Background image for mobile / tablet"
+          "label": "Background image for mobile"
+        },
+        "background_image_tablet": {
+          "label": "Background image for tablet"
         },
         "background_image_desktop": {
           "label": "Background image for desktop"
