@@ -10,6 +10,7 @@
         "backgroundColor": "rgba(0,0,0,0)",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-gzg_380e0795-ed4d-43bb-bacb-a8e1b33fad1b.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-gzg.jpg",
         "imageMobile": "shopify:\/\/shop_images\/hero-mobile-gzg_fdfdb9f4-d459-425c-a3c3-c577fcc6c0cf.jpg",
         "text": "Geld-zurück-Garantie"
       }
