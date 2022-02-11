@@ -1,0 +1,73 @@
+{% schema %}
+{
+  "name": "Siegel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.image-banner.settings.color_scheme.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "backgroundImage",
+      "label": "Hintergrundbild"
+    },
+    {
+      "type": "text",
+      "id": "subline",
+      "label": "Anmerkung",
+      "default": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Siegel",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Bild"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Siegel",
+      "settings": {
+        "color_scheme": "background-1",
+        "subline": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
+      },
+      "blocks": [
+        {
+          "type": "badge"
+        },
+        {
+          "type": "badge"
+        },
+        {
+          "type": "badge"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
