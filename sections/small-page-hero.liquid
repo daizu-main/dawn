@@ -74,7 +74,9 @@
   <div class="{{ heroWidth | escape }}">
     <div class="desktopgrid pagegrid" style="background-color: {{ section.settings.backgroundColor }};">
       {% if section.settings.imageDesktop %}
-          <img src="{{ section.settings.imageDesktop | image_url: width: 4000 }}" alt="{{ section.settings.imageDesktop.alt }}" class="col-1-5 row-1 w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
+          <img src="{{ section.settings.imageDesktop | image_url: width: 2000 }}" 
+            srcset="{{ section.settings.imageDesktop | image_url: width: 2000 }} 1x, {{ section.settings.imageDesktop | image_url: width: 4000 }} 2x"
+            alt="{{ section.settings.imageDesktop.alt }}" class="col-1-5 row-1 w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
       {% endif %}
       <div class="flex row ai-c {{ justify | escape }} {{ column | escape }} {{ jc | escape }} row-1 w-95p {{ pl | escape }} ff-heading fs-46px lh-116 ls-m200 fw-600 {{ paddings | escape }}" style="color: {{ color | escape }}">
         <div id="header-content-desktop">
@@ -84,7 +86,10 @@
     </div>
     <div class="ndesktopgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
       {% if section.settings.imageMobile %}
-        <img src="{{ section.settings.imageMobile | image_url: width: 2000 }}" alt="{{ section.settings.imageMobile.alt }}" class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
+        <img src="{{ section.settings.imageMobile | image_url: width: 1000 }}" 
+          srcset="{{ section.settings.imageDesktop | image_url: width: 1000 }} 1x, {{ section.settings.imageDesktop | image_url: width: 2000 }} 2x"
+          alt="{{ section.settings.imageMobile.alt }}" 
+          class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
       {% endif %}
       <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-mobile">
