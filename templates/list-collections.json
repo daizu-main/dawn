@@ -7,8 +7,11 @@
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
-        "backgroundColor": "#111111",
+        "backgroundColor": "rgba(0,0,0,0)",
         "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-products_c9e40ce2-45a0-4f1a-b819-7e7d4133a8ef.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-products.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-products_2e8b3f74-16b7-41d5-a30a-2f1c4b530f70.jpg",
         "text": "Ihre Experten für Premium-Schlafprodukte"
       }
     },
@@ -26,7 +29,8 @@
           "type": "product",
           "settings": {
             "product": "sleep-ink",
-            "variant": "01xBox14-fold-filled"
+            "variant": "01xBox14-fold-filled",
+            "image": "shopify:\/\/shop_images\/schlafdrink-14er-produktbild.png"
           }
         },
         "schlafessenz": {
@@ -154,7 +158,7 @@
         "title": "Alle Produkte in der Übersicht",
         "color_scheme": "background-1",
         "backgroundProductCards": "#f9f9fa",
-        "linkProductPage": "Mehr erfahren"
+        "linkProductPage": "Zum Produkt"
       }
     }
   },
