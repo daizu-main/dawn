@@ -16,9 +16,12 @@
     border: none !important;
   }
   #once, #subs {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    position: static !important;
+    height: unset !important;
+    width: unset !important;
   }
   input[name="subscription"] {
     appearance: auto;
@@ -119,17 +122,21 @@
 {% if curr_variant.metafields.global.subscriptions.value.size > 0 %}
   <div class="product-form__input product-form__subscription w-100p" {{ block.shopify_attributes }}>
     <div class="flex row jc-fs ai-c" id="tabheadings">
-      <input type="radio" value="once" name="mode" id="once" checked>
-      <label for="once" class="checked" id="oncelabel">Einzelkauf</label>
-      <input type="radio" value="subs" name="mode" id="subs">
-      <label for="subs" id="subslabel" class="flex row ai-c">
-        <span style="position: relative; bottom: 4px;">
-          Sparabo
-        </span> 
-        <span class="pos-rel" id="info-container">
-          {% render 'icon-info' %}
-        </span>
-      </label>
+      <div class="flex row jc-c" style="width: 42%;">
+        <input type="radio" value="once" name="mode" id="once" checked>
+        <label for="once" class="checked" id="oncelabel">Einzelkauf</label>
+      </div>
+      <div class="flex row jc-c" style="width: 58%;">
+        <input type="radio" value="subs" name="mode" id="subs">
+        <label for="subs" id="subslabel" class="flex row ai-c">
+          <span style="position: relative; bottom: 4px;">
+            Sparabo
+          </span> 
+          <span class="pos-rel" id="info-container">
+            {% render 'icon-info' %}
+          </span>
+        </label>
+      </div>
     </div>
     <div id="sparabo-info" class="hidden-element flex column ai-c pos-abs z-10000 px-5 py-5 w-350px" style="opacity: 1; transform: none">
       <button type="button" id="sparabo-close">
