@@ -3823,6 +3823,14 @@ details[open].menu-opening > .menu-drawer__submenu {
   line-height: 1.86;
 }
 
+.lh-13px {
+  line-height: 13px;
+}
+
+.lh-19px {
+  line-height: 19px;
+}
+
 .lh-38px {
   line-height: 38px;
 }
