@@ -131,10 +131,21 @@
                     Sorry, your browser doesn't support embedded videos!
                   </video>
                 {% else %}
-                  <img src="{{ slide.settings.imageMobile | image_url: width: 1200 }}"
-                    srcset="{{ slide.settings.imageMobile | image_url: width: 1200 }} 1x, {{ slide.settings.imageMobile | image_url: width: 2400 }} 2x"
+                  {% comment %} 
+                    As the breakpoints are at 500w and 990w, we can also set the max image sizes to these widths.
+                    The displays are different on phone and tablet. Display is switched using mobile/tablet classes
+                  {% endcomment %}
+                  <img src="{{ slide.settings.imageMobile | image_url: width: 500 }}"
+                    srcset="{{ slide.settings.imageMobile | image_url: width: 500 }} 1x, {{ slide.settings.imageMobile | image_url: width: 1000 }} 2x"
                     alt="{{ slide.settings.image.alt | escape }}" 
-                    class="w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" 
+                    class="mobile w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" 
+                    width="1000" 
+                    height="700" 
+                    loading="lazy">
+                  <img src="{{ slide.settings.imageTablet | image_url: width: 1000 }}"
+                    srcset="{{ slide.settings.imageTablet | image_url: width: 1000 }} 1x, {{ slide.settings.imageTablet | image_url: width: 2000 }} 2x"
+                    alt="{{ slide.settings.image.alt | escape }}" 
+                    class="tablet w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" 
                     width="1000" 
                     height="700" 
                     loading="lazy">
@@ -393,12 +404,17 @@
         {
           "type": "image_picker",
           "id": "imageDesktop",
-          "label": "Hintergrundbild (Desktop)"
+          "label": "t:sections.common-across-sections.settings.background_image_desktop.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageTablet",
+          "label": "t:sections.common-across-sections.settings.background_image_tablet.label"
         },
         {
           "type": "image_picker",
           "id": "imageMobile",
-          "label": "Hintergrundbild (Mobile/Tablet)"
+          "label": "t:sections.common-across-sections.settings.background_image_mobile.label"
         },
         {
           "type": "text",
