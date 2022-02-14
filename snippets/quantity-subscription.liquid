@@ -172,6 +172,14 @@
             <span class="fs-12px fw-300">inkl. MwSt.</span>
           </p>
         </div>
+        <select>
+          {%- for price in curr_variant.metafields.global.prices.value -%}
+            <option value="{{ forloop.index }}">
+              <span class="fw-600">Menge:</span>
+              <span>{{ forloop.index }}x {{ curr_variant.metafields.global.prices.value[0].subtitle }}</span>
+            </option>
+          {%- endfor -%}
+        </select>
         {%- for price in curr_variant.metafields.global.prices.value -%}
           {% liquid 
             assign currs = price.cost
