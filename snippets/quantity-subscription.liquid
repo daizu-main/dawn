@@ -132,33 +132,8 @@
           <span style="position: relative; bottom: 4px;">
             Sparabo
           </span> 
-          <span class="pos-rel" id="info-container">
-            {% render 'icon-info' %}
-          </span>
         </label>
       </div>
-    </div>
-    <div id="sparabo-info" class="hidden-element flex column ai-c pos-abs z-10000 px-5 py-5 w-350px" style="opacity: 1; transform: none">
-      <button type="button" id="sparabo-close">
-        {% render 'icon-close' %}
-      </button>
-      <svg viewBox="0 0 102 102" fill="none" aria-label="Savings Icon" class="w-100px h-100px">
-        <path d="M90.826 57.537L57.584 90.78a9.272 9.272 0 01-13.121 0L4.636 51V4.636H51l39.826 39.827a9.273 9.273 0 010 13.074v0zM27.818 27.818h.046" stroke="#25282B" stroke-width="9.273" stroke-linecap="round" stroke-linejoin="round">
-        </path>
-      </svg>
-      <h2>Spar-Abo</h2>
-      <ol class="inside mb-5">
-        <li>Produkte für regelmäßige Lieferung auswählen</li>
-        <li>Häkchen setzen</li>
-        <li>Lieferintervall auswähen</li>
-        <li>Wie gewohnt bestellen... fertig!</li>
-      </ol>
-      <h3>Bequem, Flexibel, Risikofrei!</h3>
-      <ul class="inside">
-        <li>10-16% Rabatt (für diese und alle Folgebestellungen des Abos)</li>
-        <li>Keine Mindestvertragslaufzeit</li>
-        <li>Jederzeit kündbar</li>
-      </ul>
     </div>
     <div id="quantity-subscription-body">
       <div id="quantity-wrapper" class="flex column">
@@ -601,12 +576,6 @@
     })
   }
   })
-  document.querySelectorAll("#info-container").forEach(element => element.addEventListener("click", (e) => {
-    document.getElementById("sparabo-info").classList.remove("hidden-element")
-  }))
-  document.querySelectorAll("#sparabo-close").forEach(element => element.addEventListener("click", () => {
-    document.getElementById("sparabo-info").classList.add("hidden-element")
-  }))
   function changeLink(e) {
     const subscriptions = {{ curr_variant.metafields.global.subscriptions.value | json }}
     const checkedValue = Number(e.target.value)
