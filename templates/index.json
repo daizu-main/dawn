@@ -371,7 +371,7 @@
           "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "heading_font": "sans-serif",
-            "heading_size": 20,
+            "heading_size": 18,
             "feed_width": 100,
             "html_area": ""
           }
@@ -381,7 +381,7 @@
         "9b7d64d3-0160-4b0a-91ff-b874d249c444"
       ],
       "settings": {
-        "include_margins": true
+        "include_margins": false
       }
     }
   },
