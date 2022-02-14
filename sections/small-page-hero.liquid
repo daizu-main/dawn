@@ -85,8 +85,15 @@
       </div>
     </div>
     <div class="tabletgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};" id="header-tablet-wrapper">
+      {% comment %} 
+        As the breakpoints are at 500w and 990w, we can also set the max image sizes to these widths
+      {% endcomment %}
       {% if section.settings.imageTablet %}
-        <img src="{{ section.settings.imageTablet | image_url: width: 2500 }}" alt="{{ section.settings.imageTablet.alt }}" class="col-1 row-1 w-100p cover" id="header-img-tablet" width="800" height="250" loading="lazy">
+        <img src="{{ section.settings.imageTablet | image_url: width: 1000 }}" 
+          srcset="{{ section.settings.imageTablet | image_url: width: 1000 }} 1x, {{ section.settings.imageTablet | image_url: width: 2000 }} 2x"
+          alt="{{ section.settings.imageTablet.alt }}" 
+          class="col-1 row-1 w-100p cover" id="header-img-tablet" 
+          width="800" height="250" loading="lazy">
       {% endif %}
       <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p" id="header-content-wrapper-tablet">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-tablet">
@@ -96,10 +103,11 @@
     </div>
     <div class="mobilegrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};" id="header-mobile-wrapper">
       {% if section.settings.imageMobile %}
-        <img src="{{ section.settings.imageMobile | image_url: width: 1000 }}" 
-          srcset="{{ section.settings.imageDesktop | image_url: width: 1000 }} 1x, {{ section.settings.imageDesktop | image_url: width: 2000 }} 2x"
+        <img src="{{ section.settings.imageMobile | image_url: width: 500 }}" 
+          srcset="{{ section.settings.imageMobile | image_url: width: 500 }} 1x, {{ section.settings.imageMobile | image_url: width: 1000 }} 2x"
           alt="{{ section.settings.imageMobile.alt }}" 
-class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy"
+          class="col-1 row-1 w-100p cover" id="header-img-mobile" 
+          width="375" height="145" loading="lazy"
       {% endif %}
       <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p" id="header-content-wrapper-mobile">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-mobile">

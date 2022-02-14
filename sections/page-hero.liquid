@@ -259,7 +259,7 @@
                   <img src="{{ slide.settings.imageDesktop | image_url: width: 2000 }}" 
                     srcset="{{ slide.settings.imageDesktop | image_url: width: 2000 }} 1x, {{ slide.settings.imageDesktop | image_url: width: 4000 }} 2x"
                      alt="{{ slide.settings.image.alt | escape }}" 
-                     class="col-1-5 row-1 h-100p mnh-500px cover" width="1500" height="700" 
+                     class="col-1-5 row-1 w-100p mnh-500px mxh-700px cover" width="1500" height="700" 
                      loading="lazy">
                 {% endif %}
                 {% if slide.settings.overlay %}
