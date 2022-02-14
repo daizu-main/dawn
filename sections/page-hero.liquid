@@ -156,13 +156,13 @@
                   </div>
                 {% endif %}
                 <div class="w-100p col-1 row-1 px-md-30px flex column jc-fe h-100p h-87vh mnh-450px mxh-500px" style="z-index: 10; position: relative;">
-                  <h1 class="ta-c ta-md-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
+                  <h1 class="ta-c ta-lg-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
                     {{ slide.settings.title | escape }}
                   </h1>
-                  <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l" style="color: {{ tagBackground | escape }};">
+                  <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-lg-l" style="color: {{ tagBackground | escape }};">
                     {{ slide.settings.text | escape }}
                   </p>
-                  <div class="ta-c ta-md-l w-100p mt-4 mb-8">
+                  <div class="ta-c ta-lg-l w-100p mt-4 mb-8">
                     {% if slide.settings.buttonDesign == "filled" %}
                       <a href="{{ slide.settings.url }}" class="filled py-3 px-8 mxh-60px inlblock ta-c ff-body uppercase z-1000 nodec button lh-180 fw-500" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                         {{ slide.settings.buttonText | escape }}
