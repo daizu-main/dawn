@@ -828,7 +828,7 @@
                 </div>
               {% when 'payment_icons' %}
                 <div class="payment flex row jc-spb ai-c">
-                  {% assign paymentArray = 'PayPal, VISA, Mastercard, Klarna, Amex' | split: ', ' %}
+                  {% assign paymentArray = 'Amex, Klarna, Mastercard, PayPal, VISA' | split: ', ' %}
                   {% for icon in paymentArray %}
                     {% render 'icon-payment', icon: icon %}
                   {% endfor %}
