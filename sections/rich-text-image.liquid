@@ -15,7 +15,7 @@
   endcase
 %}
 
-<div class="SectionGrid py-7 py-md-11 py-lg-13 color-{{ section.settings.color_scheme }}">
+<div class="SectionGrid {% if section.settings.paddingAbove %}pt-7 pt-md-11 pt-lg-13{% else %}pt-0{% endif %} {% if section.settings.paddingBelow %}pb-7 pb-md-11 pb-lg-13{% else %}pb-0{% endif %} color-{{ section.settings.color_scheme }}">
   <div class="SectionGrid-Narrow">
     {% if section.settings.headingPosition == 'aboveAll' %}
       <h2 class="ff-heading {{ section.settings.heading_size }} fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4 ta-c">{{ section.settings.heading | escape }}</h2>
@@ -30,7 +30,7 @@
             loading="lazy" width="600" height="600">
         </div>
       </div>
-      <div class="mnw-250px flex-1 mx-9 {% if section.settings.imagePosition == 'left' %}ml-lg-14 mr-lg-0{% else %}mr-lg-14 ml-lg-0{% endif %} my-8 my-md-0">
+      <div class="mnw-250px flex-1 mx-7 {% if section.settings.imagePosition == 'left' %}ml-lg-11 mr-lg-0{% else %}mr-lg-11 ml-lg-0{% endif %} my-8 my-md-0">
         {% if section.settings.headingPosition == 'aboveText' %}
           <h2 class="ff-heading {{ section.settings.heading_size }} fw-500 fw-lg-400 lh-107 lh-lg-116 ls-m124 mb-4">{{ section.settings.heading | escape }}</h2>
         {% endif %}
@@ -176,6 +176,18 @@
       "type": "url",
       "id": "buttonLink",
       "label": "Linkziel des Buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "paddingAbove",
+      "label": "Padding über der Section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "paddingBelow",
+      "label": "Padding unter der Section",
+      "default": true
     }
   ],
   "presets": [
@@ -184,7 +196,9 @@
       "settings": {
         "color_scheme": "background-1",
         "imagePosition": "left",
-        "buttonDesign": "outlined"
+        "buttonDesign": "outlined",
+        "paddingAbove": true,
+        "paddingBelow": true
       }
     }
   ]

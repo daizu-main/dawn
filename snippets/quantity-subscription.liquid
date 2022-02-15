@@ -15,10 +15,21 @@
     padding: 1rem;
     border: none !important;
   }
+  #once-container, #subs-container {
+    border: 1px solid #E6EAE8;
+    background-color: #F8F8F8;
+  }
+  #once-container.selected, #subs-container.selected {
+    border-bottom: none;
+    background-color: #FFFFFF;
+  }
   #once, #subs {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    position: static !important;
+    height: unset !important;
+    width: unset !important;
   }
   input[name="subscription"] {
     appearance: auto;
@@ -83,21 +94,6 @@
   #subscription-btn-wrapper button:hover {
     background: #ffd940;
   }
-  #sparabo-info {
-    background-color: rgba(var(--color-background));
-    color: rgba(var(--color-foreground));
-    box-shadow: 0 0 14px 0 rgba(0,0,0,0.15);
-  }
-  #sparabo-close {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    align-self: flex-end;
-  }
-  #sparabo-close svg {
-    width: 12px;
-    height: 12px;
-  }
   #quantity-wrapper input {
     background-color: #ffffff !important;
     color: #111111 !important;
@@ -119,42 +115,71 @@
 {% if curr_variant.metafields.global.subscriptions.value.size > 0 %}
   <div class="product-form__input product-form__subscription w-100p" {{ block.shopify_attributes }}>
     <div class="flex row jc-fs ai-c" id="tabheadings">
-      <input type="radio" value="once" name="mode" id="once" checked>
-      <label for="once" class="checked" id="oncelabel">Einzelkauf</label>
-      <input type="radio" value="subs" name="mode" id="subs">
-      <label for="subs" id="subslabel" class="flex row ai-c">
-        <span style="position: relative; bottom: 4px;">
-          Sparabo
-        </span> 
-        <span class="pos-rel" id="info-container">
-          {% render 'icon-info' %}
-        </span>
-      </label>
-    </div>
-    <div id="sparabo-info" class="hidden-element flex column ai-c pos-abs z-10000 px-5 py-5 w-350px" style="opacity: 1; transform: none">
-      <button type="button" id="sparabo-close">
-        {% render 'icon-close' %}
-      </button>
-      <svg viewBox="0 0 102 102" fill="none" aria-label="Savings Icon" class="w-100px h-100px">
-        <path d="M90.826 57.537L57.584 90.78a9.272 9.272 0 01-13.121 0L4.636 51V4.636H51l39.826 39.827a9.273 9.273 0 010 13.074v0zM27.818 27.818h.046" stroke="#25282B" stroke-width="9.273" stroke-linecap="round" stroke-linejoin="round">
-        </path>
-      </svg>
-      <h2>Spar-Abo</h2>
-      <ol class="inside mb-5">
-        <li>Produkte für regelmäßige Lieferung auswählen</li>
-        <li>Häkchen setzen</li>
-        <li>Lieferintervall auswähen</li>
-        <li>Wie gewohnt bestellen... fertig!</li>
-      </ol>
-      <h3>Bequem, Flexibel, Risikofrei!</h3>
-      <ul class="inside">
-        <li>10-16% Rabatt (für diese und alle Folgebestellungen des Abos)</li>
-        <li>Keine Mindestvertragslaufzeit</li>
-        <li>Jederzeit kündbar</li>
-      </ul>
+      <div class="flex row jc-c selected" style="width: 42%;" id="once-container">
+        <input type="radio" value="once" name="mode" id="once" checked>
+        <label for="once" class="checked" id="oncelabel">
+          <span class="ff-heading fs-12px lh-19px" style="position: relative; bottom: 2px;">
+            Einzelkauf
+          </span>
+        </label>
+      </div>
+      <div class="flex row jc-c" style="width: 58%;" id="subs-container">
+        <input type="radio" value="subs" name="mode" id="subs">
+        <label for="subs" id="subslabel" class="flex row ai-c">
+          <span style="position: relative; bottom: 2px;" class="ff-heading fs-12px lh-19px">
+            Sparabo
+          </span> 
+          <span style="position: relative; bottom: 2px; color: white; background-color: #317752; padding: 3px 6px; border-radius: 5px;" class="ff-body fs-11px lh-13px ls-m050">
+            {% liquid 
+              for sub in curr_variant.metafields.global.subscriptions.value
+                assign curr = sub.cost
+                assign content = sub.content
+                assign reference = curr_variant.metafields.global.prices.value | where: 'content', content | first
+                assign ref = reference.cost | times: reference.number
+                assign diff = curr | minus: ref | abs
+                assign saving = 100 | times: diff | divided_by: ref | round
+                if forloop.index0 == 0
+                  assign max_saving = saving
+                elsif saving > max_saving
+                  assign max_saving = saving
+                endif
+              endfor
+            %}
+            {% if max_saving > 0 %}bis {{ max_saving }}% Rabatt{% endif %}
+          </span>
+        </label>
+      </div>
     </div>
     <div id="quantity-subscription-body">
       <div id="quantity-wrapper" class="flex column">
+        <div class="flex column ai-fs jc-fs">
+          <p class="my-0 fs-2 lh-116">
+            <span id="totalcompare" class="fw-400 td-lt" style="color: rgba(17,17,17,0.8);"></span>
+            <span id="total" class="ff-body fw-700 fs-24px lh-27px">{{ curr_variant.price | money_without_currency }} €</span>
+          </p>
+          <p class="my-0 fs-12px lh-100 fw-300">
+            <span id="unitprice">
+              {% liquid
+                assign reference = curr_variant.metafields.global.prices.value[0].reference
+                assign unit = curr_variant.metafields.global.prices.value[0].unit
+                assign content = curr_variant.metafields.global.prices.value[0].content 
+                assign cost = curr_variant.metafields.global.prices.value[0].cost 
+              %}
+              {% if reference and unit and content and cost %}
+                {{ reference | times: cost | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}
+              {% endif %}
+            </span>
+            <span class="fs-12px fw-300">inkl. MwSt.</span>
+          </p>
+        </div>
+        <select>
+          {%- for price in curr_variant.metafields.global.prices.value -%}
+            <option value="{{ forloop.index }}">
+              <span class="fw-600">Menge:</span>
+              <span>{{ forloop.index }}x {{ curr_variant.metafields.global.prices.value[0].subtitle }}</span>
+            </option>
+          {%- endfor -%}
+        </select>
         {%- for price in curr_variant.metafields.global.prices.value -%}
           {% liquid 
             assign currs = price.cost
@@ -246,24 +271,6 @@
           {% render 'icon-plus' %}
         </button>
       </quantity-input>
-      <div class="flex column ai-fs jc-fs">
-        <p class="my-0 fs-2 lh-100">
-          <span id="total" class="fw-700 ls-m080">{{ curr_variant.price | money_without_currency }} €</span>
-          <span id="totalcompare" class="fw-400 td-lt"></span>
-          <span class="fs-12px fw-300">inkl. MwSt.</span>
-        </p>
-        <p class="my-0 fs-12px lh-100 fw-300">
-          <span id="unitprice">
-            {% liquid
-              assign reference = curr_variant.metafields.global.prices.value[0].reference
-              assign unit = curr_variant.metafields.global.prices.value[0].unit
-              assign content = curr_variant.metafields.global.prices.value[0].content 
-              assign cost = curr_variant.metafields.global.prices.value[0].cost 
-            %}
-            {{ reference | times: cost | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}
-          </span>
-        </p>
-      </div>
     </div>
     <div class="flex column ai-fs jc-fs py-7 hidden-element" id="subscription-price-wrapper">
       <p class="my-0 fs-2 lh-100">
@@ -413,6 +420,8 @@
 <script>
   function changeButtons() {
     if(document.getElementById("once").checked) {
+      document.getElementById("once-container").classList.add("selected")
+      document.getElementById("subs-container").classList.remove("selected")
       document.getElementById("subscription-btn-wrapper").classList.add("hidden-element")
       document.getElementById("buy-buttons").classList.remove("hidden-element")
       document.getElementById("quantity-wrapper").classList.remove("hidden-element")
@@ -424,6 +433,8 @@
       document.getElementById("subscription-checkmark-wrapper").classList.add("hidden-element")
     }
     if(document.getElementById("subs").checked) {
+      document.getElementById("once-container").classList.remove("selected")
+      document.getElementById("subs-container").classList.add("selected")
       document.getElementById("subscription-btn-wrapper").classList.remove("hidden-element")
       document.getElementById("buy-buttons").classList.add("hidden-element")
       document.getElementById("quantity-wrapper").classList.add("hidden-element")
@@ -598,12 +609,6 @@
     })
   }
   })
-  document.querySelectorAll("#info-container").forEach(element => element.addEventListener("click", (e) => {
-    document.getElementById("sparabo-info").classList.remove("hidden-element")
-  }))
-  document.querySelectorAll("#sparabo-close").forEach(element => element.addEventListener("click", () => {
-    document.getElementById("sparabo-info").classList.add("hidden-element")
-  }))
   function changeLink(e) {
     const subscriptions = {{ curr_variant.metafields.global.subscriptions.value | json }}
     const checkedValue = Number(e.target.value)
