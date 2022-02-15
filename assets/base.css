@@ -2686,6 +2686,11 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-bottom: 12px;
 }
 
+.my-5 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 .my-8 {
   margin-top: 32px;
   margin-bottom: 32px;
