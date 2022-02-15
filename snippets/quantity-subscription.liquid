@@ -63,7 +63,6 @@
     height: 17px;
   }
   #quantity-subscription-body, #quantity-subscription-body-nosub {
-    background-color: #fbf9f7;
     width: 100%;
   }
   quantity-input {
@@ -156,7 +155,7 @@
     </div>
     <div id="quantity-subscription-body">
       <div id="quantity-wrapper" class="flex column">
-        <div class="flex column ai-fs jc-fs">
+        <div class="flex column ai-fs jc-fs" style="margin-top: 19px;">
           <p class="my-0 fs-2 lh-116">
             <span id="totalcompare" class="fw-400 td-lt" style="color: rgba(17,17,17,0.8);"></span>
             <span id="total" class="ff-body fw-700 fs-24px lh-27px">{{ curr_variant.price | money_without_currency }} €</span>
@@ -181,15 +180,17 @@
             <div class="selected__value-drop flex row jc-spb ai-c ff-body fw-400 fs-13px lh-15px" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 15px 10px 11px; cursor: pointer; position: relative; z-index: 2; background-color: #fff;" id="quantity-dropdown-selected">
               <span>
                 <strong>Menge:</strong>
-                <span>1x 14 Portionsfläschchen</span>
+                <span>
+                  <span>1</span>x {{ curr_variant.metafields.global.prices.value[0].subtitle }}
+                </span>
               </span>
               <span style="width: 17px; height: 11px; position: relative; bottom: 5px;">
                 {% render 'icon-caret' %}
               </span>
             </div>
-            <div class="dropdown__items-list" style="border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; position: absolute; width: 100%; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 1; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="quantity-dropdown-list">
+            <div class="dropdown__items-list selected__value-drop ff-body fw-400 fs-13px lh-15px" style="border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; position: absolute; width: 100%; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 1; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="quantity-dropdown-list">
               {%- for price in curr_variant.metafields.global.prices.value -%}
-                <div class="dropdown__list-item" val="{{ forloop.index }}" style="padding: 15px; border-bottom: 1px solid #ccc; cursor: pointer;">
+                <div class="dropdown__list-item" data-quantity="{{ forloop.index }}" style="padding: 15px; border-bottom: 1px solid #ccc; cursor: pointer;">
                   <strong>Menge:</strong>
                   <span>{{ forloop.index }}x {{ curr_variant.metafields.global.prices.value[0].subtitle }}</span>
                 </div>
@@ -413,138 +414,20 @@
       ele.classList.add("visible")
     }
   }))
-  document.querySelectorAll("#quantity-input > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
-    const quantity = e.target.value
-    const prices = {{ curr_variant.metafields.global.prices }}
-    let unitPrice
-    if(quantity == 1) {
-      document.getElementById("once-0").checked = true
-      document.getElementById("once-0-wrapper").classList.add("active-variant")
-      prices.forEach((price, index) => {
-        if(index != 0) {
-          document.getElementById(`once-${index}-wrapper`).classList.remove("active-variant")
-        }
-      })
-      document.getElementById("total").innerHTML = `${(prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare").innerHTML = ""
-      unitPrice = prices[0].reference * prices[0].cost / prices[0].content
-      document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[0].reference} ${prices[0].unit}`
+  document.querySelectorAll("#quantity-dropdown-list > div").forEach(element => {
+    element.addEventListener("click", (e) => {
+      const prices = {{ curr_variant.metafields.global.prices }}
+      const quantity = element.dataset.quantity
+      document.querySelector("#quantity-dropdown-selected > span:first-child > span > span").innerHTML = `${quantity}`
+      const normIndex = Number(quantity)
+      const index = normIndex - 1
+      document.getElementById("total").innerHTML = `${Number(normIndex * prices[index].cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("totalcompare").innerHTML = quantity == 1 ? "" : `${Number(normIndex * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("unitprice").innerHTML = `${Number(normIndex * prices[index].reference * prices[index].cost / prices[index].content / 100).toFixed(2).replace(".", ",")} €/${prices[index].reference} ${prices[index].unit}`
       document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-    } else if (quantity == 2) {
-      document.getElementById("once-1").checked = true
-      document.getElementById("once-1-wrapper").classList.add("active-variant")
-      prices.forEach((price, index) => {
-        if(index != 1) {
-          document.getElementById(`once-${index}-wrapper`).classList.remove("active-variant")
-        }
-      })
-      document.getElementById("total").innerHTML = `${(2 * prices[1].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare").innerHTML = `${(2 * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      unitPrice = prices[1].reference * (2 * prices[1].cost) / prices[1].content
-      document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[1].reference} ${prices[1].unit}`
-      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-    } else {
-      document.getElementById("once-2").checked = true
-      document.getElementById("once-2-wrapper").classList.add("active-variant")
-      prices.forEach((price, index) => {
-        if(index != 2) {
-          document.getElementById(`once-${index}-wrapper`).classList.remove("active-variant")
-        }
-      })
-      document.getElementById("total").innerHTML = `${(Number(quantity) * prices[2].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      unitPrice = prices[2].reference * (3 * prices[2].cost) / prices[2].content
-      document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
-      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-    }
-  }))
-  document.querySelectorAll("input[name=onetime]").forEach((element, index) => element.addEventListener("change", (e) => {
-    const quantity = index + 1
-    const prices = {{ curr_variant.metafields.global.prices }}
-    prices.forEach((price, pindex ) => {
-      if (pindex == index) {
-        document.getElementById(`once-${pindex}-wrapper`).classList.add("active-variant")
-      } else {
-        document.getElementById(`once-${pindex}-wrapper`).classList.remove("active-variant")
-      }
+      document.getElementById("quantity-dropdown-list").classList.remove("visible")
     })
-    document.querySelector("#quantity-input > input[type=number]").value = `${quantity}`
-    document.getElementById("total").innerHTML = `${(Number(quantity) * prices[Number(quantity) - 1].cost / 100).toFixed(2).replace(".",",")} €`
-      if(quantity > 1) {
-        document.getElementById("totalcompare").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      } else {
-        document.getElementById("totalcompare").innerHTML = ""
-      }
-      unitPrice = prices[Number(quantity) - 1].reference * (Number(quantity) * prices[Number(quantity) - 1].cost) / prices[Number(quantity) - 1].content
-      document.getElementById("unitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[Number(quantity) - 1].reference} ${prices[Number(quantity) - 1].unit}`
-    document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-  }))
-  document.querySelectorAll("#quantity-input-nosub > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
-    const quantity = e.target.value
-    const prices = {{ curr_variant.metafields.global.prices }}
-    let unitPrice
-    if(quantity == 1) {
-      document.getElementById("once-0-nosub").checked = true
-      document.getElementById("once-0-wrapper-nosub").classList.add("active-variant")
-      prices.forEach((price, index) => {
-        if(index != 0) {
-          document.getElementById(`once-${index}-wrapper-nosub`).classList.remove("active-variant")
-        }
-      })
-      document.getElementById("total-nosub").innerHTML = `${(prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare-nosub").innerHTML = ""
-      unitPrice = prices[0].reference * prices[0].cost / prices[0].content
-      document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[0].reference} ${prices[0].unit}`
-      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-    } else if (quantity == 2) {
-      document.getElementById("once-1-nosub").checked = true
-      document.getElementById("once-1-wrapper-nosub").classList.add("active-variant")
-      prices.forEach((price, index) => {
-        if(index != 1) {
-          document.getElementById(`once-${index}-wrapper-nosub`).classList.remove("active-variant")
-        }
-      })
-      document.getElementById("total-nosub").innerHTML = `${(2 * prices[1].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare-nosub").innerHTML = `${(2 * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      unitPrice = prices[1].reference * (2 * prices[1].cost) / prices[1].content
-      document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[1].reference} ${prices[1].unit}`
-      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-    } else {
-      document.getElementById("once-2-nosub").checked = true
-      document.getElementById("once-2-wrapper-nosub").classList.add("active-variant")
-      prices.forEach((price, index) => {
-        if(index != 2) {
-          document.getElementById(`once-${index}-wrapper-nosub`).classList.remove("active-variant")
-        }
-      })
-      document.getElementById("total-nosub").innerHTML = `${(Number(quantity) * prices[2].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare-nosub").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      unitPrice = prices[2].reference * (3 * prices[2].cost) / prices[2].content
-      document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
-      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-    }
-  }))
-  document.querySelectorAll("input[name=onetime-nosub]").forEach((element, index) => element.addEventListener("change", (e) => {
-    const quantity = index + 1
-    const prices = {{ curr_variant.metafields.global.prices }}
-    prices.forEach((price, pindex ) => {
-      if (pindex == index) {
-        document.getElementById(`once-${pindex}-wrapper-nosub`).classList.add("active-variant")
-      } else {
-        document.getElementById(`once-${pindex}-wrapper-nosub`).classList.remove("active-variant")
-      }
-    })
-    document.querySelector("#quantity-input-nosub > input[type=number]").value = `${quantity}`
-      document.getElementById("total-nosub").innerHTML = `${(Number(quantity) * prices[Number(quantity) - 1].cost / 100).toFixed(2).replace(".",",")} €`
-      if(quantity > 1) {
-        document.getElementById("totalcompare-nosub").innerHTML = `${(Number(quantity) * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      } else {
-        document.getElementById("totalcompare-nosub").innerHTML = ""
-      }
-      unitPrice = prices[Number(quantity) - 1].reference * (Number(quantity) * prices[Number(quantity) - 1].cost) / prices[Number(quantity) - 1].content
-      document.getElementById("unitprice-nosub").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[Number(quantity) - 1].reference} ${prices[Number(quantity) - 1].unit}`
-    document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-  }))
+  })
   document.querySelectorAll("#subscription input[type=radio]").forEach((element, sindex, subsarray) => {
     if(subsarray.length > 0) {
     element.addEventListener("change", (e) => {
