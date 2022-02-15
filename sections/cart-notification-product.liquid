@@ -3,7 +3,8 @@
     <div id="cart-notification-product-{{ item.id }}">
       {% if item.image %}
         <img class="cart-notification-product__image"
-          src="{{ item.image | image_url: width: 140 }}"
+          src="{{ item.image | image_url: width: 70 }}"
+          srcset="{{ item.image | image_url: width: 70 }} 1x, {{ item.image | image_url: width: 140 }} 2x"
           alt="{{ item.image.alt | escape }}"
           width="70"
           height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
