@@ -110,6 +110,9 @@
   .active-variant {
     background-color: hsl(30,18.2%,90%);
   }
+  #unitprice, #mwst-1 {
+    color: rgba(17,17,17,0.6);
+  }
   .visible {
     visibility: visible !important;
     opacity: 1 !important;
@@ -154,7 +157,7 @@
       </div>
     </div>
     <div id="quantity-subscription-body">
-      <div id="quantity-wrapper" class="flex column">
+      <div id="quantity-wrapper" class="flex column px-6">
         <div class="flex column ai-fs jc-fs" style="margin-top: 19px;">
           <p class="my-0 fs-2 lh-116">
             <span id="totalcompare" class="fw-400 td-lt" style="color: rgba(17,17,17,0.8);"></span>
@@ -172,7 +175,7 @@
                 {{ reference | times: cost | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}
               {% endif %}
             </span>
-            <span class="fs-12px fw-300">inkl. MwSt.</span>
+            <span id="mwst-1" class="fs-12px fw-300">inkl. MwSt.</span>
           </p>
         </div>
         <div class="once-quantity_custom-dropdown mt-5" style="margin-bottom: 14px; position: relative;">
