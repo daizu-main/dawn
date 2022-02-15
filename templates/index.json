@@ -373,7 +373,7 @@
           "settings": {
             "heading_font": "helvetica_n4",
             "heading_size": 20,
-            "feed_width": 100,
+            "feed_width": 65,
             "html_area": ""
           }
         }
