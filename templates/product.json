@@ -4,42 +4,68 @@
       "type": "sleepink-product",
       "blocks": {
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {
+          }
         },
         "rating": {
-          "type": "rating"
+          "type": "rating",
+          "settings": {
+          }
         },
         "image_slider": {
-          "type": "image_slider"
+          "type": "image_slider",
+          "settings": {
+          }
         },
         "advantages": {
-          "type": "advantages"
+          "type": "advantages",
+          "settings": {
+            "iconA": "bed",
+            "textA": "",
+            "iconB": "bed",
+            "textB": "",
+            "iconC": "bed",
+            "textC": ""
+          }
         },
         "subscription_selector": {
-          "type": "subscription_selector"
-        },
-        "price": {
-          "type": "price"
+          "type": "subscription_selector",
+          "settings": {
+          }
         },
         "buy_buttons": {
-          "type": "buy_buttons"
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
         },
         "features": {
-          "type": "features"
+          "type": "features",
+          "settings": {
+          }
         },
         "payment_icons": {
-          "type": "payment_icons"
+          "type": "payment_icons",
+          "settings": {
+          }
         },
         "pdesc": {
-          "type": "product_description"
+          "type": "product_description",
+          "settings": {
+          }
         },
         "nutrition": {
           "type": "nutrition",
-          "accordionTitle": "Zutaten und Inhaltsstoffe",
-          "messageMissingReference": "** Keine Referenzmenge durch die EU definiert"
+          "settings": {
+            "accordionTitle": "Zutaten und Inhaltsstoffe",
+            "messageMissingReference": "** Keine Referenzmenge durch die EU definiert"
+          }
         },
         "usage": {
-          "type": "usage"
+          "type": "usage",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -47,7 +73,6 @@
         "rating",
         "image_slider",
         "advantages",
-        "variant_picker",
         "subscription_selector",
         "buy_buttons",
         "features",
@@ -55,8 +80,37 @@
         "pdesc",
         "nutrition",
         "usage"
-      ]
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "1644837122ebbd5ad6": {
+      "type": "ingredient-slider",
+      "blocks": {
+        "16448371221c00c21f-0": {
+          "type": "image",
+          "settings": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "16448371221c00c21f-0"
+      ],
+      "settings": {
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1",
+        "pretitle": "innovative Zusammensetzung",
+        "title": "Beste Inhaltsstoffe für Sie und Ihren Schlaf"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "1644837122ebbd5ad6"
+  ]
 }

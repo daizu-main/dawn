@@ -7,7 +7,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "inverse",
-            "imageDesktop": "shopify:\/\/shop_images\/hero-retina-frauke_ded63867-9c21-4256-bf1a-37b74a152550.jpg",
+            "imageDesktop": "shopify:\/\/shop_images\/hero-retina-frauke_d27cfd98-f9a9-4d6b-8927-e4b0431e0cd1.png",
             "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
             "video": "",
             "title": "Endlich besser schlafen!",
@@ -138,7 +138,7 @@
         "swipe_on_mobile": true,
         "color_scheme": "background-1",
         "backgroundProductCards": "#f9f9fa",
-        "linkProductPage": "Mehr erfahren"
+        "linkProductPage": "Zum Produkt"
       }
     },
     "kundenstimmen": {
@@ -363,6 +363,26 @@
         "swipe_on_mobile": true,
         "color_scheme": "background-1"
       }
+    },
+    "16448520175a08ff8c": {
+      "type": "apps",
+      "blocks": {
+        "9b7d64d3-0160-4b0a-91ff-b874d249c444": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_font": "avenir_next_n6",
+            "heading_size": 30,
+            "feed_width": 80,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "9b7d64d3-0160-4b0a-91ff-b874d249c444"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
@@ -370,6 +390,7 @@
     "bestseller",
     "kundenstimmen",
     "produktberater",
-    "presseslider"
+    "presseslider",
+    "16448520175a08ff8c"
   ]
 }
