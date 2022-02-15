@@ -406,7 +406,12 @@
   const metafields = {{ curr_variant.metafields.global | json }}
   const subscriptionSize = metafields.hasOwnProperty("subscriptions") ? metafields.subscriptions.length : 0
   document.querySelectorAll("#quantity-dropdown-selected").forEach(element => element.addEventListener("click", (e) => {
-    document.getElementById("quantity-dropdown-list").classList.add("visible")
+    const ele = document.getElementById("quantity-dropdown-list")
+    if(ele.classList.contains("visible")) {
+      ele.classList.remove("visible")
+    } else {
+      ele.classList.add("visible")
+    }
   }))
   document.querySelectorAll("#quantity-input > input[type=number]").forEach(element => element.addEventListener("change", (e) => {
     const quantity = e.target.value
