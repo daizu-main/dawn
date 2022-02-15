@@ -367,6 +367,20 @@
     },
     "16448520175a08ff8c": {
       "type": "apps",
+      "blocks": {
+        "a12ec752-5709-42d4-a460-57ff8559e366": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_font": "helvetica_n4",
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "a12ec752-5709-42d4-a460-57ff8559e366"
+      ],
       "settings": {
         "include_margins": false
       }
