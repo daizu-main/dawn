@@ -374,7 +374,7 @@
             "heading_font": "helvetica_n4",
             "heading_size": 20,
             "feed_width": 100,
-            "html_area": ""
+            "html_area": "margin-bottom: 0rem;"
           }
         }
       },
