@@ -179,9 +179,9 @@
           </p>
         </div>
         <div class="once-quantity_custom-dropdown mt-5" style="margin-bottom: 14px; position: relative;">
-          <div>
-            <div class="selected__value-drop flex row jc-spb ai-c ff-body fw-400 fs-13px lh-15px" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 15px 10px 11px; cursor: pointer; position: relative; z-index: 2; background-color: #fff;" id="quantity-dropdown-selected">
-              <span>
+          <div style="width: fit-content;">
+            <div class="selected__value-drop flex row jc-spb ai-c ff-body fw-400 fs-13px lh-15px" style="border: 0.75px solid #e6eae8; border-radius: 4px; padding: 10px 15px 10px 11px; cursor: pointer; position: relative; z-index: 2; background-color: #fff;" id="quantity-dropdown-selected">
+              <span style="margin-right: 36px;">
                 <strong>Menge:</strong>
                 <span>
                   <span>1</span>x {{ curr_variant.metafields.global.prices.value[0].subtitle }}
@@ -191,11 +191,18 @@
                 {% render 'icon-caret' %}
               </span>
             </div>
-            <div class="dropdown__items-list selected__value-drop ff-body fw-400 fs-13px lh-15px" style="border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; position: absolute; width: 100%; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 1; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="quantity-dropdown-list">
+            <div class="dropdown__items-list selected__value-drop ff-body fw-400 fs-13px lh-15px" style="border-left: 0.75px solid #e6eae8; border-right: 0.75px solid #e6eae8; border-bottom: 0.75px solid #e6eae8; position: absolute; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 1; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="quantity-dropdown-list">
               {%- for price in curr_variant.metafields.global.prices.value -%}
-                <div class="dropdown__list-item" data-quantity="{{ forloop.index }}" style="padding: 15px; border-bottom: 1px solid #ccc; cursor: pointer;">
+                <div class="dropdown__list-item" data-quantity="{{ forloop.index }}" style="padding: 15px; border-bottom: 0.75px solid #e6eae8; cursor: pointer;">
                   <strong>Menge:</strong>
-                  <span>{{ forloop.index }}x {{ curr_variant.metafields.global.prices.value[0].subtitle }}</span>
+                  <span>
+                    <span style="margin-right: 36px;">
+                      {{ forloop.index }}x {{ curr_variant.metafields.global.prices.value[0].subtitle }}
+                    </span>
+                    <span style="width: 17px; height: 11px; position: relative; bottom: 5px; visibility: hidden;">
+                      &nbsp;
+                    </span>
+                  </span>
                 </div>
               {%- endfor -%}
             </div>
