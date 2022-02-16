@@ -368,18 +368,18 @@
     "16448520175a08ff8c": {
       "type": "apps",
       "blocks": {
-        "9b7d64d3-0160-4b0a-91ff-b874d249c444": {
+        "a12ec752-5709-42d4-a460-57ff8559e366": {
           "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
-            "heading_font": "avenir_next_n6",
+            "heading_font": "avenir_next_n5",
             "heading_size": 30,
-            "feed_width": 80,
+            "feed_width": 65,
             "html_area": ""
           }
         }
       },
       "block_order": [
-        "9b7d64d3-0160-4b0a-91ff-b874d249c444"
+        "a12ec752-5709-42d4-a460-57ff8559e366"
       ],
       "settings": {
         "include_margins": false
