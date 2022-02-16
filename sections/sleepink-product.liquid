@@ -542,6 +542,7 @@
                   Mehr als <span class="fw-500">{{ product.metafields.global.numberBuyers.value }}x</span> in den letzten <span class="fw-500">4 Stunden</span> gekauft
                 </p>
               </div>
+            </div>
           {%- when 'rating' -%}
             {% render 'star-rating', rating: product.metafields.global.rating.value, reviewCount: product.metafields.global.reviewCount.value, type: 'page' %}
             {%- when 'nutrition' -%}
