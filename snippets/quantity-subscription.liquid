@@ -446,6 +446,7 @@
       document.getElementById("subscription-checkmark-wrapper").classList.add("hidden-element")
       document.getElementById("money-back").classList.remove("hidden")
       document.getElementById("secure-payment").classList.add("hidden")
+      document.querySelectorAll(".payment > svg").forEach(element => element.style.visibility = "visible")
     }
     if(document.getElementById("subs").checked) {
       document.getElementById("once-container").classList.remove("selected")
@@ -460,6 +461,7 @@
       document.getElementById("subscription-checkmark-wrapper").classList.remove("hidden-element")
       document.getElementById("money-back").classList.add("hidden")
       document.getElementById("secure-payment").classList.remove("hidden")
+      document.querySelectorAll(".payment > svg").forEach((element, index) => element.style.visibility = index === 1 || index === 3 ?"hidden" : "visible")
     }
   }
   const metafields = {{ curr_variant.metafields.global | json }}
