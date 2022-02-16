@@ -288,10 +288,10 @@
             </div>
             <div class="dropdown__items-list selected__value-drop ff-body fw-400 fs-13px lh-15px" style="border-left: 0.75px solid #e6eae8; border-right: 0.75px solid #e6eae8; border-bottom: 0.75px solid #e6eae8; position: absolute; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 1; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="sub-period-dropdown-list">
               {%- for period in defaultQuantity[0].periods -%}
-                <div class="dropdown__list-item" data-quantity="{{ forloop.index0 }}" style="padding: 15px; border-bottom: 0.75px solid #e6eae8; cursor: pointer;">
-                  <strong>Lieferung:</strong>
-                  <span>
-                    <span style="margin-right: 36px;">
+                <div class="dropdown__list-item" data-period="{{ forloop.index0 }}" style="padding: 15px; border-bottom: 0.75px solid #e6eae8; cursor: pointer;">
+                  <strong data-period="{{ forloop.index0 }}">Lieferung:</strong>
+                  <span data-period="{{ forloop.index0 }}">
+                    <span style="margin-right: 36px;" data-period="{{ forloop.index0 }}">
                       {{ period.title }}
                     </span>
                     <span style="width: 17px; height: 11px; position: relative; bottom: 5px; visibility: hidden;">
@@ -524,10 +524,8 @@
       const chosenPeriod = document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML
       const periodIndex = periods.reduce((acc, curr, index) => {
         if (curr.title === chosenPeriod.trim()) {
-          console.log(`"${curr.title}" is equal to "${chosenPeriod.trim()}"`)
           return index
         } else {
-          console.log(`"${curr.title}" is not equal to "${chosenPeriod.trim()}"`)
           return acc
         }
       }, -1)
@@ -540,34 +538,29 @@
       document.getElementById("sub-quantity-dropdown-list").classList.remove("visible")
     })
   })
-  document.querySelectorAll("#subscription input[type=radio]").forEach((element, sindex, subsarray) => {
-    if(subsarray.length > 0) {
-    element.addEventListener("change", (e) => {
-      if(e.target.checked) {
-        const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
-        const prices = {{ curr_variant.metafields.global.prices }}
-        const number = Number(e.target.id.replace("sub-",""))
-        subscriptions.forEach((subscription, index) => {
-          if(index == number) {
-          document.getElementById(`sub-${index}-wrapper`).classList.add("active-variant")
-          } else {
-          document.getElementById(`sub-${index}-wrapper`).classList.remove("active-variant")
-          }
-        })
-        document.getElementById("substotal").innerHTML = `${(subscriptions[number].cost / 100).toFixed(2).replace(".", ",")} €`
-        const compareIndex = prices.findIndex(obj => obj.content === subscriptions[number].content)
-        const quantity = compareIndex + 1
-        const compareGood = prices[compareIndex] || null
-        document.getElementById("substotalcompare").innerHTML = compareGood
-          ?  subscriptions[number].cost < (quantity * compareGood.cost)
-            ? `${(quantity * compareGood.cost / 100).toFixed(2).replace(".", ",")} €` 
-            : ""
-          : ""
-        const unitPrice = subscriptions[number].reference * subscriptions[number].cost / subscriptions[number].content
-        document.getElementById("subsunitprice").innerHTML = `${(unitPrice / 100).toFixed(2).replace(".",",")} €/${prices[2].reference} ${prices[2].unit}`
-      }
+  document.querySelectorAll("#sub-period-dropdown-list > div").forEach(element => {
+    element.addEventListener("click", (e) => {
+      const prices = {{ curr_variant.metafields.global.prices }}
+      const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
+      const periodIndex = e.target.dataset.period
+      const chosenQuantity = document.querySelector("#sub-quantity-dropdown-selected > span:first-child > span").innerHTML.trim()
+      const quantityIndex = subscriptions.reduce((acc, curr, index) => {
+        if(curr.title === chosenQuantity){
+          return index
+        } else {
+          return acc
+        }
+      }, -1)
+      const { number, unit, reference, content, periods } = subscriptions[quantityIndex]
+      document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML = `${periods[Number(periodIndex)].title}`
+      const { cost, vid } = periods[periodIndex]
+      document.getElementById("substotal").innerHTML = `${Number(cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("substotalcompare").innerHTML = `${Number(number * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("subsdiscount").innerHTML = `-${Number(100 - (100 * cost / (number * prices[0].cost))).toFixed(0)}%`
+      document.getElementById("subsunitprice").innerHTML = `${Number(reference * cost / content / 100).toFixed(2).replace(".", ",")} €/${reference} ${unit}`
+      document.getElementById("subscription-link").href=`https://abo.schlafdrink.de/cart/${vid}:1`
+      document.getElementById("sub-period-dropdown-list").classList.remove("visible")
     })
-  }
   })
   function changeLink(e) {
     const subscriptions = {{ curr_variant.metafields.global.subscriptions.value | json }}
