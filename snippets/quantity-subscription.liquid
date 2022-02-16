@@ -444,6 +444,8 @@
       document.getElementById("subslabel").classList.remove("checked")
       document.getElementById("subscription-price-wrapper").classList.add("hidden-element")
       document.getElementById("subscription-checkmark-wrapper").classList.add("hidden-element")
+      document.getElementById("money-back").classList.remove("hidden")
+      document.getElementById("secure-payment").classList.add("hidden")
     }
     if(document.getElementById("subs").checked) {
       document.getElementById("once-container").classList.remove("selected")
@@ -456,6 +458,8 @@
       document.getElementById("subslabel").classList.add("checked")
       document.getElementById("subscription-price-wrapper").classList.remove("hidden-element")
       document.getElementById("subscription-checkmark-wrapper").classList.remove("hidden-element")
+      document.getElementById("money-back").classList.add("hidden")
+      document.getElementById("secure-payment").classList.remove("hidden")
     }
   }
   const metafields = {{ curr_variant.metafields.global | json }}
