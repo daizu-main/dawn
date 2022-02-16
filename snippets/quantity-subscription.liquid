@@ -137,18 +137,18 @@
           </span> 
           <span style="position: relative; bottom: 2px; color: white; background-color: #317752; padding: 3px 6px; border-radius: 5px;" class="ff-body fs-11px lh-13px ls-m050">
             {% liquid 
-              for sub in curr_variant.metafields.global.subscriptions.value
-                assign curr = sub.cost
-                assign content = sub.content
-                assign reference = curr_variant.metafields.global.prices.value | where: 'content', content | first
-                assign ref = reference.cost | times: reference.number
-                assign diff = curr | minus: ref | abs
-                assign saving = 100 | times: diff | divided_by: ref | round
-                if forloop.index0 == 0
-                  assign max_saving = saving
-                elsif saving > max_saving
-                  assign max_saving = saving
-                endif
+              assign max_saving = 0
+              for subquant in curr_variant.metafields.global.subscriptions.value
+                for subperiod in subquant.periods
+                  assign curr = subperiod.cost
+                  assign content = subquant.content
+                  assign ref = subquant.number | times: curr_variant.metafields.global.prices.value[0].cost
+                  assign diff = curr | minus: ref | abs
+                  assign saving = 100 | times: diff | divided_by: ref | round
+                  if saving > max_saving
+                    assign max_saving = saving
+                  endif
+                endfor
               endfor
             %}
             {% if max_saving > 0 %}bis {{ max_saving }}% Rabatt{% endif %}
@@ -210,54 +210,71 @@
         </div>
       </div>
       <div class="subscription hidden-element flex column" id="subscription">
-        {%- for sub in curr_variant.metafields.global.subscriptions.value -%}
-          {% liquid 
-            assign curr = sub.cost
-            assign content = sub.content
-            assign reference = curr_variant.metafields.global.prices.value | where: 'content', content | first
-            assign ref = reference.cost | times: reference.number
-            assign diff = curr | minus: ref | abs
-            assign saving = 100 | times: diff | divided_by: ref | round
-          %}
-          <div class="flex row jc-fs ai-c w-100p px-4 py-5{% if forloop.index0 == 0 %} active-variant{% endif %}" style="{% if forloop.index0 != 0 %}border-top: 2px solid white;{% endif %}" id="sub-{{ forloop.index0 }}-wrapper">
-            <input type="radio" value="{{ forloop.index0 }}" name="subscription" id="sub-{{ forloop.index0 }}"{% if forloop.index0 == 0 %} checked{% endif %} class="mr-5">
-            <label for="sub-{{ forloop.index0 }}" class="flexi row jc-spb ai-c w-100p my-0i mx-0i px-0i py-0i">
-              <p class="flex column jc-c ai-fs fs-0">
-                <span class="fw-500">
-                  {{ sub.title }}
+      {% liquid 
+        assign defaultQuantity = curr_variant.metafields.global.subscriptions.value | where: 'default', true
+        assign defaultQuantName = defaultQuantity[0].title
+        assign defaultQuantPeriod = defaultQuantity[0].periods | where: 'default', true
+        assign defaultQuantPeriodName = defaultQuantPeriod[0].title
+        assign defaultQuantPeriodPrice = defaultQuantPeriod[0].cost
+      %}
+        <div class="flex column ai-fs jc-fs hidden-element" id="subscription-price-wrapper" style="margin-top: 18px;">
+          <p class="my-0 fs-2 lh-100">
+            <span id="substotalcompare" class="fw-400 td-lt" style="font-size: 18px; line-height: 21px;"">{{ defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost | money_without_currency }} €</span>
+            <span id="substotal" class="fw-700 ls-m080" style="font-size: 24px; line-height: 27px">{{ defaultQuantPeriodPrice | money_without_currency }} €</span>
+            <span class="ff-body fw-400" style="background-color: #317752; padding: 2px 6px; border-radius: 5px; font-size: 10px; line-height: 1.15; letter-spacing: -0.25px; color: white; position: relative; bottom: 6px;">
+              {% liquid
+                assign defQuantRef = defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost
+                assign defQuantDiff = defQuantRef | minus: defaultQuantPeriodPrice
+                assign saving = 100 | times: defQuantDiff | divided_by: defQuantRef | round
+              %}
+              {% if saving > 0 %}-{{ saving }}%{% endif %}
+            </span>
+          </p>
+          <p class="my-0 fs-12px lh-100 fw-300">
+            <span id="subsunitprice">
+              {% liquid
+                assign reference = defaultQuantity[0].reference
+                assign unit = defaultQuantity[0].unit
+                assign content = defaultQuantity[0].content 
+                assign cost = defaultQuantPeriodPrice
+              %}
+              <span style="font-size: 10px; line-height: 1.1; color: rgba(17,17,17,0.6);">{{ cost | times: reference | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}</span>
+              <span style="font-size: 10px; line-height: 1.1; color: rgba(17,17,17,0.6);">inkl. MwSt.</span>
+            </span>
+          </p>
+        </div>
+        <div class="sub-quantity_custom-dropdown mt-5" style="margin-bottom: 14px; position: relative;">
+          <div style="width: fit-content;">
+            <div class="selected__value-drop flex row jc-spb ai-c ff-body fw-400 fs-13px lh-15px" style="border: 0.75px solid #e6eae8; border-radius: 4px; padding: 10px 15px 10px 11px; cursor: pointer; position: relative; z-index: 2; background-color: #fff;" id="sub-quantity-dropdown-selected">
+              <span style="margin-right: 36px;">
+                <strong>Menge:</strong>
+                <span>
+                  {{ defaultQuantName }}
                 </span>
-                <span class="fw-300">
-                  {{ sub.subtitle }}
-                </span>
-              </p>
-              <span class="flex column jc-fe ai-fe">
-                {% if saving %}
-                  <span style="background-color: #ffcc00; padding: 6px 13px; color: black; font-weight: 500; border-radius: 40px;" class="mb-3">{{ saving }}% gespart</span>
-                {% endif %}
-                <span class="fs-2 fw-700 ta-r">{{ sub.cost | money_without_currency }} €</span>
               </span>
-            </label>
+              <span style="width: 17px; height: 11px; position: relative; bottom: 5px;">
+                {% render 'icon-caret' %}
+              </span>
+            </div>
+            <div class="dropdown__items-list selected__value-drop ff-body fw-400 fs-13px lh-15px" style="border-left: 0.75px solid #e6eae8; border-right: 0.75px solid #e6eae8; border-bottom: 0.75px solid #e6eae8; position: absolute; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 1; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="sub-quantity-dropdown-list">
+              {%- for sub in curr_variant.metafields.global.subscriptions.value -%}
+                <div class="dropdown__list-item" data-quantity="{{ forloop.index }}" style="padding: 15px; border-bottom: 0.75px solid #e6eae8; cursor: pointer;">
+                  <strong>Menge:</strong>
+                  <span>
+                    <span style="margin-right: 36px;">
+                      {{ sub.title }}
+                      {% comment %} {{ forloop.index }}x {{ curr_variant.metafields.global.prices.value[0].subtitle }} {% endcomment %}
+                    </span>
+                    <span style="width: 17px; height: 11px; position: relative; bottom: 5px; visibility: hidden;">
+                      &nbsp;
+                    </span>
+                  </span>
+                </div>
+              {%- endfor -%}
+            </div>
           </div>
-        {%- endfor -%}
+        </div>
       </div>
-    </div>
-    <div class="flex column ai-fs jc-fs py-7 hidden-element" id="subscription-price-wrapper">
-      <p class="my-0 fs-2 lh-100">
-        <span id="substotal" class="fw-700 ls-m080">{{ curr_variant.metafields.global.subscriptions.value[0].cost | money_without_currency }} €</span>
-        <span id="substotalcompare" class="fw-400 td-lt">{{ curr_variant.price | money_without_currency }} €</span>
-        <span class="fs-12px fw-300">inkl. MwSt.</span>
-      </p>
-      <p class="my-0 fs-12px lh-100 fw-300">
-        <span id="subsunitprice">
-          {% liquid
-            assign reference = curr_variant.metafields.global.subscriptions.value[0].reference
-            assign unit = curr_variant.metafields.global.subscriptions.value[0].unit
-            assign content = curr_variant.metafields.global.subscriptions.value[0].content 
-            assign cost = curr_variant.metafields.global.subscriptions.value[0].cost 
-          %}
-          {{ reference | times: cost | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}
-        </span>
-      </p>
     </div>
   </div>
 {% else %}
@@ -393,7 +410,6 @@
       document.getElementById("subscription-btn-wrapper").classList.add("hidden-element")
       document.getElementById("buy-buttons").classList.remove("hidden-element")
       document.getElementById("quantity-wrapper").classList.remove("hidden-element")
-      document.getElementById("quantity-input-wrapper").classList.remove("hidden-element")
       document.getElementById("subscription").classList.add("hidden-element")
       document.getElementById("oncelabel").classList.add("checked")
       document.getElementById("subslabel").classList.remove("checked")
@@ -406,7 +422,6 @@
       document.getElementById("subscription-btn-wrapper").classList.remove("hidden-element")
       document.getElementById("buy-buttons").classList.add("hidden-element")
       document.getElementById("quantity-wrapper").classList.add("hidden-element")
-      document.getElementById("quantity-input-wrapper").classList.add("hidden-element")
       document.getElementById("subscription").classList.remove("hidden-element")
       document.getElementById("oncelabel").classList.remove("checked")
       document.getElementById("subslabel").classList.add("checked")
@@ -425,6 +440,28 @@
     }
   }))
   document.querySelectorAll("#quantity-dropdown-list > div").forEach(element => {
+    element.addEventListener("click", (e) => {
+      const prices = {{ curr_variant.metafields.global.prices }}
+      const quantity = element.dataset.quantity
+      document.querySelector("#quantity-dropdown-selected > span:first-child > span > span").innerHTML = `${quantity}`
+      const normIndex = Number(quantity)
+      const index = normIndex - 1
+      document.getElementById("total").innerHTML = `${Number(normIndex * prices[index].cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("totalcompare").innerHTML = quantity == 1 ? "" : `${Number(normIndex * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("unitprice").innerHTML = `${Number(normIndex * prices[index].reference * prices[index].cost / prices[index].content / 100).toFixed(2).replace(".", ",")} €/${prices[index].reference} ${prices[index].unit}`
+      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
+      document.getElementById("quantity-dropdown-list").classList.remove("visible")
+    })
+  })
+  document.querySelectorAll("#sub-quantity-dropdown-selected").forEach(element => element.addEventListener("click", (e) => {
+    const ele = document.getElementById("sub-quantity-dropdown-list")
+    if(ele.classList.contains("visible")) {
+      ele.classList.remove("visible")
+    } else {
+      ele.classList.add("visible")
+    }
+  }))
+  document.querySelectorAll("#sub-quantity-dropdown-list > div").forEach(element => {
     element.addEventListener("click", (e) => {
       const prices = {{ curr_variant.metafields.global.prices }}
       const quantity = element.dataset.quantity
