@@ -48,11 +48,11 @@
     width: unset !important;
   }
   #oncelabel, #oncelabel-nosub {
-    color: rgba(17,17,17,0.5);
+    color: rgba(17,17,17,1);
     margin-bottom: 0;
   }
   #subslabel {
-    color: rgba(0,0,0,1);
+    color: rgba(17,17,17,1);
     margin-bottom: 0;
   }
   .product-form__input > #tabheadings > input:checked + label, .product-form__input > #tabheadings-nosub > input:checked + label {
@@ -123,7 +123,7 @@
     <div class="flex row jc-fs ai-c" id="tabheadings">
       <div class="flex row jc-c selected" style="width: 42%;" id="once-container">
         <input type="radio" value="once" name="mode" id="once" checked>
-        <label for="once" class="checked" id="oncelabel">
+        <label for="once" class="checked" id="oncelabel" style="padding: 1rem 8px;">
           <span class="ff-heading fs-12px lh-19px" style="position: relative; bottom: 2px;">
             Einzelkauf
           </span>
@@ -131,7 +131,7 @@
       </div>
       <div class="flex row jc-c" style="width: 58%;" id="subs-container">
         <input type="radio" value="subs" name="mode" id="subs">
-        <label for="subs" id="subslabel" class="flex row ai-c">
+        <label for="subs" id="subslabel" class="flex row ai-c" style="padding: 1rem 8px;">
           <span style="position: relative; bottom: 2px;" class="ff-heading fs-12px lh-19px">
             Sparabo
           </span> 
