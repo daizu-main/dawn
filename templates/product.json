@@ -3,20 +3,17 @@
     "main": {
       "type": "sleepink-product",
       "blocks": {
+        "image_slider": {
+          "type": "image_slider",
+          "settings": {}
+        },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
-          "settings": {
-          }
-        },
-        "image_slider": {
-          "type": "image_slider",
-          "settings": {
-          }
+          "settings": {}
         },
         "advantages": {
           "type": "advantages",
@@ -31,8 +28,7 @@
         },
         "subscription_selector": {
           "type": "subscription_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -42,18 +38,15 @@
         },
         "features": {
           "type": "features",
-          "settings": {
-          }
+          "settings": {}
         },
         "payment_icons": {
           "type": "payment_icons",
-          "settings": {
-          }
+          "settings": {}
         },
         "pdesc": {
           "type": "product_description",
-          "settings": {
-          }
+          "settings": {}
         },
         "nutrition": {
           "type": "nutrition",
@@ -64,14 +57,13 @@
         },
         "usage": {
           "type": "usage",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
+        "image_slider",
         "title",
         "rating",
-        "image_slider",
         "advantages",
         "subscription_selector",
         "buy_buttons",
@@ -98,9 +90,7 @@
           }
         }
       },
-      "block_order": [
-        "16448371221c00c21f-0"
-      ],
+      "block_order": ["16448371221c00c21f-0"],
       "settings": {
         "swipe_on_mobile": true,
         "color_scheme": "background-1",
@@ -109,8 +99,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "1644837122ebbd5ad6"
-  ]
+  "order": ["main", "1644837122ebbd5ad6"]
 }
