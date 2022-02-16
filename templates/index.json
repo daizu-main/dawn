@@ -373,7 +373,7 @@
           "settings": {
             "heading_font": "avenir_next_n5",
             "heading_size": 30,
-            "feed_width": 65,
+            "feed_width": 100,
             "html_area": ""
           }
         }
