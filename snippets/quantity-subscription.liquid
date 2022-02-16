@@ -221,7 +221,7 @@
           <p class="my-0 fs-2 lh-100">
             <span id="substotalcompare" class="fw-400 td-lt" style="font-size: 18px; line-height: 21px;"">{{ defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost | money_without_currency }} €</span>
             <span id="substotal" class="fw-700 ls-m080" style="font-size: 24px; line-height: 27px">{{ defaultQuantPeriodPrice | money_without_currency }} €</span>
-            <span class="ff-body fw-400" style="background-color: #317752; padding: 2px 6px; border-radius: 5px; font-size: 10px; line-height: 1.15; letter-spacing: -0.25px; color: white; position: relative; bottom: 6px;">
+            <span class="ff-body fw-400" style="background-color: #317752; padding: 2px 6px; border-radius: 5px; font-size: 10px; line-height: 1.15; letter-spacing: -0.25px; color: white; position: relative; bottom: 6px;" id="subsdiscount">
               {% liquid
                 assign defQuantRef = defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost
                 assign defQuantDiff = defQuantRef | minus: defaultQuantPeriodPrice
@@ -258,10 +258,10 @@
             </div>
             <div class="dropdown__items-list selected__value-drop ff-body fw-400 fs-13px lh-15px" style="border-left: 0.75px solid #e6eae8; border-right: 0.75px solid #e6eae8; border-bottom: 0.75px solid #e6eae8; position: absolute; top: 47px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 4px; background-color: #fff; z-index: 3; opacity: 0; visibility: hidden; margin-top: -5px; transition: all .3s ease-in-out; max-height: 350px; overflow: auto;" id="sub-quantity-dropdown-list">
               {%- for sub in curr_variant.metafields.global.subscriptions.value -%}
-                <div class="dropdown__list-item" data-quantity="{{ forloop.index }}" style="padding: 15px; border-bottom: 0.75px solid #e6eae8; cursor: pointer;">
-                  <strong>Menge:</strong>
-                  <span>
-                    <span style="margin-right: 36px;">
+                <div class="dropdown__list-item" data-quantity="{{ forloop.index0 }}" style="padding: 15px; border-bottom: 0.75px solid #e6eae8; cursor: pointer;">
+                  <strong data-quantity="{{ forloop.index0 }}">Menge:</strong>
+                  <span data-quantity="{{ forloop.index0 }}">
+                    <span style="margin-right: 36px;" data-quantity="{{ forloop.index0 }}">
                       {{ sub.title }}
                     </span>
                     <span style="width: 17px; height: 11px; position: relative; bottom: 5px; visibility: hidden;">
@@ -516,15 +516,28 @@
   document.querySelectorAll("#sub-quantity-dropdown-list > div").forEach(element => {
     element.addEventListener("click", (e) => {
       const prices = {{ curr_variant.metafields.global.prices }}
-      const quantity = element.dataset.quantity
-      document.querySelector("#quantity-dropdown-selected > span:first-child > span > span").innerHTML = `${quantity}`
-      const normIndex = Number(quantity)
-      const index = normIndex - 1
-      document.getElementById("total").innerHTML = `${Number(normIndex * prices[index].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("totalcompare").innerHTML = quantity == 1 ? "" : `${Number(normIndex * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("unitprice").innerHTML = `${Number(normIndex * prices[index].reference * prices[index].cost / prices[index].content / 100).toFixed(2).replace(".", ",")} €/${prices[index].reference} ${prices[index].unit}`
-      document.querySelectorAll(".revy-bundle-add-button").forEach(element => element.dataset.quantity = `${quantity}`)
-      document.getElementById("quantity-dropdown-list").classList.remove("visible")
+
+      const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
+      const quantityIndex = e.target.dataset.quantity
+      document.querySelector("#sub-quantity-dropdown-selected > span:first-child > span").innerHTML = `${subscriptions[Number(quantityIndex)].title}`
+      const { number, unit, reference, content, periods } = subscriptions[quantityIndex]
+      const chosenPeriod = document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML
+      const periodIndex = periods.reduce((acc, curr, index) => {
+        if (curr.title === chosenPeriod.trim()) {
+          console.log(`"${curr.title}" is equal to "${chosenPeriod.trim()}"`)
+          return index
+        } else {
+          console.log(`"${curr.title}" is not equal to "${chosenPeriod.trim()}"`)
+          return acc
+        }
+      }, -1)
+      const { cost, vid } = periods[periodIndex]
+      document.getElementById("substotal").innerHTML = `${Number(cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("substotalcompare").innerHTML = `${Number(number * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+      document.getElementById("subsdiscount").innerHTML = `-${Number(100 - (100 * cost / (number * prices[0].cost))).toFixed(0)}%`
+      document.getElementById("subsunitprice").innerHTML = `${Number(reference * cost / content / 100).toFixed(2).replace(".", ",")} €/${reference} ${unit}`
+      document.getElementById("subscription-link").href=`https://abo.schlafdrink.de/cart/${vid}:1`
+      document.getElementById("sub-quantity-dropdown-list").classList.remove("visible")
     })
   })
   document.querySelectorAll("#subscription input[type=radio]").forEach((element, sindex, subsarray) => {
