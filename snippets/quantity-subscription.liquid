@@ -231,7 +231,7 @@
           <p class="mt-0 mb-2 fs-2 lh-100">
             <span id="substotalcompare" class="fw-400 td-lt" style="font-size: 18px; line-height: 21px;"">{{ defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost | money_without_currency }} €</span>
             <span id="substotal" class="fw-700 ls-m080" style="font-size: 24px; line-height: 27px">{{ defaultQuantPeriodPrice | money_without_currency }} €</span>
-            <span class="ff-body fw-400" style="background-color: #317752; padding: 2px 6px; border-radius: 5px; font-size: 10px; line-height: 1.15; letter-spacing: -0.25px; color: white; position: relative; bottom: 6px;" id="subsdiscount">
+            <span class="ff-body fw-400" style="background-color: #317752; padding: 2px 6px; border-radius: 5px; font-size: 10px; line-height: 1.15; color: white; position: relative; bottom: 6px;" id="subsdiscount">
               {% liquid
                 assign defQuantRef = defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost
                 assign defQuantDiff = defQuantRef | minus: defaultQuantPeriodPrice
