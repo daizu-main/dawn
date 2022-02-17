@@ -15,7 +15,10 @@
   <div class="SectionGrid-Wide">
     <div class="ndesktopgrid onecol tworow w-100p">
       <div class="w-100p col-1 row-1-2">
-        <img class="w-100p cover op-cc h-100p" src="{{ section.settings.imageMobile | image_url: width: 800 }}" alt="{{ section.settings.imageMobile.alt | escape }}" width="768" height="1470" loading="lazy">
+        <img class="w-100p cover op-cc h-100p" 
+          src="{{ section.settings.imageMobile | image_url: width: 800 }}" 
+          srcset="{{ section.settings.imageMobile | image_url: width: 800 }} 1x, {{ section.settings.imageMobile | image_url: width: 1600 }} 2x"
+          alt="{{ section.settings.imageMobile.alt | escape }}" width="768" height="1470" loading="lazy">
       </div>
       <div class="col-1 row-2 z-10">
         <h2 class="ff-heading ta-c fs-7 fw-500 lh-107 ls-m124 w-85p mx-auto mxw-320px mnw-300px mb-5" style="color: {{ color }};">{{ section.settings.heading | escape }}</h2>
@@ -23,7 +26,9 @@
           {{ section.settings.text }}
         </div>
         <div class="ta-c">
-          <img src="{{ section.settings.logo | image_url: width: 200 }}" alt="{{ section.settings.logo.alt | escape }}" width="183" height="56" loading="lazy" class="w-183px">
+          <img src="{{ section.settings.logo | image_url: width: 183 }}" 
+            srcset="{{ section.settings.logo | image_url: width: 183 }} 1x, {{ section.settings.logo | image_url: width: 366 }} 2x"
+            alt="{{ section.settings.logo.alt | escape }}" width="183" height="56" loading="lazy" class="w-183px">
         </div>
       </div>
     </div>

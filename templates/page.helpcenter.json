@@ -10,7 +10,8 @@
         "backgroundColor": "#111111",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-hd-contact.jpg",
-        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-contact.png",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-hilfe-kontakt_9bde4741-fa3b-4ab6-9c8c-92c102becbf7.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-hilfe-kontakt_1f904c2b-eb3b-4501-8dcf-e66edbde891b.jpg",
         "text": "Hilfe und Kontakt"
       }
     },

@@ -158,7 +158,7 @@
         "title": "Alle Produkte in der Übersicht",
         "color_scheme": "background-1",
         "backgroundProductCards": "#f9f9fa",
-        "linkProductPage": "Mehr erfahren"
+        "linkProductPage": "Zum Produkt"
       }
     },
     "script": {

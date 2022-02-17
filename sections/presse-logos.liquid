@@ -10,7 +10,8 @@
         {% assign bSettings = block.settings %}
         {% if bSettings.showMobile %}
         <img 
-          src="{{ bSettings.image | image_url: height: 36 }}" 
+          src="{{ bSettings.image | image_url: height: 18 }}"
+          srcset="{{ bSettings.image | image_url: height: 18 }} 1x, {{ bSettings.image | image_url: height: 36 }} 2x"
           alt="{{ bSettings.image.alt | escape }}" 
           loading="lazy" 
           height="18"
@@ -39,7 +40,8 @@
         {% assign bSettings = block.settings %}
         {% if bSettings.showDesktop %}
         <img 
-          src="{{ bSettings.image | image_url: height: 82 }}" 
+          src="{{ bSettings.image | image_url: height: 41 }}" 
+          srcset="{{ bSettings.image | image_url: height: 41 }} 1x, {{ bSettings.image | image_url: height: 82 }} 2x"
           alt="{{ bSettings.image.alt | escape }}" 
           loading="lazy" 
           height="41" 

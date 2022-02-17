@@ -72,31 +72,44 @@
 
 <div class="SectionGrid color-{{ section.settings.color_scheme }}">
   <div class="{{ heroWidth | escape }}">
-    <div class="desktopgrid pagegrid" style="background-color: {{ section.settings.backgroundColor }};">
+    <div class="desktopgrid pagegrid" style="background-color: {{ section.settings.backgroundColor }};" id="header-desktop-wrapper">
       {% if section.settings.imageDesktop %}
-          <img src="{{ section.settings.imageDesktop | image_url: width: 4000 }}" alt="{{ section.settings.imageDesktop.alt }}" class="col-1-5 row-1 w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
+          <img src="{{ section.settings.imageDesktop | image_url: width: 2000 }}" 
+            srcset="{{ section.settings.imageDesktop | image_url: width: 2000 }} 1x, {{ section.settings.imageDesktop | image_url: width: 4000 }} 2x"
+            alt="{{ section.settings.imageDesktop.alt }}" class="col-1-5 row-1 w-100p cover" id="header-img-desktop" width="1200" height="600" loading="lazy">
       {% endif %}
-      <div class="flex row ai-c {{ justify | escape }} {{ column | escape }} {{ jc | escape }} row-1 w-95p {{ pl | escape }} ff-heading fs-46px lh-116 ls-m200 fw-600 {{ paddings | escape }}" style="color: {{ color | escape }}">
+      <div class="flex row ai-c {{ justify | escape }} {{ column | escape }} {{ jc | escape }} row-1 w-95p {{ pl | escape }} ff-heading fs-46px lh-116 ls-m200 fw-600 {{ paddings | escape }}" style="color: {{ color | escape }}" id="header-content-wrapper-desktop">
         <div id="header-content-desktop">
         {{ section.settings.text }}
         </div>
       </div>
     </div>
-    <div class="tabletgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
+    <div class="tabletgrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};" id="header-tablet-wrapper">
+      {% comment %} 
+        As the breakpoints are at 500w and 990w, we can also set the max image sizes to these widths
+      {% endcomment %}
       {% if section.settings.imageTablet %}
-        <img src="{{ section.settings.imageTablet | image_url: width: 2500 }}" alt="{{ section.settings.imageTablet.alt }}" class="col-1 row-1 w-100p cover" id="header-img-tablet" width="800" height="250" loading="lazy">
+        <img src="{{ section.settings.imageTablet | image_url: width: 1000 }}" 
+          srcset="{{ section.settings.imageTablet | image_url: width: 1000 }} 1x, {{ section.settings.imageTablet | image_url: width: 2000 }} 2x"
+          alt="{{ section.settings.imageTablet.alt }}" 
+          class="col-1 row-1 w-100p cover" id="header-img-tablet" 
+          width="800" height="250" loading="lazy">
       {% endif %}
-      <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p">
+      <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p" id="header-content-wrapper-tablet">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-tablet">
           {{ section.settings.text }}
         </div>
       </div>
     </div>
-    <div class="mobilegrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};">
+    <div class="mobilegrid 1col 1row" style="background-color: {{ section.settings.backgroundColor }};" id="header-mobile-wrapper">
       {% if section.settings.imageMobile %}
-        <img src="{{ section.settings.imageMobile | image_url: width: 1200 }}" alt="{{ section.settings.imageMobile.alt }}" class="col-1 row-1 w-100p cover" id="header-img-mobile" width="375" height="145" loading="lazy">
+        <img src="{{ section.settings.imageMobile | image_url: width: 500 }}" 
+          srcset="{{ section.settings.imageMobile | image_url: width: 500 }} 1x, {{ section.settings.imageMobile | image_url: width: 1000 }} 2x"
+          alt="{{ section.settings.imageMobile.alt }}" 
+          class="col-1 row-1 w-100p cover" id="header-img-mobile" 
+          width="375" height="145" loading="lazy">
       {% endif %}
-      <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p">
+      <div class="flex column jc-c {{ align | escape }} col-1 row-1 w-100p" id="header-content-wrapper-mobile">
         <div class="w-90p {{ margins | escape }} {{ justify | escape }} ff-heading fs-6 fs-md-42px lh-125 lh-md-110 ls-m100 ls-md-m200 fw-600 hyphen {{ paddings | escape }}" lang="de" style="color: {{ color | escape }}" id="header-content-mobile">
           {{ section.settings.text }}
         </div>
@@ -107,16 +120,26 @@
 <script>
 function resizeImage(){
   const contentDesktop = document.getElementById("header-content-desktop").offsetHeight;
+  const contentTablet = document.getElementById("header-content-tablet").offsetHeight;
   const contentMobile = document.getElementById("header-content-mobile").offsetHeight;
   const idealDesktopHeight = "{{ section.settings.height }}" === "high" ? `${contentDesktop + 540}` : `${contentDesktop + 290}`;
   const idealMobileHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 438}` : `${contentMobile + 113}`;
-  const idealTabletHeight = "{{ section.settings.height }}" === "high" ? `${contentMobile + 424}` : `${contentMobile + 184}`;
-  if(document.querySelectorAll("#header-img-mobile").length > 0) 
+  const idealTabletHeight = "{{ section.settings.height }}" === "high" ? `${contentTablet + 424}` : `${contentTablet + 184}`;
+  if(document.querySelectorAll("#header-img-mobile").length > 0) {
     document.getElementById("header-img-mobile").height = idealMobileHeight;
-  if(document.querySelectorAll("#header-img-tablet").length > 0)
+    document.getElementById("header-mobile-wrapper").style.height = idealMobileHeight;
+    document.getElementById("header-content-wrapper-mobile").style.height = idealMobileHeight;
+  }
+  if(document.querySelectorAll("#header-img-tablet").length > 0) {
     document.getElementById("header-img-tablet").height = idealTabletHeight;
-  if(document.querySelectorAll("#header-img-desktop").length > 0)
+    document.getElementById("header-tablet-wrapper").style.height = idealTabletHeight;
+    document.getElementById("header-content-wrapper-tablet").style.height = idealTabletHeight;
+  }
+  if(document.querySelectorAll("#header-img-desktop").length > 0) {
     document.getElementById("header-img-desktop").height = idealDesktopHeight;
+    document.getElementById("header-desktop-wrapper").style.height = idealDesktopHeight;
+    document.getElementById("header-content-wrapper-desktop").style.height = idealDesktopHeight;
+  }
 }
 window.addEventListener("load",resizeImage);
 window.addEventListener("resize",resizeImage);

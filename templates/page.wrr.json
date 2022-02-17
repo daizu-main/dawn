@@ -10,6 +10,8 @@
         "backgroundColor": "",
         "fontColor": "bright",
         "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-rueckgabe_4979d825-f654-4b88-a409-d0f2afd3778d.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-rueckgabe.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-rueckgabe_33e10d6f-c117-4abf-ac1b-f5991bb8d050.jpg",
         "text": "Widerrufsbelehrung"
       }
     },

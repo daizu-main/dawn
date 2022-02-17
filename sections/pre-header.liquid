@@ -28,7 +28,8 @@
                           {% else %}
                             <div class="pre-head-img">
                                 <img
-                                src="{{ block.settings.image | image_url: width: 44 }}"
+                                src="{{ block.settings.image | image_url: width: 22 }}"
+                                srcset="{{ block.settings.image | image_url: width: 22 }} 1x, {{ block.settings.image | image_url: width: 44 }} 2x"
                                 alt="{{ block.settings.title }}"
                                 width="22"
                                 height="22"

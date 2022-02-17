@@ -9,7 +9,9 @@
         "alignment": "center",
         "backgroundColor": "",
         "fontColor": "bright",
-        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-retail_972e3967-96a0-4d07-82b0-7ae180ddcd2f.jpg",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-presse-retail.png",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-retail_8521e2a9-165e-4603-9f2e-b0445295b015.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-press-retail_67129552-87af-4128-ace0-6704b136503f.jpg",
         "text": "Retailer werden"
       }
     },
