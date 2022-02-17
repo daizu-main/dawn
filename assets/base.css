@@ -5576,6 +5576,10 @@ deferred-media {
   max-width: unset;
 }
 
+.ProductInfo-BuyBox .accordion details summary svg {
+  right: 0.4rem !important;
+}
+
 @media screen and (min-width: 500px) {
   .ProductInfo-BuyBox {
     max-width: 620px;
