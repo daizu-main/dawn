@@ -559,7 +559,7 @@
                     </div>
                     {% render 'icon-caret' %}
                   </summary>
-                  <div class="accordion__content rte ff-body my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                  <div class="accordion__content rte ff-body my-0 pr-9 pr-md-15 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                     {% if product.metafields.global.showIngredientList.value %}
                       <h3 class="fs-1 ff-heading fw-300 lh-100">Zutatenliste</h3>
                       <div class="w-100p fs-0 fw-300 lh-150">
@@ -705,7 +705,7 @@
               {% endif %}
             {%- when 'usage' -%}
               {% if product.metafields.global.usage %}
-                <div class="accordion" {{ block.shopify_attributes }}>
+                <div class="accordion" {{ block.shopify_attributes }} {% if block.settings.borderBelow %}style="border-bottom: 0.1rem solid #e5e5e5;"{% else %}style="border-bottom: none !important;"{% endif %}>
                   <details>
                     <summary class="flex row ai-c">
                       <div class="summary__title">
@@ -715,7 +715,7 @@
                       </div>
                       {% render 'icon-caret' %}
                     </summary>
-                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 pr-9 pr-md-15 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                       {{ product.metafields.global.usage.value }}
                     </div>
                   </details>
@@ -733,7 +733,7 @@
                       </div>
                       {% render 'icon-caret' %}
                     </summary>
-                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 pr-9 pr-md-15 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                       {{ product.metafields.global.productDescription.value }}
                     </div>
                   </details>
@@ -1290,13 +1290,61 @@
           "id": "messageMissingReference",
           "label": "Text für fehlende NRV-Referenz",
           "default": "** Keine Referenzmenge durch die EU definiert"
+        },
+        {
+          "type": "select",
+          "id": "hyphenation",
+          "label": "t:sections.common-across-sections.settings.hyphenation.label",
+          "default": "off",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
         }
       ]
     },
     {
       "type": "usage",
       "name": "Anwendung",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "borderBelow",
+          "label": "Begrenzung darunter?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "hyphenation",
+          "label": "t:sections.common-across-sections.settings.hyphenation.label",
+          "default": "off",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "product_description",
@@ -1308,7 +1356,26 @@
           "id": "borderAbove",
           "label": "Begrenzung darüber?",
           "default": false
-
+        },
+        {
+          "type": "select",
+          "id": "hyphenation",
+          "label": "t:sections.common-across-sections.settings.hyphenation.label",
+          "default": "off",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
         }
       ]
     },

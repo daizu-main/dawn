@@ -47,19 +47,24 @@
         "pdesc": {
           "type": "product_description",
           "settings": {
-            "borderAbove": false
+            "borderAbove": false,
+            "hyphenation": "off"
           }
         },
         "nutrition": {
           "type": "nutrition",
           "settings": {
             "accordionTitle": "Zutaten und Inhaltsstoffe",
-            "messageMissingReference": "** Keine Referenzmenge durch die EU definiert"
+            "messageMissingReference": "** Keine Referenzmenge durch die EU definiert",
+            "hyphenation": "off"
           }
         },
         "usage": {
           "type": "usage",
-          "settings": {}
+          "settings": {
+            "borderBelow": false,
+            "hyphenation": "off"
+          }
         }
       },
       "block_order": [
