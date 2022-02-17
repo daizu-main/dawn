@@ -46,7 +46,9 @@
         },
         "pdesc": {
           "type": "product_description",
-          "settings": {}
+          "settings": {
+            "borderAbove": false
+          }
         },
         "nutrition": {
           "type": "nutrition",

@@ -678,7 +678,7 @@
               {% endif %}
             {%- when 'product_description' -%}
               {% if product.metafields.global.productDescription %}
-                <div class="accordion" {{ block.shopify_attributes }}>
+                <div class="accordion" {{ block.shopify_attributes }} {% if block.settings.borderAbove %}style="border-top: 0.1rem solid #e5e5e5;"{% else %}style="border-top: none !important;"{% endif %}>
                   <details>
                     <summary class="flex row ai-c">
                       <div class="summary__title">
@@ -1256,7 +1256,16 @@
     {
       "type": "product_description",
       "name": "Produktbeschreibung",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "borderAbove",
+          "label": "Begrenzung darüber?",
+          "default": false
+
+        }
+      ]
     },
     {
       "type": "accordion_rt",
