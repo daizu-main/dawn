@@ -5562,3 +5562,18 @@ deferred-media {
   font-weight: 400;
   font-size: 18px;
 }
+
+/* STRUCTURE: Product Page */
+.features,
+.features p {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 300;
+  font-family: var(--font-body-family);
+}
+@media screen and (min-width: 990px) {
+  .features,
+  .features p {
+    line-height: 12px;
+  }
+}
