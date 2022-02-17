@@ -2881,6 +2881,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding-right: 10px;
 }
 
+.pr-5 {
+  padding-right: 16px;
+}
+
 .pr-9 {
   padding-right: 40px;
 }
