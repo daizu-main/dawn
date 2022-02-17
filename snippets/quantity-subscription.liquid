@@ -167,7 +167,7 @@
     </div>
     <div id="quantity-subscription-body">
       <div id="quantity-wrapper" class="flex column">
-        <div class="flex column ai-fs jc-fs" style="margin-top: 19px;">
+        <div class="flex column ai-fs jc-fs" style="margin-top: 25px;">
           <p class="mt-0 mb-2 fs-2 lh-116">
             <span id="totalcompare" class="fw-400 td-lt" style="color: rgba(17,17,17,0.8);"></span>
             <span id="total" class="ff-body fw-700 fs-24px lh-27px">{{ curr_variant.price | money_without_currency }} €</span>
@@ -187,7 +187,7 @@
             <span id="mwst-1" class="fs-12px fw-300">inkl. MwSt.</span>
           </p>
         </div>
-        <div class="once-quantity_custom-dropdown mt-5" style="margin-bottom: 14px; position: relative;">
+        <div class="once-quantity_custom-dropdown mt-5" style="margin-bottom: 25px; position: relative;">
           <div style="width: fit-content;">
             <div class="selected__value-drop flex row jc-spb ai-c ff-body fw-400 fs-13px lh-15px" style="border: 0.75px solid #e6eae8; border-radius: 4px; padding: 10px 15px 10px 11px; cursor: pointer; position: relative; z-index: 2; background-color: #fff;" id="quantity-dropdown-selected">
               <span style="margin-right: 36px;">
@@ -227,7 +227,7 @@
           assign defaultQuantPeriodName = defaultQuantPeriod[0].title
           assign defaultQuantPeriodPrice = defaultQuantPeriod[0].cost
         %}
-        <div class="flex column ai-fs jc-fs hidden-element" id="subscription-price-wrapper" style="margin-top: 18px;">
+        <div class="flex column ai-fs jc-fs hidden-element" id="subscription-price-wrapper" style="margin-top: 25px;">
           <p class="mt-0 mb-2 fs-2 lh-100">
             <span id="substotalcompare" class="fw-400 td-lt" style="font-size: 18px; line-height: 21px;"">{{ defaultQuantity[0].number | times: curr_variant.metafields.global.prices.value[0].cost | money_without_currency }} €</span>
             <span id="substotal" class="fw-700 ls-m080" style="font-size: 24px; line-height: 27px">{{ defaultQuantPeriodPrice | money_without_currency }} €</span>
