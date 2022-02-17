@@ -241,8 +241,8 @@
                 assign content = defaultQuantity[0].content 
                 assign cost = defaultQuantPeriodPrice
               %}
-              <span style="font-size: 10px; line-height: 1.1; color: rgba(17,17,17,0.6);">{{ cost | times: reference | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}</span>
-              <span style="font-size: 10px; line-height: 1.1; color: rgba(17,17,17,0.6);">inkl. MwSt.</span>
+              <span style="line-height: 1.1; color: rgba(17,17,17,0.6);">{{ cost | times: reference | divided_by: content | money_without_currency }} €/{{ reference }} {{ unit }}</span>
+              <span style="line-height: 1.1; color: rgba(17,17,17,0.6);">inkl. MwSt.</span>
             </span>
           </p>
         </div>
