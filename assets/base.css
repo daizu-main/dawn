@@ -5571,9 +5571,24 @@ deferred-media {
   font-weight: 300;
   font-family: var(--font-body-family);
 }
+
+.ProductInfo-BuyBox {
+  max-width: unset;
+}
+
+@media screen and (min-width: 500px) {
+  .ProductInfo-BuyBox {
+    max-width: 620px;
+  }
+}
+
 @media screen and (min-width: 990px) {
   .features,
   .features p {
     line-height: 12px;
+  }
+
+  .ProductInfo-BuyBox {
+    max-width: 438px;
   }
 }
