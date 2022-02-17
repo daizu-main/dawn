@@ -418,6 +418,69 @@
                 </div>
               </div>
             </noscript>
+          {% when 'image_slider' %}
+          <div class="w-100p ndesktop">
+              <div class="swiper myMobSwiper2">
+                <div class="swiper-wrapper">
+                  {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+                  {%- if product.selected_or_first_available_variant.featured_media != null -%}
+                    <div class="swiper-slide">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }}" 
+                        srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1000 }} 2x"
+                        alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                        width="500" height="500" loading="lazy">
+                    </div>
+                  {%- endif -%}
+                  {% for media in product.media %}
+                    <div class="swiper-slide">
+                      <img src="{{ media.preview_image | image_url: width: 250 }}" 
+                        srcset="{{ media.preview_image | image_url: width: 250 }} 1x, {{ media.preview_image | image_url: width: 500 }} 2x"
+                        alt="{{ media.preview_image.alt }}" 
+                        width="250" height="250" loading="lazy">
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div thumbsSlider="" class="swiper myMobSwiper">
+                <div class="swiper-wrapper flex row jc-c ai-fe">
+                  {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+                  {%- if product.selected_or_first_available_variant.featured_media != null -%}
+                    <div class="swiper-slide">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 50 }}" 
+                        srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 50 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 100 }} 2x"
+                        alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="50" height="50" loading="lazy">
+                    </div>
+                  {%- endif -%}
+                  {% for media in product.media %}
+                    <div class="swiper-slide">
+                      <img src="{{ media.preview_image | image_url: width: 50 }}" 
+                        srcset="{{ media.preview_image | image_url: width: 50 }} 1x, {{ media.preview_image | image_url: width: 100 }} 2x"
+                        alt="{{ media.preview_image.alt }}" 
+                        width="50" height="50" loading="lazy">
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+              <script>
+                const mobileSwiper = new Swiper(".myMobSwiper", {
+                  spaceBetween: 10,
+                  slidesPerView: 4,
+                  freeMode: true,
+                  watchSlidesProgress: true,
+                  direction: "horizontal"
+                });
+                const mobileSwiper2 = new Swiper('.myMobSwiper2', {
+                  slidesPerView: 1,
+                  loop: true,
+                  keyboard: {
+                    enabled: true
+                  },
+                  thumbs: {
+                    swiper: mobileSwiper
+                  }
+                });
+              </script>
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }} id="buy-buttons">
               {%- if product.selected_or_first_available_variant.available -%}
