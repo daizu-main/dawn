@@ -121,7 +121,7 @@
 </style>
   <div class="product-form__input product-form__subscription w-100p" {{ block.shopify_attributes }}>
     <div class="flex row jc-fs ai-c" id="tabheadings">
-      <div class="flex row jc-c selected" style="width: 42%;" id="once-container">
+      <div class="flex row jc-c ai-c selected" style="width: 42%;" id="once-container">
         <input type="radio" value="once" name="mode" id="once" checked>
         <label for="once" class="checked" id="oncelabel" style="padding: 1rem 8px;">
           <span class="ff-heading fs-12px lh-19px" style="position: relative; bottom: 2px;">
@@ -130,7 +130,7 @@
         </label>
       </div>
       {% if curr_variant.metafields.global.subscriptions %}
-      <div class="flex row jc-c" style="width: 58%;" id="subs-container">
+      <div class="flex row jc-c ai-c" style="width: 58%;" id="subs-container">
         <input type="radio" value="subs" name="mode" id="subs">
         <label for="subs" id="subslabel" class="flex row ai-c" style="padding: 1rem 8px;">
           <span style="position: relative; bottom: 2px;" class="ff-heading fs-12px lh-19px">
