@@ -2594,6 +2594,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-top: 24px;
 }
 
+.mt-25px {
+  margin-top: 25px;
+}
+
 .mt-8 {
   margin-top: 32px;
 }
@@ -2784,6 +2788,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
   .mr-lg-11 {
     margin-right: 56px;
+  }
+  .mt-lg-0 {
+    margin-top: 0;
   }
   .mt-lg-3 {
     margin-top: 8px;
