@@ -562,7 +562,7 @@
                   <div class="accordion__content rte ff-body my-0 pr-5 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                     {% if product.metafields.global.showIngredientList.value %}
                       <h3 class="fs-1 ff-heading fw-400 lh-100 ls-0 mb-2">Zutatenliste</h3>
-                      <div class="w-100p fs-0 fw-300 lh-150">
+                      <div class="w-100p fs-0 fw-300 lh-150 mb-5">
                         {{ product.metafields.global.ingredientList.value }}
                       </div>
                     {% endif %}
