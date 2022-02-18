@@ -1945,6 +1945,17 @@
           }
         }
       }
+    },
+    "script-metadata": {
+      "name": "Metadata",
+      "settings": {
+        "title": {
+          "label": "Page title"
+        },
+        "description": {
+          "label": "Page description"
+        }
+      }
     }
   }
 }

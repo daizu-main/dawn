@@ -1995,6 +1995,17 @@
           }
         }
       }
+    },
+    "script-metadata": {
+      "name": "Metadaten",
+      "settings": {
+        "title": {
+          "label": "Seitentitel"
+        },
+        "description": {
+          "label": "Seitenbeschreibung"
+        }
+      }
     }
   }
 }
