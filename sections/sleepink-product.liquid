@@ -19,12 +19,16 @@
 
 <style>
   .mySwiper2 {
-    max-width: 624px;
-    max-height: 624px;
-    min-width: 483.6px;
-    min-height: 483.6px;
-    width: 48vw;
-    height: 48vw;
+    max-width: 520px;
+    max-height: 520px;
+    min-width: 483px;
+    min-height: 483px;
+    width: 40vw;
+    height: 40vw;
+  }
+  .mySwiper2 .swiper-slide {
+    width: fit-content;
+    height: fit-content;
   }
   .mySwiper2 img {
     width: 40vw;
@@ -57,19 +61,27 @@
   }
   .mySwiper {
     width: 8vw;
-    height: 48vw;
+    height: 40vw;
     min-width: 80.6px;
     min-height: 483.6px;
     max-width: 104px;
-    max-height: 624px;
+    max-height: 520px;
+  }
+  .mySwiper .swiper-slide {
+    width: calc((40vw - 50px) / 6);
+    height: calc((40vw - 50px) / 6);
+    min-width: 58.83px;
+    min-height: 58.83px;
+    max-width: 78.33px;
+    max-height: 78.33px;
   }
   .mySwiper img {
-    width: 6.15vw;
-    height: 6.15vw;
-    min-width: 55.59px;
-    min-height: 55.59px;
-    max-width: 80px;
-    max-height: 80px;
+    width: calc(((40vw - 50px) / 6) - 2px);
+    height: calc(((40vw - 50px) / 6) - 2px);
+    min-width: 56.83px;
+    min-height: 56.83px;
+    max-width: 76.33px;
+    max-height: 76.33px;
   }
   .myMobSwiper {
     width: calc(100vw - 32px);
