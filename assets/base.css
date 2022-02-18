@@ -3928,6 +3928,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   letter-spacing: normal;
 }
 
+.ls-0 {
+  letter-spacing: 0;
+}
+
 .ls-m024 {
   letter-spacing: -0.24px;
 }
