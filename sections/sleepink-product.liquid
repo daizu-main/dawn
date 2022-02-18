@@ -20,15 +20,16 @@
 <style>
   .mySwiper2 {
     max-width: 520px;
-    max-height: 520px;
+    max-height: 567px;
     min-width: 483px;
-    min-height: 483px;
+    min-height: 530px;
     width: 40vw;
-    height: 40vw;
+    height: calc(40vw + 47px);
   }
   .mySwiper2 .swiper-slide {
     width: fit-content;
-    height: fit-content;
+    /*height: fit-content;*/
+    text-align: center;
   }
   .mySwiper2 img {
     width: 40vw;
@@ -45,6 +46,7 @@
     max-height: 624px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 16px;
   }
   .myMobSwiper2 img {
     width: calc(100vw - 32px);
@@ -65,13 +67,12 @@
       height: 100%;
     }
   }
-  .mySwiper2 .swiper-slide, .myMobSwiper2 .swiper-slide {
+  .myMobSwiper2 .swiper-slide {
     text-align: center;
-    height: fit-content;
   }
-  .myMobSwiper2 .swiper-wrapper {
+  /*.myMobSwiper2 .swiper-wrapper {
     height: fit-content;
-  }
+  }*/
   .mySwiper {
     width: 8vw;
     height: 40vw;
