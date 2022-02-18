@@ -5611,11 +5611,16 @@ deferred-media {
   .ProductInfo-BuyBox {
     max-width: 620px;
   }
+  .features,
+  .features p {
+    font-size: 12px;
+  }
 }
 
 @media screen and (min-width: 990px) {
   .features,
   .features p {
+    font-size: 10px;
     line-height: 12px;
   }
 
