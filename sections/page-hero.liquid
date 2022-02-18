@@ -61,19 +61,20 @@
   }
   .swiper-slide a.filled {
     background-color: rgba(var(--color-base-solid_button_background)) !important;
-    color: rgba(var(--colors_font_dark)) !important;
+    color: rgba(var(--color-base-font-dark)) !important;
   }
   .swiper-slide a.filled:hover {
-    background-color: rgba(var(--color-base-solid_button_hover)) !important;
-    color: rgba(var(--colors_font_dark_hover)) !important;
+    background-color: rgba(var(--color-base-solid-button_hover)) !important;
+    opacity: 1 !important;
+    color: rgba(var(--color-base-font-dark-hover)) !important;
   }
   .swiper-slide a.outline {
     color: rgba(var(--color-base-solid_button_background)) !important;
     border-color: rgba(var(--color-base-solid_button_background)) !important;
   }
   .swiper-slide a.outline:hover {
-    color: rgba(var(--color-base-solid_button_hover)) !important;
-    border-color: rgba(var(--color-base-solid_button_hover)) !important;
+    color: rgba(var(--color-base-solid-button_hover)) !important;
+    border-color: rgba(var(--color-base-solid-button_hover)) !important;
   }
 </style>
 
@@ -130,7 +131,24 @@
                     Sorry, your browser doesn't support embedded videos!
                   </video>
                 {% else %}
-                  <img src="{{ slide.settings.imageMobile | image_url: width: 1200 }}" alt="{{ slide.settings.image.alt | escape }}" class="w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" width="1000" height="700" loading="lazy">
+                  {% comment %} 
+                    As the breakpoints are at 500w and 990w, we can also set the max image sizes to these widths.
+                    The displays are different on phone and tablet. Display is switched using mobile/tablet classes
+                  {% endcomment %}
+                  <img src="{{ slide.settings.imageMobile | image_url: width: 500 }}"
+                    srcset="{{ slide.settings.imageMobile | image_url: width: 500 }} 1x, {{ slide.settings.imageMobile | image_url: width: 1000 }} 2x"
+                    alt="{{ slide.settings.image.alt | escape }}" 
+                    class="mobile w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" 
+                    width="1000" 
+                    height="700" 
+                    loading="lazy">
+                  <img src="{{ slide.settings.imageTablet | image_url: width: 1000 }}"
+                    srcset="{{ slide.settings.imageTablet | image_url: width: 1000 }} 1x, {{ slide.settings.imageTablet | image_url: width: 2000 }} 2x"
+                    alt="{{ slide.settings.image.alt | escape }}" 
+                    class="tablet w-100p cover col-1 row-1 op-ct h-87vh mnh-450px mxh-500px" 
+                    width="1000" 
+                    height="700" 
+                    loading="lazy">
                 {% endif %}
                 {% if slide.settings.overlay %}
                   <div class="col-1 row-1 w-100p darklayer h-87vh mnh-450px mxh-500px">
@@ -138,13 +156,13 @@
                   </div>
                 {% endif %}
                 <div class="w-100p col-1 row-1 px-md-30px flex column jc-fe h-100p h-87vh mnh-450px mxh-500px" style="z-index: 10; position: relative;">
-                  <h1 class="ta-c ta-md-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
+                  <h1 class="ta-c ta-lg-l {% if slide.settings.uppercaseTitle %}uppercase {% endif %}my-0 py-0 lh-117 ls-m220" style="color: {{ tagBackground | escape }};">
                     {{ slide.settings.title | escape }}
                   </h1>
-                  <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-md-l" style="color: {{ tagBackground | escape }};">
+                  <p class="ff-body fs-3 lh-133 mt-3 mb-5 ta-c ta-lg-l" style="color: {{ tagBackground | escape }};">
                     {{ slide.settings.text | escape }}
                   </p>
-                  <div class="ta-c ta-md-l w-100p mt-4 mb-8">
+                  <div class="ta-c ta-lg-l w-100p mt-4 mb-8">
                     {% if slide.settings.buttonDesign == "filled" %}
                       <a href="{{ slide.settings.url }}" class="filled py-3 px-8 mxh-60px inlblock ta-c ff-body uppercase z-1000 nodec button lh-180 fw-500" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
                         {{ slide.settings.buttonText | escape }}
@@ -162,7 +180,11 @@
                     <div class="flex row jc-spb ai-fs wrap h-25px ofh">
                       {% for logo in logos %}
                         {% if logo.settings.showMobile %}
-                          <img src="{{ logo.settings.image | image_url: height: 50 }}" alt="{{ logo.settings.image.alt | escape }}" loading="lazy" width="100" height="25" class="h-25px w-auto mx-5 grow-0 shrink-0">
+                          <img src="{{ logo.settings.image | image_url: height: 25 }}" 
+                            srcset="{{ logo.settings.image | image_url: height: 25 }} 1x, {{ logo.settings.image | image_url: height: 50 }} 2x"
+                            alt="{{ logo.settings.image.alt | escape }}" 
+                            loading="lazy" width="100" height="25" 
+                            class="h-25px w-auto mx-5 grow-0 shrink-0">
                         {% endif %}
                       {% endfor %}
                     </div>
@@ -239,13 +261,17 @@
                     loop
                     src="{{ slide.settings.video | escape }}"
                     poster="{{ slide.settings.posterImage | image_url: width: 4000 }}"
-                    class="w-100p col-1-5 row-1 h-87vh mxh-700px mnh-500px cover lazy"
+                    class="w-100p col-1-5 row-1 h-100p mxh-700px mnh-500px cover lazy"
                     height="700"
                   >
                     Sorry, your browser doesn't support embedded videos!
                   </video>
                 {% else %}
-                  <img src="{{ slide.settings.imageDesktop | image_url: width: 2000 }}" alt="{{ slide.settings.image.alt | escape }}" class="col-1-5 row-1 w-100p h-87vh mxh-700px mnh-500px cover" width="1500" height="700" loading="lazy">
+                  <img src="{{ slide.settings.imageDesktop | image_url: width: 2000 }}" 
+                    srcset="{{ slide.settings.imageDesktop | image_url: width: 2000 }} 1x, {{ slide.settings.imageDesktop | image_url: width: 4000 }} 2x"
+                     alt="{{ slide.settings.image.alt | escape }}" 
+                     class="col-1-5 row-1 w-100p mnh-500px mxh-700px cover" width="1500" height="700" 
+                     loading="lazy">
                 {% endif %}
                 {% if slide.settings.overlay %}
                   <div class="col-2-4 row-1 overlay h-87vh mxh-700px mnh-500px">&nbsp;</div>
@@ -282,7 +308,13 @@
                     <p class="uppercase mr-4" style="color: {{ tagBackground }}; line-height: 25px;">{{ section.settings.introText | escape }}</p>
                     {% for logo in logos %}
                       {% if logo.settings.showDesktop %}
-                        <img src="{{ logo.settings.image | image_url: height: 50 }}" alt="{{ logo.settings.image.alt | escape }}" width="100" height="20" class="w-auto mx-5 grow-0 shrink-0" loading="lazy" style="height: 25px;">
+                        <img src="{{ logo.settings.image | image_url: height: 25 }}" 
+                          srcset="{{ logo.settings.image | image_url: height: 25 }} 1x, {{ logo.settings.image | image_url: height: 50 }} 2x"
+                          alt="{{ logo.settings.image.alt | escape }}" 
+                          width="100" height="25" 
+                          class="w-auto mx-5 grow-0 shrink-0" 
+                          loading="lazy" 
+                          style="height: 25px;">
                       {% endif %}
                     {% endfor %}
                   </div>
@@ -372,12 +404,17 @@
         {
           "type": "image_picker",
           "id": "imageDesktop",
-          "label": "Hintergrundbild (Desktop)"
+          "label": "t:sections.common-across-sections.settings.background_image_desktop.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageTablet",
+          "label": "t:sections.common-across-sections.settings.background_image_tablet.label"
         },
         {
           "type": "image_picker",
           "id": "imageMobile",
-          "label": "Hintergrundbild (Mobile/Tablet)"
+          "label": "t:sections.common-across-sections.settings.background_image_mobile.label"
         },
         {
           "type": "text",

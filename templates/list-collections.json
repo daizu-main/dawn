@@ -7,8 +7,11 @@
         "heroWidth": "full",
         "height": "flat",
         "alignment": "center",
-        "backgroundColor": "#111111",
+        "backgroundColor": "rgba(0,0,0,0)",
         "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-products_c9e40ce2-45a0-4f1a-b819-7e7d4133a8ef.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-products.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-products_2e8b3f74-16b7-41d5-a30a-2f1c4b530f70.jpg",
         "text": "Ihre Experten für Premium-Schlafprodukte"
       }
     },
@@ -25,86 +28,112 @@
         "drink-14": {
           "type": "product",
           "settings": {
-            "product": "schlafdrink-1",
-            "variant": "01xBox14-fold-filled"
+            "product": "sleep-ink",
+            "variant": "01xBox14-fold-filled",
+            "image": "shopify:\/\/shop_images\/schlafdrink-14er-produktbild.png"
           }
         },
         "schlafessenz": {
           "type": "product",
           "settings": {
-            "product": "schlafessenz"
+            "product": "schlafessenz",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafessenz-produktbild.png"
           }
         },
         "schlafspray": {
           "type": "product",
           "settings": {
-            "product": "schlafspray"
+            "product": "schlafspray",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafspray-produktbild.png"
           }
         },
         "schlafduo": {
           "type": "product",
           "settings": {
-            "product": "schlafduo"
+            "product": "schlafduo",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafduo-produktbild.png"
           }
         },
         "resleep": {
           "type": "product",
           "settings": {
-            "product": "resleep-schlafkapseln"
+            "product": "resleep-schlafkapseln",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/resleep-produktbild.png"
           }
         },
         "gute-nacht": {
           "type": "product",
           "settings": {
-            "product": "schlaftee-gute-nacht"
+            "product": "schlaftee-gute-nacht",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/gutenacht-schlaftee-produktbild.png"
           }
         },
         "relax": {
           "type": "product",
           "settings": {
-            "product": "schlaftee-relax"
+            "product": "schlaftee-relax",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/relax-schlaftee-produktbild.png"
           }
         },
         "gums": {
           "type": "product",
           "settings": {
-            "product": "schlafgums"
+            "product": "schlafgums",
+            "variant": ""
           }
         },
         "kerze": {
           "type": "product",
           "settings": {
-            "product": "duftkerze"
+            "product": "duftkerze",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/duftkerze-produktbild_4ff92c36-1f39-43b4-b87d-30e431db4594.png"
           }
         },
         "maske": {
           "type": "product",
           "settings": {
-            "product": "schlafmaske"
+            "product": "schlafmaske",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/schlafmaske-produktbild.png"
           }
         },
         "matte": {
           "type": "product",
           "settings": {
-            "product": "akupressurmatte"
+            "product": "akupressurmatte",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/akupressurmatte-produktbild_a36c068d-8b03-43ba-a571-185be139af60.png"
           }
         },
         "teeflasche": {
           "type": "product",
           "settings": {
-            "product": "teeflasche"
+            "product": "teeflasche",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/teeflasche-produktbild.png"
           }
         },
         "allyouneed": {
           "type": "product",
           "settings": {
-            "product": "tragetasche-all-you-need-is-sleep"
+            "product": "tragetasche-all-you-need-is-sleep",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/tasche-allneed-produktbild.png"
           }
         },
         "letstalk": {
           "type": "product",
           "settings": {
-            "product": "tragetasche-lets-talk-about-sleep-baby"
+            "product": "tragetasche-lets-talk-about-sleep-baby",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/tasche-letstalk-produktbild.png"
           }
         }
       },
@@ -128,8 +157,8 @@
       "settings": {
         "title": "Alle Produkte in der Übersicht",
         "color_scheme": "background-1",
-        "backgroundProductCards": "#F9F9FA",
-        "linkProductPage": "Mehr erfahren"
+        "backgroundProductCards": "#f9f9fa",
+        "linkProductPage": "Zum Produkt"
       }
     }
   },

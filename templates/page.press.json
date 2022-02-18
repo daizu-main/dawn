@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-2",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#ffffff",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-presse-retail.png",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-retail_8521e2a9-165e-4603-9f2e-b0445295b015.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-press-retail_08d51489-cf10-4914-90e6-f72413ecb307.jpg",
+        "text": "Presse-Info"
+      }
+    },
+    "press-info": {
+      "type": "rich-text",
+      "blocks": {
+        "1643887077a25f1d2f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Für Presseanfragen senden Sie uns gerne eine Email an <a href=\"mailto:hallo@sleep.ink\">hallo@sleep.ink<\/a>. <br\/><br\/><br\/><\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "1643887077a25f1d2f-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "press-info"
+  ]
+}

@@ -836,13 +836,13 @@
         },
         "color_scheme": {
           "options__3": {
-            "label": "dunkle Textfarbe auf HG-Farbe 1"
+            "label": "Dark text on bg-color 1"
           },
           "options__4": {
-            "label": "dunkle Textfarbe auf HG-Farbe 2"
+            "label": "Dark text on bg-color 2"
           },
           "options__5": {
-            "label": "HG-Farbe 1 auf dunkler Textfarbe"
+            "label": "BG color 1 on dark text color"
           },
           "label": "Color scheme",
           "info": "Visible when text box displayed"
@@ -1728,6 +1728,81 @@
         }
       }
     },
+    "common-across-sections": {
+      "settings": {
+        "text_align": {
+          "option_left": {
+            "label": "Left"
+          },
+          "option_center": {
+            "label": "Center"
+          },
+          "option_right": {
+            "label": "Right"
+          },
+          "label": "Text alignment"
+        },
+        "background_image_mobile": {
+          "label": "Background image for mobile"
+        },
+        "background_image_tablet": {
+          "label": "Background image for tablet"
+        },
+        "background_image_desktop": {
+          "label": "Background image for desktop"
+        },
+        "hyphenation": {
+          "option_off": {
+            "label": "no hyphenation"
+          },
+          "option_de": {
+            "label": "hyphenation (german)"
+          },
+          "option_en": {
+            "label": "hyphenation (english)"
+          },
+          "label": "hyphenation"
+        }
+      }
+    },
+    "small-page-hero": {
+      "name": "Small Page Hero",
+      "settings": {
+        "element_width": {
+          "option_full": {
+            "label": "Full screen width"
+          },
+          "option_wide": {
+            "label": "Wide (max. 1300px)"
+          },
+          "option_narrow": {
+            "label": "Narrow (max. 900px)"
+          },
+          "label": "Element width"
+        },
+        "element_height": {
+          "option_high": {
+            "label": "High (ca. 600px)"
+          },
+          "option_flat": {
+            "label": "Flat (ca. 350px)"
+          },
+          "label": "Element height"
+        },
+        "background_color": {
+          "label": "Element background color"
+        },
+        "font_color": {
+          "option_bright": {
+            "label": "Bright"
+          },
+          "option_dark": {
+            "label": "Dark"
+          },
+          "label": "Font color"
+        }
+      }
+    },
     "rich-text": {
       "name": "Rich text",
       "settings": {
@@ -1761,13 +1836,13 @@
               "label": "Heading"
             },
             "heading_size": {
-              "options__1": {
+              "option_small": {
                 "label": "Small"
               },
-              "options__2": {
+              "option_medium": {
                 "label": "Medium"
               },
-              "options__3": {
+              "option_large": {
                 "label": "Large"
               },
               "label": "Heading font size"

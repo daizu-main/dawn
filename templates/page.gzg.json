@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "16444872461e6652e5": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-retina-small-gzg_380e0795-ed4d-43bb-bacb-a8e1b33fad1b.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-gzg.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-gzg_fdfdb9f4-d459-425c-a3c3-c577fcc6c0cf.jpg",
+        "text": "Geld-zurück-Garantie"
+      }
+    },
+    "rich1": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wir sind so überzeugt von der Wirkung aller sleep.ink Produkte, dass wir eine Geld-zurück-Garantie auf unsere <strong>Nahrungsergänzungsmittel und funktionellen Nahrungsmittel<\/strong> anbieten. Sie können bis zu 49% des Produktes konsumieren, bevor Sie die Geld-zurück-Garantie in Anspruch nehmen. Wenn mehr als die Hälfte verbraucht ist, können wir den Betrag leider nicht zurückerstatten.<br\/><br\/>Bestellungen mit einem Gesamtwert inkl. Rabatt unter 20€ sind von der Geld-zurück-Garantie ebenso ausgenommen wie Abo-Bestellungen. Die Rücksendung der Ware muss innerhalb von 30 Tagen nach Zustellung der Bestellung erfolgen.<br\/><br\/>Sollten Sie mit dem erworbenen Produkt nicht zufrieden sein, folgen Sie diesen einfachen drei Schritten:<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "marginAbove": true,
+        "marginBelow": false
+      }
+    },
+    "list": {
+      "type": "list",
+      "blocks": {
+        "bullet1": {
+          "type": "list_item",
+          "settings": {
+            "text": "<p>Geben Sie Ihre Bestellnummer und Postleitzahl im Formular unten ein.<\/p>"
+          }
+        },
+        "bullet2": {
+          "type": "list_item",
+          "settings": {
+            "text": "<p>Wählen Sie aus, welche Produkte aus Ihrer Bestellung Sie zurücksenden möchten.<\/p>"
+          }
+        },
+        "bullet3": {
+          "type": "list_item",
+          "settings": {
+            "text": "<p>Drucken Sie das Rücksendedokument aus und legen Sie es Ihrer Rücksendung bei.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bullet1",
+        "bullet2",
+        "bullet3"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "list_type": "ordered"
+      }
+    },
+    "rich2": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sobald die Rücksendung bei uns eingegangen ist, erstatten wir Ihnen den vollen Betrag der Bestellung zurück. Dafür verwenden wir die Zahlungsmethode, mit der Sie die Bestellung bei uns getätigt haben.<br><br><strong>Rücksendekosten können wir leider nicht erstatten.<\/strong> Die Erstattung erfolgt in der Regel innerhalb von fünf Tagen nach Eingang der Rücksendung.<br><br>Die Adresse für die Rücksendung ist:<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "marginAbove": false,
+        "marginBelow": false
+      }
+    },
+    "address": {
+      "type": "address",
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "text": "<p>sleep.ink Versandzentrum c\/o SKF e.V.<br>Pankstraße 8-10<br>Haus D<br>13127 Berlin<\/p>"
+      }
+    },
+    "rich3": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Bitte beachten Sie, dass Rücksendungen ohne beigefügtes Rücksendedokument nicht verarbeitet werden können.<\/strong><br><br>Sollten Sie Fragen zur Geld-zurück-Garantie haben, melden Sie sich gerne bei unserem Kundenservice unter <a href='mailto:hallo@sleep.ink'>hallo@sleep.ink<\/a> oder nutzen Sie das Chatfenster auf der Webseite.<\/p>",
+            "text_align": "ta-l",
+            "hyphenation": "de"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "width": "narrow",
+        "marginAbove": false,
+        "marginBelow": true
+      }
+    },
+    "iframe": {
+      "type": "iframe",
+      "settings": {
+        "title": "",
+        "url": "https:\/\/sleep.ink\/archive\/gzg",
+        "width": "wide"
+      }
+    }
+  },
+  "order": [
+    "16444872461e6652e5",
+    "rich1",
+    "list",
+    "rich2",
+    "address",
+    "rich3",
+    "iframe"
+  ]
+}

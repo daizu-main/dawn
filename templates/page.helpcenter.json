@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "hero": {
+      "type": "small-page-hero",
+      "settings": {
+        "color_scheme": "background-1",
+        "heroWidth": "full",
+        "height": "flat",
+        "alignment": "center",
+        "backgroundColor": "#111111",
+        "fontColor": "bright",
+        "imageDesktop": "shopify:\/\/shop_images\/hero-hd-contact.jpg",
+        "imageTablet": "shopify:\/\/shop_images\/hero-tablet-hilfe-kontakt_9bde4741-fa3b-4ab6-9c8c-92c102becbf7.jpg",
+        "imageMobile": "shopify:\/\/shop_images\/hero-mobile-hilfe-kontakt_1f904c2b-eb3b-4501-8dcf-e66edbde891b.jpg",
+        "text": "Hilfe und Kontakt"
+      }
+    },
+    "hilfecenter": {
+      "type": "hilfecenter",
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Hilfe und Kontakt",
+        "subline": "Bitte wählen Sie ein Thema, zu dem Sie unterstützung benötigen:"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "hilfecenter"
+  ]
+}

@@ -150,6 +150,29 @@
     <script>!function(){window.SLIDECART=!0;window.SLIDECART_FORMAT='{{ shop.money_format }}';var e="https://cdn.jsdelivr.net/gh/apphq/slidecart-dist@master/slidecarthq.js?"+(new Date).getTime(),t=document.createElement("script");t.type="text/javascript",t.src=e,document.querySelector("body").appendChild(t)}();</script>
 
 
+    <script>
+      window.SLIDECART_UPDATED = function(cart) {
+        window.RevyBundle.api.getTotal(response => {
+          var newCart = cart
+          
+          newCart.total_price = response.bundleTotal.final
+          newCart.total_discount = response.bundleTotal.discount
+          
+          for (var i = 0; i < response.bundleTotal.per_variant.length; i++) {
+            var discountedItem = response.bundleTotal.per_variant[i]
+              var quantity = cart.items[i].quantity
+                          
+              newCart.items[i].line_price = discountedItem.item_price.final * quantity
+              newCart.items[i].original_line_price = discountedItem.item_price.original * quantity
+  
+          }
+          
+          
+          window.SLIDECART_SET_CART(newCart)
+        })
+      }
+    </script>
+  
 
     
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -219,6 +242,15 @@
           });
         }
       });
+    </script>
+    <script>
+      const pTags = [ ...document.querySelectorAll(".rich-text__text p") ];
+      const emptyPTags = pTags.filter(pTag => pTag.innerHTML == "")
+      emptyPTags.forEach(p => {
+        p.innerHTML = "&nbsp;";
+        p.style.width = "100%";
+        p.style.height = "1.5em";
+      })
     </script>
 
     {%- if settings.predictive_search_enabled -%}
