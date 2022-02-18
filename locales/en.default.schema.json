@@ -1926,6 +1926,25 @@
           }
         }
       }
+    },
+    "siegel": {
+      "name": "Badges",
+      "settings": {
+        "backgroundImage": {
+          "label": "Background image"
+        },
+        "subline": {
+          "label": "Annotation"
+        }
+      },
+      "blocks": {
+        "badge": {
+          "name": "Badge",
+          "settings": {
+            "image": "Image of the badge"
+          }
+        }
+      }
     }
   }
 }

@@ -1976,6 +1976,25 @@
           }
         }
       }
+    },
+    "siegel": {
+      "name": "Siegel",
+      "settings": {
+        "backgroundImage": {
+          "label": "Hintergrundbild"
+        },
+        "subline": {
+          "label": "Anmerkung"
+        }
+      },
+      "blocks": {
+        "badge": {
+          "name": "Siegel",
+          "settings": {
+            "image": "Bild des Siegels"
+          }
+        }
+      }
     }
   }
 }

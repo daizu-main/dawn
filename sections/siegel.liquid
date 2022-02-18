@@ -1,11 +1,11 @@
 <div class="color-{{ section.settings.color_scheme }} siegel-container">
   {% unless section.settings.backgroundImage == blank %}
-    <img src="{{ section.settings.backgroundImage | image_url: width: 2560 }}" alt="{{ section.settings.backgroundImage.alt }}" width="2560" height="1104" loading="lazy" class="siegel-background">
+    <img src="{{ section.settings.backgroundImage | image_url: width: 1280 }}" srcset="{{ section.settings.backgroundImage | image_url: width: 1280 }} 1x, {{ section.settings.backgroundImage | image_url: width: 2560 }} 2x" alt="{{ section.settings.backgroundImage.alt }}" width="1280" height="1104" loading="lazy" class="siegel-background">
   {% endunless %}
   <div class="siegel-content">
     <div class="siegel-badges">
       {%- for badge in section.blocks -%}
-        <img src="{{ badge.image | image_url: width: 750 }}" alt="{{ badge.image.alt }}" width="200" height="200" loading="lazy" class="siegel-image">
+        <img src="{{ badge.image | image_url: width: 200 }}" srcset="{{ badge.image | image_url: width: 200 }} 1x, {{ badge.image | image_url: width: 400 }} 2x" alt="{{ badge.image.alt }}" width="200" height="200" loading="lazy" class="siegel-image">
       {%- endfor -%}
     </div>
   <div class="siegel-subline">
@@ -16,7 +16,7 @@
 
 {% schema %}
 {
-  "name": "Siegel",
+  "name": "t:sections.siegel.name",
   "tag": "section",
   "settings": [
     {
@@ -42,32 +42,32 @@
     {
       "type": "image_picker",
       "id": "backgroundImage",
-      "label": "Hintergrundbild"
+      "label": "t:sections.siegel.settings.backgroundImage.label"
     },
     {
       "type": "text",
       "id": "subline",
-      "label": "Anmerkung",
+      "label": "t:sections.siegel.settings.subline.label",
       "default": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
     }
   ],
   "blocks": [
     {
       "type": "badge",
-      "name": "Siegel",
+      "name": "t:sections.siegel.blocks.badge.name",
       "limit": 3,
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Bild"
+          "label": "t:sections.siegel.blocks.badge.settings.image"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Siegel",
+      "name": "t:sections.siegel.name",
       "settings": {
         "color_scheme": "inverse",
         "subline": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
