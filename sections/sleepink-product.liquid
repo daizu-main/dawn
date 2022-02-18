@@ -49,8 +49,21 @@
   .myMobSwiper2 img {
     width: calc(100vw - 32px);
     height: calc(100vw - 32px);
-    max-width: 520px;
-    max-height: 520px;
+  }
+  @media screen and (min-width: 500px) {
+    .myMobSwiper2 {
+      width: 100%;
+    }
+    .myMobSwiper2 .swiper-wrapper {
+      width: 100%;
+    }
+    .myMobSwiper2 .swiper-slide {
+      width: 100%;
+    }
+    .myMobSwiper2 img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .mySwiper2 .swiper-slide, .myMobSwiper2 .swiper-slide {
     text-align: center;
@@ -242,7 +255,7 @@
         </button>
       {%- endif -%}
     </div>
-    <div class="col-2 ProductInfo-BuyBox w-100p mx-auto lg-bxsh px-5 px-lg-8 py-7">
+    <div class="col-2 ProductInfo-BuyBox w-100p mx-auto lg-bxsh px-5 px-lg-8 py-7 py-md-0 py-lg-7">
       <div class="w-100p">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
@@ -1010,7 +1023,7 @@
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
-  "class": "product-section spaced-section",
+  "class": "product-section",
   "blocks": [
     {
       "type": "@app"

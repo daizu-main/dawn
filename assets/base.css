@@ -3109,6 +3109,10 @@ details[open].menu-opening > .menu-drawer__submenu {
     padding-top: 56px;
     padding-bottom: 56px;
   }
+  .py-md-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .py-md-9 {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -3165,6 +3169,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   .px-lg-8 {
     padding-left: 32px;
     padding-right: 32px;
+  }
+  .py-lg-7 {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   .py-lg-13 {
     padding-top: 72px;
