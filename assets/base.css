@@ -3174,9 +3174,17 @@ details[open].menu-opening > .menu-drawer__submenu {
     padding-left: 32px;
     padding-right: 32px;
   }
+  .py-lg-6 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   .py-lg-7 {
     padding-top: 24px;
     padding-bottom: 24px;
+  }
+  .py-lg-10 {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .py-lg-13 {
     padding-top: 72px;
