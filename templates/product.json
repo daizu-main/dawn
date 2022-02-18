@@ -5,34 +5,22 @@
       "blocks": {
         "image_slider": {
           "type": "image_slider",
-          "settings": {
-          }
+          "settings": {}
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
-          "settings": {
-          }
+          "settings": {}
         },
         "advantages": {
-          "type": "advantages",
-          "settings": {
-            "iconA": "tired",
-            "textA": "Ideal bei Einschlafproblemen",
-            "iconB": "keine-nebenwirkungen",
-            "textB": "Wissenschaftsbasierte, natürliche Wirkung",
-            "iconC": "sofortwirkung",
-            "textC": "Innovatives Melatoninkonzentrat mit Pflanzenstoffen für optimale Wirkung"
-          }
+          "type": "advantages"
         },
         "subscription_selector": {
           "type": "subscription_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -42,13 +30,11 @@
         },
         "features": {
           "type": "features",
-          "settings": {
-          }
+          "settings": {}
         },
         "payment_icons": {
           "type": "payment_icons",
-          "settings": {
-          }
+          "settings": {}
         },
         "pdesc": {
           "type": "product_description",
@@ -103,9 +89,7 @@
           }
         }
       },
-      "block_order": [
-        "16448371221c00c21f-0"
-      ],
+      "block_order": ["16448371221c00c21f-0"],
       "settings": {
         "swipe_on_mobile": true,
         "color_scheme": "background-1",
@@ -114,8 +98,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "1644837122ebbd5ad6"
-  ]
+  "order": ["main", "1644837122ebbd5ad6"]
 }
