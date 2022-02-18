@@ -786,32 +786,20 @@
               </div>
             {%- when 'advantages' -%}
               <div class="advantages mb-5">
-                  <div class="flex row ai-c mb-3">
-                    <div class="h-16px mr-4">
-                      {% render "advantage-icon", { icon: block.settings.iconA } %}
+                {% if product.metafields.global.advantages %}
+                  {% for advantage in product.metafields.global.advantages.value %}
+                    <div class="flex row ai-c mb-3">
+                      <div class="h-16px mr-4">
+                        {% render "advantage-icon", { icon: advantage.icon } %}
+                      </div>
+                      <p class="fs-1 lh-150 fw-300 ff-body">
+                        {{ advantage.text | escape }}
+                      </p>
                     </div>
-                    <p class="fs-1 lh-150 fw-300 ff-body">
-                      {{ block.settings.textA | escape }}
-                    </p>
-                  </div>
-                  <div class="flex row ai-c mb-3">
-                    <div class="h-16px mr-4">
-                      {% render "advantage-icon", { icon: block.settings.iconB } %}
-                    </div>
-                    <p class="fs-1 lh-150 fw-300 ff-body">
-                      {{ block.settings.textB | escape }}
-                    </p>
-                  </div>
-                  <div class="flex row ai-c mb-3">
-                    <div class="h-16px mr-4">
-                      {% render "advantage-icon", { icon: block.settings.iconC } %}
-                    </div>
-                    <p class="fs-1 lh-150 fw-300 ff-body">
-                      {{ block.settings.textC | escape }}
-                    </p>
-                  </div>
+                  {% endfor %}
+                {% endif %}
               </div>
-              {%- when 'features' -%}
+            {%- when 'features' -%}
                 <div class="features mb-5" style="padding-top: 20px; border-top: 1px solid #e6eae8; margin-top: 20px;">
                   <div class="flex row wrap ai-c">
                     <div class="flex row jc-c ai-c mr-4" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);">
