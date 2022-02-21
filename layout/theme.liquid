@@ -37,10 +37,12 @@
     {%- endunless -%}
 
     <title>
-      {{ page_title }}
+      {{ page_title }} &vert; sleep.ink
+      {% comment %}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {% endcomment %}
     </title>
 
     {% if page_description %}
@@ -256,6 +258,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    {% include 'revy-bundle-script' %}
+    {% render 'revy-bundle-script' %}
   </body>
 </html>

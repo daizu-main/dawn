@@ -44,11 +44,23 @@
                       <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                         <div class="square col-1 row-1">
                           {% if product.settings.image %}
-                            <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain w-280px h-280px">
+                            <img src="{{ product.settings.image | image_url: width: 280 }}" 
+                              srcset="{{ product.settings.image | image_url: width: 280 }} 1x, {{ product.settings.image | image_url: width: 560 }} 2x"
+                              alt="{{ product.settings.image.alt }}" 
+                              width="280" height="280" loading="lazy" 
+                              class="contain w-280px h-280px">
                           {% elsif variant.featured_image %}
-                            <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain w-280px h-280px">
+                            <img src="{{ variant.featured_image | image_url: width: 280 }}" 
+                              srcset="{{ variant.featured_image | image_url: width: 280 }} 1x, {{ variant.featured_image | image_url: width: 560 }} 2x"
+                              alt="{{ variant.featured_image.alt }}" 
+                              width="280" height="280" loading="lazy" 
+                              class="contain w-280px h-280px">
                           {% else %}
-                            <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain w-280px h-280px">
+                            <img src="{{ product.settings.product.featured_image | image_url: width: 280 }}" 
+                              srcset="{{ product.settings.product.featured_image | image_url: width: 280 }} 1x, {{ product.settings.product.featured_image | image_url: width: 560 }} 2x"
+                              alt="{{ product.settings.product.featured_image.alt }}" 
+                              width="280" height="280" loading="lazy" 
+                              class="contain w-280px h-280px">
                           {% endif %}
                           <div class="col-1 row-1 pos-abs l-0 t-10px t-lg-16px">
                             {% assign tags = product.settings.product.metafields.global.tags.value | split: ', ' %}
@@ -166,11 +178,23 @@
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                             <div class="square col-1 row-1">
                               {% if product.settings.image %}
-                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
+                                <img src="{{ product.settings.image | image_url: width: 280 }}" 
+                                  srcset="{{ product.settings.image | image_url: width: 280 }} 1x, {{ product.settings.image | image_url: width: 560 }} 2x"
+                                  alt="{{ product.settings.image.alt }}" 
+                                  width="280" height="280" loading="lazy" 
+                                  class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
                               {% elsif variant.featured_image %}
-                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
+                                <img src="{{ variant.featured_image | image_url: width: 280 }}" 
+                                  srcset="{{ variant.featured_image | image_url: width: 280 }} 1x, {{ variant.featured_image | image_url: width: 560 }} 2x"
+                                  alt="{{ variant.featured_image.alt }}" 
+                                  width="280" height="280" loading="lazy" 
+                                  class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
                               {% else %}
-                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
+                                <img src="{{ product.settings.product.featured_image | image_url: width: 280 }}" 
+                                  srcset="{{ product.settings.product.featured_image | image_url: width: 280 }} 1x, {{ product.settings.product.featured_image | image_url: width: 560 }} 2x"
+                                  alt="{{ product.settings.product.featured_image.alt }}" 
+                                  width="280" height="280" loading="lazy" 
+                                  class="contain" style="width: clamp(200px, 50vw - 50px, 280px); height: clamp(200px, 50vw - 50px, 280px);">
                               {% endif %}
                               <div class="col-1 row-1 pos-abs l-0 t-10px">
                                 {% assign tags = product.settings.product.metafields.global.tags | split: ', ' %}
@@ -292,11 +316,23 @@
                           <a href="{{ product.settings.product.url }}?variant={{ variant_id }}" class="w-100p mt-6 mb-5 ngrid onecol onerow pos-rel square-outer" style="background-color:{{ section.settings.backgroundProductCards }};">
                             <div class="square col-1 row-1">
                               {% if product.settings.image %}
-                                <img src="{{ product.settings.image | image_url: width: 400 }}" alt="{{ product.settings.image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
+                                <img src="{{ product.settings.image | image_url: width: 280 }}" 
+                                  srcset="{{ product.settings.image | image_url: width: 280 }} 1x, {{ product.settings.image | image_url: width: 560 }} 2x"
+                                  alt="{{ product.settings.image.alt }}" 
+                                  width="280" height="280" loading="lazy" 
+                                  class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
                               {% elsif variant.featured_image %}
-                                <img src="{{ variant.featured_image | image_url: width: 400 }}" alt="{{ variant.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
+                                <img src="{{ variant.featured_image | image_url: width: 280 }}" 
+                                  srcset="{{ variant.featured_image | image_url: width: 280 }} 1x, {{ variant.featured_image | image_url: width: 560 }} 2x"
+                                  alt="{{ variant.featured_image.alt }}" 
+                                  width="280" height="280" loading="lazy" 
+                                  class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
                               {% else %}
-                                <img src="{{ product.settings.product.featured_image | image_url: width: 400 }}" alt="{{ product.settings.product.featured_image.alt }}" width="280" height="280" loading="lazy" class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
+                                <img src="{{ product.settings.product.featured_image | image_url: width: 280 }}"
+                                  srcset="{{ product.settings.product.featured_image | image_url: width: 280 }} 1x, {{ product.settings.product.featured_image | image_url: width: 560 }} 2x"
+                                  alt="{{ product.settings.product.featured_image.alt }}" 
+                                  width="280" height="280" loading="lazy" 
+                                  class="contain" style="width: clamp(215px,25vw - 31px, 280px); height: clamp(215px,25vw - 31px,280px);">
                               {% endif %}
                               <div class="col-1 row-1 pos-abs l-0 t-16px">
                                 {% assign tags = product.settings.product.metafields.global.tags | split: ", " %}
@@ -345,13 +381,13 @@
                                 <form method="post" action="/cart/add">
                                   <input type="hidden" name="id" value="{{ variant_id }}" />
                                   <input type="hidden" name="quantity" value="1" id="quantity" />
-                                  <button type="submit" class="submit fs-15px" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                                  <button type="submit" class="submit shop-atc fs-15px">
                                     {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                                   </button>
                                 </form>
                               {% endif %}
                               <a href="{{ product.settings.product.url }}?variant={{ variant_id }}">
-                                <button class="linkbutton-to-product-page" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                                <button class="linkbutton-to-product-page">
                                   {{ section.settings.linkProductPage | escape }}
                                 </button>
                               </a>

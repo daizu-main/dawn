@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   {%- if settings.favicon != blank -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
   {%- endif -%}
   <title>{{ shop.name }}</title>
   
@@ -12,10 +12,10 @@
   <meta property="og:url" content="{{ shop.url }}">
   <meta property="og:title" content="{{ shop.name }}">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="{{shop.description | default: shop.name}}">
+  <meta property="og:description" content="{{ shop.description | default: shop.name }}">
   {% if settings.share_image %}
-  	{%- capture og_image_tags -%}<meta property="og:image" content="http:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
-  	{%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
+  	{%- capture og_image_tags -%}<meta property="og:image" content="http:{{ settings.share_image | image_url: width: 1200, height: 1200 }}">{%- endcapture -%}
+  	{%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ settings.share_image | image_url: width: 1200, height: 1200 }}">{%- endcapture -%}
   {% endif %}
   {{ og_image_tags }}
   {{ og_image_secure_url_tags }}
@@ -29,7 +29,9 @@
   </script>
   
   <!-- core-config-settings -->
+  {% comment %}theme-check-disable ParserBlockingJavaScript{% endcomment %}
   <script src="{{ 'growthhero_config.js' | asset_url }}"></script>
+  {% comment %}theme-check-enable ParserBlockingJavaScript{% endcomment %}
   
   <!-- shopify-config-seeds -->
   <script>
@@ -52,7 +54,7 @@
         customer_orders_count: {{ customer.orders_count | default: 0 }},
         customer_total_spent: {{ customer.total_spent | default: 0 }},
         customer_tags: {{ customer.tags | json }},
-        customer_country_code: {{ customer.default_address.country_code  | json }},
+        customer_country_code: {{ customer.default_address.country_code | json }},
       });
     })();
   </script>
@@ -63,6 +65,6 @@
   </script>
 </head>
 <body>
-  {{content_for_layout}}
+  {{ content_for_layout }}
 </body>
 </html>

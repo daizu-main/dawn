@@ -43,13 +43,13 @@
 .rte a {
   color: rgba(var(--color-link));
   text-underline-offset: 0.3rem;
-  text-decoration-thickness: 0.1rem;
-  transition: text-decoration-thickness var(--duration-short) ease;
+  opacity: 1;
+  transition: opacity var(--duration-short) ease;
 }
 
 .rte a:hover {
   color: rgba(var(--color-link));
-  text-decoration-thickness: 0.2rem;
+  opacity: 0.6;
 }
 
 .rte blockquote {
