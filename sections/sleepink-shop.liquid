@@ -105,13 +105,13 @@
                     <form method="post" action="/cart/add">
                       <input type="hidden" name="id" value="{{ variant_id }}" />
                       <input type="hidden" name="quantity" value="1" id="quantity" />
-                      <button type="submit" class="submit fs-15px" style="background-color: {{ tagBackground }}; color: {{ tagForeground }}">
+                      <button type="submit" class="submit shop-atc fs-15px">
                         {%- render 'icon-cart2', currentColor: '#ffffff' -%}
                       </button>
                     </form>
                   {% endif %}
                   <a href="{{ product.url }}?variant={{ variant_id }}">
-                    <button class="linkbutton-to-product-page" style="background-color: {{ tagBackground }}; color: {{ tagForeground }};">
+                    <button class="linkbutton-to-product-page">
                       {{ section.settings.linkProductPage | escape }}
                     </button>
                   </a>

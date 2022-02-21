@@ -4,4 +4,8 @@
     locale: '{{ request.locale.iso_code }}'
   }; 
 </script>
+{% comment %}theme-check-disable RemoteAsset{% endcomment %}
+{% comment %}theme-check-disable ParserBlockingJavaScript{% endcomment %}
 <script async src="https://api.revy.io/bundle.js?shop=sleep-ink.myshopify.com" type="text/javascript"></script>
+{% comment %}theme-check-enable ParserBlockingJavaScript{% endcomment %}
+{% comment %}theme-check-enable RemoteAsset{% endcomment %}

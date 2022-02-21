@@ -1,0 +1,149 @@
+<div class="color-{{ section.settings.color_scheme }} gnv-container">
+  {% unless section.settings.backgroundImage == blank %}
+    <img src="{{ section.settings.backgroundImage | image_url: width: 1280 }}" srcset="{{ section.settings.backgroundImage | image_url: width: 1280 }} 1x, {{ section.settings.backgroundImage | image_url: width: 2560 }} 2x" alt="{{ section.settings.backgroundImage.alt }}" width="1280" height="1104" loading="lazy" class="gnv-background">
+  {% endunless %}
+  <div class="gnv-content">
+    <h2 class="gnv-headline">
+      {{ section.settings.title }}
+    </h2>
+    <div class="gnv-grid">
+    {%- for promise in section.blocks -%}
+      <div class="gnv-promise">
+        <div class="gnv-icon-wrapper">
+          <div class="gnv-icon-circle">
+            <img src="{{ promise.settings.image | image_url: width: 28 }}" srcset="{{ promise.settings.image | image_url: width: 28 }} 1x, {{ promise.settings.image | image_url: width: 56 }} 2x" alt="{{ promise.settings.image.alt }}" loading="lazy" width="28" height="28" class="gnv-icon">
+          </div>
+        </div>
+        <h4 class="gnv-promise-title{% unless section.settings.hyphenation == 'off' %} hyphen{% endunless %}" {% unless section.settings.hyphenation == 'off' %}lang="{{ section.settings.hyphenation }}"{% endunless %}>{{ promise.settings.title }}</h4>
+        <div class="gnv-promise-text{% unless section.settings.hyphenation == 'off' %} hyphen{% endunless %}" {% unless section.settings.hyphenation == 'off' %}lang="{{ section.settings.hyphenation }}"{% endunless %}>
+          {{ promise.settings.text }}
+        </div>
+      </div>
+    {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.gute-nacht-versprechen.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.image-banner.settings.color_scheme.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "backgroundImage",
+      "label": "t:sections.gute-nacht-versprechen.settings.background_image.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.gute-nacht-versprechen.settings.title.label",
+      "default": "Unser Gute Nacht Versprechen"
+    },
+    {
+      "type": "select",
+      "id": "hyphenation",
+      "label": "t:sections.common-across-sections.settings.hyphenation.label",
+      "default": "de",
+      "options": [
+        {
+          "value": "off",
+          "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+        },
+        {
+          "value": "de",
+          "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+        },
+        {
+          "value": "en",
+          "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promise",
+      "name": "t:sections.gute-nacht-versprechen.blocks.promise.label",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.gute-nacht-versprechen.blocks.promise.settings.image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.gute-nacht-versprechen.blocks.promise.settings.title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.gute-nacht-versprechen.blocks.promise.settings.text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.gute-nacht-versprechen.name",
+      "settings": {
+        "color_scheme": "inverse",
+        "title": "Unser Gute Nacht Versprechen",
+        "hyphenation": "de"
+      },
+      "blocks": [
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Wissenschaftsbasiert",
+            "text": "<p>Unsere innovativen Schlafprodukte sind in Zusammenarbeit mit Schlafforschern und Ärzten auf Basis aktuellster Studien entwickelt worden und bezüglich ihrer Wirksamkeit optimal dosiert.</p>"
+          }
+        },
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Hochwertig",
+            "text": "<p>Unsere Schlafprodukte werden unter Einhaltung höchster Qualitätsstandards in Deutschland produziert und zertifiziert. Zur vollen Transparenz durchläuft jede Produktion aufwändige Qualitätskontrollen.</p>"
+          }
+        },
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Natürlich",
+            "text": "<p>Unsere natürlich wirkenden Schlafprodukte sind frei von Chemie, Nebenwirkungen, Abhängigkeiten, Gewöhnungseffekten oder einem \"Kater\"-Gefühl am nächsten Morgen.</p>"
+          }
+        },
+        {
+          "type": "promise",
+          "settings": {
+            "title": "Praktisch",
+            "text": "<p>Alle Schlafprodukte sind flexibel in ihrer Anwendung und ideal für zu Hause oder unterwegs. Die Einnahme ist angenehm und unkompliziert, die Wirkung stellt sich ab der ersten Einnahme ein.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
