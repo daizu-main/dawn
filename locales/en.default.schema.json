@@ -1927,6 +1927,23 @@
         }
       }
     },
+    "presse-tab-view": {
+      "name": "Press-Tab-View",
+      "settings": {
+        "title": {
+          "label": "Title"
+        }
+      },
+      "blocks": {
+        "press-quote": {
+          "label": "Press Quote",
+          "settings": {
+            "logo": "Logo of the press outlet",
+            "quote": "Quote from the review"
+          }
+        }
+      }
+    },
     "siegel": {
       "name": "Badges",
       "settings": {

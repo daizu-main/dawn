@@ -1,0 +1,65 @@
+tabview-component {
+  position: relative;
+  display: block;
+}
+
+/* UI Reference: https://www.sleepink.shop/schlafdrink *
+
+/* Based on https://webdevtrick.com/pure-css-tabs-responsive/ */
+/* Alternative approach: https://webdesignerhut.com/create-pure-css-tabs/ */
+
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+.tabs label {
+  order: 1;
+  display: block;
+  padding: 1rem 2rem;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  opacity: 0.5;
+  font-weight: bold;
+  transition: background ease 0.2s;
+}
+ 
+.tabs .tab {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 1rem;
+}
+ 
+.tabs input[type="radio"] {
+  display: none;
+}
+ 
+.tabs input[type="radio"]:checked + label {
+  opacity: 1.0;
+}
+ 
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+
+@media screen and (max-width: 989px) {
+  
+
+}
+
+@media screen and (max-width: 749px) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+ 
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}

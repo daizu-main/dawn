@@ -1977,6 +1977,23 @@
         }
       }
     },
+    "presse-tab-view": {
+      "name": "Presse-Tab-View",
+      "settings": {
+        "title": {
+          "label": "Überschrift"
+        }
+      },
+      "blocks": {
+        "press-quote": {
+          "label": "Presse Stimme",
+          "settings": {
+            "logo": "Logo des Mediums",
+            "quote": "Zitat des Berichts"
+          }
+        }
+      }
+    },
     "siegel": {
       "name": "Siegel",
       "settings": {

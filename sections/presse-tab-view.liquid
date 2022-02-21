@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="{{ 'component-tabview.css' | asset_url }}" media="print" onload="this.media='all'">
+
+
+<div class="SectionGrid ofh pos-rel w-100p bgcol-bg pt-9 pt-md-7 pt-lg-10 pb-11 pb-md-12 pb-lg-10 color-{{ section.settings.color_scheme }}">
+  <div class="SectionGrid-Narrow bgcol-bg">
+    <h3 class="ff-heading col-fg fs-7 fs-lg-38px lh-107 lh-lg-116 ls-m124 fw-500 fw-lg-400 mx-auto mb-8 pt-0 ta-c w-84p w-md-74p w-lg-auto">{{ section.settings.title }}</h3>
+    <div>
+
+      <div class="w-100p h-100p noborder nooutline">
+        <div class="collection page-width page-width-desktop">
+          {% assign pressquotes = section.blocks | where: 'type', 'press-quote' %}
+          <press-tabview class="tabs">
+            
+      
+            {% assign index = 1 %}
+
+            {%- for pressquote in pressquotes -%}
+              <input type="radio" name="tabs" id="tab{{ index }}" checked="checked">
+              <label for="tab{{ index }}">
+                <img 
+                  src="{{ pressquote.settings.image | image_url: height: 30 }}"
+                  srcset="{{ pressquote.settings.image | image_url: height: 30 }} 1x, {{ pressquote.settings.image | image_url: height: 60 }} 2x" 
+                  alt="{{ pressquote.settings.image.alt }}" 
+                  width="150"
+                  height="30"
+                  class="h-30"
+                  loading="lazy"
+                >
+              </label>
+              <div class="tab">
+                <p>{{ pressquote.settings.text }}</p>
+              </div>
+              
+              {% assign index = index | plus: 1 %}
+            {%- endfor -%}
+          
+          </press-slider>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.presse-tab-view.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "sleep.ink® in der Presse",
+      "label": "t:sections.presse-tab-view.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.footer.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.footer.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.footer.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.footer.settings.color_scheme.label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "t:sections.presse-tab-view.blocks.press-quote.label",
+      "type": "press-quote",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.presse-tab-view.blocks.press-quote.settings.logo"
+        },
+        {
+          "id": "text",
+          "label": "t:sections.presse-tab-view.blocks.press-quote.settings.quote",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Presse Tab View",
+      "settings": {
+        "title": "sleep.ink® in der Presse"
+      },
+      "blocks": [
+        {
+          "type": "press-quote",
+          "settings": {
+            "text" : "Die besten Pillen ever!",
+            "image": "shopify:\/\/shop_images\/Bunte.jpg"
+          }
+        },
+        {
+          "type": "press-quote",
+          "settings": {
+            "text" : "Nie so gut geschlafen!",
+            "image": "shopify:\/\/shop_images\/Cosmopolitan-color.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
