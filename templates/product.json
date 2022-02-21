@@ -86,10 +86,10 @@
         "enable_video_looping": false
       }
     },
-    "1644837122ebbd5ad6": {
+    "ingredient-slider": {
       "type": "ingredient-slider",
       "blocks": {
-        "07bd07d1-3725-4710-85c0-34ad82357adc": {
+        "ingredient-baldrian": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/baldrian.jpg",
@@ -98,7 +98,7 @@
             "tag": "baldrian"
           }
         },
-        "16448371221c00c21f-0": {
+        "ingredient-melatonin": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/melatonin.jpg",
@@ -107,30 +107,50 @@
             "tag": "melatonin"
           }
         },
-        "7100d64c-5609-4f61-875b-fc5d23dfaea8": {
+        "ingredient-vitamin-b6": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/vitamin-b6.jpg",
             "name": "Avocado",
             "text": "<p>Avocados geben unseren Produkten ihre unvergleichliche Cremigkeit<\/p>",
-            "tag": "avocado"
+            "tag": "vitamin-b6"
           }
         },
-        "27046882-0c38-471e-83eb-24c4658726a0": {
+        "ingredient-selen": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/selen.jpg",
             "name": "Kokos",
             "text": "<p>Kokos gibt unseren Produkten ihren exotischen Geschmack<\/p>",
-            "tag": "kokos"
+            "tag": "selen"
+          }
+        },
+        "ingredient-l-tryptohan": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/l-tryptohan.jpg",
+            "name": "Cashew",
+            "text": "<p>Cashew gibt unseren Produkten den nötigen Crunch<\/p>",
+            "tag": "l-tryptohan"
+          }
+        },
+        "ingredient-passionsblume": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/passionsblume.jpg",
+            "name": "Passionsblume",
+            "text": "<p>Passionsblume sorgt für den einzigartigen Duft<\/p>",
+            "tag": "passionsblume"
           }
         }
       },
       "block_order": [
-        "07bd07d1-3725-4710-85c0-34ad82357adc",
-        "16448371221c00c21f-0",
-        "7100d64c-5609-4f61-875b-fc5d23dfaea8",
-        "27046882-0c38-471e-83eb-24c4658726a0"
+        "ingredient-baldrian",
+        "ingredient-melatonin",
+        "ingredient-vitamin-b6",
+        "ingredient-selen",
+        "ingredient-l-tryptohan",
+        "ingredient-passionsblume"
       ],
       "settings": {
         "swipe_on_mobile": true,
@@ -142,6 +162,6 @@
   },
   "order": [
     "main",
-    "1644837122ebbd5ad6"
+    "ingredient-slider"
   ]
 }

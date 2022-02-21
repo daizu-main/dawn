@@ -61,7 +61,6 @@
         endcomment
         assign indexArray = index | split: ','
         assign ingredientIndexes = ingredientIndexes | concat: indexArray
-        assign index = index | plus: 1
         
         comment -- for debugging
           assign tagArray = ingredient.settings.tag | split: ','
@@ -71,7 +70,8 @@
         endcomment
       endif
     endfor
-    
+
+    assign index = index | plus: 1
   endfor
   
 %}
