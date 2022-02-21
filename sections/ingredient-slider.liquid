@@ -1,3 +1,20 @@
+{% comment %}
+
+  This section displays a slider with ingredients for a product.
+
+  The ingredients are selected based on the tags assigned to the product.
+  To make this work:
+
+  1. Add all available ingredients as blocks to the Ingredients-Slider section on the (product) template
+  2. Assign each ingredient a unique tag (usually name the tags after the ingredient)
+  3. Assign the same tags to the products
+
+  The section will then display only those ingredients in the slider that the product has matching tags for.
+
+  If there are no matching tags, the entire section will not be displayed at all.
+
+{% endcomment %}
+
 {% liquid 
 
   assign allIngredients = section.blocks | where: 'type', 'image'
@@ -59,6 +76,10 @@
   
 %}
 
+{% comment %}
+Don't load/display the component if there are no matching ingredients.  
+{% endcomment %}
+{% if ingredientIndexes.size > 0 %}
 
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -90,6 +111,7 @@
               {% for slideno in (1..number_of_slides) %}
                 <li class="slider__slide w-100p px-6">
                   <div class="w-100p ngrid threecol onerow gap-8 px-8">
+                    {% comment %}theme-check-disable LiquidTag{% endcomment %}
                     {% for ingredientno in (0..2) %}
                       {% assign index = slideno | times: 3 | minus: 3 | plus: ingredientno %}
                       {% if index < ingredientIndexes.size %}
@@ -109,6 +131,7 @@
                         <div>&nbsp;</div>
                       {% endif %}
                     {% endfor %}
+                    {% comment %}theme-check-enable LiquidTag{% endcomment %}
                   </div>
                 </li>
               {% endfor %}
@@ -147,6 +170,7 @@
               {% for slideno in (1..number_of_slides) %}
                 <li class="slider__slide w-100p">
                   <div class="ngrid twocol onerow gap-8 px-10">
+                    {% comment %}theme-check-disable LiquidTag{% endcomment %}
                     {% for ingredientno in (0..1) %}
                       {% assign index = slideno | times: 2 | minus: 2 | plus: ingredientno %}
                       {% if index < ingredientIndexes.size %}
@@ -165,6 +189,7 @@
                         <div>&nbsp;</div>
                       {% endif %}
                     {% endfor %}
+                    {% comment %}theme-check-enable LiquidTag{% endcomment %}
                   </div>
                 </li>
               {% endfor %}
@@ -226,7 +251,7 @@
     </div>
   </div>
 </div>
-
+{% endif %}
 
 
 {% schema %}
