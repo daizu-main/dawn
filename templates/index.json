@@ -242,6 +242,7 @@
       ],
       "settings": {
         "color_scheme": "inverse",
+        "backgroundImage": "shopify:\/\/shop_images\/gutenacht-bg.jpg",
         "title": "Unser Gute Nacht Versprechen",
         "hyphenation": "de"
       }
