@@ -7,16 +7,17 @@
           "type": "slide",
           "settings": {
             "color_scheme": "inverse",
-            "imageDesktop": "shopify:\/\/shop_images\/hero-retina-frauke.jpg",
-            "imageMobile": "shopify:\/\/shop_images\/frauke-mobile.jpg",
+            "imageDesktop": "shopify:\/\/shop_images\/hero-retina-frauke_d27cfd98-f9a9-4d6b-8927-e4b0431e0cd1.png",
+            "imageTablet": "shopify:\/\/shop_images\/hero-tablet-big-frauke_2eff19fa-99fe-4f22-a0b1-29bc731484ff.jpg",
+            "imageMobile": "shopify:\/\/shop_images\/hero-mobile-big-frauke_36013121-e2dd-4d83-b73d-45ac16068f79.jpg",
             "video": "",
             "title": "Endlich besser schlafen!",
             "uppercaseTitle": false,
             "text": "Mehr als 75.000 zufriedene Kunden.",
             "url": "shopify:\/\/collections",
             "buttonDesign": "filled",
-            "buttonText": "Jetzt einkaufen",
-            "overlay": true
+            "buttonText": "Jetzt kaufen",
+            "overlay": false
           }
         },
         "4f02abce-cc78-4ffc-aa36-e1e1c0189aa6": {
@@ -138,43 +139,7 @@
         "swipe_on_mobile": true,
         "color_scheme": "background-1",
         "backgroundProductCards": "#f9f9fa",
-        "linkProductPage": "Mehr erfahren"
-      }
-    },
-    "123": {
-      "type": "123",
-      "blocks": {
-        "block1": {
-          "type": "advantage",
-          "settings": {
-            "heading": "Wirksamkeit",
-            "explanation": "Wir vertreiben keine Produkte mit leeren Versprechungen. Alle Produkte sind in ihrer Form und Wirkung bestätigt."
-          }
-        },
-        "block2": {
-          "type": "advantage",
-          "settings": {
-            "heading": "Hochwertigkeit",
-            "explanation": "Unsere innovativen, modernen und hochwertigen Schlafprodukte bestehen aus den bestmöglichen Inhaltstoffen und sind allesamt zertifiziert."
-          }
-        },
-        "block3": {
-          "type": "advantage",
-          "settings": {
-            "heading": "Natürlichkeit",
-            "explanation": "Schlafen? Ja! Um jeden Preis? Nein! Unsere Produkte sind frei von Nebenwirkungen oder Abhängigkeiten."
-          }
-        }
-      },
-      "block_order": [
-        "block1",
-        "block2",
-        "block3"
-      ],
-      "settings": {
-        "headline": "Endlich gut schlafen!",
-        "introtext": "<p>Mit unseren hochwertigen Schlafprodukten entschlummern Sie trotz aller Strapazen des Alltags sanft, aber wirkungsvoll in eine gute Nacht<\/p>",
-        "decorate": false
+        "linkProductPage": "Zum Produkt"
       }
     },
     "kundenstimmen": {
@@ -399,14 +364,34 @@
         "swipe_on_mobile": true,
         "color_scheme": "background-1"
       }
+    },
+    "16448520175a08ff8c": {
+      "type": "apps",
+      "blocks": {
+        "a12ec752-5709-42d4-a460-57ff8559e366": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_font": "avenir_next_n5",
+            "heading_size": 30,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "a12ec752-5709-42d4-a460-57ff8559e366"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
     "page-hero",
     "bestseller",
-    "123",
     "kundenstimmen",
     "produktberater",
-    "presseslider"
+    "presseslider",
+    "16448520175a08ff8c"
   ]
 }

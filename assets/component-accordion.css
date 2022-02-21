@@ -33,7 +33,6 @@
   margin: 0;
   word-break: break-word;
   padding-top: 2px;
-
 }
 
 .accordion .icon-accordion {
@@ -48,9 +47,7 @@
 }
 
 .accordion__content {
-  margin-bottom: 1.5rem;
   word-break: break-word;
-
 }
 
 .accordion__content img {

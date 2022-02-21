@@ -19,12 +19,17 @@
 
 <style>
   .mySwiper2 {
-    max-width: 624px;
-    max-height: 624px;
-    min-width: 483.6px;
-    min-height: 483.6px;
-    width: 48vw;
-    height: 48vw;
+    max-width: 520px;
+    max-height: 567px;
+    min-width: 483px;
+    min-height: 530px;
+    width: 40vw;
+    height: calc(40vw + 47px);
+  }
+  .mySwiper2 .swiper-slide {
+    width: fit-content;
+    /*height: fit-content;*/
+    text-align: center;
   }
   .mySwiper2 img {
     width: 40vw;
@@ -36,36 +41,61 @@
   }
   .myMobSwiper2 {
     width: calc(100vw - 32px);
-    height: calc(100vw - 32px);
+    height: fit-content;
     max-width: 624px;
     max-height: 624px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 16px;
   }
   .myMobSwiper2 img {
-    width: calc(80vw - 56px);
-    height: calc(80vw - 56px);
-    max-width: 520px;
-    max-height: 520px;
+    width: calc(100vw - 32px);
+    height: calc(100vw - 32px);
   }
-  .mySwiper2 .swiper-slide, .myMobSwiper2 .swiper-slide {
+  @media screen and (min-width: 500px) {
+    .myMobSwiper2 {
+      width: 100%;
+    }
+    .myMobSwiper2 .swiper-wrapper {
+      width: 100%;
+    }
+    .myMobSwiper2 .swiper-slide {
+      width: 100%;
+    }
+    .myMobSwiper2 img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .myMobSwiper2 .swiper-slide {
     text-align: center;
   }
+  /*.myMobSwiper2 .swiper-wrapper {
+    height: fit-content;
+  }*/
   .mySwiper {
     width: 8vw;
-    height: 48vw;
+    height: 40vw;
     min-width: 80.6px;
     min-height: 483.6px;
     max-width: 104px;
-    max-height: 624px;
+    max-height: 520px;
+  }
+  .mySwiper .swiper-slide {
+    width: calc((40vw - 50px) / 6);
+    height: calc((40vw - 50px) / 6);
+    min-width: 58.83px;
+    min-height: 58.83px;
+    max-width: 78.33px;
+    max-height: 78.33px;
   }
   .mySwiper img {
-    width: 6.15vw;
-    height: 6.15vw;
-    min-width: 55.59px;
-    min-height: 55.59px;
-    max-width: 80px;
-    max-height: 80px;
+    width: calc(((40vw - 50px) / 6) - 2px);
+    height: calc(((40vw - 50px) / 6) - 2px);
+    min-width: 56.83px;
+    min-height: 56.83px;
+    max-width: 76.33px;
+    max-height: 76.33px;
   }
   .myMobSwiper {
     width: calc(100vw - 32px);
@@ -112,7 +142,13 @@
   .swiper-button-prev::after, .swiper-button-next::after {
     font-size: 14px;
   }
-  .swiper-pagination-bullet-active {
+  .swiper-mobile-pagination {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .swiper-pagination-bullet-active, .swiper-mobile-pagination-bullet-active {
     background: #111111;
   }
   .mySwiper .swiper-slide, .myMobSwiper .swiper-slide {
@@ -135,19 +171,26 @@
 </style>
 
 <section class="SectionGrid">
-  <div class="SectionGrid-Wide ngrid lg-twocol-32 onecol">
+  <div class="SectionGrid-Wide ngrid lg-twocol-32 onecol py-lg-10">
     <div class="col-1 ngrid twocol-14 desktopgrid">
       <div thumbsSlider="" class="swiper mySwiper col-1">
         <div class="swiper-wrapper">
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 250 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="80" height="80" loading="lazy" class="w-100p h-100p">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 80 }}" 
+                srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 80 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 160 }} 2x"
+                alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                width="80" height="80" loading="lazy" class="w-100p h-100p">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | image_url: width: 250 }}" alt="{{ media.preview_image.alt }}" width="80" height="80" loading="lazy" class="w-100p h-100p">
+              <img src="{{ media.preview_image | image_url: width: 80 }}" 
+                srcset="{{ media.preview_image | image_url: width: 80 }} 1x, {{ media.preview_image | image_url: width: 160 }} 2x"
+                alt="{{ media.preview_image.alt }}" 
+                width="80" height="80" loading="lazy" 
+                class="w-100p h-100p">
             </div>
           {% endfor %}
         </div>
@@ -157,12 +200,18 @@
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             <div class="swiper-slide">
-              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1600 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
+              <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }}" 
+                srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1000 }} 2x"
+                alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                width="500" height="500" loading="lazy">
             </div>
           {%- endif -%}
           {% for media in product.media %}
             <div class="swiper-slide">
-              <img src="{{ media.preview_image | image_url: width: 1600 }}" alt="{{ media.preview_image.alt }}" width="500" height="500" loading="lazy">
+              <img src="{{ media.preview_image | image_url: width: 500 }}" 
+                srcset="{{ media.preview_image | image_url: width: 500 }} 1x, {{ media.preview_image | image_url: width: 1000 }} 2x"
+                alt="{{ media.preview_image.alt }}" 
+                width="500" height="500" loading="lazy">
             </div>
           {% endfor %}
         </div>
@@ -207,8 +256,8 @@
         </button>
       {%- endif -%}
     </div>
-    <div class="col-2">
-      <div class="px-5 py-7 px-lg-7 lg-bxsh mx-auto mx-lg-unset">
+    <div class="col-2 ProductInfo-BuyBox w-100p mx-auto lg-bxsh px-5 px-lg-8 py-7 py-md-10 py-lg-6">
+      <div class="w-100p">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -221,7 +270,7 @@
               {{- block.settings.text -}}
             </p>
           {%- when 'title' -%}
-            <h1 class="product__title ff-heading fs-30px lh-116 fw-600 ls-m140 mr-auto mb-3i ta-c ta-lg-l" {{ block.shopify_attributes }}>
+            <h1 class="product__title ff-heading fs-30px lh-116 fw-600 ls-m140 mr-auto mt-25px mr-lg-0 mb-3i ta-l" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
           {%- when 'price' -%}
@@ -405,60 +454,66 @@
                 </div>
               </div>
             </noscript>
-          {%- when 'image_slider' -%}
-            <div class="w-100p ndesktop">
+          {% when 'image_slider' %}
+          <div class="w-100p ndesktop">
               <div class="swiper myMobSwiper2">
                 <div class="swiper-wrapper">
                   {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
                   {%- if product.selected_or_first_available_variant.featured_media != null -%}
                     <div class="swiper-slide">
-                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1200 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="500" height="500" loading="lazy">
+                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }}" 
+                        srcset="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 500 }} 1x, {{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 1000 }} 2x"
+                        alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" 
+                        width="500" height="500" loading="lazy">
                     </div>
                   {%- endif -%}
                   {% for media in product.media %}
                     <div class="swiper-slide">
-                      <img src="{{ media.preview_image | image_url: width: 1200 }}" alt="{{ media.preview_image.alt }}" width="250" height="250" loading="lazy">
+                      <img src="{{ media.preview_image | image_url: width: 250 }}" 
+                        srcset="{{ media.preview_image | image_url: width: 250 }} 1x, {{ media.preview_image | image_url: width: 500 }} 2x"
+                        alt="{{ media.preview_image.alt }}" 
+                        width="250" height="250" loading="lazy">
                     </div>
                   {% endfor %}
                 </div>
               </div>
-              <div thumbsSlider="" class="swiper myMobSwiper">
-                <div class="swiper-wrapper flex row jc-c ai-fe">
-                  {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
-                  {%- if product.selected_or_first_available_variant.featured_media != null -%}
-                    <div class="swiper-slide">
-                      <img src="{{ product.selected_or_first_available_variant.featured_media.preview_image | image_url: width: 150 }}" alt="{{ product.selected_or_first_available_variant.featured_media.preview_image.alt }}" width="50" height="50" loading="lazy">
-                    </div>
-                  {%- endif -%}
-                  {% for media in product.media %}
-                    <div class="swiper-slide">
-                      <img src="{{ media.preview_image | image_url: width: 150 }}" alt="{{ media.preview_image.alt }}" width="50" height="50" loading="lazy">
-                    </div>
-                  {% endfor %}
-                </div>
-              </div>
+              <div class="swiper-mobile-pagination swiper-mobile-pagination-clickable"></div>
             </div>
               <script>
-                const mobileSwiper = new Swiper(".myMobSwiper", {
-                  spaceBetween: 10,
-                  slidesPerView: 4,
-                  freeMode: true,
-                  watchSlidesProgress: true,
-                  direction: "horizontal"
-                });
                 const mobileSwiper2 = new Swiper('.myMobSwiper2', {
                   slidesPerView: 1,
                   loop: true,
                   keyboard: {
                     enabled: true
                   },
-                  thumbs: {
-                    swiper: mobileSwiper
-                  }
+                  pagination: {
+                    el: ".swiper-mobile-pagination",
+                    clickable: true,
+                    clickableClass: "swiper-mobile-pagination-clickable"
+                  },
                 });
               </script>
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }} id="buy-buttons">
+              {%- if product.selected_or_first_available_variant.available -%}
+                <div class="my-5 flex row jc-c ai-c green checkmark ff-body fs-0 lh-100">
+                  {% render 'icon-check-stock' %}
+                  <span>
+                    <b>
+                      Auf Lager –
+                    </b>
+                    in 1-3 Tagen bei Ihnen
+                  </span>
+                </div>
+              {%- else -%}
+                <div class="my-5 flex row jc-c ai-c checkmark ff-body fs-0 lh-100" style="color: rgba(var(--color-base-error));">
+                  <span>
+                    <b>
+                      Ausverkauft
+                    </b>
+                  </span>
+                </div>
+              {%- endif -%}
               <product-form class="product-form">
                 <div class="product-form__error-message-wrapper" role="alert" hidden>
                   <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
@@ -494,25 +549,12 @@
                   </div>
                 {%- endform -%}
               </product-form>
-              {%- if product.selected_or_first_available_variant.available -%}
-                <div class="mt-4 flex row jc-c ai-c green checkmark ff-body fs-0 lh-100">
-                  {% render 'icon-checkmark' %}
-                  <span>
-                    <b>
-                      Auf Lager –
-                    </b>
-                    in 1-3 Tagen bei Dir
-                  </span>
-                </div>
-              {%- else -%}
-                <div class="mt-4 flex row jc-c ai-c checkmark ff-body fs-0 lh-100" style="color: rgba(var(--color-base-error));">
-                  <span>
-                    <b>
-                      Ausverkauft
-                    </b>
-                  </span>
-                </div>
-              {%- endif -%}
+              <div class="flex row jc-c ai-c w-100p" style="border-top: 2px solid white; margin-top: 18px;">
+                <p class="ff-body fs-0 lh-100 fw-300 ml-3 my-0">
+                  Mehr als <span class="fw-500">{{ product.metafields.global.numberBuyers.value }}x</span> in den letzten <span class="fw-500">4 Stunden</span> gekauft
+                </p>
+              </div>
+            </div>
           {%- when 'rating' -%}
             {% render 'star-rating', rating: product.metafields.global.rating.value, reviewCount: product.metafields.global.reviewCount.value, type: 'page' %}
             {%- when 'nutrition' -%}
@@ -547,10 +589,10 @@
                     </div>
                     {% render 'icon-caret' %}
                   </summary>
-                  <div class="accordion__content rte ff-body my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                  <div class="accordion__content rte ff-body my-0 pr-5 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                     {% if product.metafields.global.showIngredientList.value %}
-                      <h3 class="fs-1 ff-heading fw-300 lh-100">Zutatenliste</h3>
-                      <div class="w-100p fs-0 fw-300 lh-150">
+                      <h3 class="fs-1 ff-heading fw-400 lh-100 ls-0 mb-2 mt-3">Zutatenliste</h3>
+                      <div class="w-100p fs-0 fw-300 lh-150 mb-5">
                         {{ product.metafields.global.ingredientList.value }}
                       </div>
                     {% endif %}
@@ -559,112 +601,112 @@
                     {% endif %}
                     {% if product.metafields.global.showNutritionTable.value %}
                       <div class="ngrid threecol-422 w-100p ff-body mb-25px">
-                        <div class="fs-1 fw-300 lh-100 pl-5px">
+                        <div class="fs-0 fw-400 lh-100">
                           {{ product.metafields.global.titleNutritionTable.value | escape }}
                         </div>
-                        <div class="fs-1 fw-300 lh-100 ta-c">
+                        <div class="fs-0 fw-400 lh-100 ta-r">
                           {{ product.metafields.global.referenceAmount.value | escape }}
                         </div>
-                        <div class="fs-1 fw-300 lh-100 ta-r pr-10px">
+                        <div class="fs-0 fw-400 lh-100 ta-r">
                           {{ product.metafields.global.portionAmount.value | escape }} <br> Portion
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           Energie
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceEnergyKcal.value | escape }} kcal 
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionEnergyKcal.value | escape }} kcal 
                         </div>
                         <div class="fs-0 fw-300 lh-150">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceEnergyKj.value | escape }} kJ
-                        </div><div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        </div><div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionEnergyKj.value | escape }} kJ 
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           Fett
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceFat.value | escape }} g
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionFat.value | escape }} g
                         </div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           (gesättigte Fettsäuren)
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceSaturated.value | escape }} g
-                        </div><div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        </div><div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionSaturated.value | escape }} g 
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           Kohlenhydrate
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceCarbs.value | escape }} g
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionCarbs.value | escape }} g
                         </div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           (Zucker)
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceSugar.value | escape }} g
-                        </div><div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        </div><div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionSugar.value | escape }} g 
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           Ballaststoffe
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceFiber.value | escape }} g
-                        </div><div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        </div><div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionFiber.value | escape }} g 
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           Protein
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceProtein.value | escape }} g
-                        </div><div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        </div><div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionProtein.value | escape }} g 
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
-                        <div class="fs-0 fw-300 lh-150 pl-5px">
+                        <div class="fs-0 fw-300 lh-150">
                           Salz
                         </div>
-                        <div class="fs-0 fw-300 lh-150 ta-c">
+                        <div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.referenceSalt.value | escape }} g
-                        </div><div class="fs-0 fw-300 lh-150 ta-r pr-10px">
+                        </div><div class="fs-0 fw-300 lh-150 ta-r">
                           {{ product.metafields.global.portionSalt.value | escape }} g 
                         </div>
                       </div>
                     {% endif %}
                     {% if product.metafields.global.showActiveIngredients.value %}
                       {% assign activeList = product.metafields.global.activeIngredients.value | map: 'name' | join: ', ' %}
-                      <h3 class="fs-1 ff-heading fw-300 lh-100">Inhaltsstoffe</h3>
-                      <div class="w-100p fs-0 fw-300 lh-150 mb-4">
+                      <h3 class="fs-1 ff-heading fw-400 lh-100 ls-0 mb-2">Inhaltsstoffe</h3>
+                      <div class="w-100p fs-1 fw-300 lh-150 mb-5">
                         {{ activeList | escape }}
                       </div>
                       <div class="ngrid threecol-843 w-100p ff-body">
-                        <div class="fs-1 col-1-2 fw-300 lh-100">
+                        <div class="fs-0 col-1-2 fw-400 lh-100">
                           {{ product.metafields.global.titleActiveTable.value | escape }}
                         </div>
-                        <div class="fs-1 col-3 fw-300 lh-100 ta-r">
+                        <div class="fs-0 col-3 fw-400 lh-100 ta-r">
                           %NRV*
                         </div>
                         <div class="line-1-3 my-10px w-100p">&nbsp;</div>
                         {% for ingredient in product.metafields.global.activeIngredients.value %}
-                          <div class="fs-0 fw-300 lh-150 pl-5px">
+                          <div class="fs-0 fw-300 lh-150">
                             {{ ingredient.name | escape }}
                           </div>
                           <div class="fs-0 fw-300 lh-150 ta-r">
@@ -693,7 +735,7 @@
               {% endif %}
             {%- when 'usage' -%}
               {% if product.metafields.global.usage %}
-                <div class="accordion" {{ block.shopify_attributes }}>
+                <div class="accordion" {{ block.shopify_attributes }} {% if block.settings.borderBelow %}style="border-bottom: 0.1rem solid #e5e5e5;"{% else %}style="border-bottom: none !important;"{% endif %}>
                   <details>
                     <summary class="flex row ai-c">
                       <div class="summary__title">
@@ -703,7 +745,7 @@
                       </div>
                       {% render 'icon-caret' %}
                     </summary>
-                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 pr-5 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                       {{ product.metafields.global.usage.value }}
                     </div>
                   </details>
@@ -711,7 +753,7 @@
               {% endif %}
             {%- when 'product_description' -%}
               {% if product.metafields.global.productDescription %}
-                <div class="accordion" {{ block.shopify_attributes }}>
+                <div class="accordion" {{ block.shopify_attributes }} {% if block.settings.borderAbove %}style="border-top: 0.1rem solid #e5e5e5;"{% else %}style="border-top: none !important;"{% endif %}>
                   <details>
                     <summary class="flex row ai-c">
                       <div class="summary__title">
@@ -721,7 +763,7 @@
                       </div>
                       {% render 'icon-caret' %}
                     </summary>
-                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 hyphen pr-9 pr-md-15 pb-6" lang="de">
+                    <div class="accordion__content rte ff-body fs-0 fw-300 lh-150 my-0 pr-5 pb-6{% unless block.settings.hyphenation == 'off' %} hyphen{% endunless %}"{% unless block.settings.hyphenation == 'off' %} lang="{{ block.settings.hyphenation }}"{% endunless %}>
                       {{ product.metafields.global.productDescription.value }}
                     </div>
                   </details>
@@ -745,61 +787,51 @@
               </div>
             {%- when 'advantages' -%}
               <div class="advantages mb-5">
-                  <div class="flex row ai-c mb-3">
-                    <div class="h-16px mr-3">
-                      {% render "advantage-icon", { icon: block.settings.iconA } %}
-                    </div>
-                    <p class="fs-1 lh-125 fw-300 ff-body">
-                      {{ block.settings.textA | escape }}
-                    </p>
-                  </div>
-                  <div class="flex row ai-c mb-3">
-                    <div class="h-16px mr-3">
-                      {% render "advantage-icon", { icon: block.settings.iconB } %}
-                    </div>
-                    <p class="fs-1 lh-125 fw-300 ff-body">
-                      {{ block.settings.textB | escape }}
-                    </p>
-                  </div>
-                  <div class="flex row ai-c mb-3">
-                    <div class="h-16px mr-3">
-                      {% render "advantage-icon", { icon: block.settings.iconC } %}
-                    </div>
-                    <p class="fs-1 lh-125 fw-300 ff-body">
-                      {{ block.settings.textC | escape }}
-                    </p>
-                  </div>
-              </div>
-              {%- when 'features' -%}
-                <div class="features mb-5 pt-7 bdtw-1px bdts-sol bdtcfg mt-7">
-                    <div class="flex row ai-c mb-4">
-                      <div class="h-16px mr-3 pos-rel b-2">
-                        {% render "advantage-icon", { icon: 'parcel' } %}
+                {% if product.metafields.global.advantages %}
+                  {% for advantage in product.metafields.global.advantages.value %}
+                    <div class="flex row ai-c mb-3">
+                      <div class="h-16px mr-4">
+                        {% render "advantage-icon", { icon: advantage.icon } %}
                       </div>
-                      <p class="fs-0 lh-130 fw-300 ff-body">
-                        Schneller Versand
+                      <p class="fs-1 lh-150 fw-300 ff-body">
+                        {{ advantage.text | escape }}
                       </p>
                     </div>
-                    <div class="flex row ai-c mb-4">
-                      <div class="h-16px mr-3 pos-rel b-2">
+                  {% endfor %}
+                {% endif %}
+              </div>
+            {%- when 'features' -%}
+                <div class="features mb-5" style="padding-top: 20px; border-top: 1px solid #e6eae8; margin-top: 20px;">
+                  <div class="flex row wrap ai-c">
+                    <div class="flex row jc-c ai-c mr-4" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);">
+                      <div class="h-16px mr-3 pos-rel">
+                        {% render "advantage-icon", { icon: 'parcel' } %}
+                      </div>
+                      <p>
+                        Kostenloser Versand ab 29€
+                      </p>
+                    </div>
+                    <div class="flex row jc-c ai-c" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);" id="money-back">
+                      <div class="h-16px mr-3 pos-rel">
                         {% render "advantage-icon", { icon: 'euro' } %}
                       </div>
-                      <p class="fs-0 lh-130 fw-300 ff-body">
+                      <p>
                         30 Tage Geld-zurück-Garantie
                       </p>
                     </div>
-                    <div class="flex row ai-c mb-4">
-                      <div class="h-16px mr-3 pos-rel b-2">
+                    <div class="flex row jc-c ai-c hidden" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);" id="secure-payment">
+                      <div class="h-16px mr-3 pos-rel">
                         {% render "advantage-icon", { icon: 'secure-payment' } %}
                       </div>
-                      <p class="fs-0 lh-130 fw-300 ff-body">
+                      <p>
                         Sichere Zahlung
                       </p>
                     </div>
+                  </div>
                 </div>
               {% when 'payment_icons' %}
                 <div class="payment flex row jc-spb ai-c">
-                  {% assign paymentArray = 'PayPal, VISA, Mastercard, Klarna, Amex' | split: ', ' %}
+                  {% assign paymentArray = 'Amex, Klarna, Mastercard, PayPal, VISA' | split: ', ' %}
                   {% for icon in paymentArray %}
                     {% render 'icon-payment', icon: icon %}
                   {% endfor %}
@@ -814,6 +846,18 @@
     </div>
   </div>
   </div>
+  <script>
+    const details = document.querySelectorAll("details")
+    details.forEach((targetDetail) => {
+      targetDetail.addEventListener("click", () => {
+        details.forEach((detail) => {
+          if(detail != targetDetail) {
+            detail.removeAttribute("open")
+          }
+        })
+      })
+    })
+  </script>
 
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
@@ -968,7 +1012,7 @@
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
-  "class": "product-section spaced-section",
+  "class": "product-section",
   "blocks": [
     {
       "type": "@app"
@@ -1276,18 +1320,94 @@
           "id": "messageMissingReference",
           "label": "Text für fehlende NRV-Referenz",
           "default": "** Keine Referenzmenge durch die EU definiert"
+        },
+        {
+          "type": "select",
+          "id": "hyphenation",
+          "label": "t:sections.common-across-sections.settings.hyphenation.label",
+          "default": "off",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
         }
       ]
     },
     {
       "type": "usage",
       "name": "Anwendung",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "borderBelow",
+          "label": "Begrenzung darunter?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "hyphenation",
+          "label": "t:sections.common-across-sections.settings.hyphenation.label",
+          "default": "off",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "product_description",
       "name": "Produktbeschreibung",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "borderAbove",
+          "label": "Begrenzung darüber?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "hyphenation",
+          "label": "t:sections.common-across-sections.settings.hyphenation.label",
+          "default": "off",
+          "options": [
+            {
+              "value": "off",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_off.label"
+            },
+            {
+              "value": "de",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_de.label"
+            },
+            {
+              "value": "en",
+              "label": "t:sections.common-across-sections.settings.hyphenation.option_en.label"
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "accordion_rt",
@@ -1308,296 +1428,7 @@
     {
       "type": "advantages",
       "name": "Produktvorteile (kurz)",
-      "settings": [
-        {
-          "type": "select",
-          "id": "iconA",
-          "label": "erstes Icon",
-          "options": [
-            {
-              "value": "bed",
-              "label": "Bett"
-            },
-            {
-              "value": "germany",
-              "label": "Deutschland"
-            },
-            {
-              "value": "dosierung",
-              "label": "Dosierung"
-            },
-            {
-              "value": "euro",
-              "label": "Euro"
-            },
-            {
-              "value": "brain",
-              "label": "Gehirn (von der Seite)"
-            },
-            {
-              "value": "potenzial-brain",
-              "label": "Gehirn (von oben)"
-            },
-            {
-              "value": "money",
-              "label": "Geld"
-            },
-            {
-              "value": "drink-drop",
-              "label": "Glas und Tropfen"
-            },
-            {
-              "value": "capsule",
-              "label": "Kapsel"
-            },
-            {
-              "value": "keine-nebenwirkungen",
-              "label": "keine Nebenwirkungen"
-            },
-            {
-              "value": "cherry",
-              "label": "Kirsche"
-            },
-            {
-              "value": "microscope",
-              "label": "Mikroskop"
-            },
-            {
-              "value": "molecule",
-              "label": "Molekül"
-            },
-            {
-              "value": "moon-sleep",
-              "label": "Mond mit ZZZ"
-            },
-            {
-              "value": "tired",
-              "label": "müde"
-            },
-            {
-              "value": "overleaf",
-              "label": "Ring und Blatt"
-            },
-            {
-              "value": "secure-payment",
-              "label": "sichere Bezahlung"
-            },
-            {
-              "value": "sofortwirkung",
-              "label": "Sofortwirkung"
-            },
-            {
-              "value": "watch",
-              "label": "Stoppuhr"
-            },
-            {
-              "value": "drops",
-              "label": "Tropfen"
-            },
-            {
-              "value": "cycle",
-              "label": "Zyklus"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "textA",
-          "label": "erster Text"
-        },
-        {
-          "type": "select",
-          "id": "iconB",
-          "label": "zweites Icon",
-          "options": [
-            {
-              "value": "bed",
-              "label": "Bett"
-            },
-            {
-              "value": "germany",
-              "label": "Deutschland"
-            },
-            {
-              "value": "dosierung",
-              "label": "Dosierung"
-            },
-            {
-              "value": "euro",
-              "label": "Euro"
-            },
-            {
-              "value": "brain",
-              "label": "Gehirn (von der Seite)"
-            },
-            {
-              "value": "potenzial-brain",
-              "label": "Gehirn (von oben)"
-            },
-            {
-              "value": "money",
-              "label": "Geld"
-            },
-            {
-              "value": "drink-drop",
-              "label": "Glas und Tropfen"
-            },
-            {
-              "value": "capsule",
-              "label": "Kapsel"
-            },
-            {
-              "value": "keine-nebenwirkungen",
-              "label": "keine Nebenwirkungen"
-            },
-            {
-              "value": "cherry",
-              "label": "Kirsche"
-            },
-            {
-              "value": "microscope",
-              "label": "Mikroskop"
-            },
-            {
-              "value": "molecule",
-              "label": "Molekül"
-            },
-            {
-              "value": "moon-sleep",
-              "label": "Mond mit ZZZ"
-            },
-            {
-              "value": "tired",
-              "label": "müde"
-            },
-            {
-              "value": "overleaf",
-              "label": "Ring und Blatt"
-            },
-            {
-              "value": "secure-payment",
-              "label": "sichere Bezahlung"
-            },
-            {
-              "value": "sofortwirkung",
-              "label": "Sofortwirkung"
-            },
-            {
-              "value": "watch",
-              "label": "Stoppuhr"
-            },
-            {
-              "value": "drops",
-              "label": "Tropfen"
-            },
-            {
-              "value": "cycle",
-              "label": "Zyklus"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "textB",
-          "label": "zweiter Text"
-        },
-        {
-          "type": "select",
-          "id": "iconC",
-          "label": "drittes Icon",
-          "options": [
-            {
-              "value": "bed",
-              "label": "Bett"
-            },
-            {
-              "value": "germany",
-              "label": "Deutschland"
-            },
-            {
-              "value": "dosierung",
-              "label": "Dosierung"
-            },
-            {
-              "value": "euro",
-              "label": "Euro"
-            },
-            {
-              "value": "brain",
-              "label": "Gehirn (von der Seite)"
-            },
-            {
-              "value": "potenzial-brain",
-              "label": "Gehirn (von oben)"
-            },
-            {
-              "value": "money",
-              "label": "Geld"
-            },
-            {
-              "value": "drink-drop",
-              "label": "Glas und Tropfen"
-            },
-            {
-              "value": "capsule",
-              "label": "Kapsel"
-            },
-            {
-              "value": "keine-nebenwirkungen",
-              "label": "keine Nebenwirkungen"
-            },
-            {
-              "value": "cherry",
-              "label": "Kirsche"
-            },
-            {
-              "value": "microscope",
-              "label": "Mikroskop"
-            },
-            {
-              "value": "molecule",
-              "label": "Molekül"
-            },
-            {
-              "value": "moon-sleep",
-              "label": "Mond mit ZZZ"
-            },
-            {
-              "value": "tired",
-              "label": "müde"
-            },
-            {
-              "value": "overleaf",
-              "label": "Ring und Blatt"
-            },
-            {
-              "value": "secure-payment",
-              "label": "sichere Bezahlung"
-            },
-            {
-              "value": "sofortwirkung",
-              "label": "Sofortwirkung"
-            },
-            {
-              "value": "watch",
-              "label": "Stoppuhr"
-            },
-            {
-              "value": "drops",
-              "label": "Tropfen"
-            },
-            {
-              "value": "cycle",
-              "label": "Zyklus"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "textC",
-          "label": "dritter Text"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "features",

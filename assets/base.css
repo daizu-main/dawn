@@ -2053,11 +2053,19 @@ details[open].menu-opening > .menu-drawer__submenu {
   display: block;
 }
 
+.mobilegrid {
+  display: grid;
+}
+
 .nmobile {
   display: none;
 }
 
 .tablet {
+  display: none;
+}
+
+.tabletgrid {
   display: none;
 }
 
@@ -2089,16 +2097,25 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mobile {
     display: none;
   }
+  .mobilegrid {
+    display: none;
+  }
   .nmobile {
     display: block;
   }
   .tablet {
     display: block;
   }
+  .tabletgrid {
+    display: grid;
+  }
 }
 
 @media screen and (min-width: 990px) {
   .tablet {
+    display: none;
+  }
+  .tabletgrid {
     display: none;
   }
   .desktop {
@@ -2511,6 +2528,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-left: 16px;
 }
 
+.ml-14 {
+  margin-left: 80px;
+}
+
 .mr-0 {
   margin-right: 0;
 }
@@ -2531,6 +2552,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 .mr-5 {
   margin-right: 16px;
+}
+
+.mr-14 {
+  margin-right: 80px;
 }
 
 .mt-0 {
@@ -2567,6 +2592,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .mt-7 {
   margin-top: 24px;
+}
+
+.mt-25px {
+  margin-top: 25px;
+}
+
+.mt-30px {
+  margin-top: 30px;
 }
 
 .mt-8 {
@@ -2626,6 +2659,11 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-right: 24px;
 }
 
+.mx-9 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -2654,6 +2692,16 @@ details[open].menu-opening > .menu-drawer__submenu {
 .my-4 {
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+.my-5 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.my-8 {
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .my-56d {
@@ -2697,6 +2745,10 @@ details[open].menu-opening > .menu-drawer__submenu {
     margin-left: 48px;
     margin-right: 48px;
   }
+  .my-md-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   .my-md-92px {
     margin-top: 92px;
     margin-bottom: 92px;
@@ -2726,11 +2778,23 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mb-lg-8 {
     margin-bottom: 32px;
   }
+  .ml-lg-0 {
+    margin-left: 0;
+  }
   .ml-lg-7 {
     margin-left: 24px;
   }
+  .ml-lg-11 {
+    margin-left: 56px;
+  }
   .mr-lg-0 {
     margin-right: 0;
+  }
+  .mr-lg-11 {
+    margin-right: 56px;
+  }
+  .mt-lg-0 {
+    margin-top: 0;
   }
   .mt-lg-3 {
     margin-top: 8px;
@@ -2826,6 +2890,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .pr-10px {
   padding-right: 10px;
+}
+
+.pr-5 {
+  padding-right: 16px;
 }
 
 .pr-9 {
@@ -3003,6 +3071,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   .pb-md-10 {
     padding-bottom: 48px;
   }
+  .pb-md-11 {
+    padding-bottom: 56px;
+  }
   .pb-md-12 {
     padding-bottom: 64px;
   }
@@ -3011,6 +3082,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
   .pt-md-7 {
     padding-top: 24px;
+  }
+  .pt-md-11 {
+    padding-top: 56px;
   }
   .pt-md-13 {
     padding-top: 72px;
@@ -3035,9 +3109,17 @@ details[open].menu-opening > .menu-drawer__submenu {
     padding-top: 56px;
     padding-bottom: 56px;
   }
+  .py-md-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .py-md-9 {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+  .py-md-10 {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .py-md-11 {
     padding-top: 56px;
@@ -3053,6 +3135,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   .pb-lg-10 {
     padding-bottom: 48px;
   }
+  .pb-lg-13 {
+    padding-bottom: 72px;
+  }
   .pb-lg-16 {
     padding-bottom: 96px;
   }
@@ -3061,6 +3146,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
   .pt-lg-10 {
     padding-top: 48px;
+  }
+  .pt-lg-13 {
+    padding-top: 72px;
   }
   .px-lg-unset {
     padding-left: unset;
@@ -3081,6 +3169,22 @@ details[open].menu-opening > .menu-drawer__submenu {
   .px-lg-7 {
     padding-left: 24px;
     padding-right: 24px;
+  }
+  .px-lg-8 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .py-lg-6 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .py-lg-7 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .py-lg-10 {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .py-lg-13 {
     padding-top: 72px;
@@ -3628,6 +3732,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-size: 38px;
 }
 
+.fs-46px {
+  font-size: 46px;
+}
+
 .fs-52px {
   font-size: 52px;
 }
@@ -3759,6 +3867,18 @@ details[open].menu-opening > .menu-drawer__submenu {
   line-height: 1.86;
 }
 
+.lh-13px {
+  line-height: 13px;
+}
+
+.lh-19px {
+  line-height: 19px;
+}
+
+.lh-27px {
+  line-height: 27px;
+}
+
 .lh-38px {
   line-height: 38px;
 }
@@ -3837,6 +3957,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .ls-normal {
   letter-spacing: normal;
+}
+
+.ls-0 {
+  letter-spacing: 0;
 }
 
 .ls-m024 {
@@ -4096,7 +4220,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 @media screen and (min-width: 990px) {
   .lg-bxsh {
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -4993,13 +5117,13 @@ deferred-media {
 }
 
 .richtext-image-wrapper {
-  width: calc(100vw - 32px);
-  height: calc(100vw - 32px);
+  width: 100vw;
+  height: 100vw;
 }
 
 .richtext-image {
-  width: calc(100vw - 32px);
-  height: calc(100vw - 32px);
+  width: 100vw;
+  height: 100vw;
   object-position: center center;
 }
 
@@ -5400,9 +5524,9 @@ deferred-media {
 .line-1-3 {
   grid-column: 1 / span 3;
   height: 1px;
-  border-color: rgba(var(--color-foreground));
-  border-style: solid;
-  border-width: 1px;
+  border-top-color: rgba(var(--color-foreground));
+  border-top-style: solid;
+  border-top-width: 1px;
 }
 
 /* Availability Status */
@@ -5476,4 +5600,43 @@ deferred-media {
   line-height: 1.5;
   font-weight: 400;
   font-size: 18px;
+}
+
+/* STRUCTURE: Product Page */
+.features,
+.features p {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 300;
+  font-family: var(--font-body-family);
+}
+
+.ProductInfo-BuyBox {
+  max-width: unset;
+}
+
+.ProductInfo-BuyBox .accordion details summary svg {
+  right: 0.4rem !important;
+}
+
+@media screen and (min-width: 500px) {
+  .ProductInfo-BuyBox {
+    max-width: 620px;
+  }
+  .features,
+  .features p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .features,
+  .features p {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .ProductInfo-BuyBox {
+    max-width: 438px;
+  }
 }
