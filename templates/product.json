@@ -5,22 +5,28 @@
       "blocks": {
         "image_slider": {
           "type": "image_slider",
-          "settings": {}
+          "settings": {
+          }
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "rating": {
           "type": "rating",
-          "settings": {}
+          "settings": {
+          }
         },
         "advantages": {
-          "type": "advantages"
+          "type": "advantages",
+          "settings": {
+          }
         },
         "subscription_selector": {
           "type": "subscription_selector",
-          "settings": {}
+          "settings": {
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -30,11 +36,13 @@
         },
         "features": {
           "type": "features",
-          "settings": {}
+          "settings": {
+          }
         },
         "payment_icons": {
           "type": "payment_icons",
-          "settings": {}
+          "settings": {
+          }
         },
         "pdesc": {
           "type": "product_description",
@@ -81,15 +89,49 @@
     "1644837122ebbd5ad6": {
       "type": "ingredient-slider",
       "blocks": {
+        "07bd07d1-3725-4710-85c0-34ad82357adc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/baldrian.jpg",
+            "name": "Baldrian",
+            "text": "<p>Baldrian wirkt wunderbar beruhigend<\/p>",
+            "tag": "baldrian"
+          }
+        },
         "16448371221c00c21f-0": {
           "type": "image",
           "settings": {
-            "name": "",
-            "text": ""
+            "image": "shopify:\/\/shop_images\/melatonin.jpg",
+            "name": "Melatonin",
+            "text": "<p>Melatonin macht dich so richtig müde.<\/p>",
+            "tag": "melatonin"
+          }
+        },
+        "7100d64c-5609-4f61-875b-fc5d23dfaea8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vitamin-b6.jpg",
+            "name": "Avocado",
+            "text": "<p>Avocados geben unseren Produkten ihre unvergleichliche Cremigkeit<\/p>",
+            "tag": "avocado"
+          }
+        },
+        "27046882-0c38-471e-83eb-24c4658726a0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/selen.jpg",
+            "name": "Kokos",
+            "text": "<p>Kokos gibt unseren Produkten ihren exotischen Geschmack<\/p>",
+            "tag": "kokos"
           }
         }
       },
-      "block_order": ["16448371221c00c21f-0"],
+      "block_order": [
+        "07bd07d1-3725-4710-85c0-34ad82357adc",
+        "16448371221c00c21f-0",
+        "7100d64c-5609-4f61-875b-fc5d23dfaea8",
+        "27046882-0c38-471e-83eb-24c4658726a0"
+      ],
       "settings": {
         "swipe_on_mobile": true,
         "color_scheme": "background-1",
@@ -98,5 +140,8 @@
       }
     }
   },
-  "order": ["main", "1644837122ebbd5ad6"]
+  "order": [
+    "main",
+    "1644837122ebbd5ad6"
+  ]
 }
