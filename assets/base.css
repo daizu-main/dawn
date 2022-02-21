@@ -2617,6 +2617,14 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-top: 24px;
 }
 
+.mt-25px {
+  margin-top: 25px;
+}
+
+.mt-30px {
+  margin-top: 30px;
+}
+
 .mt-8 {
   margin-top: 32px;
 }
@@ -2808,6 +2816,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   .mr-lg-11 {
     margin-right: 56px;
   }
+  .mt-lg-0 {
+    margin-top: 0;
+  }
   .mt-lg-3 {
     margin-top: 8px;
   }
@@ -2902,6 +2913,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .pr-10px {
   padding-right: 10px;
+}
+
+.pr-5 {
+  padding-right: 16px;
 }
 
 .pr-9 {
@@ -3117,9 +3132,17 @@ details[open].menu-opening > .menu-drawer__submenu {
     padding-top: 56px;
     padding-bottom: 56px;
   }
+  .py-md-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .py-md-9 {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+  .py-md-10 {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .py-md-11 {
     padding-top: 56px;
@@ -3173,6 +3196,18 @@ details[open].menu-opening > .menu-drawer__submenu {
   .px-lg-8 {
     padding-left: 32px;
     padding-right: 32px;
+  }
+  .py-lg-6 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .py-lg-7 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .py-lg-10 {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   .py-lg-13 {
     padding-top: 72px;
@@ -3947,6 +3982,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   letter-spacing: normal;
 }
 
+.ls-0 {
+  letter-spacing: 0;
+}
+
 .ls-m024 {
   letter-spacing: -0.24px;
 }
@@ -4204,7 +4243,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 @media screen and (min-width: 990px) {
   .lg-bxsh {
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -5508,9 +5547,9 @@ deferred-media {
 .line-1-3 {
   grid-column: 1 / span 3;
   height: 1px;
-  border-color: rgba(var(--color-foreground));
-  border-style: solid;
-  border-width: 1px;
+  border-top-color: rgba(var(--color-foreground));
+  border-top-style: solid;
+  border-top-width: 1px;
 }
 
 /* Availability Status */
@@ -5946,15 +5985,24 @@ deferred-media {
   max-width: unset;
 }
 
+.ProductInfo-BuyBox .accordion details summary svg {
+  right: 0.4rem !important;
+}
+
 @media screen and (min-width: 500px) {
   .ProductInfo-BuyBox {
     max-width: 620px;
+  }
+  .features,
+  .features p {
+    font-size: 12px;
   }
 }
 
 @media screen and (min-width: 990px) {
   .features,
   .features p {
+    font-size: 10px;
     line-height: 12px;
   }
 
