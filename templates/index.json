@@ -202,6 +202,50 @@
         "swipe_on_mobile": true
       }
     },
+    "1645458017a91bc44d": {
+      "type": "gute-nacht-versprechen",
+      "blocks": {
+        "16454580174ba4a2b2-0": {
+          "type": "promise",
+          "settings": {
+            "title": "Wissenschaftsbasiert",
+            "text": "<p>Unsere innovativen Schlafprodukte sind in Zusammenarbeit mit Schlafforschern und Ärzten auf Basis aktuellster Studien entwickelt worden und bezüglich ihrer Wirksamkeit optimal dosiert.<\/p>"
+          }
+        },
+        "16454580174ba4a2b2-1": {
+          "type": "promise",
+          "settings": {
+            "title": "Hochwertig",
+            "text": "<p>Unsere Schlafprodukte werden unter Einhaltung höchster Qualitätsstandards in Deutschland produziert und zertifiziert. Zur vollen Transparenz durchläuft jede Produktion aufwändige Qualitätskontrollen.<\/p>"
+          }
+        },
+        "16454580174ba4a2b2-2": {
+          "type": "promise",
+          "settings": {
+            "title": "Natürlich",
+            "text": "<p>Unsere natürlich wirkenden Schlafprodukte sind frei von Chemie, Nebenwirkungen, Abhängigkeiten, Gewöhnungseffekten oder einem \"Kater\"-Gefühl am nächsten Morgen.<\/p>"
+          }
+        },
+        "16454580174ba4a2b2-3": {
+          "type": "promise",
+          "settings": {
+            "title": "Praktisch",
+            "text": "<p>Alle Schlafprodukte sind flexibel in ihrer Anwendung und ideal für zu Hause oder unterwegs. Die Einnahme ist angenehm und unkompliziert, die Wirkung stellt sich ab der ersten Einnahme ein.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16454580174ba4a2b2-0",
+        "16454580174ba4a2b2-1",
+        "16454580174ba4a2b2-2",
+        "16454580174ba4a2b2-3"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "title": "Unser Gute Nacht Versprechen",
+        "hyphenation": "de"
+      }
+    },
     "produktberater": {
       "type": "produktberater",
       "blocks": {
@@ -390,6 +434,7 @@
     "page-hero",
     "bestseller",
     "kundenstimmen",
+    "1645458017a91bc44d",
     "produktberater",
     "presseslider",
     "16448520175a08ff8c"
