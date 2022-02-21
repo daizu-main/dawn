@@ -208,7 +208,7 @@
         "16454580174ba4a2b2-0": {
           "type": "promise",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TrustedShops-rgb-Siegel_500Hpx.png",
+            "image": "shopify:\/\/shop_images\/microscope-icon.png",
             "title": "Wissenschaftsbasiert",
             "text": "<p>Unsere innovativen Schlafprodukte sind in Zusammenarbeit mit Schlafforschern und Ärzten auf Basis aktuellster Studien entwickelt worden und bezüglich ihrer Wirksamkeit optimal dosiert.<\/p>"
           }
@@ -216,6 +216,7 @@
         "16454580174ba4a2b2-1": {
           "type": "promise",
           "settings": {
+            "image": "shopify:\/\/shop_images\/diamond-icon_d1348dd2-590c-41bc-adfe-1118047daed9.png",
             "title": "Hochwertig",
             "text": "<p>Unsere Schlafprodukte werden unter Einhaltung höchster Qualitätsstandards in Deutschland produziert und zertifiziert. Zur vollen Transparenz durchläuft jede Produktion aufwändige Qualitätskontrollen.<\/p>"
           }
@@ -223,6 +224,7 @@
         "16454580174ba4a2b2-2": {
           "type": "promise",
           "settings": {
+            "image": "shopify:\/\/shop_images\/nature-icon.png",
             "title": "Natürlich",
             "text": "<p>Unsere natürlich wirkenden Schlafprodukte sind frei von Chemie, Nebenwirkungen, Abhängigkeiten, Gewöhnungseffekten oder einem \"Kater\"-Gefühl am nächsten Morgen.<\/p>"
           }
@@ -230,6 +232,7 @@
         "16454580174ba4a2b2-3": {
           "type": "promise",
           "settings": {
+            "image": "shopify:\/\/shop_images\/hand-icon.png",
             "title": "Praktisch",
             "text": "<p>Alle Schlafprodukte sind flexibel in ihrer Anwendung und ideal für zu Hause oder unterwegs. Die Einnahme ist angenehm und unkompliziert, die Wirkung stellt sich ab der ersten Einnahme ein.<\/p>"
           }
