@@ -1,5 +1,35 @@
-<div class="SectionGrid onerow">
-  <div class="SectionGrid-Full SectionGrid onerow">
+{% liquid 
+  if section.settings.imageLeft
+    assign imageColumn = "1 / span 1"
+    assign textColumn = "2 / span 1"
+    assign contentColumn = "1 / span 2"
+  else
+    assign imageColumn = "2 / span 1"
+    assign textColumn = "1 / span 1"
+    assign contentColumn = "2 / span 2"
+  endif
+%}
+
+<div class="SectionGrid onerow color-{{ section.settings.color_scheme }}" style="height: 380px;">
+  <div class="SectionGrid-Full ngrid onerow w-100p" style="grid-template-columns: 50% 50%;">
+    <div style="grid-row: 1 / span 1; grid-column: {{ textColumn }}; background-color: {{ section.settings.backgroundColor }}; grid-template-columns: 1fr minmax(25px, 200px) minmax(350px, 450px); display: grid; width: 100%;" class="h-100p">
+      <div style="grid-column: {{ contentColumn }}; width: clamp(375px, 100%, 650px); padding: 30px;" class="flex column jc-spa">
+        <h2 style="font-size: 32px;">
+          {{ section.settings.title }}
+        </h2>
+        <div>
+          <form action="https://hook.integromat.com/8pf5t7kev3k931umilola6f25s44yvo7" method="post">
+            <input type="hidden" name="g" value="WsHQ2g">
+            <input type="hidden" name="$fields" value="$first_name,$source">
+            <input type="hidden" name="$source" value="10% Gutschein Subscriber">
+            <input type="text" name="$first_name" placeholder="Vorname" required style="padding: 8px 12px; width: calc(33.3% - 4px);">
+            <input type="email" id="drip-email" name="fields[email]" placeholder="E-Mail-Adresse" required style="padding: 8px 12px; width: calc(66.7% - 4px);">
+            <button type="submit" style="display: block;" class="mx-auto py-5 px-7 mt-5 button uppercase ff-heading">Anmelden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <img src="{{ section.settings.backgroundImage | image_url: width: 1200 }}" srcset="{{ section.settings.backgroundImage | image_url: width: 1200 }} 1x, {{ section.settings.backgroundImage | image_url: width: 2400 }} 2x" alt="{{ section.settings.backgroundImage.alt }}" style="grid-row: 1 / span 1; grid-column: {{ imageColumn }}; object-fit: cover; width: 50vw; height: 100%;">
   </div>
 </div>
 
@@ -34,6 +64,12 @@
       "label": "t:sections.gute-nacht-versprechen.settings.background_image.label"
     },
     {
+      "type": "checkbox",
+      "id": "imageLeft",
+      "label": "Bild links anzeigen?",
+      "default": false
+    },
+    {
       "type": "color",
       "id": "backgroundColor",
       "label": "Hintergrundfarbe"
@@ -51,7 +87,8 @@
       "settings": {
         "color_scheme": "inverse",
         "title": "Erhalte 10% auf deine Erstbestellung, wenn du unseren Newsletter abonnierst.",
-        "backgroundColor": "#A1A4A9"
+        "backgroundColor": "#A1A4A9",
+        "imageLeft": false
       }
     }
   ]

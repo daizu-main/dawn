@@ -999,7 +999,9 @@ a {
   appearance: none;
 }
 
+.button:hover,
 .button:focus-visible {
+  background-color: rgba(var(--color-base-solid-button_hover));
   box-shadow: 0 0 0 0.1rem rgba(var(--color-button)),
     0 0 0 0.3rem rgba(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground));
@@ -2575,6 +2577,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 .mr-5 {
   margin-right: 16px;
+}
+
+.mr-7 {
+  margin-right: 24px;
 }
 
 .mr-14 {
