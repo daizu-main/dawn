@@ -118,7 +118,7 @@ Don't load/display the component if there are no matching ingredients.
                         {% comment %} The plus 0 is to convert the string to an int {% endcomment %}
                         {% assign ingredientIndex = ingredientIndexes[index] | plus: 0 %}
                         {% assign ingredient = allIngredients[ingredientIndex] %}
-                        <div class="flex column ai-c jc-spa">
+                        <div class="flex column ai-c jc-fs">
                           <img src="{{ ingredient.settings.image | image_url: width: 100 }}"
                             srcset="{{ ingredient.settings.image | image_url: width: 100 }} 1x, {{ ingredient.settings.image | image_url: width: 200 }} 2x" 
                             alt="{{ ingredient.settings.image.alt | escape }}" 
@@ -177,7 +177,7 @@ Don't load/display the component if there are no matching ingredients.
                         {% comment %} The plus 0 is to convert the string to an int {% endcomment %}
                         {% assign ingredientIndex = ingredientIndexes[index] | plus: 0 %}
                         {% assign ingredient = allIngredients[ingredientIndex] %}
-                        <div class="flex column ai-c jc-spa">
+                        <div class="flex column ai-c jc-fs">
                           <img src="{{ ingredient.settings.image | image_url: width: 100 }}" alt="{{ ingredient.settings.image.alt | escape }}" 
                             srcset="{{ ingredient.settings.image | image_url: width: 100 }} 1x, {{ ingredient.settings.image | image_url: width: 200 }} 2x"
                             loading="lazy" width="100" height="100" 
@@ -219,7 +219,7 @@ Don't load/display the component if there are no matching ingredients.
               {% for index in (0..ingredientIndexes.size) %}
                 <li class="slider__slide w-100p">
                   <div class="ngrid onecol onerow gap-8 px-10">
-                      <div class="flex column ai-c jc-spa">
+                      <div class="flex column ai-c jc-fs">
                         {% comment %} The plus 0 is to convert the string to an int {% endcomment %}
                         {% assign ingredientIndex = ingredientIndexes[index] | plus: 0 %}
                         {% assign ingredient = allIngredients[ingredientIndex] %}
