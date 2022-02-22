@@ -443,6 +443,7 @@
       ],
       "settings": {
         "color_scheme": "inverse",
+        "backgroundImage": "shopify:\/\/shop_images\/badge-5-bg.jpg",
         "subline": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
       }
     },
