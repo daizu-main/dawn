@@ -216,7 +216,8 @@ Don't load/display the component if there are no matching ingredients.
         <div class="collection page-width{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}">
           <sleepink-slider class="slider-mobile-gutter">
             <ul class="grid slider slider--tablet slider--desktop grid--peek negative-margin negative-margin--small" role="list">
-              {% for index in (0..ingredientIndexes.size) %}
+              {% assign maxIndex = ingredientIndexes.size | minus: 1 %}
+              {% for index in (0..maxIndex) %}
                 <li class="slider__slide w-100p">
                   <div class="ngrid onecol onerow gap-8 px-10">
                       <div class="flex column ai-c jc-fs">
@@ -232,7 +233,7 @@ Don't load/display the component if there are no matching ingredients.
                 </li>
               {% endfor %}
             </ul>
-            {%- if number_of_slides > 1 and section.settings.swipe_on_mobile -%}
+            {%- if ingredientIndexes.size > 1 and section.settings.swipe_on_mobile -%}
               <div class="slider-buttons no-js-hidden w-100p flex row jc-spb">
                 <button type="button" class="slider-button slider-button--prev zutaten-button" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
                 <div class="slider-counter caption">
