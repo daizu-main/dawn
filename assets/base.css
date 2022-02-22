@@ -6022,3 +6022,67 @@ deferred-media {
 #insta-feed h2 {
   font-family: var(--font-heading-family) !important;
 }
+
+/* STRUCTURE: Newsletter Signup */
+
+@media screen and (min-width: 990px) {
+  .newsletter-section {
+    height: 380px;
+  }
+
+  .newsletter-twogrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+  }
+
+  .newsletter-contentgrid {
+    grid-row: 1 / span 1;
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
+
+  .newsletter-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+    width: clamp(375px, 100%, 650px);
+  }
+
+  .newsletter-title {
+    font-size: 32px;
+  }
+
+  .newsletter-firstname {
+    height: 58px;
+    background-color: transparent;
+    padding: 8px 12px;
+    width: calc(33.3% - 4px);
+    border: 1px solid #000000;
+  }
+
+  .newsletter-firstname:focus,
+  .newsletter-firstname:focus-visible {
+    border: 2px solid #000000;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .newsletter-email {
+    height: 58px;
+    background-color: transparent;
+    padding: 8px 12px;
+    width: calc(66.7% - 4px);
+    border: 1px solid #000000;
+  }
+
+  .newsletter-email:focus,
+  .newsletter-email:focus-visible {
+    border: 2px solid #000000;
+    outline: none;
+    box-shadow: none;
+  }
+}

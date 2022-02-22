@@ -3,18 +3,20 @@
     assign imageColumn = "1 / span 1"
     assign textColumn = "2 / span 1"
     assign contentColumn = "1 / span 2"
+    assign gridColumns = "minmax(350px, 450px) minmax(25px, 200px) 1fr"
   else
     assign imageColumn = "2 / span 1"
     assign textColumn = "1 / span 1"
     assign contentColumn = "2 / span 2"
+    assign gridColumns = "1fr minmax(25px, 200px) minmax(350px, 450px)"
   endif
 %}
 
-<div class="SectionGrid onerow color-{{ section.settings.color_scheme }}" style="height: 380px;">
-  <div class="SectionGrid-Full ngrid onerow w-100p" style="grid-template-columns: 50% 50%;">
-    <div style="grid-row: 1 / span 1; grid-column: {{ textColumn }}; background-color: {{ section.settings.backgroundColor }}; grid-template-columns: 1fr minmax(25px, 200px) minmax(350px, 450px); display: grid; width: 100%;" class="h-100p">
-      <div style="grid-column: {{ contentColumn }}; width: clamp(375px, 100%, 650px); padding: 30px;" class="flex column jc-spa">
-        <h2 style="font-size: 32px;">
+<div class="SectionGrid onerow color-{{ section.settings.color_scheme }} newsletter-section">
+  <div class="SectionGrid-Full newsletter-twogrid">
+    <div style="grid-column: {{ textColumn }}; background-color: {{ section.settings.backgroundColor }}; grid-template-columns: {{ gridColumns }};" class="newsletter-contentgrid">
+      <div style="grid-column: {{ contentColumn }};" class="newsletter-content">
+        <h2 class="newsletter-title">
           {{ section.settings.title }}
         </h2>
         <div>
@@ -22,8 +24,8 @@
             <input type="hidden" name="g" value="WsHQ2g">
             <input type="hidden" name="$fields" value="$first_name,$source">
             <input type="hidden" name="$source" value="10% Gutschein Subscriber">
-            <input type="text" name="$first_name" placeholder="Vorname" required style="padding: 8px 12px; width: calc(33.3% - 4px);">
-            <input type="email" id="drip-email" name="fields[email]" placeholder="E-Mail-Adresse" required style="padding: 8px 12px; width: calc(66.7% - 4px);">
+            <input type="text" name="$first_name" placeholder="Vorname" required class="newsletter-firstname">
+            <input type="email" id="drip-email" name="fields[email]" placeholder="E-Mail-Adresse" required class="newsletter-email">
             <button type="submit" style="display: block;" class="mx-auto py-5 px-7 mt-5 button uppercase ff-heading">Anmelden</button>
           </form>
         </div>
