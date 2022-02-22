@@ -5,7 +5,7 @@
   <div class="siegel-content">
     <div class="siegel-badges">
       {%- for badge in section.blocks -%}
-        <img src="{{ badge.image | image_url: width: 200 }}" srcset="{{ badge.image | image_url: width: 200 }} 1x, {{ badge.image | image_url: width: 400 }} 2x" alt="{{ badge.image.alt }}" width="200" height="200" loading="lazy" class="siegel-image">
+        <img src="{{ badge.settings.image | image_url: width: 200 }}" srcset="{{ badge.settings.image | image_url: width: 200 }} 1x, {{ badge.settings.image | image_url: width: 400 }} 2x" alt="{{ badge.image.alt }}" width="200" height="200" loading="lazy" class="siegel-image">
       {%- endfor -%}
     </div>
   <div class="siegel-subline">
