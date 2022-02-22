@@ -202,6 +202,55 @@
         "swipe_on_mobile": true
       }
     },
+    "1645458017a91bc44d": {
+      "type": "gute-nacht-versprechen",
+      "blocks": {
+        "16454580174ba4a2b2-0": {
+          "type": "promise",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/microscope-icon.png",
+            "title": "Wissenschaftsbasiert",
+            "text": "<p>Unsere innovativen Schlafprodukte sind in Zusammenarbeit mit Schlafforschern und Ärzten auf Basis aktuellster Studien entwickelt worden und bezüglich ihrer Wirksamkeit optimal dosiert.<\/p>"
+          }
+        },
+        "16454580174ba4a2b2-1": {
+          "type": "promise",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/diamond-icon_d1348dd2-590c-41bc-adfe-1118047daed9.png",
+            "title": "Hochwertig",
+            "text": "<p>Unsere Schlafprodukte werden unter Einhaltung höchster Qualitätsstandards in Deutschland produziert und zertifiziert. Zur vollen Transparenz durchläuft jede Produktion aufwändige Qualitätskontrollen.<\/p>"
+          }
+        },
+        "16454580174ba4a2b2-2": {
+          "type": "promise",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nature-icon.png",
+            "title": "Natürlich",
+            "text": "<p>Unsere natürlich wirkenden Schlafprodukte sind frei von Chemie, Nebenwirkungen, Abhängigkeiten, Gewöhnungseffekten oder einem \"Kater\"-Gefühl am nächsten Morgen.<\/p>"
+          }
+        },
+        "16454580174ba4a2b2-3": {
+          "type": "promise",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-icon.png",
+            "title": "Praktisch",
+            "text": "<p>Alle Schlafprodukte sind flexibel in ihrer Anwendung und ideal für zu Hause oder unterwegs. Die Einnahme ist angenehm und unkompliziert, die Wirkung stellt sich ab der ersten Einnahme ein.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16454580174ba4a2b2-0",
+        "16454580174ba4a2b2-1",
+        "16454580174ba4a2b2-2",
+        "16454580174ba4a2b2-3"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "backgroundImage": "shopify:\/\/shop_images\/gutenacht-bg.jpg",
+        "title": "Unser Gute Nacht Versprechen",
+        "hyphenation": "de"
+      }
+    },
     "produktberater": {
       "type": "produktberater",
       "blocks": {
@@ -365,6 +414,38 @@
         "color_scheme": "background-1"
       }
     },
+    "16454598972666e24a": {
+      "type": "siegel",
+      "blocks": {
+        "1645459897d1509438-0": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gerette-naechte-badge.png"
+          }
+        },
+        "1645459897d1509438-1": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/weiterempfehlung-badge.png"
+          }
+        },
+        "1645459897d1509438-2": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/TrustedShops-rgb-Siegel_500Hpx.png"
+          }
+        }
+      },
+      "block_order": [
+        "1645459897d1509438-0",
+        "1645459897d1509438-1",
+        "1645459897d1509438-2"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "subline": "* Umfrageergebnis von sleep.ink® Studie mit 200 Teilnehmer*innen, März 2021"
+      }
+    },
     "16448520175a08ff8c": {
       "type": "apps",
       "blocks": {
@@ -390,8 +471,10 @@
     "page-hero",
     "bestseller",
     "kundenstimmen",
+    "1645458017a91bc44d",
     "produktberater",
     "presseslider",
+    "16454598972666e24a",
     "16448520175a08ff8c"
   ]
 }
