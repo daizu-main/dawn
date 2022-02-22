@@ -1,0 +1,59 @@
+<div class="SectionGrid onerow">
+  <div class="SectionGrid-Full SectionGrid onerow">
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.image-banner.settings.color_scheme.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "backgroundImage",
+      "label": "t:sections.gute-nacht-versprechen.settings.background_image.label"
+    },
+    {
+      "type": "color",
+      "id": "backgroundColor",
+      "label": "Hintergrundfarbe"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.gute-nacht-versprechen.settings.title.label",
+      "default": "Erhalte 10% auf deine Erstbestellung, wenn du unseren Newsletter abonnierst."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "settings": {
+        "color_scheme": "inverse",
+        "title": "Erhalte 10% auf deine Erstbestellung, wenn du unseren Newsletter abonnierst.",
+        "backgroundColor": "#A1A4A9"
+      }
+    }
+  ]
+}
+{% endschema %}
