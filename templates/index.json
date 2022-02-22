@@ -132,6 +132,14 @@
             "variant": "",
             "image": "shopify:\/\/shop_images\/akupressurmatte-produktbild_a36c068d-8b03-43ba-a571-185be139af60.png"
           }
+        },
+        "2c4375fc-ba23-45c2-9d27-bc13970e84a0": {
+          "type": "product",
+          "settings": {
+            "product": "resleep",
+            "variant": "",
+            "image": "shopify:\/\/shop_images\/resleep-produktbild_c8cbf38a-7e7c-4616-8a3f-ec60a699db56.png"
+          }
         }
       },
       "block_order": [
@@ -141,7 +149,8 @@
         "1a38d4db-9dee-4338-bc0d-7af2bf5efc0c",
         "343cc3f6-2dc6-490f-afad-0a64276d7f9a",
         "5b1caa4d-6c99-4794-b7a7-226f4c3b90a2",
-        "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6"
+        "e0393d4a-a34a-4b5a-a5f4-4f76a3e88ed6",
+        "2c4375fc-ba23-45c2-9d27-bc13970e84a0"
       ],
       "settings": {
         "title": "Unsere Bestseller",
