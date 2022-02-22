@@ -163,7 +163,7 @@
         </label>
       </div>
       {% else %}
-      <div style="width: 58%; border-bottom: 1px solid #E6EAE8;">&nbsp;</div>
+      <div style="width: 65%; padding: 10px 0; border-bottom: 1px solid #E6EAE8;">&nbsp;</div>
       {% endif %}
     </div>
     <div id="quantity-subscription-body">
@@ -449,55 +449,56 @@
       ele.classList.add("visible")
     }
   }))
-  document.querySelectorAll("#sub-quantity-dropdown-list > div").forEach(element => {
-    element.addEventListener("click", (e) => {
-      const prices = {{ curr_variant.metafields.global.prices }}
-
-      const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
-      const quantityIndex = e.target.dataset.quantity
-      document.querySelector("#sub-quantity-dropdown-selected > span:first-child > span").innerHTML = `${subscriptions[Number(quantityIndex)].title}`
-      const { number, unit, reference, content, periods } = subscriptions[quantityIndex]
-      const chosenPeriod = document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML
-      const periodIndex = periods.reduce((acc, curr, index) => {
-        if (curr.title === chosenPeriod.trim()) {
-          return index
-        } else {
-          return acc
-        }
-      }, -1)
-      const { cost, vid } = periods[periodIndex]
-      document.getElementById("substotal").innerHTML = `${Number(cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("substotalcompare").innerHTML = `${Number(number * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("subsdiscount").innerHTML = `-${Number(100 - (100 * cost / (number * prices[0].cost))).toFixed(0)}%`
-      document.getElementById("subsunitprice").innerHTML = `${Number(reference * cost / content / 100).toFixed(2).replace(".", ",")} €/${reference} ${unit}`
-      document.getElementById("subscription-link").href=`https://abo.schlafdrink.de/cart/${vid}:1`
-      document.getElementById("sub-quantity-dropdown-list").classList.remove("visible")
+    {% if curr_variant.metafields.global.subscriptions and curr_variant.metafields.global.subscriptions.value.size > 0 %}
+    document.querySelectorAll("#sub-quantity-dropdown-list > div").forEach(element => {
+      element.addEventListener("click", (e) => {
+        const prices = {{ curr_variant.metafields.global.prices }}
+        const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
+        const quantityIndex = e.target.dataset.quantity
+        document.querySelector("#sub-quantity-dropdown-selected > span:first-child > span").innerHTML = `${subscriptions[Number(quantityIndex)].title}`
+        const { number, unit, reference, content, periods } = subscriptions[quantityIndex]
+        const chosenPeriod = document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML
+        const periodIndex = periods.reduce((acc, curr, index) => {
+          if (curr.title === chosenPeriod.trim()) {
+            return index
+          } else {
+            return acc
+          }
+        }, -1)
+        const { cost, vid } = periods[periodIndex]
+        document.getElementById("substotal").innerHTML = `${Number(cost / 100).toFixed(2).replace(".",",")} €`
+        document.getElementById("substotalcompare").innerHTML = `${Number(number * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+        document.getElementById("subsdiscount").innerHTML = `-${Number(100 - (100 * cost / (number * prices[0].cost))).toFixed(0)}%`
+        document.getElementById("subsunitprice").innerHTML = `${Number(reference * cost / content / 100).toFixed(2).replace(".", ",")} €/${reference} ${unit}`
+        document.getElementById("subscription-link").href=`https://abo.schlafdrink.de/cart/${vid}:1`
+        document.getElementById("sub-quantity-dropdown-list").classList.remove("visible")
+      })
     })
-  })
-  document.querySelectorAll("#sub-period-dropdown-list > div").forEach(element => {
-    element.addEventListener("click", (e) => {
-      const prices = {{ curr_variant.metafields.global.prices }}
-      const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
-      const periodIndex = e.target.dataset.period
-      const chosenQuantity = document.querySelector("#sub-quantity-dropdown-selected > span:first-child > span").innerHTML.trim()
-      const quantityIndex = subscriptions.reduce((acc, curr, index) => {
-        if(curr.title === chosenQuantity){
-          return index
-        } else {
-          return acc
-        }
-      }, -1)
-      const { number, unit, reference, content, periods } = subscriptions[quantityIndex]
-      document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML = `${periods[Number(periodIndex)].title}`
-      const { cost, vid } = periods[periodIndex]
-      document.getElementById("substotal").innerHTML = `${Number(cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("substotalcompare").innerHTML = `${Number(number * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
-      document.getElementById("subsdiscount").innerHTML = `-${Number(100 - (100 * cost / (number * prices[0].cost))).toFixed(0)}%`
-      document.getElementById("subsunitprice").innerHTML = `${Number(reference * cost / content / 100).toFixed(2).replace(".", ",")} €/${reference} ${unit}`
-      document.getElementById("subscription-link").href=`https://abo.schlafdrink.de/cart/${vid}:1`
-      document.getElementById("sub-period-dropdown-list").classList.remove("visible")
+    document.querySelectorAll("#sub-period-dropdown-list > div").forEach(element => {
+      element.addEventListener("click", (e) => {
+        const prices = {{ curr_variant.metafields.global.prices }}
+        const subscriptions = {{ curr_variant.metafields.global.subscriptions }}
+        const periodIndex = e.target.dataset.period
+        const chosenQuantity = document.querySelector("#sub-quantity-dropdown-selected > span:first-child > span").innerHTML.trim()
+        const quantityIndex = subscriptions.reduce((acc, curr, index) => {
+          if(curr.title === chosenQuantity){
+            return index
+          } else {
+            return acc
+          }
+        }, -1)
+        const { number, unit, reference, content, periods } = subscriptions[quantityIndex]
+        document.querySelector("#sub-period-dropdown-selected > span:first-child > span").innerHTML = `${periods[Number(periodIndex)].title}`
+        const { cost, vid } = periods[periodIndex]
+        document.getElementById("substotal").innerHTML = `${Number(cost / 100).toFixed(2).replace(".",",")} €`
+        document.getElementById("substotalcompare").innerHTML = `${Number(number * prices[0].cost / 100).toFixed(2).replace(".",",")} €`
+        document.getElementById("subsdiscount").innerHTML = `-${Number(100 - (100 * cost / (number * prices[0].cost))).toFixed(0)}%`
+        document.getElementById("subsunitprice").innerHTML = `${Number(reference * cost / content / 100).toFixed(2).replace(".", ",")} €/${reference} ${unit}`
+        document.getElementById("subscription-link").href=`https://abo.schlafdrink.de/cart/${vid}:1`
+        document.getElementById("sub-period-dropdown-list").classList.remove("visible")
+      })
     })
-  })
+  {% endif %}
   function changeLink(e) {
     const subscriptions = {{ curr_variant.metafields.global.subscriptions.value | json }}
     const checkedValue = Number(e.target.value)
