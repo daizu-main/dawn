@@ -1,3 +1,86 @@
+{% comment %}
+
+  This section displays a slider with ingredients for a product.
+
+  The ingredients are selected based on the tags assigned to the product.
+  To make this work:
+
+  1. Add all available ingredients as blocks to the Ingredients-Slider section on the (product) template
+  2. Assign each ingredient a unique tag (usually name the tags after the ingredient)
+  3. Assign the same tags to the products
+
+  The section will then display only those ingredients in the slider that the product has matching tags for.
+
+  If there are no matching tags, the entire section will not be displayed at all.
+
+{% endcomment %}
+
+{% liquid 
+
+  assign allIngredients = section.blocks | where: 'type', 'image'
+  assign ingredientTags = '' | split: ''
+
+  assign ingredientIndexes = '' | split: ''
+  comment -- for debugging
+    assign ingredientNames = '' | split: ''
+    assign matchingTags = '' | split: ''
+  endcomment
+
+  assign index = 0
+
+  comment 
+    The following algorithm is to filter all ingredients set up in the template for 
+    those that match the tags of the current product.
+    So we can use the tags to eaily defin which ingredients to show for each product.
+
+    However, Liquid is an extremely limited language, even though it is probably 
+    Turing Complete.
+
+    There are two major difficulties making the code ugly:
+
+      1.  the where filter does not allow to filter for multiple elements as argument.
+          so we cannot simply filter the ingredients for all tags in the product.tags
+          this is why we have this ugly nested for loop.
+      2.  Even though it's not really documented, you can only concat arrays of strings.
+          So we cannot simply create a new list of ingredients but instead
+          we build an array of the (string) indexes of the ingredients we want to show.
+      3.  In the actual UI code, we find the ingredient object using the indexes.
+
+    — Gabriel, 2022-02-14
+  endcomment
+
+  for ingredient in allIngredients
+    
+    assign ingredientTagArray = ingredient.settings.tag | split: ','
+    assign ingredientTags = ingredientTags | concat: ingredientTagArray
+    for productTag in product.tags
+      if productTag == ingredient.settings.tag
+        comment
+          Only arrays can be concatenated (there is no append for single objects).
+          So we need to convert the index to string array.
+        endcomment
+        assign indexArray = index | split: ','
+        assign ingredientIndexes = ingredientIndexes | concat: indexArray
+        
+        comment -- for debugging
+          assign tagArray = ingredient.settings.tag | split: ','
+          assign matchingTags = matchingTags | concat: tagArray
+          assign ingredientNameArray = ingredient.settings.name | split: ','
+          assign ingredientNames = ingredientNames | concat: ingredientNameArray
+        endcomment
+      endif
+    endfor
+
+    assign index = index | plus: 1
+  endfor
+  
+%}
+
+{% comment %}
+Don't load/display the component if there are no matching ingredients.  
+{% endcomment %}
+{% if ingredientIndexes.size > 0 %}
+
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
@@ -6,30 +89,36 @@
   <div class="SectionGrid-Wide flex column jc-c ai-c nooutline">
     <h2 class="w-auto ff-heading fs-13px lh-125 fs-md-0 lh-100 fw-700 ta-l ls-p200 uppercase mt-0 mb-7 mx-auto">{{ section.settings.pretitle | escape }}</h2>
     <h2 class="w-17ch mxw-1200px mt-0 mb-7 fs-27px lh-107 fs-md-36px fs-lg-38px ta-c ls-m200 mx-auto fw-600">{{ section.settings.title | escape }}</h2>
+
     {% comment %} Desktop Slider {% endcomment %}
     <div class="w-100p h-95p h-lg-90p mxw-1200px desktop">
       <div class="w-100p h-100p">
         <div class="collection page-width{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}">
-          {% assign ingredients = section.blocks | where: 'type', 'image' %}
+
+
+
           <sleepink-slider class="slider-mobile-gutter">
             <ul class="grid slider slider--tablet slider--desktop grid--peek negative-margin negative-margin--small" role="list">
               {% liquid 
-                assign number_modulo = ingredients.size | modulo: 3
+                assign number_modulo = ingredientIndexes.size | modulo: 3
                 if number_modulo == 0
                   assign number_remaining = 0
                 else
                   assign number_remaining = 3 | minus: number_modulo
                 endif
-                assign number_of_slides = ingredients.size | plus: number_remaining | divided_by: 3
+                assign number_of_slides = ingredientIndexes.size | plus: number_remaining | divided_by: 3
               %}
               {% for slideno in (1..number_of_slides) %}
                 <li class="slider__slide w-100p px-6">
                   <div class="w-100p ngrid threecol onerow gap-8 px-8">
+                    {% comment %}theme-check-disable LiquidTag{% endcomment %}
                     {% for ingredientno in (0..2) %}
                       {% assign index = slideno | times: 3 | minus: 3 | plus: ingredientno %}
-                      {% assign ingredient = ingredients[index] %}
-                      {% if index < ingredients.size %}
-                        <div class="flex column ai-c jc-spa">
+                      {% if index < ingredientIndexes.size %}
+                        {% comment %} The plus 0 is to convert the string to an int {% endcomment %}
+                        {% assign ingredientIndex = ingredientIndexes[index] | plus: 0 %}
+                        {% assign ingredient = allIngredients[ingredientIndex] %}
+                        <div class="flex column ai-c jc-fs">
                           <img src="{{ ingredient.settings.image | image_url: width: 100 }}"
                             srcset="{{ ingredient.settings.image | image_url: width: 100 }} 1x, {{ ingredient.settings.image | image_url: width: 200 }} 2x" 
                             alt="{{ ingredient.settings.image.alt | escape }}" 
@@ -42,6 +131,7 @@
                         <div>&nbsp;</div>
                       {% endif %}
                     {% endfor %}
+                    {% comment %}theme-check-enable LiquidTag{% endcomment %}
                   </div>
                 </li>
               {% endfor %}
@@ -53,7 +143,7 @@
                   <span class="slider-counter--current">1</span>
                   <span aria-hidden="true"> / </span>
                   <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-                  <span class="slider-counter--total">{{ ingredients.size }}</span>
+                  <span class="slider-counter--total">{{ ingredientIndexes.size }}</span>
                 </div>
                 <button type="button" class="slider-button slider-button--next zutaten-button" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
               </div>
@@ -66,26 +156,28 @@
     <div class="w-100p h-95p h-lg-90p mxw-1200px tablet">
       <div class="w-100p h-100p">
         <div class="collection page-width{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}">
-          {% assign ingredients = section.blocks | where: 'type', 'image' %}
           <sleepink-slider class="slider-mobile-gutter">
             <ul class="grid slider slider--tablet slider--desktop grid--peek negative-margin negative-margin--small px-6" role="list">
               {% liquid 
-                assign number_modulo = ingredients.size | modulo: 2
+                assign number_modulo = ingredientIndexes.size | modulo: 2
                 if number_modulo == 0
                   assign number_remaining = 0
                 else
                   assign number_remaining = 2 | minus: number_modulo
                 endif
-                assign number_of_slides = ingredients.size | plus: number_remaining | divided_by: 2
+                assign number_of_slides = ingredientIndexes.size | plus: number_remaining | divided_by: 2
               %}
               {% for slideno in (1..number_of_slides) %}
                 <li class="slider__slide w-100p">
                   <div class="ngrid twocol onerow gap-8 px-10">
+                    {% comment %}theme-check-disable LiquidTag{% endcomment %}
                     {% for ingredientno in (0..1) %}
                       {% assign index = slideno | times: 2 | minus: 2 | plus: ingredientno %}
-                      {% assign ingredient = ingredients[index] %}
-                      {% if index < ingredients.size %}
-                        <div class="flex column ai-c jc-spa">
+                      {% if index < ingredientIndexes.size %}
+                        {% comment %} The plus 0 is to convert the string to an int {% endcomment %}
+                        {% assign ingredientIndex = ingredientIndexes[index] | plus: 0 %}
+                        {% assign ingredient = allIngredients[ingredientIndex] %}
+                        <div class="flex column ai-c jc-fs">
                           <img src="{{ ingredient.settings.image | image_url: width: 100 }}" alt="{{ ingredient.settings.image.alt | escape }}" 
                             srcset="{{ ingredient.settings.image | image_url: width: 100 }} 1x, {{ ingredient.settings.image | image_url: width: 200 }} 2x"
                             loading="lazy" width="100" height="100" 
@@ -97,6 +189,7 @@
                         <div>&nbsp;</div>
                       {% endif %}
                     {% endfor %}
+                    {% comment %}theme-check-enable LiquidTag{% endcomment %}
                   </div>
                 </li>
               {% endfor %}
@@ -108,7 +201,7 @@
                   <span class="slider-counter--current">1</span>
                   <span aria-hidden="true"> / </span>
                   <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-                  <span class="slider-counter--total">{{ ingredients.size }}</span>
+                  <span class="slider-counter--total">{{ ingredientIndexes.size }}</span>
                 </div>
                 <button type="button" class="slider-button slider-button--next zutaten-button-tablet" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
               </div>
@@ -121,18 +214,18 @@
     <div class="w-100p h-95p h-lg-90p mxw-1200px mobile">
       <div class="w-100p h-100p">
         <div class="collection page-width{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}">
-          {% assign ingredients = section.blocks | where: 'type', 'image' %}
           <sleepink-slider class="slider-mobile-gutter">
             <ul class="grid slider slider--tablet slider--desktop grid--peek negative-margin negative-margin--small" role="list">
-              {% for ingredient in ingredients %}
+              {% assign maxIndex = ingredientIndexes.size | minus: 1 %}
+              {% for index in (0..maxIndex) %}
                 <li class="slider__slide w-100p">
                   <div class="ngrid onecol onerow gap-8 px-10">
-                      <div class="flex column ai-c jc-spa">
+                      <div class="flex column ai-c jc-fs">
+                        {% comment %} The plus 0 is to convert the string to an int {% endcomment %}
+                        {% assign ingredientIndex = ingredientIndexes[index] | plus: 0 %}
+                        {% assign ingredient = allIngredients[ingredientIndex] %}
                         <img src="{{ ingredient.settings.image | image_url: width: 100 }}" 
-                          srcset="{{ ingredient.settings.image | image_url: width: 100 }} 1x, {{ ingredient.settings.image | image_url: width: 200 }} 2x"
-                          alt="{{ ingredient.settings.image.alt | escape }}" 
-                          loading="lazy" width="100" height="100" 
-                          class="w-100px h-100px bdr-50p mb-7 cover">
+                        alt="{{ ingredient.settings.image.alt | escape }}" loading="lazy" width="100" height="100" class="w-100px h-100px bdr-50p mb-7 cover">
                         <h3 class="ff-heading fs-0 lh-130 fw-600 ta-c mt-0 mb-3">{{ ingredient.settings.name | escape }}</h3>
                         <div class="rt-zutaten">{{ ingredient.settings.text }}</div>
                       </div>
@@ -140,14 +233,14 @@
                 </li>
               {% endfor %}
             </ul>
-            {%- if number_of_slides > 1 and section.settings.swipe_on_mobile -%}
+            {%- if ingredientIndexes.size > 1 and section.settings.swipe_on_mobile -%}
               <div class="slider-buttons no-js-hidden w-100p flex row jc-spb">
                 <button type="button" class="slider-button slider-button--prev zutaten-button" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
                 <div class="slider-counter caption">
                   <span class="slider-counter--current">1</span>
                   <span aria-hidden="true"> / </span>
                   <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-                  <span class="slider-counter--total">{{ ingredients.size }}</span>
+                  <span class="slider-counter--total">{{ ingredientIndexes.size }}</span>
                 </div>
                 <button type="button" class="slider-button slider-button--next zutaten-button" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
               </div>
@@ -158,7 +251,7 @@
     </div>
   </div>
 </div>
-
+{% endif %}
 
 
 {% schema %}
@@ -224,6 +317,11 @@
           "id": "text",
           "label": "Beschreibung der Zutat",
           "type": "richtext"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Produkt-Tag über das die Zutat angezeigt wird."
         }
       ]
     }
