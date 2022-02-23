@@ -11,9 +11,29 @@
     assign gridColumns = "1fr minmax(25px, 200px) minmax(350px, 450px)"
   endif
 %}
-
 <div class="SectionGrid onerow color-{{ section.settings.color_scheme }} newsletter-section">
-  <div class="SectionGrid-Full newsletter-twogrid">
+{% comment %} Desktop {% endcomment %}
+  <div class="SectionGrid-Full newsletter-twogrid desktopgrid">
+    <div style="grid-column: {{ textColumn }}; background-color: {{ section.settings.backgroundColor }}; grid-template-columns: {{ gridColumns }};" class="newsletter-contentgrid">
+      <div style="grid-column: {{ contentColumn }};" class="newsletter-content">
+        <h2 class="newsletter-title">
+          {{ section.settings.title }}
+        </h2>
+        <div>
+          <form action="https://hook.integromat.com/8pf5t7kev3k931umilola6f25s44yvo7" method="post">
+            <input type="hidden" name="g" value="WsHQ2g">
+            <input type="hidden" name="$fields" value="$first_name,$source">
+            <input type="hidden" name="$source" value="10% Gutschein Subscriber">
+            <input type="text" name="$first_name" placeholder="Vorname" required class="newsletter-firstname">
+            <input type="email" id="drip-email" name="fields[email]" placeholder="E-Mail-Adresse" required class="newsletter-email">
+            <button type="submit" class="newsletter-button button">Anmelden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <img src="{{ section.settings.backgroundImage | image_url: width: 1200 }}" srcset="{{ section.settings.backgroundImage | image_url: width: 1200 }} 1x, {{ section.settings.backgroundImage | image_url: width: 2400 }} 2x" alt="{{ section.settings.backgroundImage.alt }}" style="grid-column: {{ imageColumn }};" class="newsletter-image">
+  </div>
+  <div class="SectionGrid-Full newsletter-twogrid tabletgrid">
     <div style="grid-column: {{ textColumn }}; background-color: {{ section.settings.backgroundColor }}; grid-template-columns: {{ gridColumns }};" class="newsletter-contentgrid">
       <div style="grid-column: {{ contentColumn }};" class="newsletter-content">
         <h2 class="newsletter-title">

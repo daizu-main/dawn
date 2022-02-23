@@ -2137,7 +2137,7 @@ details[open].menu-opening > .menu-drawer__submenu {
     display: none;
   }
   .tabletgrid {
-    display: none;
+    display: none !important;
   }
   .desktop {
     display: block;
@@ -6025,11 +6025,7 @@ deferred-media {
 
 /* STRUCTURE: Newsletter Signup */
 
-@media screen and (min-width: 990px) {
-  .newsletter-section {
-    height: 380px;
-  }
-
+@media screen and (min-width: 500px) {
   .newsletter-twogrid {
     width: 100%;
     display: grid;
@@ -6042,43 +6038,35 @@ deferred-media {
     display: grid;
     width: 100%;
     height: 100%;
+    grid-template-rows: 1fr;
   }
 
   .newsletter-content {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 3;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 30px;
-    width: clamp(375px, 100%, 650px);
+    width: clamp(250px, 100%, 495px);
   }
 
   .newsletter-title {
-    font-size: 32px;
+    font-size: 23px;
   }
 
-  .newsletter-firstname {
+  .newsletter-firstname,
+  .newsletter-email {
     height: 58px;
+    width: 100%;
     background-color: transparent;
     padding: 8px 12px;
-    width: calc(33.3% - 4px);
     border: 1px solid #000000;
+    margin-bottom: 8px;
   }
 
   .newsletter-firstname:focus,
-  .newsletter-firstname:focus-visible {
-    border: 2px solid #000000;
-    outline: none;
-    box-shadow: none;
-  }
-
-  .newsletter-email {
-    height: 58px;
-    background-color: transparent;
-    padding: 8px 12px;
-    width: calc(66.7% - 4px);
-    border: 1px solid #000000;
-  }
-
+  .newsletter-firstname:focus-visible,
   .newsletter-email:focus,
   .newsletter-email:focus-visible {
     border: 2px solid #000000;
@@ -6088,7 +6076,7 @@ deferred-media {
 
   .newsletter-button {
     display: block;
-    margin: 16px auto 0;
+    margin: 16px auto 0 0;
     padding: 16px 24px;
     font-family: var(--font-heading-family);
     text-transform: uppercase;
@@ -6099,5 +6087,40 @@ deferred-media {
     object-fit: cover;
     width: 50vw;
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .newsletter-section {
+    height: 380px;
+  }
+
+  .newsletter-content {
+    padding: 30px;
+    width: clamp(375px, 100%, 650px);
+  }
+
+  .newsletter-title {
+    font-size: 32px;
+  }
+
+  .newsletter-firstname {
+    height: 58px;
+    padding: 8px 12px;
+    width: calc(33.3% - 4px);
+  }
+
+  .newsletter-email {
+    height: 58px;
+    padding: 8px 12px;
+    width: calc(66.7% - 4px);
+  }
+
+  .newsletter-button {
+    display: block;
+    margin: 16px auto 0 0;
+    padding: 16px 24px;
+    font-family: var(--font-heading-family);
+    text-transform: uppercase;
   }
 }
