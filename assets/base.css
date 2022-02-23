@@ -6085,4 +6085,19 @@ deferred-media {
     outline: none;
     box-shadow: none;
   }
+
+  .newsletter-button {
+    display: block;
+    margin: 16px auto 0;
+    padding: 16px 24px;
+    font-family: var(--font-heading-family);
+    text-transform: uppercase;
+  }
+
+  .newsletter-image {
+    grid-row: 1 / span 1;
+    object-fit: cover;
+    width: 50vw;
+    height: 100%;
+  }
 }
