@@ -791,7 +791,7 @@
                   {% for advantage in product.metafields.global.advantages.value %}
                     <div class="flex row ai-c mb-3">
                       <div class="h-16px mr-4">
-                        {% render "advantage-icon", { icon: advantage.icon } %}
+                        {% render "advantage-icon", icon: advantage.icon %}
                       </div>
                       <p class="fs-1 lh-150 fw-300 ff-body">
                         {{ advantage.text | escape }}
@@ -805,7 +805,7 @@
                   <div class="flex row wrap ai-c">
                     <div class="flex row jc-c ai-c mr-4" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);">
                       <div class="h-16px mr-3 pos-rel">
-                        {% render "advantage-icon", { icon: 'parcel' } %}
+                        {% render "advantage-icon", icon: 'parcel' %}
                       </div>
                       <p>
                         Kostenloser Versand ab 29€
@@ -813,7 +813,7 @@
                     </div>
                     <div class="flex row jc-c ai-c" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);" id="money-back">
                       <div class="h-16px mr-3 pos-rel">
-                        {% render "advantage-icon", { icon: 'euro' } %}
+                        {% render "advantage-icon", icon: 'euro' %}
                       </div>
                       <p>
                         30 Tage Geld-zurück-Garantie
@@ -821,7 +821,7 @@
                     </div>
                     <div class="flex row jc-c ai-c hidden" style="background-color: #faf8f6; padding: 14px 10px; width: calc(50% - 6px);" id="secure-payment">
                       <div class="h-16px mr-3 pos-rel">
-                        {% render "advantage-icon", { icon: 'secure-payment' } %}
+                        {% render "advantage-icon", icon: 'secure-payment' %}
                       </div>
                       <p>
                         Sichere Zahlung
@@ -1483,3 +1483,22 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render "advantage-icon", { icon: advantage.icon } %}'
+  to: '{% render "advantage-icon", icon: advantage.icon %}'
+  position: 39503..39554
+- from: '{% render "advantage-icon", { icon: ''parcel'' } %}'
+  to: '{% render "advantage-icon", icon: ''parcel'' %}'
+  position: 40257..40302
+- from: '{% render "advantage-icon", { icon: ''euro'' } %}'
+  to: '{% render "advantage-icon", icon: ''euro'' %}'
+  position: 40691..40734
+- from: '{% render "advantage-icon", { icon: ''secure-payment'' } %}'
+  to: '{% render "advantage-icon", icon: ''secure-payment'' %}'
+  position: 41136..41189
+{% endcomment %}
