@@ -695,7 +695,7 @@
               <div class="advantages mb-5">
                   <div class="flex row ai-c mb-3">
                     <div class="h-16px mr-3">
-                      {% render "advantage-icon", { icon: block.settings.iconA } %}
+                      {% render "advantage-icon", icon: block.settings.iconA %}
                     </div>
                     <p class="fs-1 lh-125 fw-300 ff-body">
                       {{ block.settings.textA | escape }}
@@ -703,7 +703,7 @@
                   </div>
                   <div class="flex row ai-c mb-3">
                     <div class="h-16px mr-3">
-                      {% render "advantage-icon", { icon: block.settings.iconB } %}
+                      {% render "advantage-icon", icon: block.settings.iconB %}
                     </div>
                     <p class="fs-1 lh-125 fw-300 ff-body">
                       {{ block.settings.textB | escape }}
@@ -711,7 +711,7 @@
                   </div>
                   <div class="flex row ai-c mb-3">
                     <div class="h-16px mr-3">
-                      {% render "advantage-icon", { icon: block.settings.iconC } %}
+                      {% render "advantage-icon", icon: block.settings.iconC %}
                     </div>
                     <p class="fs-1 lh-125 fw-300 ff-body">
                       {{ block.settings.textC | escape }}
@@ -722,7 +722,7 @@
                 <div class="features mb-5 pt-7 bdtw-1px bdts-sol bdtcfg mt-7">
                     <div class="flex row ai-c mb-4">
                       <div class="h-16px mr-3 pos-rel b-2">
-                        {% render "advantage-icon", { icon: 'parcel' } %}
+                        {% render "advantage-icon", icon: 'parcel' %}
                       </div>
                       <p class="fs-0 lh-130 fw-300 ff-body">
                         Schneller Versand
@@ -730,7 +730,7 @@
                     </div>
                     <div class="flex row ai-c mb-4">
                       <div class="h-16px mr-3 pos-rel b-2">
-                        {% render "advantage-icon", { icon: 'euro' } %}
+                        {% render "advantage-icon", icon: 'euro' %}
                       </div>
                       <p class="fs-0 lh-130 fw-300 ff-body">
                         30 Tage Geld-zurück-Garantie
@@ -738,7 +738,7 @@
                     </div>
                     <div class="flex row ai-c mb-4">
                       <div class="h-16px mr-3 pos-rel b-2">
-                        {% render "advantage-icon", { icon: 'secure-payment' } %}
+                        {% render "advantage-icon", icon: 'secure-payment' %}
                       </div>
                       <p class="fs-0 lh-130 fw-300 ff-body">
                         Sichere Zahlung
@@ -1590,3 +1590,28 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render "advantage-icon", { icon: block.settings.iconA } %}'
+  to: '{% render "advantage-icon", icon: block.settings.iconA %}'
+  position: 34799..34856
+- from: '{% render "advantage-icon", { icon: block.settings.iconB } %}'
+  to: '{% render "advantage-icon", icon: block.settings.iconB %}'
+  position: 35170..35227
+- from: '{% render "advantage-icon", { icon: block.settings.iconC } %}'
+  to: '{% render "advantage-icon", icon: block.settings.iconC %}'
+  position: 35541..35598
+- from: '{% render "advantage-icon", { icon: ''parcel'' } %}'
+  to: '{% render "advantage-icon", icon: ''parcel'' %}'
+  position: 36068..36113
+- from: '{% render "advantage-icon", { icon: ''euro'' } %}'
+  to: '{% render "advantage-icon", icon: ''euro'' %}'
+  position: 36437..36480
+- from: '{% render "advantage-icon", { icon: ''secure-payment'' } %}'
+  to: '{% render "advantage-icon", icon: ''secure-payment'' %}'
+  position: 36815..36868
+{% endcomment %}
